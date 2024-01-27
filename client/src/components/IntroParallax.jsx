@@ -1,6 +1,7 @@
 import React, { useEffect, useState,useRef,useHover} from "react";
 import TeamPage from '../pages/TeamPage.jsx';
 import '../public/intro.css';
+//the local deployment works with serve,but with heroku not yet
 //heroku logs --tail -a passtilliostest1
 // "start": "node app/index.js"
 //https://github.com/HalehEsmaeili/passtilliosRepository
