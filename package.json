@@ -1,9 +1,8 @@
 {
   "dependencies": {
     "react-marker": "^1.0.1"
-  }
-  ,
+  },
   "scripts": {
-    "start": "node index.js" // Replace with the actual entry point of your application
+    "start": "node index.js"
   }
 }
