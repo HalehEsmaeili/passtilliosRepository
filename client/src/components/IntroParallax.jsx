@@ -4,6 +4,7 @@ import '../public/intro.css';
 //heroku logs --tail -a passtilliostest1
 // "start": "node app/index.js"
 //https://github.com/HalehEsmaeili/passtilliosRepository
+//heroku git:remote -a passtilliosfrontendtest
 //vids
 //import teamHeaderVid from "../public/video/teamGif.gif";
 import wtf from "../public/images/campaign/wtf.png";
