@@ -3,6 +3,11 @@
     "react-marker": "^1.0.1"
   },
   "scripts": {
-   
+    "start": "cd client && npm start",
+    "build": "cd client && npm run build",
+    "test": "cd client && npm test",
+    "eject": "cd client && npm eject",
+    "heroku-postbuild": "cd client && npm run build",
+    "serve": "cd client && npm run serve"
   }
 }
