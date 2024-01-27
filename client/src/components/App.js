@@ -35,7 +35,7 @@ return (
 
     
       <Header/>
-      <TeamPage/>
+     
       <IntroParallax/>
     
 

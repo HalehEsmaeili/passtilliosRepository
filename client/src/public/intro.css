@@ -931,21 +931,27 @@ rotate:-90deg;
   display: grid;
   grid-template-columns: 100%;
   overflow: visible;
+ 
 }
 
 .secondGreyHeader{
 text-align: center;
   text-transform: uppercase;
   font-size: 11vw;
+line-height: 4vw;
+display: inline-block;
+margin-right: 2%;
+margin-left:2% ;
 }
 .secondGreyHeaderContainer{
   overflow: visible;
   position: relative;
-  margin-left: 22%;
-  margin-right: 22%;
+  margin-left: 20%;
+  margin-right: 15%;
  margin-bottom: 0;
- 
-
+}
+#over{
+margin-left:20% ;
 
 }
 .greyDivSvgContainer{

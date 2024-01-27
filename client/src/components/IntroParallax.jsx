@@ -196,6 +196,12 @@ const isInViewdiv2=useInView(div2, {once:true,amount:1});
 const isInViewdiv3=useInView(div3, {once:true,amount:.8});
 
 //const [isHovered,handleHover]=useHover();
+///////dont let grey take over
+const dontAnim =useAnimationControls();
+const letAnim  =useAnimationControls();
+const greyAnim =useAnimationControls();
+const takeAnim =useAnimationControls();
+const overAnim =useAnimationControls();
   ////////////////////////animation controls
   const controls =useAnimationControls();
   const controlsimg2 =useAnimationControls();
@@ -288,7 +294,7 @@ const campaignImgAnimation=useAnimationControls();
   */
 //////////////////////animation functions
 const wtfAnim=async ()=>{
-  await wtfAnimation.start({scale:[1,1.1,],opacity:1,transition:{delay:.3,duration:.5}});
+  await wtfAnimation.start({scale:[1,1.1],opacity:1,transition:{delay:.3,duration:.5}});
  };
 useEffect(() =>{
   if(isInViewWtfRef){
@@ -298,7 +304,7 @@ useEffect(() =>{
   
   },[isInViewWtfRef]);
   const campaignImgAnim=async ()=>{
-    await campaignImgAnimation.start({scale:[1,1.2],transition:{delay:.2,duration:.5}});
+    await campaignImgAnimation.start({scale:[1,1.3],transition:{delay:.5,duration:.5}});
    };
   useEffect(() =>{
     if(isInViewCampaignImg){
@@ -427,30 +433,33 @@ useEffect(()=>{
   if(scrollToGreyActive){
   const bubbleBurstAnim=async ()=>{
     b2Controls.start({left:"85%",top:"120%",transition:{stiffness:.1,duration:5}});
-    b5Controls.start({left:"-15%",top:"2%",x:["-5vw","16vw"],y:["10vw","28vw"],transition:{delay:1,stiffness:.1,duration:5}});
-    b10Controls.start({left:"-5%",top:"-36%",transition:{delay:4,stiffness:.1,duration:5}});
-    b9Controls.start({ left:"78%",top:"-18%",transition:{delay:5,stiffness:.1,duration:5}});
+    b5Controls.start({left:"-17%",top:"2%",x:["-5vw","16vw"],y:["10vw","28vw"],transition:{delay:1,stiffness:.1,duration:5}});
+    b10Controls.start({left:"-10%",top:"-30%",transition:{delay:4,stiffness:.1,duration:5}});
+    b9Controls.start({ left:"78%",top:"-18%",transition:{delay:1.3,stiffness:.1,duration:9}});
    
     
-    await  b11Controls.start({ left:"17%",top:"-38%",transition:{stiffness:1,duration:5}});
+    await  b11Controls.start({ left:"17%",top:"-131vw",transition:{stiffness:1,duration:5}});
    
     b11EmptyControls.start({scale:6, opacity:0, transition:{duration:.1}});
+     
     await splash5Controls.start({scale:6,transition:{}});
- 
+    dontAnim.start({opacity:1});
    
     b2EmptyControls.start({scale:6, opacity:0, transition:{delay:1,duration:.1}});
     await splash2Controls.start({opacity:1,scale:5.5,transition:{delay:1}});
-   
+    letAnim.start({opacity:1});
+
     b5EmptyControls.start({scale:6, opacity:0, transition:{delay:.5,duration:.1}});
      await  splash1Controls.start({scale:4.5,transition:{delay:.5}});
-   
+    greyAnim.start({opacity:1});
+
    b10EmptyControls.start({scale:8, opacity:0, transition:{delay:2,duration:.1}});
    await splash4Controls.start({scale:6.5,transition:{delay:2}});
- 
+    takeAnim.start({opacity:1});
    
    b9EmptyControls.start({scale:6, opacity:0, transition:{delay:.5,duration:.1}});
    await splash3Controls.start({scale:6,transition:{delay:.5}});
- 
+   overAnim.start({opacity:1});
   }
    bubbleBurstAnim();
   }
@@ -1833,7 +1842,11 @@ In 60 years, if a painting were to represent the life you lived up to that point
 (
 <div>
 <div className="secondGreyHeaderContainer">
-<h1  className="secondGreyHeader">Don't let grey take over...</h1>
+<motion.h1 initial={{opacity:0}}  animate={dontAnim} className="secondGreyHeader">Don't </motion.h1>
+<motion.h1 initial={{opacity:0}}  animate={letAnim}   className="secondGreyHeader">let</motion.h1>
+<motion.h1 initial={{opacity:0}}  animate={greyAnim}    className="secondGreyHeader">grey</motion.h1>
+<motion.h1 initial={{opacity:0}}  animate={takeAnim}  className="secondGreyHeader">take</motion.h1>
+<motion.h1 initial={{opacity:0}}  animate={overAnim} id="over"  className="secondGreyHeader">over...</motion.h1>
 
 </div>
 
