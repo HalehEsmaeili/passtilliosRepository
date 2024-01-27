@@ -1,0 +1,37 @@
+.no-scroll {
+    overflow: hidden;
+  }
+
+.fixed-div {
+ background-color:#0D0431;
+ min-height: 1000vh;
+
+  display: flex;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+    top: 0;
+    
+    
+    transform: translateX(-50%);
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    overflow:hidden;
+  }
+  
+  .fixed-div img {
+    max-height: 80vh; /* Adjust to your preferred height */
+  }
+  
+  .content {
+    margin-top: 500px; /* Adjust this margin to ensure the scrolling effect */
+  }
+  .animationTxt {
+color:white;
+left: 50%;
+
+
+
+  }

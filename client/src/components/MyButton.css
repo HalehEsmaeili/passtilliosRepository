@@ -1,0 +1,14 @@
+.passtillios{
+    left:50%;
+    position:absolute;
+    margin-right: 2%;
+    align-items: center;
+    transform-origin:center;
+}
+
+.nextStep{
+    transform-origin:center;
+    position:absolute;
+    align-content: center;
+    left:50%
+}
