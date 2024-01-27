@@ -1,7 +1,9 @@
 import React, { useEffect, useState,useRef,useHover} from "react";
 import TeamPage from '../pages/TeamPage.jsx';
 import '../public/intro.css';
-
+//heroku logs --tail -a passtilliostest1
+// "start": "node app/index.js"
+//https://github.com/HalehEsmaeili/passtilliosRepository
 //vids
 //import teamHeaderVid from "../public/video/teamGif.gif";
 import wtf from "../public/images/campaign/wtf.png";

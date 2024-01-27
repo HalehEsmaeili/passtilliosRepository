@@ -3,6 +3,6 @@
     "react-marker": "^1.0.1"
   },
   "scripts": {
-    "start": "node app/index.js"
+   
   }
 }
