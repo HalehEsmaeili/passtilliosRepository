@@ -68,7 +68,7 @@ p{
     margin-left: 20%;
     margin-right: 20%;
   margin-top: 10%;
-    margin-bottom: 60%;
+    margin-bottom: 0%;
     position: relative;
     z-index: 10000;
     align-items: center;
@@ -159,6 +159,10 @@ h1{
   border:2vw solid #0d043100 ;
   position: relative;
   z-index: 100;
+  overflow: visible;
+}
+.divProjectSection{
+   
   overflow: visible;
 }
 .div1 {
@@ -605,7 +609,7 @@ z-index: 100000;
    margin-bottom: 0;
 }
 .ArtOrPainting{
-    min-height: 100vh;
+ margin-bottom: 0;
    padding-top:5%;
     position: relative;
     overflow: visible;
@@ -627,6 +631,21 @@ z-index: 100000;
    margin-top: 0;
   }
   
+  
+  .projectTxt {
+     /* border: 2px solid yellow;*/
+
+      position: relative;
+     margin-left: 7%;
+     margin-right: 7%;
+
+  
+       /* Set the height of the grid to 100% of the parent container */
+    
+     margin-top: 15%;  
+     margin-bottom: 0;
+    }
+    
   .first-column {
  
     grid-column: 1;
@@ -1016,7 +1035,7 @@ scale:.55;
 .showMeActivationDiv{
 position: relative;
 overflow: visible;
-padding-bottom: 15%;
+padding-bottom: 10%;
 }
 
 #showMeImgLine{
