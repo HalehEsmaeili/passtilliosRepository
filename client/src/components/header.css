@@ -3,15 +3,17 @@
 input{
   opacity: 0;
 }
+.headerDiv{
 
+
+}
 
 .svg-icon {
-  /* Your existing styles for the SVG */
-  /* ... */
+  
   position: absolute;
-left:11vw;
-top:4vw;
- width: 4.7vw; 
+left:16vw;
+top:6vw;
+ width: 6vw; 
  transform-origin: right;
   transition: stroke 0.3s; /* Add transition for a smooth color change */
 }
@@ -68,10 +70,10 @@ stroke-width:7;
 .menu--circle {
   position: absolute;
   z-index: 13;
-  width: 40vw;
-  height: 40vw;
-  background-color: #0D0431;
-
+  width: 80vw;
+  height: 80vw;
+  background-color: #0d043100;
+border-bottom-right-radius: 70%;
   overflow: hidden;
 }
 .menu__active {
@@ -81,10 +83,10 @@ stroke-width:7;
 .menu__toggle {
   z-index: 11;
   position: absolute;
-  top: -10vw;
-  left: -10vw;
-  width: 20vw;
-  height: 20vw;
+  top: -15vw;
+  left: -15vw;
+  width: 30vw;
+  height: 30vw;
   background-color: #ffffff;
   /*background-image: linear-gradient(225deg,#00EEB9,#F90EE7 89%);*/
   border-radius: 50%;
@@ -109,10 +111,10 @@ stroke-width:7;
 .menu__listings {
   z-index: 10;
   position: absolute;
-  top: -20vw;
-  left: -20vw;
-  width: 40vw;
-  height: 40vw;
+  top: -30vw;
+  left: -30vw;
+  width: 60vw;
+  height: 60vw;
   border-radius: 50%;
   transform: scale(0.1) rotate(150deg);
   transition: transform 1s;
@@ -132,8 +134,10 @@ stroke-width:7;
   list-style: none;
 }
 .menu__arrow--top {
-  top: 2vw;
-  left: 22vw;
+ 
+  top: 0;
+  left: 33vw;
+  z-index: 100000;
 }
 .menu__arrow--top .arrow {
   transform: rotate(-45deg);
@@ -146,8 +150,9 @@ stroke-width:7;
   transform: rotate(-135deg);
 }
 .arrow {
-  width: 20px;
-  height: 20px;
+  
+  width: 4vw;
+  height: 4vw;
   border-right: 6.666666666666667px solid #fff;
   border-top: 6.666666666666667px solid #fff;
   border-radius: 3px;
@@ -158,6 +163,9 @@ stroke-width:7;
 .arrow:hover {
   border-color: #ff947f;
   transition: border-color 0.3s;
+}
+.words{
+  font-size: 5vw;
 }
 .circle {
   position: relative;
@@ -311,8 +319,9 @@ text-transform:uppercase ;
 #menu__active:checked ~ label #degree--up-1:checked ~ .menu__listings ~ .menu__arrow--top label[for="degree--up-2"] {
   display: block;
 }
+
 .customIconCss{
 
-width: 9%;
+width: 5vw;
 }
 

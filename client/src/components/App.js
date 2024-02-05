@@ -1,5 +1,7 @@
 import '../../src/public/App.css';
 import Header from "../components/Header";
+import Footer from "../components/Footer";
+import { BrowserRouter as Router, Route, Routes  } from 'react-router-dom';
 import AnimationSlide from "../components/AnimationSlide";
 import IntroParallax from "../components/IntroParallax";
 import {motion,useSpring,useMotionValueEvent, useScroll,useAnimate, delay, animate,useAnimationControls } from "framer-motion";
@@ -13,6 +15,10 @@ import splash3 from '../public/images/colorSplash/10.png';
 import React, { useEffect } from 'react';
 import Slider from './Slider';
 import TeamPage from '../pages/TeamPage';
+import ContactPage from '../pages/ContactPage';
+
+
+ 
 
 function App() {
  
@@ -33,10 +39,17 @@ function App() {
 return (
     <div >
 
-    
-      <Header/>
-     
-      <IntroParallax/>
+<Router>
+  <Header />
+  <Routes> 
+   <Route path="/team" element={<TeamPage />} />
+    <Route path="/contact" element={<ContactPage />} />
+    <Route path="/home" element={<IntroParallax/>} />
+    <Route index element={ <IntroParallax/>} />
+    {/* Add more routes for other components */}
+    </Routes> 
+</Router>
+    <Footer />
     
 
       

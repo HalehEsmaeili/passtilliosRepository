@@ -1,0 +1,27 @@
+.headerImage{
+    position: relative;
+    display:inline-block;
+  
+    width:20%;
+    rotate: 0deg;
+    margin-right:40% ;
+    margin-left:57% ;
+    margin-bottom: 18%;
+    margin-top: 9%;
+  }
+  .headerGif{
+
+    position: absolute;
+    display:inline-block;
+rotate: 30deg;
+    width:90%;
+    right:-40%;
+    top:0%;
+   
+  }
+  .headerContainer{
+    position: relative;
+    display: flex;
+
+overflow: visible;
+  }

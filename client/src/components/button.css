@@ -185,4 +185,10 @@ padding-right: 5vw;
   background-image:none;
   /*background-image: linear-gradient(144deg,#F90EE7,#5B42F3 50%,#00EEB9,#FEC125);*/
   }
-} 
+}
+#contactBtn{
+  top:92%;
+width: 62%;
+ left:25%;
+font-size: 3vw;
+  } 

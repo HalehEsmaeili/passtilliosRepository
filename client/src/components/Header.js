@@ -1,13 +1,15 @@
 import React from 'react';
+import { BrowserRouter as Router,Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faTrash, faComment } from '@fortawesome/free-solid-svg-icons';
 import '@fortawesome/fontawesome-free/css/all.css';
 import '../components/header.css';
-import team from "../public/images/iconsMenu/5.png";
+import home from "../public/images/iconsMenu/5.png";
 import contact from "../public/images/iconsMenu/2.png";
 import art from "../public/images/iconsMenu/3.png";
 import insta from "../public/images/iconsMenu/4.png";
-import home from "../public/images/iconsMenu/1.png";
+import team from "../public/images/iconsMenu/1.png";
+
 function Header() {
   const handleToggleClick = () => {
     const menuToggle = document.querySelector('.menu__toggle');
@@ -39,23 +41,29 @@ function Header() {
             <li>
               <div className="placeholder">
                 <div className="upside">
-                  <a href='#' className="button">
+                
        {          /* <FontAwesomeIcon icon= />  */}
-                    <img src={art} className="customIconCss"/>
-                  </a>
+                      <Link to="/art" className="button">
+                    <img src={art} className="customIconCss" alt="Art Icon" />
+                  </Link>
+            
                 </div>
               </div>
             </li>
             <li>
               <div className="placeholder">
                 <div className="upside">
-                  <a href='#' className="button">
-                  <img src={team} className="customIconCss"/>
-                    
-                    
+               
+                <Link to="/home" className="button">
+                    <img src={home} className="customIconCss" alt="Team Icon" />
+                  </Link>
                   
+                 
+                   
+                
+                 
                   
-                  </a>
+             
                 </div>
               </div>
             </li>
@@ -105,7 +113,7 @@ function Header() {
             <li>
               <div className="placeholder">
                 <div className="upside">
-                  <a href='#' className="button">
+                  <a className="button">
               rest
                   </a>
                 </div>
@@ -114,16 +122,18 @@ function Header() {
             <li>
               <div className="placeholder">
                 <div className="upside">
-                  <a href='#' className="button">
-                  <img src={home} className="customIconCss"/>
-                  </a>
+              
+                <Link to="/team" className="button">
+                <img src={team} className="customIconCss"/>
+                  </Link>
+                 
                 </div>
               </div>
             </li>
             <li>
               <div className="placeholder">
                 <div className="upside">
-                  <a href="#" className="button">
+                  <a href="https://www.instagram.com/passtillios/" className="button">
                  {/**  <FontAwesomeIcon icon={faTrash} /> */} 
                  <img src={insta} className="customIconCss"/>
                   
@@ -137,11 +147,14 @@ function Header() {
             <li>
               <div className="placeholder">
                 <div className="upside">
-                  <a href="#" className="button">
-                  <img src={contact} className="customIconCss"/>
+                <Link to="/contact" className="button">
+                <img src={contact} className="customIconCss"/>
                     
                  
-                  </a>
+                  </Link>
+                  
+                 
+           
                 </div>
               </div>
             </li>

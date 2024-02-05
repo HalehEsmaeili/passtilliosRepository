@@ -14,7 +14,7 @@ import teamHeaderVid from "../public/video/yourcolors.gif";
 import yourColorsVid from "../public/images/campaign/yourColorsVid.mp4"
 import whatpaintingsVid1 from "../public/images/broDIV2/whatPaintings.mp4";
 import whatpaintingsVid from "../public/video/bro2.mp4";
-import bobVid from "../public/images/nextSteps/bob.mp4";
+import bobVid from "../public/images/nextSteps/28.mp4";
 import colorRevelation from "../public/images/campaign/colorRevelation.png";
 import yourcolors from "../public/images/campaign/yourcolorwords.png";
 import Button from "./Button.js";
@@ -309,7 +309,7 @@ useEffect(() =>{
   
   },[isInViewWtfRef]);
   const campaignImgAnim=async ()=>{
-    await campaignImgAnimation.start({scale:[1,1.3],transition:{delay:.5,duration:.5}});
+    await campaignImgAnimation.start({scale:[1,1.3,1.2],transition:{delay:.3,duration:.5}});
    };
   useEffect(() =>{
     if(isInViewCampaignImg){
@@ -325,7 +325,6 @@ useEffect(() =>{
    await logoLineAnimation.start({pathLength:1, transition:{delay:3,duration:3,transition:{stiffness:2}}});
   };
   if(scrollToGreyActive){
-   
     svgLineAnim();
   }
   
@@ -1665,8 +1664,7 @@ useEffect(() => {
 <img src={callMe}></img>
 */
 return (
-<div style={{overflow:"hidden"}}>
-
+<div >
 
 <motion.div ref={div0}  className="div0">
 
@@ -1683,6 +1681,7 @@ return (
 </motion.div>
 
 
+<div style={{position:"relative", zIndex: 1,marginTop:"20%"}}></div>
 <motion.img src={logo} style={{scale:1.3,marginBottom:"5%"}} animate={introLogoControl} alt="logo" ></motion.img>
 <motion.h1  id="h1Intro" initial={{opacity:0}} animate={{opacity:1}}  transition={{type:"yoyo"}} >ITS ABOUT DAMN TIME WE INFUSE SOME of that MAGICal SPICE INTO OUR LIVES!</motion.h1>
 <motion.img className="bubbles"  src={l} animate={lControls} alt="l" ></motion.img>
@@ -1899,10 +1898,13 @@ In 60 years, if a painting were to represent the life you lived up to that point
 <p >
 Instead how about we embrace the true charm of grey? I believe it's about time we guide it back to being the background color; the perfect backdrop where vibrant and unique colors can take the lead as the main storytellers in the painting of our lives!
 </p>
-<h1>lets make it a story of how a bunch of </h1>
-<h1>ordinary students</h1>
-<h1>made something</h1>
-<h1>extra ordinary together</h1>
+<div  className="passtilliosSvgContainer">
+
+
+
+<h1 id="onSvgtxt1">but to kick start this journey</h1>
+
+<h1 id="onSvgtxt2">I need your help!</h1>
 <svg  className="logoSvgLine"  viewBox="0 0 237 3839" fill="none" xmlns="http://www.w3.org/2000/svg">
 <motion.path initial={{pathLength:0}} animate={logoLineAnimation} id="logoLine" d="M117.709 1716.07C116.646 1705.96 120.18 480.085 120.18 261.53C98.3879 242.579 23.9554 192.971 60.9991 244.251C84.6933 277.051 87.5753 277.694 120.18 313.925C130.629 325.535 218.33 137.789 120.18 233.661C-120 -174.5 179.494 100.697 217.5 15.4999C217.5 15.4999 120.18 144 29 15.4999M117.709 1716.07C122.493 1706.6 143.329 1683.21 158.636 1682.32C177.771 1681.2 178.303 1690.12 215.509 1672.84C256.6 1653.76 223.908 1691.46 197.969 1696.81C184.15 1691.79 155.341 1684.77 150.664 1696.81C144.817 1711.86 128.871 1730.81 96.4482 1703.5C64.0253 1676.19 74.6558 1697.93 54.4579 1700.71C34.26 1703.5 11.936 1690.68 3.43164 1682.32C-5.07274 1673.96 26.2871 1701.83 45.422 1696.81C64.5568 1691.79 80.5025 1671.73 100.169 1686.22C119.835 1700.71 116.646 1705.96 117.709 1716.07ZM117.709 1716.07C118.772 1726.19 84.7547 1733.04 61.3677 1732.48C55.7438 1732.35 50.3965 1731.64 45.422 1730.54M45.422 1730.54C29.7098 1727.09 17.7157 1719.86 12.4675 1715.21C6.93969 1710.3 20.7947 1720.59 28.4132 1726.35C25.9328 1730.07 21.8223 1738.73 25.2241 1743.63C24.161 1741.22 23.3106 1734.71 28.4132 1728.03C32.3111 1728.4 40.6383 1729.81 42.7644 1732.48C41.8785 1738.24 42.7644 1746.98 45.422 1751.99C43.4731 1745.68 40.7446 1732.56 45.422 1730.54ZM58.3415 1732.36C57.2785 1737.74 58.3415 1749.76 62.9622 1756.45C60.659 1749.21 57.1155 1734.71 61.3677 1734.71C66.3286 1733.97 76.463 1732.48 77.3134 1732.48C78.3764 1732.48 75.7188 1744.75 80.5025 1751.99C78.0221 1746.14 74.5495 1734.04 80.5025 1732.48C87.9438 1730.54 91.6645 1728.03 93.2591 1728.03C94.8537 1728.03 90.0699 1735.83 98.5743 1746.98C95.7395 1741.77 91.3456 1730.7 96.4482 1728.03C102.827 1724.68 120.367 1709.07 120.367 1726.35C120.367 1743.63 134.718 1843.41 155.447 1835.6C167.672 1831.89 195.949 1830.81 211.257 1856.23C215.332 1864.4 217.423 1882.2 193.185 1888C162.889 1895.24 168.735 1893.57 157.042 1906.39C145.348 1919.21 136.844 1919.21 117.709 1910.29C98.5743 1901.37 94.3221 1903.6 78.908 1918.1C63.4938 1932.59 65.6199 1940.95 77.3134 1956.56C89.0069 1972.16 116.646 2014.52 215.509 2011.18C211.08 2004.31 200.414 1987.77 193.185 1976.62C184.15 1962.69 182.024 1948.75 157.042 1954.33C132.06 1959.9 130.997 1957.11 115.052 1943.18C99.1058 1929.24 67.746 1905.83 56.0525 1921.44C54.6991 1924.78 55.2495 1934.93 68.2775 1948.75C75.3645 1966.96 93.6843 2006.58 110.268 2015.5M110.268 2015.5C130.997 2026.65 138.439 2026.23 167.141 2019.54C190.103 2014.19 206.119 2010.25 211.257 2008.95C208.423 2008.39 199.032 2004.6 184.15 1993.9C165.546 1980.52 156.51 1990.56 138.97 1987.21C121.43 1983.87 121.961 1969.93 110.268 1966.59C98.5743 1963.24 71.6977 1956.56 70.9351 1950.98M110.268 2015.5L114 3751M114 3751C271.5 3751 171 3751 120.367 3835.5C61.2614 3766.38 2.72157 3751 58 3751C92.7081 3751 76.7934 3751 114 3751Z" stroke="url(#paint0_linear_12_2)" stroke-width="4" stroke-linecap="round"/>
 <defs>
@@ -1917,20 +1919,19 @@ Instead how about we embrace the true charm of grey? I believe it's about time w
 </linearGradient>
 </defs>
 </svg>
-
+ </div>
 {(!scrollToNextStepsActive)?(
   <Button id="btnNextSteps" name="count me in! next steps?" handleClick={handleScrollToDivNext}/>
 
 ):
 (
   
-<video  muted autoPlay="autoplay" loop id="bobNextStep"    >
+<video   muted autoPlay="autoplay" loop id="bobNextStep"    >
 
 <source src={bobVid} type="video/mp4"></source>
 
-
-
  </video>
+
 )}
 </div>)
 : <div></div>}

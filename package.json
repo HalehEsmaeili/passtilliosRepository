@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "dotenv": "^16.4.1",
     "react-marker": "^1.0.1"
   },
   "scripts": {

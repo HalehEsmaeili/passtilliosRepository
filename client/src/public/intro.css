@@ -7,7 +7,7 @@
     div{
 
         min-height: auto;
-        margin-bottom:3%;
+        margin-bottom:1%;
         z-index: 1;
         overflow: hidden;
      }
@@ -41,6 +41,7 @@ font-family: 'Exo 2', sans-serif;
   line-height: 7.5vw;
     text-transform: uppercase;
 }
+
 .GreyToBackGround{
     position: absolute;
     top:0;
@@ -130,6 +131,11 @@ z-index: 1000000;
     top:400%;
     left:60%
 }
+.div0{
+margin-top: 5%;
+  position: relative;
+ 
+}
 .div0 img{
     left: 50%;
     padding-top: 5%;
@@ -178,7 +184,7 @@ z-index: 1;
   overflow: visible;
   position:relative;
   margin-bottom: 35%;
-  z-index: 1;
+  z-index: 100000;
 }
 
 .divGreyContent{
@@ -393,11 +399,10 @@ margin-top: 0%;
       margin-left: 27%;
       margin-right: 27%;
       padding-top: 25%;
-     
-  
     }
 .yourColorsDiv{
   position: relative;
+  margin-top: 10%;
   margin-bottom:40%;
 }
 
@@ -1240,6 +1245,21 @@ position: absolute;
   left: 17%;
   rotate: 8deg;
 }
-#logoLine{
+#onSvgtxt1{
+ position: absolute; 
+top: 20%;
+left:30%;
+right:30%;
+text-align: center;
+}
+#onSvgtxt2{
+  position: absolute; 
+  top: 75%;
+  left:30%;
+  right:30%;
+  text-align: center;
+}
+.passtilliosSvgContainer{
 
+  position: relative; 
 }
