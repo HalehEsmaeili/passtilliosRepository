@@ -1,20 +1,22 @@
-
-
-
 /* CSS */
 .button-64 {
-
-    position: absolute;
-    top:15%;
-    right:32%;
+  position: absolute;
+  top: 15%;
+  right: 32%;
   align-items: center;
- /* background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB), #FEC125;*/
- background-image: linear-gradient(144deg,#F90EE7,#5B42F3 40%,#00EEB9,#FEC125);
- border: 0;
+  /* background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB), #FEC125;*/
+  background-image: linear-gradient(
+    144deg,
+    #f90ee7,
+    #5b42f3 40%,
+    #00eeb9,
+    #fec125
+  );
+  border: 0;
   border-radius: 8px;
   box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
   box-sizing: border-box;
-  color: #FFFFFF;
+  color: #ffffff;
   display: flex;
   font-family: Phantomsans, sans-serif;
   font-size: 20px;
@@ -29,7 +31,6 @@
   touch-action: manipulation;
   white-space: nowrap;
   cursor: pointer;
-  
 }
 
 .button-64:active,
@@ -40,100 +41,109 @@
 .button-64 span {
   background-color: rgb(5, 6, 45);
   font-size: 2vw;
- 
+
   padding: 2vw 2vw;
   border-radius: 6px;
   width: 100%;
   height: 100%;
   transition: 300ms;
- /* border-radius: 100%;*/
+  /* border-radius: 100%;*/
 }
 
 .button-64:hover span {
-
   font-size: 1.5vw;
- 
- /* color: black;
+
+  /* color: black;
   background:none;
  */
 }
-#btn1{
-    position: absolute;
-    top:10%;
-    left:30%;
-  
-  }
-  #btn1{
-    z-index: 1;
-    position: absolute;
-    top:42%;
-    left:33%;
-  width: auto;
-  background-color: #0D0431;
-  
-  background-image:none;
-  /*background-image: linear-gradient(144deg,#F90EE7,#5B42F3 50%,#00EEB9,#FEC125);*/
-  }
-  #btn1 span{
-   
-
-  }
-  #btn2{
-    width: auto;
-    position: absolute;
-    top:76%;
-    right:6%;
-    background-color: #0D0431;
-    background-image:none;
-   
-  }
-  #btn2:hover{
-    background-image: linear-gradient(144deg,#F90EE7,#5B42F3 40%,#00EEB9,#FEC125);
-  }
- #btn1:hover{
-    background-image: linear-gradient(144deg,#F90EE7,#5B42F3 40%,#00EEB9,#FEC125);
-  }
-  #btn3:hover{
-    background-image: linear-gradient(144deg,#F90EE7,#5B42F3 40%,#00EEB9,#FEC125);
-   }
-  #btn3{
-
-    width: auto;
-    position: absolute;
-    top:55%;
-   right:20%;
-   background-color: #0D0431;
-   background-image:none;
-   /*background-image: linear-gradient(144deg,#00EEB9,#FEC125,#5B42F3 50%,#F90EE7);*/
-  }
-
-  #btn3{
-
-    width: auto;
-    position: absolute;
-    top:55%;
-   right:20%;
-   background-color: #0D0431;
-   background-image:none;
-   /*background-image: linear-gradient(144deg,#00EEB9,#FEC125,#5B42F3 50%,#F90EE7);*/
-  }
-
-#btnLastWords{
-
+#btn1 {
   position: absolute;
-  left:35%;
-  right:35%;
-  top:90%
+  top: 10%;
+  left: 30%;
 }
-#btnNextSteps{
+#btn1 {
+  z-index: 1;
   position: absolute;
-  background-image: linear-gradient(175deg,#f90e9b,#5a00b4,60%,#00EEB9);
-   left:25%;
-  right:25%;
-  top:101%;
- font-size: 4vw;
- text-transform: uppercase;
- 
+  top: 42%;
+  left: 33%;
+  width: auto;
+  background-color: #0d0431;
+
+  background-image: none;
+  /*background-image: linear-gradient(144deg,#F90EE7,#5B42F3 50%,#00EEB9,#FEC125);*/
+}
+#btn1 span {
+}
+#btn2 {
+  width: auto;
+  position: absolute;
+  top: 76%;
+  right: 6%;
+  background-color: #0d0431;
+  background-image: none;
+}
+#btn2:hover {
+  background-image: linear-gradient(
+    144deg,
+    #f90ee7,
+    #5b42f3 40%,
+    #00eeb9,
+    #fec125
+  );
+}
+#btn1:hover {
+  background-image: linear-gradient(
+    144deg,
+    #f90ee7,
+    #5b42f3 40%,
+    #00eeb9,
+    #fec125
+  );
+}
+#btn3:hover {
+  background-image: linear-gradient(
+    144deg,
+    #f90ee7,
+    #5b42f3 40%,
+    #00eeb9,
+    #fec125
+  );
+}
+#btn3 {
+  width: auto;
+  position: absolute;
+  top: 55%;
+  right: 20%;
+  background-color: #0d0431;
+  background-image: none;
+  /*background-image: linear-gradient(144deg,#00EEB9,#FEC125,#5B42F3 50%,#F90EE7);*/
+}
+
+#btn3 {
+  width: auto;
+  position: absolute;
+  top: 55%;
+  right: 20%;
+  background-color: #0d0431;
+  background-image: none;
+  /*background-image: linear-gradient(144deg,#00EEB9,#FEC125,#5B42F3 50%,#F90EE7);*/
+}
+
+#btnLastWords {
+  position: absolute;
+  left: 35%;
+  right: 35%;
+  top: 90%;
+}
+#btnNextSteps {
+  position: absolute;
+  background-image: linear-gradient(175deg, #f90e9b, #5a00b4, 60%, #00eeb9);
+  left: 22%;
+  right: 25%;
+  top: 101%;
+  font-size: 4vw;
+  text-transform: uppercase;
 }
 
 @media (min-width: 768px) {
@@ -141,54 +151,54 @@
     font-size: 24px;
     min-width: 196px;
   }
- 
-} 
+}
 @media (max-width: 540px) {
   .button-64 {
-    font-size: .5vw;
-min-width: none;
-    }
- 
-  #btn3{
+    font-size: 0.5vw;
+    min-width: none;
+  }
+
+  #btn3 {
     text-align: left;
     padding-left: 4vw;
-   
+
     position: absolute;
- 
-    padding-right:0vw ;
-    top:55%;
-   right:9%;
-   background-color: #0D0431;
-   background-image:none;
-   /*background-image: linear-gradient(144deg,#00EEB9,#FEC125,#5B42F3 50%,#F90EE7);*/
+
+    padding-right: 0vw;
+    top: 55%;
+    right: 9%;
+    background-color: #0d0431;
+    background-image: none;
+    /*background-image: linear-gradient(144deg,#00EEB9,#FEC125,#5B42F3 50%,#F90EE7);*/
   }
-  #btn2{
+  #btn2 {
     width: 4vw;
     position: absolute;
-    top:76%;
-    right:2%;
-    background-color: #0D0431;
-    background-image:none;
-   text-align: right;
-padding-left: 0;
-padding-right: 5vw;
-
+    top: 76%;
+    right: 2%;
+    background-color: #0d0431;
+    background-image: none;
+    text-align: right;
+    padding-left: 0;
+    padding-right: 5vw;
   }
-  #btn1{
+  #btn1 {
     z-index: 1;
     position: absolute;
-    top:42%;
-    left:31%;
-  width: auto;
-  background-color: #0D0431;
- 
-  background-image:none;
-  /*background-image: linear-gradient(144deg,#F90EE7,#5B42F3 50%,#00EEB9,#FEC125);*/
+    top: 42%;
+    left: 31%;
+    width: auto;
+    background-color: #0d0431;
+
+    background-image: none;
+    /*background-image: linear-gradient(144deg,#F90EE7,#5B42F3 50%,#00EEB9,#FEC125);*/
   }
 }
-#contactBtn{
-  top:92%;
-width: 62%;
- left:25%;
-font-size: 3vw;
-  } 
+#contactBtn {
+  top: 92%;
+  width: 66%;
+  left: 23%;
+  font-size: 3vw;
+  border-radius: 4px;
+}
+

@@ -1,770 +1,729 @@
 
-@media screen and (min-width: 1000px) {
-    body{
-        overflow-x: hidden;
-        background-color: red;
-    }
-    div{
-
-        min-height: auto;
-        margin-bottom:1%;
-        z-index: 1;
-        overflow: hidden;
-     }
-     h1{
-     color: white;
-     font-family: 'Exo 2', sans-serif;
-       font-size: 16vw; 
-       z-index: 3000;
-       text-transform: uppercase;
-       
-     }
-  }
-body{
-    overflow-x: hidden;
-    background-color: #0D0431;
+body {
+  overflow-x: hidden;
+  background-color: #0d0431;
 }
 
-div{
-
-   min-height: auto;
-   margin-bottom:10%;
-   z-index: 1;
-   overflow: hidden;
+div {
+  min-height: auto;
+  margin-bottom: 10%;
+  z-index: 1;
+  overflow: hidden;
 }
-h1{
-color: white;
-font-family: 'Exo 2', sans-serif;
-  font-size: 5vw; 
+h1 {
+  color: white;
+  font-family: "Exo 2", sans-serif;
+  font-size: 5vw;
 
   z-index: 3000;
   line-height: 7.5vw;
-    text-transform: uppercase;
+  text-transform: uppercase;
+}
+#h1Intro{
+  font-size: 5vw;
+}
+.storytimeH{
+  font-size: 2vw;
+}
+.GreyToBackGround {
+  position: absolute;
+  top: 0;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+.paintingNotArt {
+  top: 9%;
+  text-align: left;
 }
 
-.GreyToBackGround{
-    position: absolute;
-    top:0;
-    margin-left: 15%;
-    margin-right: 15%;
+p {
+  color: white;
+  font-size: 3.5vw;
 
+  line-height: 7vw;
+  text-align: justify;
 }
-.paintingNotArt{
-   
- 
-    top:9%;
-    text-align: left;  
+.div0 {
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 0%;
+  margin-bottom: 0%;
+  position: relative;
+  z-index: 10000;
+  align-items: center;
+  overflow: visible;
+  text-align: center;
 }
+.ArtOrPaintingTitle {
+  position: relative;
+  margin-bottom: 5%;
+  margin-right: 98%;
+  margin-left: 18%;
+  margin-top: -20%;
+  /* border: 2px solid yellow;*/
+  font-size: 7vw;
+  line-height:10vw ;
 
-p{
-    color: white;
-    font-size: 3.5vw;
- 
-    line-height: 7vw;
-    text-align: justify;
-    
-}
-.div0{
-    margin-left: 20%;
-    margin-right: 20%;
-  margin-top: 10%;
-    margin-bottom: 0%;
-    position: relative;
-    z-index: 10000;
-    align-items: center;
-    overflow: visible;
-    text-align: center;
+  align-self: left;
 }
 .bubbles {
-    position:absolute;
-    opacity:0;
-    width:30%;
-    top:600%;
-    left:60%
+  position: absolute;
+  opacity: 0;
+  width: 30%;
+  top: 600%;
+  left: 60%;
 }
-.bubbleContainerGrey{
-  
-    display: grid;
-    grid-template-columns: 100%;
-    align-items: center;
-    z-index: 1000000;
-    position: absolute;
-    overflow:visible;
-    opacity: 1;
-    top: 2000%;
-    left:30%;
-    width: 60%;
-
+.bubbleContainerGrey {
+  display: grid;
+  grid-template-columns: 100%;
+  align-items: center;
+  z-index: 10000000;
+  position: absolute;
+  overflow: visible;
+  opacity: 1;
+  top: 2000%;
+  left: 30%;
+  width: 60%;
 }
-.bubbleContainerIntro{
-  
-    display: grid;
-    grid-template-columns: 100%;
-    align-items: center;
-    z-index: 10;
-    position: absolute;
-    overflow:visible;
-    opacity: 1;
-    top: 2000%;
-    left:30%;
-    width: 110%;
+.bubbleContainerIntro {
+  display: grid;
+  grid-template-columns: 100%;
+  align-items: center;
+  z-index: 10;
+  position: absolute;
+  overflow: visible;
+  opacity: 1;
+  top: 2000%;
+  left: 30%;
+  width: 110%;
 }
-.emptyBubble{
-position:relative;
-opacity: 1;
-z-index: 1000000;
-  
-  
-
-}
-.colorSplash{
-  margin-top: -34%;
-  position:relative;
- 
-  
-}
-
-.color-bubbles{
-    position:absolute;
-    opacity:1;
-    width:30%;
-    top:400%;
-    left:60%
-}
-.div0{
-margin-top: 5%;
+.emptyBubble {
   position: relative;
- 
+  opacity: 1;
+  z-index: 1000000;
 }
-.div0 img{
-    left: 50%;
-    padding-top: 5%;
-    padding-bottom: 5%;
-   width: 20%;
-   
+.colorSplash {
+  margin-top: -34%;
+  position: relative;
+z-index: 100000;
 }
-.div0Container{
- 
-    min-height: 40%;
+
+.color-bubbles {
+  position: absolute;
+  opacity: 1;
+  width: 30%;
+  top: 400%;
+  left: 60%;
 }
-h1{
-    color: whitesmoke;
-  
+.div0 {
+  margin-top: 5%;
+  position: relative;
 }
-.parent{
-    background-color:#0D0431;
-    position:relative;
+.div0 img {
+  left: 50%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  width: 20%;
 }
-.divForLogoContainer{
-  border:2vw solid #0d043100 ;
+.div0Container {
+  min-height: 40%;
+}
+h1 {
+  color: whitesmoke;
+}
+.parent {
+  background-color: #0d0431;
+  position: relative;
+}
+.divForLogoContainer {
+  border: 2vw solid #0d043100;
   position: relative;
   z-index: 100;
   overflow: visible;
 }
-.divProjectSection{
-   
+.divProjectSection {
   overflow: visible;
+ 
 }
 .div1 {
-   
-position: auto;
-display: grid;
-grid-template-columns: 50%,50%;
-z-index: 1;
-    }
+  position: auto;
+  display: grid;
+  grid-template-columns: 50%, 50%;
+  z-index: 1;
+}
 
-.div1 img{
-    
-   
-    left: 0; 
-    right: 0; 
-    margin-left: auto; 
-    margin-right: auto; 
-    width: 11vw;
-    z-index: 10;
-    position: relative;
+.div1 img {
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 11vw;
+  z-index: 10;
+  position: relative;
 }
 .divGrey {
   overflow: visible;
-  position:relative;
+  position: relative;
   margin-bottom: 35%;
   z-index: 100000;
 }
 
-.divGreyContent{
-margin-left: 7%;
-margin-right: 7%;
-    position: relative;
-display: grid;
-grid-template-areas:
-"header header"
-"content content"
-;
-align-content: start;
+.divGreyContent {
+  margin-left: 10%;
+  margin-right: 10%;
+  position: relative;
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "content content";
+  align-content: start;
 }
 
-.GridItemGreyText{
-grid-area:content;
-justify-content:left;
-text-align:left;
-margin-left: 2%;
-
-
+.GridItemGreyText {
+  grid-area: content;
+  justify-content: left;
+  text-align: left;
+  margin-left: 2%;
 }
 
-.GridItemGreyTitle{
-grid-area: header;
-text-align: start;
-margin-left: 2%;
+.GridItemGreyTitle {
+  grid-area: header;
+  text-align: start;
+  margin-left: 2%;
 
-overflow: visible;
+  overflow: visible;
 }
-.divGrey img{
-    
-    float:left;
-    margin-top: -40%;
-    margin-right: 40%;
-    margin-left: 0%;
-    width:30%;
-    z-index: -1;
-    position: relative;
-  
+.ArtOrPaintingTitle {
+  position: relative;
+  margin-bottom: 5%;
+  margin-right: 90%;
+  margin-left: 5%;
+  /* border: 2px solid yellow;*/
+  font-size: 10vw;
+  display: inline-block;
+  align-self: left;
 }
-.greyToAnimate{
-position: absolute;
-opacity: 30%;
-width:10% ;
-
+.divGrey img {
+  float: left;
+  margin-top: -40%;
+  margin-right: 40%;
+  margin-left: 0%;
+  width: 33%;
+  z-index: -1;
+  position: relative;
 }
-#greyUP{
-    
-    position: absolute;
-    width:60% ;
-    left: -40vw;
-    top:30%;
+.greyToAnimate {
+  position: absolute;
+  opacity: 30%;
+  width: 10%;
+}
+#greyUP {
+  position: absolute;
+  width: 90%;
+  left: -50vw;
+  top: 20%;
   z-index: 10000;
-  
 }
-#greyDown{
+#greyDown {
+  width: 80%;
+  position: absolute;
+  left: 80vw;
+  top: 110%;
+  z-index: 10000;
+}
+#greyDown2 {
+  position: absolute;
+  left: -20vw;
+  top: 1%;
+  width: 90%;
+}
+#greySplashs {
+  position: absolute;
+  margin-top: 15%;
+  margin-left: 0;
+  z-index: 1;
+}
+.div2 img {
+  position: relative;
+  margin-top: -40%;
+  margin-right: 0;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  right: 10%;
+  opacity: 0;
+  width: 31%;
+  transform-origin: bottom;
+  bottom: 0;
 
-    width:80% ;
-    position: absolute;
-    left: 65vw;
-    top:110%;
-    z-index: 10000;
-  
-}
-#greyDown2{  
-    position: absolute;
-    left: -20vw;
-    top:0%;
-    width: 90%;
-}
-#greySplashs{
-    position: absolute;
-    margin-top: 15%;
-    margin-left: 0;
-    z-index: 1;
-}
-.div2 img{
- 
-    position: relative;
-    margin-top: -40%;
-    margin-right: 0;
-    padding-top:5% ;
-    padding-bottom:5% ;
-    right:10%;
-    opacity:0;
-    width: 31%;
-    transform-origin:bottom;
-    bottom: 0;
-  
-    z-index: 1;
- 
-justify-self: end;
+  z-index: 1;
+
+  justify-self: end;
 }
 .div2 {
-margin-top: 5%;
-position: relative;
-display: grid;
-grid-template-columns: 1fr;
-transform-origin:bottom;
-justify-content: end;
-z-index: 1;
-overflow: visible;
+  margin-top: 5%;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  transform-origin: bottom;
+  justify-content: end;
+  z-index: 1;
+  overflow: visible;
 }
 
-.bubbleContainerDiv2{
- 
-    display: grid;
-    grid-template-columns: 100%;
-    align-items: center;
-    z-index: 1000000;
-    position: absolute;
-    overflow:visible;
-    opacity: 1;
-    top: 200%;
-    left:50%;
-   width: 60%;
-}
-.schirm{
-opacity: 0;
-left: auto;
-bottom: 0;
-scale:3;
-transform-origin:bottom;
-z-index: 1;
-}
-.logo{
-   position: absolute;
-    left: auto;
-    bottom: 0;
-    scale:1;
-    transform-origin:center;
-    z-index: 100000;
-   
-}
-.imgDiv{
-    min-height: auto;
-    position: absolute;
-   
-}
-.essential{
-    height:200px;
-}
-.logoContainer{
-display: grid;
-grid-template-columns: 100%;
-align-items: center;
-z-index: 1000;
-position: absolute;
-overflow:visible;
-opacity: 0;
-
-}
-.logoHandLeg{
- 
-
-}
-#logoBeforPush{
+.bubbleContainerDiv2 {
+  display: grid;
+  grid-template-columns: 100%;
+  align-items: center;
+  z-index: 1000000;
   position: absolute;
-top:40%;
-left:-40%;
-width: 180%;
+  overflow: visible;
+  opacity: 1;
+  top: 200%;
+  left: 50%;
+  width: 60%;
 }
-#logoAfterPush{
-
+.schirm {
+  opacity: 0;
+  left: auto;
+  bottom: 0;
+  scale: 3;
+  transform-origin: bottom;
+  z-index: 1;
+}
+.logo {
   position: absolute;
-  top:50%;
-  left:-44%;
+  left: auto;
+  bottom: 0;
+  scale: 1;
+  transform-origin: center;
+  z-index: 100000;
+}
+.imgDiv {
+  min-height: auto;
+  position: absolute;
+}
+.essential {
+  height: 200px;
+}
+.logoContainer {
+  display: grid;
+  grid-template-columns: 100%;
+  align-items: center;
+  z-index: 1000;
+  position: absolute;
+  overflow: visible;
+  opacity: 0;
+}
+.logoHandLeg {
+}
+#logoBeforPush {
+  position: absolute;
+  top: 40%;
+  left: -40%;
+  width: 180%;
+}
+#logoAfterPush {
+  position: absolute;
+  top: 50%;
+  left: -44%;
   width: 175%;
-  
 }
-#yourcolorsVid{
-width:150%;
-display: inline-block;
-margin-left:-2%;
-margin-top: 0%;
+#yourcolorsVid {
+  width: 150%;
+  display: inline-block;
+  margin-left: -2%;
+  margin-top: 0%;
 }
-#yourcolorsIMG1{
-  width:209%;
+#yourcolorsIMG1 {
+  width: 160%;
   position: relative;
   display: inline-block;
-  margin-left:-99%;
-  
-  }
-  #yourcolorsWords{
-    width:42%;
-    position: absolute;
-    display: inline-block;
-    left:22%;
-    top: 8.2%;
-    z-index: 10;
-    }
-  #wtf{
-    opacity: 0;
-    position:absolute;
-    left:-2%;
-    width:40%;
-    top:81.4%;
-  }
+  margin-left: -75%;
+  margin-top: 20%;
+}
+#yourcolorsWords {
+  width: 30%;
+  position: absolute;
+  display: inline-block;
+  left: 22%;
+  top: 8.2%;
+  z-index: 10;
+}
+#wtf {
+  opacity: 0;
+  position: absolute;
+  left: -2%;
+  width: 40%;
+  top: 81.4%;
+}
 
+#yourcolorsIMG {
+  width: 68%;
 
-  #yourcolorsIMG{
-    width:68%;
-
-    margin-left:15%;
-    margin-right:16% ;
-   
-
-    }
-    #journeyTxt{
-      position: relative;
-      margin-left: 27%;
-      margin-right: 27%;
-      padding-top: 25%;
-    }
-.yourColorsDiv{
+  margin-left: 15%;
+  margin-right: 16%;
+}
+#journeyTxt {
+  position: relative;
+  margin-left: 27%;
+  margin-right: 27%;
+  padding-top: 25%;
+}
+.yourColorsDiv {
   position: relative;
   margin-top: 10%;
-  margin-bottom:40%;
+  margin-bottom: 40%;
 }
 
 #hand {
-    opacity: 1;
-    position: absolute;
-    bottom:0;
-    width: 45%;
-    left:27%;
-    top:-2%;
-    stroke-width:7;
-   
-   
-    transform-origin:top;
-    right:-1vh;
-    z-index: 1;
+  opacity: 1;
+  position: absolute;
+  bottom: 0;
+  width: 45%;
+  left: 27%;
+  top: -2%;
+  stroke-width: 7;
+
+  transform-origin: top;
+  right: -1vh;
+  z-index: 1;
 }
 
 
-.section1 img{
-width:70%;
-transform-origin:left;
-left:-1vw;
+.section1 img {
+  width: 70%;
+  transform-origin: left;
+  left: -1vw;
 }
 .greyness {
-position: relative;
+  position: relative;
 
-display: grid;
-grid-template-columns: 1fr 1fr;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
-.greyness img{
- 
+.greyness img {
   width: 90%;
 }
-#greyslow{
-    
-
-scale:1;
-transform-origin:bottom;
-bottom: 0;
+#greyslow {
+  scale: 1;
+  transform-origin: bottom;
+  bottom: 0;
 }
-#greyfast{
-  
-    scale:1;
-    transform-origin:top;
-    top: 0;
-    
+#greyfast {
+  scale: 1;
+  transform-origin: top;
+  top: 0;
 }
-.container img{
-
-    width: 70%;
-
+.container img {
+  width: 70%;
 }
-.container{
- 
-position: relative;
-margin-left: 0;
-margin-right: 0;
+.container {
+  position: relative;
+  margin-left: 0;
+  margin-right: 0;
 
-margin-bottom: 25%;
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    justify-items: start;
-  z-index:1;
-  grid-column-gap:1vw ;
-  
+  margin-bottom: 25%;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  justify-items: start;
+  z-index: 1;
+  grid-column-gap: 1vw;
 }
 .container svg {
   width: 100%; /* Make the SVG take up the full width of its container */
   height: 100%; /* Make the SVG take up the full height of its container */
 }
 
-#rainbowStart{
-
+#rainbowStart {
 }
-#personNotTalking{
-opacity: 1;
-margin-top: 0%;
-right:10vw;
+#personNotTalking {
+  opacity: 1;
+  margin-top: 0%;
+  right: 10vw;
 }
-#personNotTalking2{
-   rotate:-1deg;
-   position: absolute;
-   opacity: 0;
-   right:5vw;
-    opacity: 1;
-    margin-top: -60%;
-    width:57%;
+.personNotTalking2 {
  
-    }
-.col1{
-    margin-left: 0;
-    justify-self: start;
+  rotate: -1deg;
+  position: absolute;
+  opacity: 1;
+  right: 5vw;
+  opacity: 1;
+  margin-top: 160%;
+  width: 57%;
+  right:-80vw;
+  
 }
-#spashStart{
-    justify-self: end;
+.personNotMoving2{
+
+  rotate: -1deg;
+  position: absolute;
+  opacity: 1;
+  right: 5vw;
+  opacity: 1;
+  margin-top: 160%;
+  width: 57%;
+  right:2vw;
+  
 }
-#colorSplashImg{
-width:54%;
-opacity: 0;
-z-index: 1000;
-margin-left: 0;
-position: absolute;
-margin-top: 27%;
-rotate:-1deg;
-left:-5%
+
+.col1 {
+  margin-left: 0;
+  justify-self: start;
 }
-.magicContainer{
-    margin-top: 15%;
-    scale: 1.5;
-  display: grid;  
+#spashStart {
+  justify-self: end;
+}
+#colorSplashImg {
+  width: 54%;
+  opacity: 0;
+  z-index: 1000;
+  margin-left: 0;
+  position: absolute;
+  margin-top: 27%;
+  rotate: -1deg;
+  left: -5%;
+}
+.magicContainer {
+  margin-top: 15%;
+  scale: 1.5;
+  display: grid;
   grid-template-areas: "header header" "magic1 magic2";
-
 }
-.grid-item-spice{
-
-
-justify-self: center;
-grid-area: header;
-z-index: 100;
+.grid-item-spice {
+  justify-self: center;
+  grid-area: header;
+  z-index: 100;
 }
-.grid-item-magicLeft{
-    rotate: -6deg;
- justify-self: right;
- grid-area: magic1;
-scale:4;
-transform-origin:right;
- margin-top: 2%;
- margin-right:-1vw;
+.grid-item-magicLeft {
+  rotate: -6deg;
+  justify-self: right;
+  grid-area: magic1;
+  scale: 4;
+  transform-origin: right;
+  margin-top: 2%;
+  margin-right: -1vw;
 }
-.broDialog{
-    color: white;
-    rotate: -45deg;
-    opacity: 0;
-    z-index: 1000000;
-    position: absolute;
-    scale:.2;
-    left:70%;
-    top:60%
-    }
-.grid-item-magicRight{
-    margin-left:1.5vw;
-    z-index: -1;
-    rotate: 11deg;
-    justify-self: left;
-     grid-area: magic2;
-     scale:3.5; 
-    transform-origin:left;
-     margin-top: -20%;
+.broDialog {
+  color: white;
+  rotate: -45deg;
+  opacity: 0;
+  z-index: 1000000;
+  position: absolute;
+  scale: 0.2;
+  left: 70%;
+  top: 60%;
+}
+.grid-item-magicRight {
+  margin-left: 1.5vw;
+  z-index: -1;
+  rotate: 11deg;
+  justify-self: left;
+  grid-area: magic2;
+  scale: 3.5;
+  transform-origin: left;
+  margin-top: -20%;
 }
 
-
-.logoDialog{
-
-    
+.logoDialog {
 }
-.nextSteps{
+.nextSteps {
   position: relative;
-  opacity:1;
-  width:90% ;
- 
-
+  opacity: 1;
+  width: 90%;
 }
 
-.div5{
-     /* border: 2px solid yellow;*/
-    position: relative;
-    margin-left:  5%;
-    margin-right: 5%;
-    text-align: left;
-
+.div5 {
+  /* border: 2px solid yellow;*/
+  position: relative;
+  margin-left: 5%;
+  margin-right: 5%;
+  text-align: left;
 }
 
-
-#logoWithHair{
-width:15%;
-position: absolute;
-top:23%;
-right:-40%;
-z-index: 100000;
-
+#logoWithHair {
+  width: 15%;
+  position: absolute;
+  top: 23%;
+  right: -40%;
+  z-index: 100000;
 }
-#personNotTalking3{
-    rotate:-10deg;
-    width:35%;
-    position:absolute;
-    top:-52%;
-    right:-40%;
-    z-index: 10000000000;
-   
+#personNotTalking3 {
+  rotate: -10deg;
+  width: 35%;
+  position: absolute;
+  top: -52%;
+  right: -40%;
+  z-index: 10000000000;
 }
 
-
-.NextStepsContainer{
-
-   position: relative;
-   padding-top:0%;
-   margin-top:0;
-   overflow:visible;
-   margin-bottom: 0;
+.NextStepsContainer {
+  position: relative;
+  padding-top: 0%;
+  margin-top: 0;
+  overflow: visible;
+  margin-bottom: 0;
 }
-.ArtOrPainting{
- margin-bottom: 0;
-   padding-top:5%;
-    position: relative;
-    overflow: visible;
-   align-content: left;
- 
+.ArtOrPainting {
+  margin-bottom: 0;
+  padding-top: 5%;
+  position: relative;
+  overflow: visible;
+  align-content: left;
+  
+}
+div{
+  /* border: 2px solid yellow;*/
+}
+.storytime-title{
+  position: relative;
+  overflow: visible;
+  margin-top: 15%;
+ margin-bottom: -2%;
+  /* border: 2px solid yellow;*/
 }
 .grid-container {
-   /* border: 2px solid yellow;*/
-    display: grid;
-    grid-template-columns: auto;
-    gap: 2vw;
-    position: relative;
-    margin-top: 0;
-    padding-top: 0;
-    width: 72%;
 
-     /* Set the height of the grid to 100% of the parent container */
-  
-   margin-top: 0;
-  }
-  
-  
-  .projectTxt {
-     /* border: 2px solid yellow;*/
+  display: grid;
+  grid-template-columns: auto;
+  gap: 2vw;
+  position: relative;
+  margin-top: 0;
+  padding-top: 0;
+  width: 72%;
 
-      position: relative;
-     margin-left: 7%;
-     margin-right: 7%;
+  /* Set the height of the grid to 100% of the parent container */
 
-  
-       /* Set the height of the grid to 100% of the parent container */
-    
-     margin-top: 15%;  
-     margin-bottom: 0;
-    }
-    
-  .first-column {
- 
-    grid-column: 1;
-    height: auto;
-  }
-  
-  .second-column {
-    grid-column: 2;
-    display: flex;
-    flex-direction: column;
-    align-self: start;
-   
-  }
-  
-  .sideText {
-    position: absolute;
-   left:78%;
- display: block;
- font-size: 6vw;
-  }
-  
-  #firstSideText{
-   top:-5%;
-   font-size: 8vw;
-  }
-  #secondSideText{
-    font-size: 4vw;
-    top:20%;
-  }
-  #thirdSideText{
-   top:32%;
-  }
-  #forthSideText{
-    top:36%;
-    left:79%;
-    font-size: 13vw;
-    letter-spacing:3vw ;
-  }
-  #fifthSideText{
-    top:70%;
-    font-size: 7.1vw;
-  }
-
-  .ArtOrPaintingTitle{
-   position: relative;
-   margin-bottom: 5%;
-  margin-right: 90%;
-  margin-left: 5%;
-  /* border: 2px solid yellow;*/
-    font-size: 10vw;
-    display: block;
-    align-self: left;
-  }
-  .div2Bubblecontainer{
-    position: relative;
-    min-height: 30vw;
-    overflow: visible;
-  }
-  .bubbleDiv2{
-    
-    display: grid;
-    grid-template-columns: 100%;
-    align-items: center;
-    z-index: 10;
-    position: absolute;
-    overflow:visible;
-    opacity: 1;
-    top: 70%;
-    left:60%;
-    width: 90%;
-  }
-  
-.emptyBubble2{
- 
-opacity: 1;
-width: 20%;
-z-index: 1000;
-
+  margin-top: 0;
 }
-.colorSplash2{
-  margin-left: 4%; 
+
+.projectTxt {
+  /* border: 2px solid yellow;*/
+
+  position: relative;
+  margin-left: 7%;
+  margin-right: 10%;
+
+  /* Set the height of the grid to 100% of the parent container */
+
+  margin-top: 0%;
+  margin-bottom: 0;
+}
+
+.first-column {
+  grid-column: 1;
+  height: auto;
+}
+
+.second-column {
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  align-self: start;
+}
+
+.sideText {
+  position: absolute;
+  left: 78%;
+  display: block;
+  font-size: 6vw;
+}
+
+#firstSideText {
+  top: -5%;
+  font-size: 8vw;
+}
+#secondSideText {
+  font-size: 4vw;
+  top: 20%;
+}
+#thirdSideText {
+  top: 32%;
+}
+#forthSideText {
+  top: 36%;
+  left: 79%;
+  font-size: 13vw;
+  letter-spacing: 3vw;
+}
+#fifthSideText {
+  top: 70%;
+  font-size: 7.1vw;
+}
+
+
+.div2Bubblecontainer {
+  position: relative;
+  min-height: 30vw;
+  overflow: visible;
+  z-index: 100000000;
+}
+.bubbleDiv2 {
+  display: grid;
+  grid-template-columns: 100%;
+  align-items: center;
+  z-index: 10;
+  position: absolute;
+  overflow: visible;
+  opacity: 1;
+  top: 70%;
+  left: 60%;
+  width: 90%;
+}
+
+.emptyBubble2 {
+  opacity: 1;
+  width: 20%;
+  z-index: 1000;
+}
+.colorSplash2 {
+  margin-left: 4%;
   margin-top: -20%;
   width: 12%;
   opacity: 1;
 }
-#bubbleForLogo{
+#bubbleForLogo {
   opacity: 0;
-width: 15%;
-position: absolute;
-top:2000%;
-z-index: 10000;
+  width: 15%;
+  position: absolute;
+  top: 2000%;
+  z-index: 10000;
 
-/*
+  /*
 
 left:10%;
 */
-left:80%;
+  left: 80%;
 }
 
-.bubbleAttack{
+.bubbleAttack {
   position: relative;
   overflow: visible;
 }
 
-
-.nextStepBodyContainer{
+.nextStepBodyContainer {
   position: relative;
   opacity: 0;
   overflow: visible;
   /*min-height: 500px;*/
 }
-.lastWordsTxt{
+.lastWordsTxt {
   position: absolute;
   text-align: center;
-  top:0%;
-  left:20%;
-  right:20%;
+  top: 0%;
+  left: 20%;
+  right: 20%;
   font-size: 3vw;
 }
+.secondGreyTxtp{
+  position: relative;
+margin-left: 20%;
+margin-right: 20%;
+font-size: 1.5vw;
+line-height: 3vw;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
 /*
 .gridContainer{
   border: 2px solid red;
@@ -810,297 +769,250 @@ line-height: 7vw;
 }
 */
 
-.gridContainer{
- min-height: 100vw;
+.gridContainer {
+  /*  min-height: 100vw;*/
+
   position: relative;
 
-  margin-left:10%;
+  margin-left: 10%;
   margin-right: 10%;
-  
-overflow: visible;
-margin-bottom: 50%;
 
+  overflow: visible;
+  margin-bottom: 50%;
 }
 
-.leftSideHeader{
-
-
+.leftSideHeader {
   text-transform: uppercase;
 
-   position: relative;
-  
- 
-
-
+  position: relative;
 }
-.rightSideText{
-position: relative;
-font-size: 3.5vw;
-padding-top: 30%;
-line-height: 7vw;
-
+.rightSideText {
+  position: relative;
+  font-size: 3.5vw;
+  padding-top: 30%;
+  line-height: 7vw;
 }
 
-.containerTxt{
+.containerTxt {
   margin-top: 0%;
   overflow: visible;
-  width:100%;
+  width: 100%;
   display: flex;
- 
 }
 
-#life{
- 
+#life {
   position: relative;
-  rotate:-30deg;
+  rotate: -30deg;
   font-size: 15vw;
 }
-.lifeContainer{
-  top:-9vw;
-  left:4.6%;
+.lifeContainer {
+  top: -9vw;
+  left: 4.6%;
   position: absolute;
 
-  
-overflow: visible;
+  overflow: visible;
 }
-#asA{
-  opacity:0;
-  top:-8vw;
-  right:35vw;
+#asA {
+  opacity: 0;
+  top: -8vw;
+  right: 35vw;
   position: absolute;
-  rotate:0deg;
- /* color:#00EEB9;*/
- 
+  rotate: 0deg;
+  /* color:#00EEB9;*/
 }
-#painting{
-  top:2%;
-  right:5%;
+#painting {
+  top: 2%;
+  right: 5%;
   position: absolute;
-  rotate:0deg;
+  rotate: 0deg;
   font-size: 11vw;
 }
 /*paing not art section*/
-.lifePaintGraphics{
-position: absolute;
-width:35%;
-right:0%;
+.lifePaintGraphics {
+  position: absolute;
+  width: 35%;
+  right: 0%;
 }
-.lamp{
+.lamp {
   opacity: 1;
   /*
   top:-5vw;
   right:-18vw;
   */
-  top:-26%;
-  right:-14.9vw;
+  top: -26%;
+  right: -14.9vw;
   position: absolute;
-  rotate:58deg;
+  rotate: 58deg;
   z-index: 1000;
-  width:70%;
+  width: 70%;
 }
-#paintBrush{
+#paintBrush {
   opacity: 1;
   /*right:99%;
   left:-8.2vw;
   top:-11.7%;
   */
-  top:-92%;
-  left:-8.7vw;
-rotate:-30deg;
-width:130%;
-position: absolute;
-
+  top: -92%;
+  left: -8.7vw;
+  rotate: -30deg;
+  width: 130%;
+  position: absolute;
 }
 
-
-#your{
-  color:#00EEB9;
+#your {
+  color: #00eeb9;
   position: relative;
- /*
+  /*
   left:3.5%;
   top:5%;
   */
-  
-rotate:60deg;
+
+  rotate: 60deg;
 }
-#magnet{
+#magnet {
   opacity: 0;
   transform-origin: bottom;
-  top:-14vw;
-  right:32vw;
+  top: -14vw;
+  right: 32vw;
   position: absolute;
-  rotate:5deg;
+  rotate: 5deg;
   z-index: 100;
-  width:40%
+  width: 40%;
 }
-#lampNotOn{
-  
-z-index: 1000;
+#lampNotOn {
+  z-index: 1000;
 }
-#lampOn{
-
+#lampOn {
 }
-#paintingImg{
-  opacity: .2;
-right:3%;
-  top:-27%;
-  width:54%;
-}
-.brushContainer{
-scale:1.1;
-left:-30vw;
-top:-13vw;
-rotate:-90deg;
-  position: absolute;
-  display: grid;
-  grid-template-columns: 100%;
-  overflow: visible;
- 
+#paintingImg {
+  opacity: 0.2;
+  right: 3%;
+  top: -27%;
+  width: 54%;
 }
 
-.secondGreyHeader{
-text-align: center;
+
+.secondGreyHeader {
+  text-align: center;
   text-transform: uppercase;
   font-size: 11vw;
-line-height: 4vw;
-display: inline-block;
-margin-right: 2%;
-margin-left:2% ;
+  line-height: 4vw;
+  display: inline-block;
+  margin-right: 2%;
+  margin-left: 2%;
 }
-.secondGreyHeaderContainer{
+.secondGreyHeaderContainer {
   overflow: visible;
   position: relative;
   margin-left: 20%;
   margin-right: 15%;
- margin-bottom: 0;
+  margin-bottom: 0;
 }
-#over{
-margin-left:20% ;
-
+#over {
+  margin-left: 20%;
 }
-.greyDivSvgContainer{
+.greyDivSvgContainer {
   opacity: 0;
   position: relative;
   overflow: visible;
-  min-height: 10vw;
+
 }
-.greyDivSvg{
+.greyDivSvg {
   opacity: 0;
   position: absolute;
   left: 45%;
-  width:2.3%;
-  height:100%;
-  top:-13%;
+  width: 2.3%;
+  height: 100%;
+  top: -13%;
+}
 
-}
-#greyCloudOutCanvas{
-position: absolute;
-right:-80vw;
-top:-29%;
-width:70%;
-z-index: 0;
-opacity: .3;
-scale:.55;
-}
-#handOfCanvas{
-  opacity: 0;
-  position: absolute;
-  right:24vw;
-  top:-14%;
-  width:20%;
-  rotate:-50deg;
-  z-index: 1;
-}
-.logoSvgLineContainer{
+.logoSvgLineContainer {
   position: relative;
   margin-top: 50%;
-  height:200%;
+  height: 200%;
   margin-left: 15%;
   margin-right: 15%;
   overflow: visible;
 }
 
-.logoSvgLine{
+.logoSvgLine {
   position: relative;
-  margin-left:35%;
+  margin-left: 35%;
   margin-top: 10%;
-  width:25%;
-  height:100%;
+  width: 25%;
+  height: 100%;
 }
-.greySvgArrow{
+.greySvgArrow {
   position: relative;
-  width:20%;
+  width: 20%;
 }
 
-.showMeActivationDiv{
-position: relative;
-overflow: visible;
-padding-bottom: 10%;
+.showMeActivationDiv {
+  position: relative;
+  overflow: visible;
+  padding-bottom: 10%;
 }
 
-#showMeImgLine{
-
+#showMeImgLine {
   position: absolute;
-  
-  top:60%;
-  right:10%;
+
+  top: 60%;
+  right: 10%;
 
   width: 20%;
 }
-#showMeHeader{
+#showMeHeader {
   position: relative;
- margin-top: 20%;
+  margin-top: 20%;
   margin-left: 12%;
   margin-right: 12%;
   text-align: center;
   font-size: 7vw;
   line-height: 12vw;
 }
-#showMeText{
-
+#showMeText {
   position: relative;
-  top:10%;
-  left:40%;
-  right:10%;
+  top: 10%;
+  left: 40%;
+  right: 10%;
 }
 
-#bobNextStep{
-  margin-left: 2%;
-  width:100%
-}
-.onePainting{
-display: inline-block;
-position: relative;
-
-
-}
-#oneInOnePainting{
-rotate:0deg;
-padding-right: 0vw;
-padding-left:.5vw;
-margin-top: -10%;
-font-size: 10vw;
-}
-.campaignText{
+#bobNextStep {
   position: relative;
-margin-left: 30%;
-margin-right: 15%;
+  top:0%;
+ margin-left: 2%;
+  width: 100%;
 }
-#campaignP{
+.onePainting {
+  display: inline-block;
+  position: relative;
+}
+#oneInOnePainting {
+  rotate: 0deg;
+  padding-right: 0vw;
+  padding-left: 0.5vw;
+  margin-top: -10%;
+  font-size: 10vw;
+}
+.campaignText {
+  position: relative;
+  margin-left: 30%;
+  margin-right: 15%;
+}
+#campaignP {
   margin-left: 25%;
-margin-top:-30%;
-margin-bottom: 40%;
+  margin-top: -15%;
+  margin-bottom: 40%;
 }
-#campaignH{
-  font-size: 9vw;
-  line-height: 10.5vw;
+#campaignH {
+  font-size: 7vw;
+  line-height: 9.5vw;
   text-align: left;
-  margin-bottom:-25%;
+  margin-bottom: -25%;
   margin-right: 18%;
   margin-left: 27%;
 }
-.tooFastH{
-
+.tooFastH {
   position: relative;
   margin-left: 37%;
   margin-right: 37%;
@@ -1109,17 +1021,16 @@ margin-bottom: 40%;
   margin-bottom: 20%;
   margin-top: 10%;
 }
-#whatIHave{
-  
+#whatIHave {
   position: relative;
   margin-top: 35%;
   text-align: center;
   font-size: 5vw;
   margin-bottom: 10%;
- margin-left: 32%;
- margin-right: 32%;
+  margin-left: 32%;
+  margin-right: 32%;
 }
-#tooFast{
+#tooFast {
   margin-top: 35%;
   text-align: center;
   font-size: 5vw;
@@ -1127,158 +1038,508 @@ margin-bottom: 40%;
   margin-top: 60%;
 }
 
-
-#shit{
+#shit {
   text-align: center;
   font-size: 9vw;
   margin-bottom: 5%;
 }
-.atATime{
- /* border: 2px solid aquamarine;*/
-width:54%;
-overflow: hidden;
-position: relative;
-display:inline-block;
-margin-top:-30%;
-margin-left: 4%;
-
-margin-bottom:30%;
-}
-#crazyProjectH{
+.atATime {
+  /* border: 2px solid aquamarine;*/
+  width: 54%;
+  overflow: hidden;
   position: relative;
- font-size: 4vw;
-top:-37%;
-right: 0;
-left:-10%
-}
-#sharedMemo{
-  position: absolute;
   display: inline-block;
-text-align: left;
+  margin-top: -30%;
+  margin-left: 4%;
 
-top:10%;
-left: 75%;
-font-size: 5vw;
+  margin-bottom: 30%;
 }
-#atATime{
+#crazyProjectH {
   position: relative;
-font-size: 5vw;
-margin-top: 63%;
-left:-9%;
+  font-size: 4vw;
+  top: -37%;
+  right: 0;
+  left: -10%;
 }
-#h1Painting{
-position: relative;
-margin-top: 5%;
-
-}
-#teamworkIMG{
-position: absolute;
-left:0%;
-right:1%;
-width:40%;
-top:10%;
-opacity:0;
-
-}
-#countless{
+#sharedMemo {
   position: absolute;
   display: inline-block;
-text-align: left;
+  text-align: left;
 
-
-top:-13%;
-left: 25%;
-font-size: 5vw;
+  top: 10%;
+  left: 75%;
+  font-size: 5vw;
 }
-#memories{
+#atATime {
+  position: relative;
+  font-size: 5vw;
+  margin-top: 63%;
+  left: -9%;
+}
+#h1Painting {
+  position: relative;
+  margin-top: 5%;
+}
+#teamworkIMG {
+  position: absolute;
+  left: 0%;
+  right: 1%;
+  width: 40%;
+  top: 10%;
+  opacity: 0;
+}
+#countless {
   position: absolute;
   display: inline-block;
-text-align: left;
+  text-align: left;
 
-top:34%;
-left: 25%;
-font-size: 5vw;
+  top: -13%;
+  left: 25%;
+  font-size: 5vw;
 }
-.atATimeSlide{
+#memories {
+  position: absolute;
+  display: inline-block;
+  text-align: left;
 
-display: flex;
-position: absolute;
-top:-10%;
-left:-188%;
-z-index: 0;
-width: 100%;
-overflow: visible;
+  top: 34%;
+  left: 25%;
+  font-size: 5vw;
 }
-#nextButton{
-
- scale:1;
- width: 4.5%;
-color:white;
-position: absolute;
-top:0%;
-left:40%;
-z-index:11111;
-
+.atATimeSlide {
+  display: flex;
+  position: absolute;
+  top: -10%;
+  left: -188%;
+  z-index: 0;
+  width: 100%;
+  overflow: visible;
 }
-#nextButton:hover{
+#nextButton {
+  scale: 1;
+  width: 4.5%;
+  color: white;
+  position: absolute;
+  top: 0%;
+  left: 40%;
+  z-index: 11111;
+}
+#nextButton:hover {
   width: 4%;
 }
-.projectStatement{
- /* border:3px solid #00EEB9;*/
-position: relative;
-z-index: 10000;
-display: flexbox;
-overflow: visible;
-
-}
-#AtATimeH{
-  padding-left: 10%;
-margin-right:50% ;
-margin-top: 40%;
-font-size: 7vw;
-line-height:9vw;
-}
-#countlessSharedMemoriesH{
-padding-top: 19%;
-  margin-right: 12%;
-margin-left: -40%;
-padding-right: 0%;
-}
-#oneCrazyProjectH{
-  padding-left: 23%;
-  margin-top: 40%;
-  font-size: 6.2vw;
-  line-height:9vw;
-}
-.svgTeam{
+.projectStatement {
+  /* border:3px solid #00EEB9;*/
   position: relative;
-  margin-left: 37%;
-  width: 20%;
-  margin-top: 7%;
-  margin-bottom: 7%;
+  z-index: 10000;
+  display: flexbox;
+  overflow: visible;
 }
-.arrowImage{
-position: absolute;
-  width: 30%;
- top: 63.6%;
-  left: 17%;
-  rotate: 8deg;
+#AtATimeH {
+  padding-left: 10%;
+  margin-right: 50%;
+  margin-top: 40%;
+  font-size: 7vw;
+  line-height: 9vw;
 }
-#onSvgtxt1{
- position: absolute; 
-top: 20%;
-left:30%;
-right:30%;
-text-align: center;
+#countlessSharedMemoriesH {
+  padding-top: 32%;
+  margin-right: 12%;
+  margin-left: -40%;
+  padding-right: 0%;
 }
-#onSvgtxt2{
-  position: absolute; 
-  top: 75%;
-  left:30%;
-  right:30%;
+#oneCrazyProjectH {
+  padding-left: 30%;
+  margin-top: 40%;
+  font-size: 5vw;
+  line-height: 9vw;
+}
+
+#onSvgtxt1 {
+  background-color: #0d0431;
+  position: absolute;
+  top: 20%;
+  left: 30%;
+  right: 30%;
   text-align: center;
 }
-.passtilliosSvgContainer{
+#onSvgtxt2 {
+  background-color: #0d0431;
+  position: absolute;
+  top: 75%;
+  left: 30%;
+  right: 30%;
+  text-align: center;
+}
+.passtilliosSvgContainer {
+  position: relative;
+}
 
-  position: relative; 
+
+@media screen and (min-width: 920px) {
+  /* Styles for screens with a minimum width of 1200 pixels */
+  
+  h1 {
+    color: white;
+    font-family: "Exo 2", sans-serif;
+    font-size: 4vw;
+    z-index: 3000;
+    font-size: 5.3vw;
+    text-transform: uppercase;
+  }
+ 
+  
+  
+  
+  
+  p {
+    color: white;
+    font-size:1.6vw;
+    line-height: 4vw;
+    text-align: justify;
+  }
+  
+ 
+  .ArtOrPaintingTitle {
+    position: relative;
+    margin-bottom: 5%;
+    margin-right: 90%;
+    margin-left: 5%;
+    /* border: 2px solid yellow;*/
+    font-size: 5vw;
+    display: inline-block;
+    align-self: left;
+  }
+  
+  .lastWordsTxt {
+    position: absolute;
+    text-align: center;
+    top: 0%;
+    left: 20%;
+    right: 20%;
+   
+  }
+  
+  .rightSideText {
+    position: relative;
+    font-size: 3.5vw;
+    padding-top: 30%;
+    line-height: 7vw;
+  }
+  
+  #life {
+    position: relative;
+    rotate: -30deg;
+    font-size: 15vw;
+  }
+  
+  #painting {
+    top: 2%;
+    right: 5%;
+    position: absolute;
+    rotate: 0deg;
+    font-size: 11vw;
+  }
+  
+  .secondGreyHeader {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 11vw;
+    line-height: 4vw;
+    display: inline-block;
+    margin-right: 2%;
+    margin-left: 2%;
+  }
+  
+  
+  #showMeHeader {
+    position: relative;
+    margin-top: 20%;
+    margin-left: 12%;
+    margin-right: 12%;
+    text-align: center;
+    font-size: 7vw;
+    line-height: 12vw;
+  }
+  
+  #oneInOnePainting {
+    rotate: 0deg;
+    padding-right: 0vw;
+    padding-left: 0.5vw;
+    margin-top: -10%;
+    font-size: 10vw;
+  }
+  
+  #campaignH {
+    font-size: 10vh;
+    line-height: 12.5vh;
+    text-align: left;
+    margin-bottom: -40%;
+    margin-right: 40%;
+    margin-left: 27%;
+  }
+ 
+  
+  #whatIHave {
+    position: relative;
+    margin-top: 35%;
+    text-align: center;
+    font-size: 5vw;
+    margin-bottom: 10%;
+    margin-left: 32%;
+    margin-right: 32%;
+  }
+  
+  
+  #tooFast {
+  
+    text-align: center;
+    font-size: 2vw;
+    margin-bottom: 10%;
+    margin-top: 60%;
+  }
+  
+  #shit {
+    text-align: center;
+    font-size: 4vw;
+    margin-bottom: 5%;
+  }
+  
+  #crazyProjectH {
+    position: relative;
+    font-size: 4vw;
+    top: -37%;
+    right: 0;
+    left: -10%;
+  }
+  
+  
+  #sharedMemo {
+    position: absolute;
+    display: inline-block;
+    text-align: left;
+    top: 10%;
+    left: 75%;
+    font-size: 5vw;
+  }
+  
+  #atATime {
+    position: relative;
+    font-size: 5vw;
+    margin-top: 63%;
+    left: -9%;
+  }
+  
+  #countless {
+    position: absolute;
+    display: inline-block;
+    text-align: left;
+    top: -13%;
+    left: 25%;
+    font-size: 5vw;
+  }
+  
+  #memories {
+    position: absolute;
+    display: inline-block;
+    text-align: left;
+    top: 45%;
+    left: 25%;
+    font-size: 5vw;
+  }
+  
+  #AtATimeH {
+    padding-left: 10%;
+    margin-right: 50%;
+    margin-top: 40%;
+    font-size: 7vw;
+    line-height: 9vw;
+  }
+  
+ 
+  #countlessSharedMemoriesH {
+    padding-top: 32%;
+    margin-right: 12%;
+    margin-left: -40%;
+    padding-right: 0%;
+  }
+.greyTxt{
+  margin-left: 10%;
+  margin-right: 10%;
+  font-size: 1.6vw; 
+  line-height: 4vw;
+}
+#greyUP {
+  position: absolute;
+  opacity: 60%;
+  width: 70%;
+  left: -60%;
+  top: 30%;
+  z-index: 10000;
+}
+#greyDown {
+  width: 50%;
+  opacity: 50%;
+  position: absolute;
+  left: 80vw;
+  top: 100%;
+  z-index: 10000;
+}
+#greyDown2 {
+  position: absolute;
+  left: -30vw;
+  top: 10%;
+  width: 70%;
+}
+
+.GridItemGreyTitle {
+  grid-area: header;
+  text-align: start;
+  margin-left: 10%;
+margin-right: 50%;
+  overflow: visible;
+}
+.div2 img{
+  width:20%;
+  padding: 11%;
+}
+.logoContainer{
+  width:10%
+}
+.schirm {
+  opacity: 0;
+  left: auto;
+  bottom: 0;
+  scale: 2;
+  transform-origin: bottom;
+  z-index: 1;
+}
+.logo {
+  position: absolute;
+  left: auto;
+  bottom: 0;
+  scale: 1;
+  transform-origin: center;
+  z-index: 100000;
+}
+
+/*
+.container img {
+  width: 40%;
+}
+.container {
+  position: relative;
+  margin-top: -30%;
+  margin-left: 0;
+  margin-right: 0;
+width:50%;
+  margin-bottom: 25%;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  justify-items: start;
+  z-index: 1;
+  grid-column-gap: 1vw;
+  overflow: visible;
+}
+.container svg {
+  width: 200%; 
+  height: 200%; 
+position: relative;
+  margin-left: -0%;
+
+}
+#oneCrazyProjectH {
+  padding-left: 30%;
+  margin-top: 40%;
+  font-size: 4vw;
+  line-height: 9vw;
+}
+
+.divProjectSection {
+
+  overflow: visible;
+
+ margin-left:20% ;
+}
+.rainbow{
+
+  left: -120%;
+}
+*/
+#h1Intro{
+  position: relative;
+  width: 70%;
+  margin-top: 0%;
+  margin-right: 15%;
+ margin-left: 15%;
+ font-size: 3.2vw;
+ line-height: 4.5vw;
+  
+}
+.webTxtP{
+
+  font-size: 2vw;
+}
+.projectTxt {
+  /* border: 2px solid yellow;*/
+  font-size: 1.6vw; 
+  line-height: 4vw;
+  position: relative;
+  margin-left: 20%;
+  margin-right: 20%;
+
+  /* 
+  .storytime-title{
+
+  position:relative;
+  overflow: visible;
+  z-index: inherit;
+}
+  border:10px solid red;
+   Set the height of the grid to 100% of the parent container */
+
+  margin-top: 2%;
+  margin-bottom: 0;
+}
+
+
+.ArtOrPaintingTitle {
+  position: relative;
+ 
+  margin-right: 98%;
+  margin-left: 18%;
+  margin-top: -20%;
+  /* border: 2px solid yellow;*/
+  font-size: 7vw;
+  line-height:10vw ;
+  align-self: left;
+}
+
+.secondGreyHeader {
+  text-align: center;
+  text-transform: uppercase;
+
+  font-size: 6vw;
+  line-height: 1vw;
+  display: inline-block;
+  margin-right: 2%;
+  margin-left: 5%;
+}
+.secondGreyHeaderContainer {
+  width:40%;
+  overflow: visible;
+  position: relative;
+  margin-left: 32%;
+  margin-right: 25%;
+  margin-bottom: 0;
+}
+.secondGreyTxtp{
+  position: relative;
+
+}
+p{
+
+  font-size: 1.5vw;
+  line-height: 3vw;
+}
+
 }

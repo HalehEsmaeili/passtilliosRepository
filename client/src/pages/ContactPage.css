@@ -1,14 +1,16 @@
-.ContactPage{
-    position: relative;
-    width: 100%;
-    height: fit-content;
-    
+.ContactPage {
+  position: relative;
+  width: 100%;
+  height: fit-content;
 }
 
+.pagetxtLeft {
+  position: relative;
+  margin-left: 10%;
+}
+#e_mail{
 
-.pagetxtLeft{
-position: relative;
-margin-left: 10%;
+margin-left: 5%;
 }
 /*
 body {
@@ -27,186 +29,272 @@ body {
       width: 60%;
   }
   */
-  .form-control{
-    margin-top: 3%;
-    margin-bottom: 1%;
-    font-size: 3vw;
-    color: black;
-    opacity: 1;
-    border: 4px solid white;
-    display: inline-block;
-    width: 65%;
-   padding-top: 1%;
-   padding-bottom: 2%;
-   margin-left: 4%;
+.btnEmailListContainer {
+  min-height: 8vh;
+  min-width: 100%;
+  margin-bottom: 10vw;
+  position: relative;
+  width: 100%;
+  overflow: visible;
+  margin-top: -13%;
+  margin-left: -2%;
+}
+.form-control {
+  margin-top: 3%;
+  margin-bottom: 1%;
+  font-size: 2vw;
+  color: black;
+  opacity: 1;
+  border: 4px solid white;
+  display: inline-block;
+  width: 65%;
+  padding-top: 1%;
+  padding-bottom: 2%;
+  margin-left: 4%;
+}
+input:hover::placeholder {
+  color:    rgb(255, 255, 255);
   }
-  .h1contact{
-position: relative;
-margin-left: 20%;
-margin-right: 30%;
-padding-left: 5%;
-margin-bottom: 0;
-line-height: 7.5vw;
-  }
-  label{
-    display: inline-block;
-    padding-right: 2%;
-    color:white;
-    font-size: 3vw;
-  }
-  /*
+  input::placeholder {
+   font-family: "exo2";
+    color:    rgb(255, 255, 255);
+    }
+    .nameInput::placeholder {
+      /*color:    rgb(255, 0, 225);*/
+      color:    rgb(255, 255, 255);
+      }
+
+.h1contact {
+  position: relative;
+  margin-left: 20%;
+  margin-right: 30%;
+  padding-left: 5%;
+  margin-bottom: 0;
+  line-height: 7.5vw;
+}
+label {
+  display: inline-block;
+
+  color: white;
+  font-size: 3vw;
+}
+/*
   h1{
     color:white;
     padding-top: 0;
     font-size: 5vw;
     padding-left: 2.7%;
   }
-  */
   h5{
     margin-left: auto;
     margin-right: auto;
   }
-  .form-signin {
-    max-width:90%;
-    padding: 5%;
-  }
-  .form-signin .form-floating:focus-within {
-    z-index: 100;
-  }
-  .form-signin input[type="email"] {
+   border: .3vw solid #f90e9b64;
+  */
 
-    color: aliceblue;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-margin-top: 0%;
+.form-signin {
+  max-width: 90%;
+  padding: 5%;
+  padding-bottom: 0;
+}
+.form-signin .form-floating:focus-within {
+  z-index: 100;
+}
+.form-signin input[type="email"] {
+ 
+  margin-top: 0%;
+ 
+}
+.form-signin input:hover {
+  color: white;
+
+  background-image: linear-gradient(
+    144deg,
+    #f90ee7,
+    #5b42f3 40%,
+    #00eeb9,
+    #fec125
+  );
+}
+
+.form-signin input[type="password"] {
+  color: black;
+  margin-bottom: 10px;
+
+}
+
+.bd-placeholder-img {
+  font-size: 1.125em;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5em;
   }
-  
-  .form-signin input[type="password"] {
-    margin-bottom: 10px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-  }
-  
-        .bd-placeholder-img {
-          font-size: 1.125rem;
-          text-anchor: middle;
-          -webkit-user-select: none;
-          -moz-user-select: none;
-          user-select: none;
-        }
-        @media (min-width: 768px) {
-          .bd-placeholder-img-lg {
-            font-size: 3.5rem;
-          }
-        }
-        .b-example-divider {
-          width: 100%;
-          height: 3rem;
-          background-color: rgb(255, 255, 255);
-          border: solid rgb(255, 255, 255);
-          border-width: 1px 0;
-          box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-        }
-        .b-example-vr {
-          flex-shrink: 0;
-          width: 1.5rem;
-          height: 100vh;
-        }
-        .bi {
-          vertical-align: -.125em;
-          fill: currentColor;
-        }
-        .nav-scroller {
-          position: relative;
-          z-index: 2;
-          height: 2.75rem;
-          overflow-y: hidden;
-        }
-        .nav-scroller .nav {
-          display: flex;
-          flex-wrap: nowrap;
-          padding-bottom: 1rem;
-          margin-top: -1px;
-          overflow-x: auto;
-          text-align: center;
-          white-space: nowrap;
-          -webkit-overflow-scrolling: touch;
-        }
-        .btn-bd-primary {
-          --bd-violet-bg: #712cf9;
-          --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
-          --bs-btn-font-weight: 600;
-          --bs-btn-color: var(--bs-white);
-          --bs-btn-bg: var(--bd-violet-bg);
-          --bs-btn-border-color: var(--bd-violet-bg);
-          --bs-btn-hover-color: var(--bs-white);
-          --bs-btn-hover-bg: #6528e0;
-          --bs-btn-hover-border-color: #6528e0;
-          --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
-          --bs-btn-active-color: var(--bs-btn-hover-color);
-          --bs-btn-active-bg: #5a23c8;
-          --bs-btn-active-border-color: #5a23c8;
-        }
-        .bd-mode-toggle {
-          z-index: 1500;
-        }
-  .btn{
+}
+.b-example-divider {
+  width: 100%;
+  height: 3rem;
+  background-color: rgb(255, 255, 255);
+  border: solid rgb(255, 255, 255);
+  border-width: 1px 0;
+  box-shadow: inset 0 0.5em 1.5em rgba(0, 0, 0, 0.1),
+    inset 0 0.125em 0.5em rgba(0, 0, 0, 0.15);
+}
+.b-example-vr {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 100vh;
+}
+.bi {
+  vertical-align: -0.125em;
+  fill: currentColor;
+}
+.nav-scroller {
+  position: relative;
+  z-index: 2;
+  height: 2.75rem;
+  overflow-y: hidden;
+}
+.nav-scroller .nav {
+  display: flex;
+  flex-wrap: nowrap;
+  padding-bottom: 1rem;
+  margin-top: -1px;
+  overflow-x: auto;
+  text-align: center;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+.btn-bd-primary {
+  --bd-violet-bg: #712cf9;
+  --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+  --bs-btn-font-weight: 600;
+  --bs-btn-color: var(--bs-white);
+  --bs-btn-bg: var(--bd-violet-bg);
+  --bs-btn-border-color: var(--bd-violet-bg);
+  --bs-btn-hover-color: var(--bs-white);
+  --bs-btn-hover-bg: #6528e0;
+  --bs-btn-hover-border-color: #6528e0;
+  --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+  --bs-btn-active-color: var(--bs-btn-hover-color);
+  --bs-btn-active-bg: #5a23c8;
+  --bs-btn-active-border-color: #5a23c8;
+}
+.bd-mode-toggle {
+  z-index: 1500;
+}
+.btn {
   background-color: #e91d5a;
-  color:white;
-  }
-  
-  .svg-icon2 {
-  
-      position: absolute;
-      top: -34%;
-      left: 6%;
-      width: 13.5%; 
-      transform-origin: center;
-      transition: stroke 0.3s; /* Add transition for a smooth color change */
-    }
-    .svg-icon-path2 {
-    
-      stroke: white;
-      stroke-width:7;
-      }
+  color: white;
+}
 
-.contactTextContainer{
+.svg-icon2 {
+  position: absolute;
+  top: -34%;
+  left: 6%;
+  width: 13.5%;
+  transform-origin: center;
+  transition: stroke 0.3s; /* Add transition for a smooth color change */
+}
+.svg-icon-path2 {
+  stroke: white;
+  stroke-width: 7;
+}
+
+.contactTextContainer {
   position: relative;
   margin-top: 30%;
+  width: 100%;
 }
-      
-    
-      
-      .headerTxt{
-        position: relative;
-        display:inline-block;
-    
-  
-        width:20%;
-        rotate: 0deg;
-        margin-right:0% ;
-    
-        margin-bottom: 20%;
-        margin-top: 20%;
-      }
-    .errorP{
-    color:#00EEB9;
-    margin-left: 23%;
-margin-top: 0;
-margin-bottom: 0;
-    }
-      
-  
-  #chicks{
-    position: relative;
-    width: 60%;
-    margin-right: 20%;
-    margin-left: 20%;
-    margin-top: 10%;
-display: inline-block;
-  }
-  .successContainer{
 
-    position: relative;
+.headerTxt {
+  position: relative;
+  display: inline-block;
+
+  width: 20%;
+  rotate: 0deg;
+  margin-right: 0%;
+
+  margin-bottom: 20%;
+  margin-top: 20%;
+}
+.errorP {
+  color: #00eeb9;
+  margin-left: 23%;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#chicks {
+  position: relative;
+  width: 60%;
+  margin-right: 20%;
+  margin-left: 20%;
+  margin-top: 20%;
+  display: inline-block;
+}
+.successContainer {
+  position: relative;
+}
+@media screen and (min-width: 920px) {
+  p {
    
+    font-size: 1.5vw;
+    line-height: 3vw;
   }
+  
+  .h1contact {
+    position: relative;
+    margin-left: 20%;
+    margin-right: 5%;
+    padding-left: 5%;
+    margin-bottom: 0;
+    line-height: 7.5vw;
+  }
+  label {
+    display: inline-block;
+    padding-right: 2%;
+    color: white;
+    font-size: 2vw;
+  }
+  .form-signin {
+    border: 0.3vw solid #f90e9b64;
+    border-radius: 2%;
+    width: 60%;
+    margin-left: 15%;
+    margin-right: 15%;
+    padding-bottom: 0;
+    padding-top: 2%;
+  }
+
+  /*#f90e9b,#5a00b4,60%,#00EEB9*/
+  .svg-icon2 {
+    position: absolute;
+    top: -29%;
+    left: 22%;
+    width: 8%;
+    transform-origin: center;
+    transition: stroke 0.3s; /* Add transition for a smooth color change */
+  }
+  .svg-icon-path2 {
+    stroke: white;
+    stroke-width: 5;
+  }
+  .btnEmailListContainer {
+    position: relative;
+    width: 58%;
+    margin-top: -10%;
+  }
+
+  .contactTextContainer {
+    position: relative;
+    margin-top: -20%;
+    width: 60%;
+    margin-left: 5%;
+    margin-right: 0%;
+  }
+}

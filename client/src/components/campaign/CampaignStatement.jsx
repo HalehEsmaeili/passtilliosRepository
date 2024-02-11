@@ -1,5 +1,8 @@
 import React, { useEffect, useState,useRef} from "react";
 import '../../public/intro.css';
+import "./CampaignStatement.css";
+import axios from 'axios';
+
 //1901 change the h1s positioning css.
 //the local deployment works with serve,but with heroku not yet
 //heroku logs --tail -a passtilliostest1
@@ -30,7 +33,7 @@ import arrow from "../../public/images/campaign/arrow.png";
 
 
 
-function CampaignStatement() {
+function CampaignStatement(props) {
   const text="Imagine a world painted only in shades of gray, where only black and white call the shots. It's a place without the cozy warmth of lively colors.In this imaginary place, our eyes reveal emptiness, echoing the loneliness inside. The once-fiery passion in hearts, eager to use their unique colors to make a beautiful difference on our collective canvas of life, now flickers, struggling to survive in a world that only wants us to be either black or white.Creativity and inspiration take a backseat. Life in this gray and expected canvas feels like a broken record, missing the beat of unpredictability that makes it exciting and dance-worthy!";
   
 ///////////refs  und is in view
@@ -71,6 +74,10 @@ const animateMagic=useAnimationControls();
 const wtfAnimation=useAnimationControls();
 const campaignImgAnimation=useAnimationControls();
 
+/////usestate 
+const [sectionData, setSectionData] = useState(null);
+const [headers,setHeaders]=useState(null);
+const [texts,setTexts]=useState(null);
 
 ////wtf useeffect
 const wtfAnim=async ()=>{
@@ -116,14 +123,14 @@ useEffect(()=>{
  
   if(isInViewYourLifePaintingDiv){
     const yourLifePaintigAnim=async ()=>{
-    paintBrushControls.start({left:["-30vw","3vw"],top:["-13vw","-1vw"],rotate:90, transition:{type:"yoyo",stiffness:70,duration:.4}});
+    paintBrushControls.start({left:["-200%","4%"],top:["3%","0%"],rotate:90, transition:{type:"yoyo",stiffness:70,duration:.4}});
     magnetControls.start({opacity:.4,scale:1, transition:{duration:.3}});
     magnetControls.start({opacity:0,transition:{delay:.3,duration:.1}});
-    asAControls.start({opacity:1,right:["-20vw","-5vw"],top:["-8vw","-.5vw"],rotate:60, color: "#00EEB9", transition:{delay:.5,duration:.2}});
+    asAControls.start({opacity:1,right:["-20vw","-5vw"],top:["-8vw","-.7vw"],rotate:60, color: "#00EEB9", transition:{delay:.5,duration:.2}});
     paintingImgControls.start({opacity:1,transition:{delay:.7,duration:.1}});
     await lampControls.start({opacity:1, transition:{delay:.6,duration:.3}});
     
-  await greyCloudOutCanvasControls.start({right:["-80vw","-18vw"],scale:2, transition:{stiffness:1,duration:5}});
+  await greyCloudOutCanvasControls.start({right:["-80vw","-18vw"],scale:3, transition:{stiffness:1,duration:5}});
   await  handOfCanvasControls.start({opacity:.5});
   handOfCanvasControls.start({rotate:[-50,50,-40,40],scale:[1.2,1], transition:{type:"yoyo",stiffness:50,duration:.3}});
   await  greyCloudOutCanvasControls.start({right:["-18vw","-80vw"], transition:{delay:.4,stiffness:1,duration:.7}});
@@ -135,30 +142,57 @@ useEffect(()=>{
   
   },[isInViewYourLifePaintingDiv]);
 
+  useEffect(() => {
+    axios.get(`http://localhost:3001/sections/${props.pageId}/${props.sectionId}`)
+      .then(response => {
+
+       //response.data.sections.section_title;
+       setHeaders(response.data.sections.header_contents);
+       setTexts(response.data.sections.text_contents);
+
+     
+        //console.log(response.data.sections);
+//setSectionData(response.data.sections);
+       
+      })
+      .catch(error => {
+        console.error('Error retrieving section data:', error);
+        // Handle error
+      });
+  }, []);
 
 
-useEffect(()=>{
-
-}, []);
 
 
 
 return (
 <div>
 <div className="yourColorsDiv">
-<h1 id="campaignH"  className="campaignText">a world with a touch of...</h1>
+
+{ headers? 
+  <h1 id="campaignH"  className="campaignText">{headers[0]}...</h1>:
+  <h1 id="campaignH"  className="campaignText">a world with a touch of...</h1>
+}
 {/**<img id="yourcolorsIMG" src={yourColors}></img>
 <video id="yourcolorsVid"  autoplay="autoplay" muted loop> <source src={yourColorsVid} type="video/mp4"></source>  </video>
  
  */}
  <img id="yourcolorsWords" src={yourcolors}></img>
  <img id="yourcolorsIMG1" src={teamHeaderVid} />
+ { texts? 
 <p id="campaignP" className="campaignText">
 
-is what I am after. Take a pause and check out the scene around you. Can you feel how everything's sliding into that snooze-fest of "greyish" vibes? Before it hits peak snooze, join me, just a regular person like you, who dares to dream of a more colorful world! Toss in your one-of-a-kind color palettes and let's rev up the energy! Together, let's throw a wild splash of life onto this canvas of grey. Let's paint on this grey canvas with your bold, bright, and unique colors! 
+{texts[1]}
+
 </p>
-<h1 id="whatIHave" className="tooFastH">so with a painting and an idea</h1>
+: ""}
+<div style={{position:"relative"}}>
+{ headers? 
+<h1 id="whatIHave" className="tooFastH">{headers[1]}</h1>
+: ""}
+
 <motion.img ref={campaignImgRef} animate={campaignImgAnimation} id="yourcolorsIMG" src={colorRevelation}></motion.img>
+
 <svg className="svgTeam"  viewBox="0 0 80 287" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g id="Vector">
 <path d="M45.5744 135.443C45.7117 135.553 45.8596 135.682 46.0181 135.83C46.1767 135.977 46.3308 136.137 46.4806 136.308C46.6366 136.484 46.767 136.66 46.8718 136.837L46.356 137.269C46.165 137.085 45.9565 136.898 45.7306 136.706C45.5159 136.514 45.3274 136.352 45.1651 136.222C44.803 135.932 44.4758 135.752 44.1836 135.682C43.8913 135.611 43.5982 135.664 43.3045 135.838C43.0107 136.013 42.6862 136.322 42.3309 136.765C41.9757 137.208 41.7423 137.595 41.6308 137.926C41.5243 138.251 41.5371 138.548 41.6693 138.818C41.8015 139.088 42.0486 139.368 42.4106 139.659C42.5043 139.734 42.6285 139.828 42.7833 139.942C42.9381 140.056 43.1048 140.174 43.2833 140.297C43.4681 140.424 43.6486 140.538 43.8246 140.638L43.4811 141.24C43.1851 141.136 42.8848 140.992 42.5801 140.809C42.2816 140.632 41.9982 140.435 41.7298 140.22C41.2055 139.8 40.8467 139.384 40.6534 138.973C40.4601 138.562 40.4318 138.124 40.5684 137.659C40.7113 137.199 41.0179 136.676 41.4882 136.089C41.9586 135.503 42.4056 135.092 42.8294 134.858C43.2531 134.623 43.6842 134.559 44.1227 134.664C44.5661 134.763 45.05 135.023 45.5744 135.443Z" fill="white"/>
@@ -188,8 +222,18 @@ is what I am after. Take a pause and check out the scene around you. Can you fee
 <path d="M33.8637 122.352C34.5516 122.901 34.949 123.423 35.0559 123.917C35.169 124.417 35.0285 124.914 34.6344 125.408C34.3163 125.819 33.9775 126.071 33.6178 126.163C33.2631 126.248 32.895 126.139 32.5135 125.834L29.8494 123.709L30.3433 123.09L32.801 125.051C33.0074 125.215 33.1967 125.254 33.369 125.166C33.5463 125.072 33.7023 124.941 33.837 124.772C34.0652 124.473 34.1448 124.193 34.0757 123.934C34.0067 123.674 33.7689 123.382 33.3624 123.058C33.0309 122.793 32.7284 122.634 32.4547 122.579C32.1922 122.523 31.923 122.585 31.6472 122.764C31.3826 122.942 31.0781 123.246 30.7339 123.678C30.3448 124.166 30.0948 124.575 29.9841 124.906C29.8796 125.243 29.8962 125.542 30.034 125.806C30.1718 126.069 30.4158 126.341 30.7661 126.62C31.01 126.815 31.2832 127.017 31.5859 127.228C31.8998 127.438 32.1849 127.619 32.4412 127.772L32.0991 128.374C31.9103 128.316 31.6947 128.221 31.4521 128.088C31.2158 127.961 30.9776 127.817 30.7375 127.657C30.5037 127.501 30.2992 127.353 30.1241 127.213C29.5987 126.794 29.239 126.379 29.0448 125.968C28.8555 125.551 28.8255 125.108 28.9548 124.638C29.0954 124.167 29.3976 123.64 29.8616 123.059C30.3405 122.458 30.7891 122.044 31.2073 121.814C31.6368 121.584 32.0621 121.519 32.4833 121.62C32.9157 121.719 33.3759 121.963 33.8637 122.352Z" fill="white"/>
 </g>
 </svg>
+<div className="arrowContainer" >
 <img className="arrowImage"  src={arrow}></img>
-<p id="journeyTxt" className="campaignText">which I'm here to find among you amazing folks, I want to kickstart a journey where together, we bring back some magic and spice to our lives! </p>
+</div>
+{ headers? 
+  <p id="journeyTxt" className="campaignText">{texts[2]}</p>
+
+: <p id="journeyTxt" className="campaignText">, I want to kickstart a journey where together, we bring back some magic and spice to our lives! </p>}
+
+
+</div>
+<div className="wtfContainer"> 
+
 <motion.img animate={wtfAnimation} id="wtf" ref={wtfRef} src={wtf}></motion.img>
 <h1 id="tooFast" className="tooFastH">talking too fast? </h1>
 
@@ -197,6 +241,7 @@ is what I am after. Take a pause and check out the scene around you. Can you fee
 
 <h1  className="tooFastH">my bad! then let's start from  the begining... shall we?
  </h1>
+ </div>
 </div>
 
 

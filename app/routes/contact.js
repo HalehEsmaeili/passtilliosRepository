@@ -1,23 +1,23 @@
 import 'dotenv/config';
 import { Router } from 'express';
-
+import rateLimit from 'express-rate-limit';
 import axios from 'axios';
 import https from 'https';
 
 const router = Router();
-const mailchimpApiKey = process.env.MAILCHIMP_API_KEY;
-const dbName = process.env.DB_NAME;
-const dbPassword = process.env.DB_PASSWORD;
 
-// Now you can use these variables in your code
-// For example, logging them to the console
+// Rate limit configuration
+const limiter = rateLimit({
+  windowMs: 20 * 60 * 1000, // 20 minutes
+  max: 3, // limit each IP to 5 requests per windowMs
+});
 
+// Apply the rate limiter to all requests to the '/saveEmail' route
+router.post('/saveEmail', limiter, async (req, res) => {
 
-router.post('/saveEmail', async (req, res) => {
-  console.log("hey in save email");
   const email = req.body.email;
   const name = req.body.name;
-
+//const tel=
   const data = {
     members: [
       {
@@ -36,18 +36,18 @@ router.post('/saveEmail', async (req, res) => {
   const url = "https://us11.api.mailchimp.com/3.0/lists/9e391126bd";
   const options = {
     method: "POST",
-    auth:process.env.MAILCHIMP_API_KEY,
+    auth: process.env.MAILCHIMP_API_KEY,
   };
-//`${process.env.MAILCHIMP_API_KEY}`
+
   const reqq = https.request(url, options, function (response) {
-   //let frontend know the status
+    // let frontend know the status
     let statusCode = response.statusCode;
     res.json({ statusCode });
 
     if (response.statusCode === 200) {
-      console.log("mailchip success");
+      console.log("mailchimp success");
     } else {
-      console.log("mailchip error");
+      console.log("mailchimp error");
     }
     response.on("data", function (data) {
       console.log(JSON.parse(data));
@@ -56,7 +56,6 @@ router.post('/saveEmail', async (req, res) => {
 
   reqq.write(flat_data);
   reqq.end();
-  
 });
 
 export default router;

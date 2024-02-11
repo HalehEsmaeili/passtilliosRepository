@@ -1,0 +1,63 @@
+.screen-size-hint {
+    position: fixed;
+    overflow: visible;
+    bottom: 0;
+    right: 0;
+    background-color: #ffffff00; /* Add your preferred background color */
+ width:30%;
+ 
+    z-index: 100000000; /* border: 1px solid  #00EEB9 ; Add a z-index to ensure it appears above other elements */
+    cursor: pointer;
+  }
+  
+  .close-button {
+    margin-left: 10px; /* Add space between the text and the button */
+  }
+
+  /*#f90e9b,#5a00b4,60%,#00EEB9*/
+  .hintP{
+    position: absolute;
+    color: white;
+    text-align: justify;
+   font-size: .7vw;
+line-height: 1.5vw;
+left:7%;
+right:2%;
+top:90%;
+  }
+  .hintH{
+   padding-top: 10%;
+   margin-right:7%;
+    position: relative;
+    text-align: center;
+    line-height: 3vw;
+    font-size: 2vw;
+   color: #00EEB9 ;
+   padding: 2%;
+  }
+  .hintContainer{
+    position: relative;
+    margin-right: 10%;
+    margin-left: 10%;
+    overflow: visible;
+  }
+  .hintImg{
+   position: absolute;
+   top:-90%;
+   right: 45%;
+   width:75%
+  }
+  .close-button{
+    position: absolute;
+    font-weight: 200;
+    font-size: 1.2vw;
+position: absolute;
+background-color: #00EEB9;
+padding-top: 5%;
+padding-bottom: 5%;
+padding-right: 2%;
+left: -16%;
+top: 102%;
+display: inline-block;
+border: none;
+  }
