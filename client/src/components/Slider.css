@@ -1,110 +1,101 @@
-.awesomeSlider{
-    position: relative;
- margin-right: 5%;
- margin-left: 5%;
-    z-index: 1111111111;
-width:80%;
-height: auto;
-
-
+.awesomeSlider {
+  position: relative;
+  margin-right: 10%;
+  margin-left: 10%;
+  z-index: 1111111111;
+  width: 80%;
+  height: auto;
 }
 
 .aws-btn {
+  --slider-height-percentage: 60%;
+  --slider-transition-duration: 770ms;
+  --organic-arrow-thickness: 3vw;
+  --organic-arrow-border-radius: 0px;
+  --organic-arrow-height: 5vw;
+  --organic-arrow-color: #0ddebb;
+  --control-button-width: 100%;
+  --control-button-height: 25%;
+  --control-button-background: transparent;
+  --control-bullet-color: #19e63f;
 
-    --slider-height-percentage: 60%;
-    --slider-transition-duration: 770ms;
-    --organic-arrow-thickness: 3vw;
-    --organic-arrow-border-radius: 0px;
-    --organic-arrow-height: 5vw;
-    --organic-arrow-color: #0ddebb;
-    --control-button-width: 100%;
-    --control-button-height: 25%;
-    --control-button-background: transparent;
-    --control-bullet-color: #19e63f;
-  
-    --control-bullet-active-color: #ff00c8;
-    --loader-bar-color: #ea1ad8;
-    --loader-bar-height: 10vh;
-    }
-    .p{
-        
-        font-size: 1vw;
-    }
-    .awssld__bullets{
-color: #e619d5;
-position: relative;
-        z-index: 11111111;
-        width: 100%;
-    }
-    .awssld__bullets--active{
-        color: #e619d5;
-
-    }
-    .nav{
-        position: relative;
-        background-color:#54dc6d;
-        z-index: 11111111;
-    }
-   
-element.style {
-    background-color: rgb(74, 156, 140);
+  --control-bullet-active-color: #ff00c8;
+  --loader-bar-color: #ea1ad8;
+  --loader-bar-height: 10vh;
 }
-.awssld__content div  {
+.p {
+  font-size: 1vw;
+}
+.awssld__bullets {
+  color: #e619d5;
+  position: relative;
+  z-index: 11111111;
+  width: 100%;
+}
+.awssld__bullets--active {
+  color: #e619d5;
+}
+.nav {
+  position: relative;
+  background-color: #54dc6d;
+  z-index: 11111111;
+}
+
+element.style {
+  background-color: rgb(74, 156, 140);
+}
+.awssld__content div {
   display: flex;
   justify-content: center;
   position: relative;
- 
+
   margin-bottom: -30%;
 }
-.awssld__content [data-type=caption] {
-position: relative;
-font-size: 3vw;
-display: flex;
-margin-bottom: 0;
-align-self: center;
+.awssld__content [data-type="caption"] {
+  position: relative;
+  font-size: 3vw;
+  display: flex;
+  margin-bottom: 0;
+  align-self: center;
 
-width:100%
-    }
-    
-    .awssld {
-   
-          padding-bottom: 10vw;
-        --organic-arrow-color: #0ddebb;
-        --loader-bar-color: #ea1ad8;
-        --control-bullet-active-color:var(--organic-arrow-color);
+  width: 100%;
+}
 
-        position: relative;
-width: 100%;
-margin: 0;
-    }
-    .awssld__bullets{
-margin-top: -5vw;
-        width: 100%;
-    }
-    .awssld__bullets button {
-        padding: 0;
-        display: block;
-        width: 2vw;
-        height: 2vw;
-        margin: .7vw;
-        border-radius: 50%;
-        background:  #e619d5;
-        text-indent: -9999px;
-        overflow: visible;
-        cursor: pointer;
-        border: none;
-        transition: transform 0.225s cubic-bezier(0.8, 1.35, 0.75, 1.45), background-color 0.175s ease-out;
-    }
-    .awssld__bullets--active{
-      
-        background:  #19e63f;
-    }
-    @media screen and (max-width: 520px) {
-        .awssld__controls {
-            --organic-arrow-height: 2vh;
-          visibility: visible;
-        }
-        
-      }
+.awssld {
+  padding-bottom: 10vw;
+  --organic-arrow-color: #0ddebb;
+  --loader-bar-color: #ea1ad8;
+  --control-bullet-active-color: var(--organic-arrow-color);
 
-    
+  position: relative;
+  width: 100%;
+  margin: 0;
+}
+.awssld__bullets {
+  margin-top: -5vw;
+  width: 100%;
+}
+.awssld__bullets button {
+  padding: 0;
+  display: block;
+  width: 2vw;
+  height: 2vw;
+  margin: 0.7vw;
+  border-radius: 50%;
+  background: #e619d5;
+  text-indent: -9999px;
+  overflow: visible;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.225s cubic-bezier(0.8, 1.35, 0.75, 1.45),
+    background-color 0.175s ease-out;
+}
+.awssld__bullets--active {
+  background: #19e63f;
+}
+@media screen and (max-width: 520px) {
+  .awssld__controls {
+    --organic-arrow-height: 2vh;
+    visibility: visible;
+  }
+}

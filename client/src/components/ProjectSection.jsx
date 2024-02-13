@@ -325,18 +325,18 @@ useEffect(() => {
       rotate: [0, 360, 720, 0],
       transition: { duration: 1 },
     });
-
-    await controlsSecondPerson.start({
+   controlslogo.start({
+      x: ["10vw", "19vw", "24vw", "29vw", "45vw"],
+      y: ["316%", "346%", "376%", "400%", "765%"],
+      transition: { type: "yoyo", duration: 1 },
+    });
+   await controlsSecondPerson.start({
       opacity: 1,
       right: ["-80vw", "8vw", "2vw"],
       transition: { type: "yoyo", duration: 0.5 },
     });
 
-    await controlslogo.start({
-      x: ["10vw", "19vw", "24vw", "29vw", "45vw"],
-      y: ["316%", "346%", "376%", "400%", "765%"],
-      transition: { type: "yoyo", duration: 1 },
-    });
+   
 
     controlsSecondPersonTalking.start({
       opacity: 1,
@@ -573,7 +573,7 @@ controlsLogoAfterPush.start({opacity:0,transition:{duration:.5}});
     });
     setBroAnimationComplete(true);
     ///props.setBroAnimationComplete(true);
-    console.log("broanimation is compelete" + broAnimationComplete);
+   // console.log("broanimation is compelete" + broAnimationComplete);
     return;
   };
 

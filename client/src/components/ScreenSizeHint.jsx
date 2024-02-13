@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import "./screenSizeHint.css";
-import heyThere from "../public/errorImgVid/heythere.png";
+import heyThere from "../public/errorImgVid/heythere2.png";
 
 const ScreenSizeHint = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
