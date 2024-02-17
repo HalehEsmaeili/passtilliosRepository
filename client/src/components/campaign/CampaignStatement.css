@@ -1,12 +1,56 @@
 
 
 /*campaign css*/
+
+#parazitVid{
+  position: absolute;
+  width:70%;
+  left:15%;
+  right:15%;
+  opacity: 50%;
+top: 0%;
+}
+.videoContanier{
+  
+overflow: visible;
+}
+.meetPasstilliosContainer{
+
+  position: relative;
+  margin-left: 5%;
+  margin-right: 5%;
+margin-top: 20%;
+margin-bottom: 20%;
+}
+.meetPasstilliosTxt{
+  position: relative;
+  margin-left: 10%;
+  margin-right: 10%;
+  font-size: 3.1vw;
+  line-height: 220%;
+}
+.centerH{
+  position: relative;
+display: inline-block;
+margin-left: 20%;
+margin-right: 20%;
+font-size: 5.5vw;
+margin-bottom: 0%;
+text-align: center;
+}
 #yourcolorsIMG1 {
     width: 160%;
     position: relative;
     display: inline-block;
     margin-left: -75%;
     margin-top: 20%;
+  }
+  #useWhatYouCan{
+font-size:4vw;
+margin-left: 28%;
+margin-right: 28%;
+text-align: center;
+margin-bottom: 0;
   }
   .campaignText {
     position: relative;
@@ -241,425 +285,11 @@ margin-top: -20%;
     overflow: visible;
   }
   
-@media screen and (min-width: 768px) {
-  /* Styles for screens with a minimum width of 768 pixels */
-  h1 {
-    color: white;
-    font-family: "Exo 2", sans-serif;
-    font-size: 5vw;
-    z-index: 3000;
-    line-height: 7.5vw;
-    text-transform: uppercase;
-  }
-  
-  
-  
-  
-  
-  p {
-    color: white;
-    font-size: 3.5vw;
-    line-height: 7vw;
-    text-align: justify;
-  }
-  
-  
-  
-  
-  
-  .sideText {
-    position: absolute;
-    left: 78%;
-    display: block;
-    font-size: 6vw;
-  }
-  
-  
-  #firstSideText {
-    top: -5%;
-    font-size: 8vw;
-  }
-  
-  
-  #secondSideText {
-    font-size: 4vw;
-    top: 20%;
-  }
-  
-  #forthSideText {
-    top: 36%;
-    left: 79%;
-    font-size: 13vw;
-    letter-spacing: 3vw;
-  }
-  
-  #fifthSideText {
-    top: 70%;
-    font-size: 7.1vw;
-  }
-  
-  
 
-  .lastWordsTxt {
-    position: absolute;
-    text-align: center;
-    top: 0%;
-    left: 20%;
-    right: 20%;
-    font-size: 3vw;
-  }
-  
-  .rightSideText {
-    position: relative;
-    font-size: 3.5vw;
-    padding-top: 30%;
-    line-height: 7vw;
-  }
-  
-  #life {
-    position: relative;
-    rotate: -30deg;
-    font-size: 15vw;
-  }
-  
-  #painting {
-    top: 2%;
-    right: 5%;
-    position: absolute;
-    rotate: 0deg;
-    font-size: 11vw;
-  }
-  
 
-  
-  #showMeHeader {
-    position: relative;
-    margin-top: 20%;
-    margin-left: 12%;
-    margin-right: 12%;
-    text-align: center;
-    font-size: 7vw;
-    line-height: 12vw;
-  }
-  
-  #oneInOnePainting {
-    rotate: 0deg;
-    padding-right: 0vw;
-    padding-left: 0.5vw;
-    margin-top: -10%;
-    font-size: 10vw;
-  }
-  
-  #campaignH {
-    font-size: 9vw;
-    line-height: 10.5vw;
-    text-align: left;
-    margin-bottom: -25%;
-    margin-right: 18%;
-    margin-left: 27%;
-  }
-  
-  .tooFastH {
-    position: relative;
-    margin-left: 37%;
-    margin-right: 37%;
-    text-align: justify;
-    font-size: 2.5vw;
-    margin-bottom: 20%;
-    margin-top: 10%;
-  }
-  
-  
-  #whatIHave {
-    position: relative;
-    margin-top: 35%;
-    text-align: center;
-    font-size: 5vw;
-    margin-bottom: 10%;
-    margin-left: 32%;
-    margin-right: 32%;
-  }
-  
-  
-  #tooFast {
-    margin-top: 35%;
-    text-align: center;
-    font-size: 5vw;
-    margin-bottom: 5%;
-    margin-top: 60%;
-  }
-  
-  #shit {
-    text-align: center;
-    font-size: 9vw;
-    margin-bottom: 5%;
-  }
-  
-  #crazyProjectH {
-    position: relative;
-    font-size: 4vw;
-    top: -37%;
-    right: 0;
-    left: -10%;
-  }
-  
-  
-  #sharedMemo {
-    position: absolute;
-    display: inline-block;
-    text-align: left;
-    top: 10%;
-    left: 75%;
-    font-size: 5vw;
-  }
-  
-  #atATime {
-    position: relative;
-    font-size: 5vw;
-    margin-top: 63%;
-    left: -9%;
-  }
-  
-  #countless {
-    position: absolute;
-    display: inline-block;
-    text-align: left;
-    top: -13%;
-    left: 25%;
-    font-size: 5vw;
-  }
-  
-  #memories {
-    position: absolute;
-    display: inline-block;
-    text-align: left;
-    top: 34%;
-    left: 25%;
-    font-size: 5vw;
-  }
-  
-  #AtATimeH {
-    padding-left: 10%;
-    margin-right: 50%;
-    margin-top: 40%;
-    font-size: 7vw;
-    line-height: 9vw;
-  }
-  
-  
-  
-}
 
-@media screen and (min-width: 992px) {
-  /* Styles for screens with a minimum width of 992 pixels */
-  h1 {
-    color: white;
-    font-family: "Exo 2", sans-serif;
-    font-size: 5vw;
-    z-index: 3000;
-    line-height: 7.5vw;
-    text-transform: uppercase;
-  }
-  
-  
-  
-  
-  
-  p {
-    color: white;
-    font-size: 3.5vw;
-    line-height: 7vw;
-    text-align: justify;
-  }
-  
-  
-  
-  
-  
-  .sideText {
-    position: absolute;
-    left: 78%;
-    display: block;
-    font-size: 6vw;
-  }
-  
-  
-  #firstSideText {
-    top: -5%;
-    font-size: 8vw;
-  }
-  
-  
-  #secondSideText {
-    font-size: 4vw;
-    top: 20%;
-  }
-  
-  #forthSideText {
-    top: 36%;
-    left: 79%;
-    font-size: 13vw;
-    letter-spacing: 3vw;
-  }
-  
-  #fifthSideText {
-    top: 70%;
-    font-size: 7.1vw;
-  }
-  
-  
 
-  
-  .lastWordsTxt {
-    position: absolute;
-    text-align: center;
-    top: 0%;
-    left: 20%;
-    right: 20%;
-    font-size: 3vw;
-  }
-  
-  .rightSideText {
-    position: relative;
-    font-size: 3.5vw;
-    padding-top: 30%;
-    line-height: 7vw;
-  }
-  
-  #life {
-    position: relative;
-    rotate: -30deg;
-    font-size: 15vw;
-  }
-  
-  #painting {
-    top: 2%;
-    right: 5%;
-    position: absolute;
-    rotate: 0deg;
-    font-size: 11vw;
-  }
-  
-  
-  #showMeHeader {
-    position: relative;
-    margin-top: 20%;
-    margin-left: 12%;
-    margin-right: 12%;
-    text-align: center;
-    font-size: 7vw;
-    line-height: 12vw;
-  }
-  
-  #oneInOnePainting {
-    rotate: 0deg;
-    padding-right: 0vw;
-    padding-left: 0.5vw;
-    margin-top: -10%;
-    font-size: 10vw;
-  }
-  
-  #campaignH {
-    font-size: 9vw;
-    line-height: 10.5vw;
-    text-align: left;
-    margin-bottom: -25%;
-    margin-right: 18%;
-    margin-left: 27%;
-  }
-  
-  .tooFastH {
-    position: relative;
-    margin-left: 37%;
-    margin-right: 37%;
-    text-align: justify;
-    font-size: 2.5vw;
-    margin-bottom: 20%;
-    margin-top: 10%;
-  }
-  
-  
-  #whatIHave {
-    position: relative;
-    margin-top: 35%;
-    text-align: center;
-    font-size: 5vw;
-    margin-bottom: 10%;
-    margin-left: 32%;
-    margin-right: 32%;
-  }
-  
-  
-  #tooFast {
-    margin-top: 35%;
-    text-align: center;
-    font-size: 5vw;
-    margin-bottom: 5%;
-    margin-top: 60%;
-  }
-  
-  #shit {
-    text-align: center;
-    font-size: 9vw;
-    margin-bottom: 5%;
-  }
-  
-  #crazyProjectH {
-    position: relative;
-    font-size: 4vw;
-    top: -37%;
-    right: 0;
-    left: -10%;
-  }
-  
-  
-  #sharedMemo {
-    position: absolute;
-    display: inline-block;
-    text-align: left;
-    top: 10%;
-    left: 75%;
-    font-size: 5vw;
-  }
-  
-  #atATime {
-    position: relative;
-    font-size: 5vw;
-    margin-top: 63%;
-    left: -9%;
-  }
-  
-  #countless {
-    position: absolute;
-    display: inline-block;
-    text-align: left;
-    top: -13%;
-    left: 25%;
-    font-size: 5vw;
-  }
-  
-  #memories {
-    position: absolute;
-    display: inline-block;
-    text-align: left;
-    top: 34%;
-    left: 25%;
-    font-size: 5vw;
-  }
-  
-  #AtATimeH {
-    padding-left: 10%;
-    margin-right: 50%;
-    margin-top: 40%;
-    font-size: 7vw;
-    line-height: 9vw;
-  }
-  
-  
-  
-}
-
-@media screen and (min-width: 1100px) {
+@media screen and (min-width: 1000px) {
   /* Styles for screens with a minimum width of 1200 pixels */
  
   
@@ -977,6 +607,7 @@ width: 50%;
   top: -35%;
   width: 55%;
 }
+
 .brushContainer {
   scale: 1.1;
   rotate: -90deg;
@@ -1045,6 +676,18 @@ width: 50%;
   opacity: 0.3;
   scale: 0.55;
 }
-
+.meetPasstilliosTxt{
+  position: relative;
+  margin-left: 10%;
+  margin-right: 10%;
+  font-size: 1.8vw;
+  line-height: 180%;
+}
+#useWhatYouCan{
+  font-size:3.5vw;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 0;
+    }
 
 }

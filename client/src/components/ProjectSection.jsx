@@ -952,8 +952,8 @@ How will your life look as a painting 60 years from now? Will it narrate a story
       <div ref={div4} className="ArtOrPainting">
        <div className="storytime-title">
 
-  
-        <motion.h1
+
+  <motion.h1
           initial={{ opacity: 0 }}
           animate={storyTimeControls}
           className="ArtOrPaintingTitle"
@@ -975,6 +975,9 @@ How will your life look as a painting 60 years from now? Will it narrate a story
         >
           time!
         </motion.h1>
+
+ 
+ {/* <p id="fightH" className="projectTxt" >painting has been my way to fight for my colors!</p>*/}
         </div>
         {/**
   
@@ -998,6 +1001,12 @@ How will your life look as a painting 60 years from now? Will it narrate a story
 
   </motion.video> */}
         <p className="projectTxt">
+          Imagine a world painted only in shades of gray, where only black and
+          white call the shots. It's a place without the cozy warmth of lively
+          colors.In this imaginary place, our eyes reveal emptiness, echoing the
+          Imagine a world painted only in shades of gray, where only black and
+          white call the shots. It's a place without the cozy warmth of lively
+          colors.In this imaginary place, our eyes reveal emptiness, echoing the
           Imagine a world painted only in shades of gray, where only black and
           white call the shots. It's a place without the cozy warmth of lively
           colors.In this imaginary place, our eyes reveal emptiness, echoing the

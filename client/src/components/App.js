@@ -36,7 +36,8 @@ function App() {
 </svg>   <MyButton name="show me!"/> <IntroParallax/>
 *////https://www.npmjs.com/package/react-floating-button-menu
  //https://github.com/na6im/react-floating-button  <TeamPage/>
-return (
+// style={{border:"2px solid red",overflow:"hidden"}}
+ return (
     <div >
 
 <Router>

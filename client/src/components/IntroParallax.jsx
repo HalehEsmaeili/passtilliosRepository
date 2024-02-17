@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef, useHover } from "react";
 import axios from "axios";
+import axiosInstance from "../Api/axiosInstance.js";
 import "../public/intro.css";
 import CampaignStatement from "./campaign/CampaignStatement.jsx";
 import ProjectSection from "./ProjectSection.jsx";
@@ -133,7 +134,7 @@ function IntroParallax() {
   const magicContainerRef = useRef(null);
   const wtfRef = useRef(null);
   const campaignImgRef = useRef(null);
-
+  
   const isInViewCampaignImg = useInView(campaignImgRef, {
     once: true,
     amount: 0.7,
@@ -143,14 +144,14 @@ function IntroParallax() {
     amount: 0.3,
   });
 
-  const isInViewGreyTxt = useInView(greydiv, { once: true, amount: 0.2 });
+  const isInViewGreyTxt = useInView(greydiv, { once: true, amount: 0.1 });
   const isInViewdivNextStep = useInView(divNextSteps, { amount: 0.7 });
 
   //const isInViewdiv0=useInView(div0, {once:true});
   //const isInViewDivGrey=useInView(greydiv, {once:true});
   const isInViewdiv2 = useInView(div2, { once: true, amount: 1 });
   const isInViewdiv3 = useInView(div3, { once: true, amount: 0.8 });
-
+  const isInViewdiv0= useInView(div0, { once: true, amount: 0.2 });
   //const [isHovered,handleHover]=useHover();
   ///////dont let grey take over
   const dontAnim = useAnimationControls();
@@ -248,8 +249,7 @@ function IntroParallax() {
   //////////////////////animation functions
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:3001/sections/${1}/${2}`)
+    axiosInstance.get(`/sections/${1}/${2}`)
       .then((response) => {
         console.log("responsoe for grey");
         console.log(response.data.sections);
@@ -266,8 +266,8 @@ function IntroParallax() {
       });
 
     ///fetch texts for the grey 2
-    axios
-      .get(`http://localhost:3001/sections/${1}/${3}`)
+    axiosInstance
+      .get(`/sections/${1}/${3}`)
       .then((response) => {
         console.log("responsoe for grey");
         console.log(response.data.sections);
@@ -325,6 +325,7 @@ function IntroParallax() {
 
   useEffect(() => {
     if (isInViewdiv3) {
+      
       nextButtonControls.start({
         opactity: 1,
         left: ["-10%", "92%", "82%"],
@@ -343,7 +344,7 @@ function IntroParallax() {
         });
         b5Controls.start({
           left: "-17%",
-          top: "2%",
+          top: "10%",
           x: ["-5vw", "16vw"],
           y: ["10vw", "28vw"],
           transition: { delay: 1, stiffness: 0.1, duration: 5 },
@@ -360,8 +361,8 @@ function IntroParallax() {
         });
 
         await b11Controls.start({
-          left: "17%",
-          top: "-40%",
+          left: "15%",
+          top: "-39%",
           transition: { stiffness: 1, duration: 5 },
         });
 
@@ -414,35 +415,7 @@ function IntroParallax() {
     }
   }, [scrollToGreyActive]);
 
-  async function myAnimation() {
-    await animate(
-      scope.current,
-      {
-        y: ["-50vh", "-60vh"],
-      },
-
-      { type: "spring", stiffness: 100 }
-    );
-    await animate(
-      scope.current,
-      {
-        y: "200vh",
-      },
-
-      { type: "spring", stiffness: 100 }
-    );
-
-    await animate(
-      scope.current,
-      {
-        y: ["200vh", "7vh"],
-        x: "-30vw",
-      },
-
-      { type: "spring", stiffness: 20 }
-    );
-  }
-
+  
   const handleScrollToDivNext = (e) => {
     setScrollToNextStepsActive(true);
     // Access the current property of the ref to get the DOM element
@@ -487,7 +460,7 @@ function IntroParallax() {
   });
 
   useMotionValueEvent(s, "change", (latest) => {
-    if (isInViewGreyTxt && introAnimationComplete) {
+    if (isInViewGreyTxt) {
       setGreyScrolled(true);
     }
   });
@@ -507,60 +480,7 @@ function IntroParallax() {
     }
   };
 */
-  const logoAnimationTodiv4 = async () => {
-    await oneInOnePaintingCotrols.start({
-      rotate: -90,
-      x: "-1vw",
-      paddingRight: "3vw",
-      transition: { type: "yoyo", duration: 0.3 },
-    });
-    await paintingH1Control.start({
-      x: "10vw",
-      transition: { type: "yoyo", duration: 0.3 },
-    });
-
-    await paintingH1Control.start({
-      x: "-1vw",
-      transition: { type: "yoyo", duration: 0.1 },
-    });
-
-    await controlslogo.start({
-      x: "10vw",
-      transition: { type: "yoyo", duration: 0.5 },
-    });
-    controlslogoImage.start({
-      rotate: [0, 360, 720, 0],
-      transition: { duration: 1 },
-    });
-    controlsSecondPerson.start({ opacity: 1 });
-    whatPaintingRef.current.play();
-    await controlslogo.start({
-      x: ["10vw", "19vw", "24vw", "29vw", "45vw"],
-      y: ["316%", "346%", "376%", "400%", "868%"],
-      transition: { type: "yoyo", duration: 1 },
-    });
-
-    await controls.start({ x: "100vw", opacity: 1 });
-    await oneInOnePaintingCotrols.start({
-      rotate: 0,
-      paddingRight: "0vw",
-      transition: { type: "yoyo", duration: 0.3 },
-    });
-    //controlslogo.start({x:["32vw","50vw"],y:["410%","780%"],transition:{type:"yoyo",duration:.5}});
-    if (!scrollToGreyActive) {
-      b10Controls.start({
-        left: "70%",
-        top: "450%",
-        transition: { stiffness: 1, duration: 5 },
-      });
-    }
-
-    // await controlslogo.start({x:["34vw","36vw"],y:["500%","811%"],rotate:-20,transition:{type:"yoyo",duration:.5}});
-
-    storyTimeControls.start({ opacity: 1, transition: { delay: 1.5 } });
-    setLogoAnimationTodiv4Compelete(true);
-    return;
-  };
+ 
   const logoAnimationToNextSteps = async () => {
     controlsSecondPerson.start({ opacity: 0, transition: { duration: 0.3 } });
     await controlslogo.start({ opacity: 0, transition: { duration: 0.3 } });
@@ -601,371 +521,7 @@ function IntroParallax() {
 
     return;
   };
-  const introAnim = async () => {
-    console.log("introAnim started");
-    //await introLogoControl.start({x:"-30vw",transition:{delay:1,stiffness:700}});
-
-    await introLogoControl.start({
-      y: ["0%", "-20%"],
-
-      transition: { delay: 2, type: "spring", stiffness: 100, duration: 0.06 },
-    });
-    //setletsgoBubbleShow(()=>{true});
-    //console.log("set bubbbble"+letsGoBubbleShow);
-    lControls.start({
-      opacity: 1,
-
-      transition: { duration: 0.001 },
-    });
-    eControls.start({
-      opacity: 1,
-
-      transition: { duration: 0.001 },
-    });
-    tControls.start({
-      opacity: 1,
-
-      transition: { duration: 0.001 },
-    });
-    sControls.start({
-      opacity: 1,
-
-      transition: { duration: 0.001 },
-    });
-    gControls.start({
-      opacity: 1,
-
-      transition: { duration: 0.001 },
-    });
-    oControls.start({
-      opacity: 1,
-
-      transition: { duration: 0.001 },
-    });
-    await zeichenControls.start({
-      opacity: 1,
-
-      transition: { duration: 0.001 },
-    });
-    ///colorful bubblessss animation
-
-    b1Controls.start({
-      x: ["-.3vw", "0vw", "-.3vw"],
-      y: [".3vh", "0vh", ".3vh"],
-      transition: { type: "yoyo", repeat: Infinity, duration: 3 },
-    });
-    b2Controls.start({
-      top: "170%",
-      left: "70%",
-      transition: { type: "spring", stiffness: 22, duration: 0.2 },
-    });
-
-    b3Controls.start({
-      opacity: 1,
-      top: "40%",
-      left: "45%",
-      transition: { type: "spring", stiffness: 17, duration: 0.2 },
-    });
-
-    b4Controls.start({
-      opacity: 1,
-      top: "60%",
-      left: "-70%",
-      transition: { type: "spring", stiffness: 15, duration: 0.2 },
-    });
-
-    b5Controls.start({
-      opacity: 1,
-      top: "10%",
-      left: "70%",
-      transition: { type: "spring", stiffness: 20, duration: 0.2 },
-    });
-
-    /*
-  b8Controls.start({
-    opacity:1,
-    top:"260%",
-    left:"60%",
-    transition:  {type:"spring",stiffness:8,duration:.2}
-  });
-*/
-    /////
-    b1Controls.start({
-      top: "10%",
-      left: "7%",
-      transition: { type: "spring", stiffness: 14, duration: 0.1 },
-    });
-    lControls.start({
-      opacity: 1,
-      top: "-200%",
-      left: "-5%",
-      scale: 1.5,
-      transition: { type: "spring", stiffness: 10, duration: 0.9 },
-    });
-    eControls.start({
-      top: "-200%",
-      left: "0%",
-      opacity: 1,
-
-      scale: 1.4,
-      transition: { type: "spring", stiffness: 9.5, duration: 0.9 },
-    });
-    tControls.start({
-      opacity: 1,
-      top: "-200%",
-      left: "5%",
-      scale: 1.3,
-      transition: { type: "spring", stiffness: 9, duration: 0.9 },
-    });
-    sControls.start({
-      opacity: 1,
-      top: "-200%",
-      left: "10%",
-      scale: 1.2,
-      transition: { type: "spring", stiffness: 8.5, duration: 0.9 },
-    });
-    gControls.start({
-      opacity: 1,
-      top: "-130%",
-      left: "15%",
-      transition: { type: "spring", stiffness: 7.8, duration: 0.5 },
-    });
-    oControls.start({
-      opacity: 1,
-      top: "-130%",
-      left: "20%",
-      transition: { type: "spring", stiffness: 7.2, duration: 0.5 },
-    });
-    zeichenControls.start({
-      opacity: 1,
-      top: "-100%",
-      left: "25%",
-      transition: { type: "spring", stiffness: 6.8, duration: 0.2 },
-    });
-
-    await introLogoControl.start({
-      y: "10000%",
-      transition: { type: "spring", stiffness: 100, duration: 0.02 },
-    });
-    introLogoControl.start({
-      opacity: 0,
-      transition: { duration: 0.02 },
-    });
-
-    setIntroAnimationComplete(true);
-    return;
-  };
-  //startbroanimation
-  const broAnim = async () => {
-    if (!scrollToGreyActive) {
-      b9Controls.start({
-        left: "10%",
-        top: "-10%",
-        transition: { delay: 1, stiffness: 0.1, duration: 5 },
-      });
-    }
-
-    /*
-     console.log('broAnim started');
-     await controls.start({ x: "10vw" });
-     await controlslogo.start({
-       y:["-50vh","-60vh"],
-       transition:  {type:"spring",stiffness:100,duration:.06}
-     });
-     await controlslogo.start({
-       y:"200vh",
-      transition: {type:"spring",stiffness:100,duration:.02}
-     });
-      controlsschirm.start({opacity:1});
-    
-   await  controls.start({rotate:-45, transition: {type:"spring",stiffness:50,duration:.001}});
-
-   
-   controls.start({rotate:0, transition: {type:"spring",stiffness:50,duration:.1}});
-   
-    
-    await controlslogo.start({
-       y:["200vh","7vh"],
-       x:"100%",
-       transition:  {type:"spring",stiffness:20,duration:.3}});
-       
-  */
-
-    await controls.start({
-      rotate: -45,
-      transition: { type: "spring", stiffness: 50, duration: 0.001 },
-    });
-    b6Controls.start({
-      opacity: 1,
-      top: "500%",
-      left: "10%",
-      transition: { type: "spring", stiffness: 5.5, duration: 0.2 },
-    });
-    b7Controls.start({
-      opacity: 1,
-      top: "920%",
-      left: "67%",
-      transition: { type: "spring", stiffness: 5.5, duration: 0.2 },
-    });
-
-    await controls.start({
-      rotate: 0,
-      transition: { type: "spring", stiffness: 50, duration: 0.1 },
-    });
-    controlsschirm.start({ opacity: 1 });
-
-    controlslogo.start({
-      opacity: 1,
-
-      transition: { type: "spring", stiffness: 1000, duration: 0.001 },
-    });
-
-    controls.start({
-      rotate: 16,
-      transition: { type: "spring", stiffness: 12, duration: 0.01 },
-    });
-    await controlslogo.start({
-      y: ["1000%", "100%"],
-      x: "100%",
-
-      transition: { type: "spring", stiffness: 20, duration: 0.3 },
-    });
-
-    controlsLogoBeforPush.start({ opacity: 1, transition: { duration: 1 } });
-    await controlslogo.start({
-      y: ["100%", "30%"],
-      transition: { stiffness: 1, duration: 1 },
-    });
-    controlsLogoBeforPush.start({ opacity: 0 });
-    controlsLogoAfterPush.start({ opacity: 1, transition: { duration: 0.3 } });
-    await controlslogo.start({
-      y: ["100%", "199%"],
-      transition: { stiffness: 100, duration: 0.3 },
-    });
-    await controlsLogoAfterPush.start({
-      opacity: 0,
-      transition: { duration: 0.01 },
-    });
-    await controlslogo.start({
-      y: ["199%", "100%"],
-      transition: { stiffness: 0.01, duration: 1.5 },
-    });
-
-    //await controlsLogoBeforPush.start({opacity:1,transition:{delay:-.,duration:1.7}});
-    /*
-await  controlsLogoBeforPush.start({opacity:0,transition:{stiffness:100,duration:.01}});
- controlsLogoAfterPush.start({opacity:1,transition:{stiffness:80,delay:.08,duration:.3}});
-  await controlslogo.start({
-y:["50%","150%","50%"],
-transition:{stiffness:1,delay:.08,duration:.3}
-});
-controlsLogoAfterPush.start({opacity:0,transition:{duration:.5}});
-*/
-    await controls
-      .start({ opacity: 0, transition: { delay: -0.2, duration: 0.01 } })
-      .catch((error) => console.error(error));
-
-    await controlsimg2.start({ opacity: 1, x: "10vw" });
-    ////delay-group 1
-
-    await controlsimg2.start({
-      opacity: 0,
-      transition: { type: "Spring", duration: 0.05, stiffness: 2 },
-    });
-    await controlsimg3.start({ opacity: 1, transition: { duration: 0.2 } });
-
-    controlsBroDialog.start({
-      opacity: 0.3,
-      left: "5%",
-      top: "-20%",
-      scale: 15,
-      transition: { duration: 1.3, stiffness: 1 },
-    });
-
-    await controlsimg3.start({
-      opacity: 0,
-      transition: { delay: 0.5, duration: 0.1 },
-    });
-
-    await controls.start({ opacity: 1, transition: { delay: 0.05 } });
-
-    controlsBroDialog.start({
-      opacity: 0,
-      transition: { stiffness: 0.1, delay: -0.5, duration: 1 },
-    });
-    ////delay-group 2
-    await controlsHand.start({
-      pathLength: 1,
-      transition: { type: "Spring", duration: 1, stiffness: 60 },
-    });
-    await controlsHandSVG.start({
-      left: ["22%", "10%", "23%"],
-      rotate: [0, -10, 0],
-      transition: { type: "Spring", duration: 0.2, stiffness: 100 },
-    });
-    // await  controlslogo.start({opacity:1,x:["-30vw","-30.5vw","-30vw","-30.5vw"],rotateZ:[0,10,0,10,0],transition:{type:"yoyo",duration:.5,stiffness:2}})
-    await controlsHand.start({ pathLength: 0 });
-    //await  controlsHandSVG.start({opacity:0});
-    controlsschirm.start({ opacity: 0 });
-
-    //  secondrainbowControl.start({opacity:0});
-    /*
-       if(!scrollToGreyActive){
-       b9Controls.start({ left:"10%",top:"140%",transition:{delay:1,stiffness:.1,duration:5}});
-       }
-       */
-    bubbleForLogoControls.start({
-      opacity: 1,
-      left: "16%",
-      top: "427.5%",
-      scale: 1.7,
-      transition: { type: "spring", stiffness: 16, duration: 0.02 },
-    });
-    rainbowSvgControl2.start({ opacity: 0, pathLength: 0 });
-
-    await firstrainbowControl.start({ rotate: -45 });
-
-    controls.start({ rotate: -25, transition: { stiffness: 6, delay: 0.7 } });
-    await controlslogo.start({
-      y: "300%",
-      transition: {
-        delay: 0.5,
-        type: "spring",
-        stiffness: 60,
-        duration: 0.003,
-      },
-    });
-    /*bubbleForLogoControls.stop();*/
-
-    await controls.start({ rotate: 0, transition: { delay: 1, stiffness: 5 } });
-
-    await controlslogo.start({
-      y: "150%",
-      x: "165%",
-      transition: { type: "spirng", stiffness: 600, duration: 0.25 },
-    });
-    await firstrainbowControl.start({ rotate: 0 });
-    rainbowSvgControl2.start({ opacity: 1 });
-    await rainbowSvgControl2.start({ pathLength: 1 });
-    await colorSplashControl.start({ opacity: 1 });
-    await bubbleForLogoControls.start({
-      opacity: 0,
-      scale: 7,
-      transition: { type: "spring", duration: 0.06 },
-    });
-    controlslogo.start({
-      y: "316%",
-      x: "27vw",
-      transition: { type: "spring", duration: 0.75 },
-    });
-    await controls.start({
-      x: "4vw",
-      transition: { type: "spring", stiffness: 150, duration: 0.002 },
-    });
-    setBroAnimationComplete(true);
-    console.log("broanimation is compelete" + broAnimationComplete);
-    return;
-  };
+  
 
   /////////useEffectSection
   useEffect(() => {
@@ -1004,22 +560,17 @@ controlsLogoAfterPush.start({opacity:0,transition:{duration:.5}});
     }
   }, [isInViewGreyTxt, introAnimationComplete, greyScrolled]);
 
-  useEffect(() => {
-    if (isInViewdiv2) {
-      broAnim();
-    }
-  }, [isInViewdiv2]);
-
+  
   useEffect(() => {
     /*
   if(isInViewdivNextStep){
     b11Controls.start({top:"1280%",left:"10%",transition:{stiffness:1,duration:2}});   
   }
+   logoAnimationTodiv4Compelete &&
   */
 
     if (
       isInViewdivNextStep &&
-      logoAnimationTodiv4Compelete &&
       scrollToNextStepsActive &&
       !nextStepAnimationStarted
     ) {
@@ -1058,22 +609,385 @@ if(isInViewGreyTxt){
 
 },[]);
 */
-
+   /*
   useEffect(() => {
+ 
+    const introAnim = async () => {
+      //console.log("introAnim started");
+      //await introLogoControl.start({x:"-30vw",transition:{delay:1,stiffness:700}});
+  
+      await introLogoControl.start({
+        y: ["0%", "-20%"],
+        transition: { delay: 2, type: "spring", stiffness: 100, duration: 0.06 },
+      });
+      //setletsgoBubbleShow(()=>{true});
+      //console.log("set bubbbble"+letsGoBubbleShow);
+      lControls.start({
+        opacity: 1,
+  
+        transition: { duration: 0.001 },
+      });
+      eControls.start({
+        opacity: 1,
+  
+        transition: { duration: 0.001 },
+      });
+      tControls.start({
+        opacity: 1,
+  
+        transition: { duration: 0.001 },
+      });
+      sControls.start({
+        opacity: 1,
+  
+        transition: { duration: 0.001 },
+      });
+      gControls.start({
+        opacity: 1,
+  
+        transition: { duration: 0.001 },
+      });
+      oControls.start({
+        opacity: 1,
+  
+        transition: { duration: 0.001 },
+      });
+      await zeichenControls.start({
+        opacity: 1,
+  
+        transition: { duration: 0.001 },
+      });
+      ///colorful bubblessss animation
+  
+      b1Controls.start({
+        x: ["-.3vw", "0vw", "-.3vw"],
+        y: [".3vh", "0vh", ".3vh"],
+        transition: { type: "yoyo", repeat: Infinity, duration: 3 },
+      });
+      b2Controls.start({
+        top: "-100%",
+        left: "70%",
+        transition: { type: "spring", stiffness: 22, duration: 0.2 },
+      });
+  
+      b3Controls.start({
+        opacity: 1,
+        top: "40%",
+        left: "45%",
+        transition: { type: "spring", stiffness: 17, duration: 0.2 },
+      });
+  
+      b4Controls.start({
+        opacity: 1,
+        top: "60%",
+        left: "-70%",
+        transition: { type: "spring", stiffness: 15, duration: 0.2 },
+      });
+  
+      b5Controls.start({
+        opacity: 1,
+        top: "10%",
+        left: "70%",
+        transition: { type: "spring", stiffness: 20, duration: 0.2 },
+      });
+  
+      /*
+    b8Controls.start({
+      opacity:1,
+      top:"260%",
+      left:"60%",
+      transition:  {type:"spring",stiffness:8,duration:.2}
+    });
+  */
+      /////
+      /*
+      b1Controls.start({
+        top: "11%",
+        left: "7%",
+        transition: { type: "spring", stiffness: 14, duration: 0.1 },
+      });
+      lControls.start({
+        opacity: 1,
+        top: "-200%",
+        left: "-5%",
+        scale: 1.5,
+        transition: { type: "spring", stiffness: 10, duration: 0.9 },
+      });
+      eControls.start({
+        top: "-200%",
+        left: "0%",
+        opacity: 1,
+  
+        scale: 1.4,
+        transition: { type: "spring", stiffness: 9.5, duration: 0.9 },
+      });
+      tControls.start({
+        opacity: 1,
+        top: "-200%",
+        left: "5%",
+        scale: 1.3,
+        transition: { type: "spring", stiffness: 9, duration: 0.9 },
+      });
+      sControls.start({
+        opacity: 1,
+        top: "-200%",
+        left: "10%",
+        scale: 1.2,
+        transition: { type: "spring", stiffness: 8.5, duration: 0.9 },
+      });
+      gControls.start({
+        opacity: 1,
+        top: "-130%",
+        left: "15%",
+        transition: { type: "spring", stiffness: 7.8, duration: 0.5 },
+      });
+      oControls.start({
+        opacity: 1,
+        top: "-130%",
+        left: "20%",
+        transition: { type: "spring", stiffness: 7.2, duration: 0.5 },
+      });
+      zeichenControls.start({
+        opacity: 1,
+        top: "-100%",
+        left: "25%",
+        transition: { type: "spring", stiffness: 6.8, duration: 0.2 },
+      });
+  
+      await introLogoControl.start({
+        y: "10000%",
+        transition: { type: "spring", stiffness: 100, duration: 0.02 },
+      });
+      introLogoControl.start({
+        opacity: 0,
+        transition: { duration: 0.02 },
+      });
+  
+      setIntroAnimationComplete(true);
+    
+    };
+
     if ("scrollRestoration" in window.history) {
       window.history.scrollRestoration = "manual";
     }
     window.scrollTo(0, 0);
 
-    introAnim();
+  
     // Cleanup function to clear the timeout in case the component unmounts before the timeout
     return () => {
       //clearTimeout(timeoutId);
+    
     };
   }, []);
 
+    */
+
+
+  useEffect(() => {
+  
+    const introAnim = async () => {
+      try {
+        
+     await  introLogoControl.start({
+        y: ["10%","-26%"],
+        transition: { delay: 1, type: "spring", stiffness: 100, duration: .05 },
+      });
+      await introLogoControl.start({
+        y: "10000%",
+        transition: {  delay: -.9,type: "spring", stiffness: 100, duration: 0.02 },
+      });
+      await introLogoControl.start({
+        opacity: 0,
+        transition: { duration: 0.02 },
+      });
+      setIntroAnimationComplete(true);
+      //setletsgoBubbleShow(()=>{true});
+      //console.log("set bubbbble"+letsGoBubbleShow);
+      await Promise.all([
+      
+      lControls.start({
+        opacity: 1,
+  
+        transition: { duration: 0.001 },
+      }),
+      eControls.start({
+        opacity: 1,
+  
+        transition: { duration: 0.001 },
+      }),
+      tControls.start({
+        opacity: 1,
+  
+        transition: { duration: 0.001 },
+      }),
+      sControls.start({
+        opacity: 1,
+  
+        transition: { duration: 0.001 },
+      }),
+      gControls.start({
+        opacity: 1,
+  
+        transition: { duration: 0.001 },
+      }),
+      oControls.start({
+        opacity: 1,
+  
+        transition: { duration: 0.001 },
+      }),
+    zeichenControls.start({
+        opacity: 1,
+  
+        transition: { duration: 0.001 },
+      }),
+      ///colorful bubblessss animation
+  
+    
+      b2Controls.start({
+        top: "-100%",
+        left: "70%",
+        transition: { type: "spring", stiffness: 22, duration: 0.2 },
+      }),
+  
+      b3Controls.start({
+        opacity: 1,
+        top: "40%",
+        left: "45%",
+        transition: { type: "spring", stiffness: 17, duration: 0.2 },
+      }),
+  
+      b4Controls.start({
+        opacity: 1,
+        top: "60%",
+        left: "-70%",
+        transition: { type: "spring", stiffness: 15, duration: 0.2 },
+      }),
+  
+      b5Controls.start({
+        opacity: 1,
+        top: "10%",
+        left: "70%",
+        transition: { type: "spring", stiffness: 20, duration: 0.2 },
+      }),
+  
+      /*
+    b8Controls.start({
+      opacity:1,
+      top:"260%",
+      left:"60%",
+      transition:  {type:"spring",stiffness:8,duration:.2}
+    });
+  */
+      /////
+      b1Controls.start({
+        top: "11%",
+        left: "7%",
+        transition: { type: "spring", stiffness: 14, duration: 0.1 },
+      }),
+      lControls.start({
+        opacity: 1,
+        top: "-200%",
+        left: "-5%",
+        scale: 1.5,
+        transition: { type: "spring", stiffness: 10, duration: 0.9 },
+      }),
+      eControls.start({
+        top: "-200%",
+        left: "0%",
+        opacity: 1,
+  
+        scale: 1.4,
+        transition: { type: "spring", stiffness: 9.5, duration: 0.9 },
+      }),
+      tControls.start({
+        opacity: 1,
+        top: "-200%",
+        left: "5%",
+        scale: 1.3,
+        transition: { type: "spring", stiffness: 9, duration: 0.9 },
+      }),
+      sControls.start({
+        opacity: 1,
+        top: "-200%",
+        left: "10%",
+        scale: 1.2,
+        transition: { type: "spring", stiffness: 8.5, duration: 0.9 },
+      }),
+      gControls.start({
+        opacity: 1,
+        top: "-130%",
+        left: "15%",
+        transition: { type: "spring", stiffness: 7.8, duration: 0.5 },
+      }),
+      oControls.start({
+        opacity: 1,
+        top: "-130%",
+        left: "20%",
+        transition: { type: "spring", stiffness: 7.2, duration: 0.5 },
+      }),
+    zeichenControls.start({
+        opacity: 1,
+        top: "-100%",
+        left: "25%",
+        transition: { type: "spring", stiffness: 6.8, duration: 0.2 },
+      })
+  
+  
+    ]);
+
+
+    /*
+      b1Controls.start({
+        x: ["-.3vw", "0vw", "-.3vw"],
+        y: [".3vh", "0vh", ".3vh"],
+        transition: { type: "yoyo", repeat: Infinity, duration: 3 },
+      }),
+    */
+      //setIntroAnimationComplete(true);
+      }catch(error){
+       // console.error('Error in introAnim:', error);
+      }
+    };
+   
+
+   introAnim();
+
+    // Cleanup function to clear the timeout in case the component unmounts before the timeout
+    return () => {
+      //clearTimeout(timeoutId);
+      introLogoControl.stop();
+      lControls.stop();
+      eControls.stop();
+      tControls.stop();
+      sControls.stop();
+      gControls.stop();
+      oControls.stop();
+      zeichenControls.stop();
+      b1Controls.stop();
+      b2Controls.stop();
+      b3Controls.stop();
+      b4Controls.stop();
+      b5Controls.stop();
+   
+    };
+  }, [introLogoControl,
+    lControls,
+    eControls,
+    tControls,
+    sControls,
+    gControls,
+    oControls,
+    zeichenControls,
+    b2Controls,
+    b2Controls,
+    b3Controls,
+    b4Controls,
+    b5Controls]);
+  //border:"2px solid yellow"
   return (
-    <div>
+    <div
+      style={{ overflowY: "hidden", maxHeight: "fit-content", marginBottom: 0 }}
+    >
       <motion.div ref={div0} className="div0">
         <motion.div className="bubbleContainerIntro" animate={b3Controls}>
           <motion.img
@@ -1101,86 +1015,95 @@ if(isInViewGreyTxt){
           ></motion.img>
         </motion.div>
 
-        <div style={{ position: "relative", zIndex: 1, marginTop: "0%" }}></div>
-        <motion.img
-          src={logo}
-          style={{ scale: 1.3, marginBottom: "5%" }}
-          animate={introLogoControl}
-          alt="logo"
-        ></motion.img>
-        <motion.h1
-          id="h1Intro"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ type: "yoyo" }}
+        <div
+          className={
+            scrollToGreyActive
+              ? "bufferForItIsDamnTime-afterClick"
+              : "bufferForItIsDamnTime-beforClick"
+          }
         >
-          ITS ABOUT DAMN TIME WE INFUSE SOME MAGIC AND SPICE INTO OUR LIVES!
-        </motion.h1>
-        <motion.img
-          className="bubbles"
-          src={l}
-          animate={lControls}
-          alt="l"
-        ></motion.img>
-        <motion.img
-          className="bubbles"
-          src={e}
-          animate={eControls}
-          alt="e"
-        ></motion.img>
-        <motion.img
-          className="bubbles"
-          src={t}
-          animate={tControls}
-          alt="t"
-        ></motion.img>
-        <motion.img
-          className="bubbles"
-          src={ss}
-          animate={sControls}
-          alt="s"
-        ></motion.img>
-        <motion.img
-          className="bubbles"
-          src={g}
-          animate={gControls}
-          alt="g"
-        ></motion.img>
-        <motion.img
-          className="bubbles"
-          src={o}
-          animate={oControls}
-          alt="o"
-        ></motion.img>
-        <motion.img
-          className="bubbles"
-          src={zeichen}
-          animate={zeichenControls}
-          alt="zeichen"
-        ></motion.img>
+          <motion.img
+            src={logo}
+            initial={{ y:"0%" }}
+            style={{ scale: 1.3, marginBottom: "5%" }}
+            animate={introLogoControl}
+            alt="logo"
+          ></motion.img>
+          <motion.h1
+            id="h1Intro"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ type: "yoyo" }}
+          >
+            ITS ABOUT DAMN TIME WE INFUSE SOME MAGIC AND SPICE INTO OUR LIVES!
+          </motion.h1>
 
-        <div ref={magicContainerRef} className="magicContainer">
           <motion.img
-            className="grid-item-spice"
-            src={introSpice}
-            initial={{ opacity: 1 }}
-            animate={animateMagicContainer}
-            alt="spice"
+            className="bubbles"
+            src={l}
+            animate={lControls}
+            alt="l"
           ></motion.img>
           <motion.img
-            className="grid-item-magicLeft"
-            initial={{ opacity: 0 }}
-            animate={animateMagic}
-            src={magicLeft}
-            alt="magicLeft"
+            className="bubbles"
+            src={e}
+            animate={eControls}
+            alt="e"
           ></motion.img>
           <motion.img
-            className="grid-item-magicRight"
-            initial={{ opacity: 0 }}
-            animate={animateMagic}
-            src={magicRight}
-            alt="magicRight"
+            className="bubbles"
+            src={t}
+            animate={tControls}
+            alt="t"
           ></motion.img>
+          <motion.img
+            className="bubbles"
+            src={ss}
+            animate={sControls}
+            alt="s"
+          ></motion.img>
+          <motion.img
+            className="bubbles"
+            src={g}
+            animate={gControls}
+            alt="g"
+          ></motion.img>
+          <motion.img
+            className="bubbles"
+            src={o}
+            animate={oControls}
+            alt="o"
+          ></motion.img>
+          <motion.img
+            className="bubbles"
+            src={zeichen}
+            animate={zeichenControls}
+            alt="zeichen"
+          ></motion.img>
+
+          <div ref={magicContainerRef} className="magicContainer">
+            <motion.img
+              className="grid-item-spice"
+              src={introSpice}
+              initial={{ opacity: 1 }}
+              animate={animateMagicContainer}
+              alt="spice"
+            ></motion.img>
+            <motion.img
+              className="grid-item-magicLeft"
+              initial={{ opacity: 0 }}
+              animate={animateMagic}
+              src={magicLeft}
+              alt="magicLeft"
+            ></motion.img>
+            <motion.img
+              className="grid-item-magicRight"
+              initial={{ opacity: 0 }}
+              animate={animateMagic}
+              src={magicRight}
+              alt="magicRight"
+            ></motion.img>
+          </div>
         </div>
       </motion.div>
 
@@ -1240,20 +1163,8 @@ if(isInViewGreyTxt){
           ></motion.img>
         </motion.div>
 
-        <motion.div className="bubbleContainerGrey" animate={b6Controls}>
-          <motion.img
-            className="emptyBubble"
-            src={bubble6}
-            alt="b6"
-          ></motion.img>
-          <motion.img
-            className="colorSplash"
-            src={splash6}
-            alt="colorSplash"
-          ></motion.img>
-        </motion.div>
-
-        <motion.div className="bubbleContainerGrey" animate={b7Controls}>
+        {/**
+<motion.div className="bubbleContainerGrey" animate={b7Controls}>
           <motion.img
             className="emptyBubble"
             src={bubble7}
@@ -1266,7 +1177,21 @@ if(isInViewGreyTxt){
           ></motion.img>
         </motion.div>
 
-        <motion.div className="bubbleContainerGrey" animate={b8Controls}>
+ <motion.div className="bubbleContainerGrey" animate={b6Controls}>
+          <motion.img
+            className="emptyBubble"
+            src={bubble6}
+            alt="b6"
+          ></motion.img>
+          <motion.img
+            className="colorSplash"
+            src={splash6}
+            alt="colorSplash"
+          ></motion.img>
+        </motion.div>
+
+
+<motion.div className="bubbleContainerGrey" animate={b8Controls}>
           <motion.img
             className="emptyBubble"
             src={bubble8}
@@ -1278,6 +1203,8 @@ if(isInViewGreyTxt){
             alt="colorSplash"
           ></motion.img>
         </motion.div>
+
+ */}
 
         <motion.img
           id="greyUP"
@@ -1312,7 +1239,13 @@ if(isInViewGreyTxt){
                   highlight="Imagine unique colors"
                 /> */}
             <div className="GridItemGreyText">
-              {texts ? <p className="greyTxt">{texts[0]}</p> : ""}
+              {texts ? (
+                <p className="greyTxt">
+                 {texts[0]}
+                </p>
+              ) : (
+                ""
+              )}
               {/** <Highlighted text={text} highlight="Imagine unique colors" /> */}
             </div>
           </div>
@@ -1421,7 +1354,7 @@ if(isInViewGreyTxt){
               {headers2 ? (
                 <h1 id="onSvgtxt1">{headers2[0]}</h1>
               ) : (
-                <h1 id="onSvgtxt1">but to kick start this journey</h1>
+                <h1 id="onSvgtxt1">but for this to work</h1>
               )}
               {headers2 ? (
                 <h1 id="onSvgtxt2">{headers2[1]}</h1>
@@ -1479,7 +1412,7 @@ if(isInViewGreyTxt){
         )}
 
         <motion.div
-          initial={{ top: "250%", left: "-50%" }}
+          initial={{ position: "absolute", top: "250%", left: "-50%" }}
           animate={b9Controls}
           className="bubbleDiv2"
         >
@@ -1497,7 +1430,12 @@ if(isInViewGreyTxt){
           ></motion.img>
         </motion.div>
         <motion.div
-          initial={{ top: "600%", left: "100%", zIndex: 20000 }}
+          initial={{
+            position: "absolute",
+            top: "600%",
+            left: "100%",
+            zIndex: 20000,
+          }}
           animate={b10Controls}
           className="bubbleDiv2"
         >
@@ -1515,7 +1453,7 @@ if(isInViewGreyTxt){
           ></motion.img>
         </motion.div>
         <motion.div
-          initial={{ top: "1300%", left: "7%" }}
+          initial={{ position: "absolute", top: "1300%", left: "7%" }}
           animate={b11Controls}
           className="bubbleDiv2"
         >
@@ -1556,6 +1494,10 @@ if(isInViewGreyTxt){
             <motion.h1 id="showMeHeader">
               LET THE BUBBLES TALK THE FINAL TALK!
             </motion.h1>
+            {/*<div style={{ border: "20px solid rgba(0, 0, 0, 0)", overflow: "visible", position: "relative" }}>
+               </div>
+            */}
+
             <Button
               id="btnLastWords"
               name="READY?"
@@ -1563,7 +1505,7 @@ if(isInViewGreyTxt){
             />
           </div>
         ) : (
-          <div ref={nextStepBodyContainerRef}>
+          <div className="nextstepDiv" ref={nextStepBodyContainerRef}>
             <motion.img
               id="personNotTalking3"
               animate={controlsthirdPerson}

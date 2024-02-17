@@ -1,5 +1,9 @@
 import React, { useState } from "react";
+
+
 import Slider from "../components/Slider.jsx";
+
+
 
 import { Container, Row, Col } from "react-bootstrap";
 //import 'bootstrap/dist/css/bootstrap.min.css';
@@ -11,6 +15,7 @@ import colorGif from "../public/video/yourcolors.gif";
 import welcomeVid from "../public/images/contactPage/welcome.mp4";
 import Button from "../components/Button.js";
 import axios from "axios";
+import axiosInstance from "../Api/axiosInstance.js";
 import PageHeader from "./PageHeader.jsx";
 const ContactPage = () => {
   // // <Container className="container" fluid style={{width:"100%",backgroundColor:"green"}}>
@@ -23,6 +28,7 @@ const ContactPage = () => {
   });
   const [email, setEmail] = useState("");
   const [name, setname] = useState("");
+  const [tel, setTel] = useState("");
   const [btnPressed, setBtnPressed] = useState(false);
   const [savedSuccessfully, setSavedSuccessfully] = useState(false);
   const [savingUnsuccessful, setSavingUnsuccessful] = useState(false);
@@ -39,15 +45,19 @@ const ContactPage = () => {
       try {
         console.log("cccccccccc" + email);
         // Make a POST request to your Node.js server
-        const response = await axios.post(
-          "http://localhost:3001/api/contact/saveEmail",
+        const response = await await axiosInstance.post('/api/contact/saveEmail',
           {
             email: email,
             name: name,
+            tel:tel,
           }
         );
         console.log("Response:", response); // Log the response from the server
-
+   // Check rate limit status
+   if (response.data.statusCode === 429) {
+    console.log("Rate limit exceeded");
+    // Handle rate limit exceeded case on the frontend
+  } else {
         // Handle the response from the server
         if (response.status === 200) {
           setSavedSuccessfully(true);
@@ -69,6 +79,7 @@ const ContactPage = () => {
             }
           }
         }
+      }
       } catch (error) {
         console.error("Error:", error.message);
         // Handle other errors, e.g., network error
@@ -85,6 +96,10 @@ const ContactPage = () => {
       console.log(event.target.value);
       setEmail(event.target.value);
     }
+    else if (event.target.name === "tel") {
+      console.log(event.target.value);
+      setTel(event.target.value);
+    }
   };
 
   return (
@@ -95,16 +110,7 @@ const ContactPage = () => {
 
       <PageHeader image={callMe} />
 
-      <div className="contactTextContainer">
-        <h1 className="h1contact">Contact</h1>
-
-        <p className="pagetxt" id="pageTxtP">
-          it is about time to embrace the true charm of grey! lets step by step
-          guide it back to being the background color; the perfect backdrop
-          where vibrant and unique colors can take the lead as the main
-          storytellers in the painting of our lives!
-        </p>
-      </div>
+     
 
       <div style={{ position: "relative", overflow: "visible" }}>
         <svg
@@ -198,12 +204,11 @@ const ContactPage = () => {
                  tel number:
                 </label>
                 <input
-                  type="text"
-                  name="name"
+                  type="telNumber"
+                  name="tel"
                   className="form-control nameInput"
-                  id="name"
                   onChange={handleChange}
-                  value={name}
+                  value={tel}
                   placeholder="optional..for SMS lovers!"
                 />
               

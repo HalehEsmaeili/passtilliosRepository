@@ -9,12 +9,16 @@ const router = Router();
 // Rate limit configuration
 const limiter = rateLimit({
   windowMs: 20 * 60 * 1000, // 20 minutes
-  max: 3, // limit each IP to 5 requests per windowMs
+  max: 13, // limit each IP to 2 requests per windowMs
+  handler: (req, res) => {
+    // Send a custom response when rate limit is exceeded
+    res.status(429).json({ error: 'Rate limit exceeded', message: 'You have reached the maximum number of requests. Please try again later.' });
+  },
 });
 
 // Apply the rate limiter to all requests to the '/saveEmail' route
 router.post('/saveEmail', limiter, async (req, res) => {
-
+console.log("i am in save email post");
   const email = req.body.email;
   const name = req.body.name;
 //const tel=
