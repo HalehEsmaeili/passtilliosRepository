@@ -36,7 +36,7 @@ function Slider() {
    {
      backgroundColor: '#4a9c8c',
      media: "../public/images/colorSplash/11.png",
-     caption: 'I want to see what you got.',
+     caption: "I mean, come on! After all that talk about black and white, if you're still inviting me to your dresscode: black & white party, I have to show up rocking this look!",
    },
    {
      backgroundColor: '#4a9c8c',

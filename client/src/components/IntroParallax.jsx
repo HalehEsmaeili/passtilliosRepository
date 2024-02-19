@@ -4,6 +4,7 @@ import axiosInstance from "../Api/axiosInstance.js";
 import "../public/intro.css";
 import CampaignStatement from "./campaign/CampaignStatement.jsx";
 import ProjectSection from "./ProjectSection.jsx";
+import NextSteps from "./NextSteps.jsx";
 import ScreenSizeHint from "./ScreenSizeHint.jsx";
 //1901 change the h1s positioning css.
 //the local deployment works with serve,but with heroku not yet
@@ -15,7 +16,7 @@ import ScreenSizeHint from "./ScreenSizeHint.jsx";
 //import teamHeaderVid from "../public/video/teamGif.gif";
 
 import bobVid from "../public/images/nextSteps/28.mp4";
-
+import showMeImgLine from "../public/images/nextSteps/showMeSec.png";
 import Button from "./Button.js";
 import {
   motion,
@@ -75,11 +76,6 @@ import magicRight from "../public/images/Intro/44.png";
 import greyDown from "../public/images/greyDivGrey/1.png";
 import greyUP from "../public/images/greyDivGrey/2.png";
 
-////div4 and div5 imports
-import logoWithHair from "../public/images/logo.png";
-//import logoWithHair from "../public/images/div4/headLogoHair.png";
-import nextSteps from "../public/images/div4/nextStepFinal.png";
-import showMeImgLine from "../public/images/nextSteps/showMeSec.png";
 
 function IntroParallax() {
   const text =
@@ -103,7 +99,7 @@ function IntroParallax() {
 
   const [animationComplete, setAnimationComplete] = useState(false);
   const [broAnimationComplete, setBroAnimationComplete] = useState(false);
-  const [nextStepAnimationStarted, setNextStepAnimationStarted] =
+  const [startNextStepAnimation, setStartNextStepAnimation] =
     useState(false);
 
   const [h1moved, setH1Moved] = useState(false);
@@ -122,17 +118,15 @@ function IntroParallax() {
   const div0 = useRef(null);
   const div2 = useRef(null);
   const div3 = useRef(null);
-  const div4 = useRef(null);
-
-  const whatPaintingRef = useRef(null);
   const finalWordsDiv = useRef(null);
   const divNextSteps = useRef(null);
   const nextStepBodyContainerRef = useRef(null);
+  const isInViewdivNextStep = useInView(divNextSteps, { amount: 0.7 });
 
   const greydiv = useRef(null);
-  const handPoking = useRef(null);
+
   const magicContainerRef = useRef(null);
-  const wtfRef = useRef(null);
+ 
   const campaignImgRef = useRef(null);
   
   const isInViewCampaignImg = useInView(campaignImgRef, {
@@ -145,7 +139,6 @@ function IntroParallax() {
   });
 
   const isInViewGreyTxt = useInView(greydiv, { once: true, amount: 0.1 });
-  const isInViewdivNextStep = useInView(divNextSteps, { amount: 0.7 });
 
   //const isInViewdiv0=useInView(div0, {once:true});
   //const isInViewDivGrey=useInView(greydiv, {once:true});
@@ -160,37 +153,20 @@ function IntroParallax() {
   const takeAnim = useAnimationControls();
   const overAnim = useAnimationControls();
   ////////////////////////animation controls
-  const controls = useAnimationControls();
-  const controlsimg2 = useAnimationControls();
-  const controlsimg3 = useAnimationControls();
-  const controlsHand = useAnimationControls();
-  const controlslogo = useAnimationControls();
-  const controlsBroDialog = useAnimationControls();
+
   const greyCloudControl = useAnimationControls();
   const greyCloudDownControl = useAnimationControls();
-  const firstrainbowControl = useAnimationControls();
-  const secondrainbowControl = useAnimationControls();
-  const paintingH1Control = useAnimationControls();
-  const rainbowSvgControl = useAnimationControls();
-  const rainbowSvgControl2 = useAnimationControls();
-  const controlsschirm = useAnimationControls();
-  const colorSplashControl = useAnimationControls();
   const introLogoControl = useAnimationControls();
-  const controlslogoImage = useAnimationControls();
-  const controlsSecondPerson = useAnimationControls();
   const greyToAnimate = useAnimationControls();
-  const nextStepsBodyAnimationControls = useAnimationControls();
-
+ 
   ////bubble attack
-  const bubbleForLogoControls = useAnimationControls();
+
   const splash1Controls = useAnimationControls();
   const splash2Controls = useAnimationControls();
   const splash3Controls = useAnimationControls();
   const splash4Controls = useAnimationControls();
   const splash5Controls = useAnimationControls();
-  const splash6Controls = useAnimationControls();
-  const controlsLogoAfterPush = useAnimationControls();
-  const controlsLogoBeforPush = useAnimationControls();
+  
   //////
 
   const nextButtonControls = useAnimationControls();
@@ -223,16 +199,11 @@ function IntroParallax() {
   const b9EmptyControls = useAnimationControls();
   const b10EmptyControls = useAnimationControls();
   const b11EmptyControls = useAnimationControls();
-  const b12EmptyControls = useAnimationControls();
-  const controlslogoWithHair = useAnimationControls();
-  const controlsthirdPerson = useAnimationControls();
-  const controlsHandSVG = useAnimationControls();
-  const storyTimeControls = useAnimationControls();
-  const oneInOnePaintingCotrols = useAnimationControls();
+
   const animateMagicContainer = useAnimationControls();
   const animateMagic = useAnimationControls();
   const logoLineAnimation = useAnimationControls();
-  const wtfAnimation = useAnimationControls();
+
   const campaignImgAnimation = useAnimationControls();
   /*
   const[animateimg1,setimg1animate]=useState(false);
@@ -281,25 +252,18 @@ function IntroParallax() {
       });
   }, []);
 
-  const campaignImgAnim = async () => {
-    await campaignImgAnimation.start({
-      scale: [1, 1.3, 1.2],
-      transition: { delay: 0.3, duration: 0.5 },
-    });
-  };
-  useEffect(() => {
-    if (isInViewCampaignImg) {
-      campaignImgAnim();
-    }
-  }, [isInViewCampaignImg]);
-
+  
   useEffect(() => {
     const svgLineAnim = async () => {
       // animateMagicContainer.start({scale:[1,1.2,1],rotate:[0,30,0,-30,0,20,0,-20,0], transition:{delay:.2,type:"yoyo"}});
+     try{
       await logoLineAnimation.start({
         pathLength: 1,
         transition: { delay: 3, duration: 3, transition: { stiffness: 2 } },
       });
+    }catch{
+
+    }
     };
     if (scrollToGreyActive) {
       svgLineAnim();
@@ -309,6 +273,7 @@ function IntroParallax() {
   useEffect(() => {
     if (isInViewMagicContainerRef) {
       const spiceAnim = async () => {
+        try{
         animateMagicContainer.start({
           scale: [1, 1.2, 1],
           rotate: [0, 30, 0, -30, 0, 20, 0, -20, 0],
@@ -318,6 +283,11 @@ function IntroParallax() {
           opacity: 1,
           transition: { delay: 0.7, type: "yoyo" },
         });
+      }catch{
+
+
+      }
+      
       };
       spiceAnim();
     }
@@ -337,6 +307,7 @@ function IntroParallax() {
   useEffect(() => {
     if (scrollToGreyActive) {
       const bubbleBurstAnim = async () => {
+        try{
         b2Controls.start({
           left: "85%",
           top: "120%",
@@ -351,7 +322,7 @@ function IntroParallax() {
         });
         b10Controls.start({
           left: "-10%",
-          top: "-30%",
+          top: "-34%",
           transition: { zIndex: 100000, delay: 4, stiffness: 0.1, duration: 5 },
         });
         b9Controls.start({
@@ -362,7 +333,7 @@ function IntroParallax() {
 
         await b11Controls.start({
           left: "15%",
-          top: "-39%",
+          top: "-42%",
           transition: { stiffness: 1, duration: 5 },
         });
 
@@ -396,7 +367,7 @@ function IntroParallax() {
         greyAnim.start({ opacity: 1 });
 
         b10EmptyControls.start({
-          scale: 8,
+          scale: 10,
           opacity: 0,
           transition: { delay: 2, duration: 0.1 },
         });
@@ -410,6 +381,11 @@ function IntroParallax() {
         });
         await splash3Controls.start({ scale: 6, transition: { delay: 0.5 } });
         overAnim.start({ opacity: 1 });
+
+      }catch{
+        console.log("haaaaaaaaaaaaaaaaaaaaah");
+      }
+
       };
       bubbleBurstAnim();
     }
@@ -480,7 +456,7 @@ function IntroParallax() {
     }
   };
 */
- 
+ /*
   const logoAnimationToNextSteps = async () => {
     controlsSecondPerson.start({ opacity: 0, transition: { duration: 0.3 } });
     await controlslogo.start({ opacity: 0, transition: { duration: 0.3 } });
@@ -521,11 +497,12 @@ function IntroParallax() {
 
     return;
   };
-  
+  */
 
   /////////useEffectSection
   useEffect(() => {
     const greyAnim = async () => {
+      try{
       greyCloudDownControl.start({
         x: "-15vw",
         y: "-10%",
@@ -552,6 +529,9 @@ function IntroParallax() {
         transition: { duration: 2.3 },
       });
       await greyToAnimate.start({ opacity: 1 });
+    }catch{
+    
+    }
     };
 
     if (isInViewGreyTxt && introAnimationComplete && greyScrolled) {
@@ -568,21 +548,29 @@ function IntroParallax() {
   }
    logoAnimationTodiv4Compelete &&
   */
+///the conditiong right now is trivializing the scrollToNextStepsActive->dependebility on the button being pressed!
+ /**
+  *  (isInViewdivNextStep &&
+      scrollToNextStepsActive &&
+      !startNextStepAnimation)|| (isInViewdivNextStep &&
+        !startNextStepAnimation)
+  */
 
-    if (
+if (
       isInViewdivNextStep &&
       scrollToNextStepsActive &&
-      !nextStepAnimationStarted
+      !startNextStepAnimation
     ) {
-      setNextStepAnimationStarted(true);
-      logoAnimationToNextSteps();
+      console.log("im in setting it to true!!!!!!!!!!!!!!!");
+      setStartNextStepAnimation(true);
+   
     }
   }, [
     isInViewdivNextStep,
     logoAnimationTodiv4Compelete,
     scrollToGreyActive,
     scrollToNextStepsActive,
-    nextStepAnimationStarted,
+    startNextStepAnimation,
   ]);
   /*
   useEffect(()=>{
@@ -1483,59 +1471,37 @@ if(isInViewGreyTxt){
         broMovingToNextSteps={broMovingToNextSteps}
       />
 
-      <div ref={divNextSteps} className="NextStepsContainer">
-        {!scrollToGreyActive ? (
-          <div className="showMeActivationDiv">
-            <motion.img
-              id="showMeImgLine"
-              src={showMeImgLine}
-              alt="showMeImgLine"
-            ></motion.img>
-            <motion.h1 id="showMeHeader">
-              LET THE BUBBLES TALK THE FINAL TALK!
-            </motion.h1>
-            {/*<div style={{ border: "20px solid rgba(0, 0, 0, 0)", overflow: "visible", position: "relative" }}>
-               </div>
-            */}
-
-            <Button
-              id="btnLastWords"
-              name="READY?"
-              handleClick={handleScrollToDivgrey}
-            />
-          </div>
-        ) : (
-          <div className="nextstepDiv" ref={nextStepBodyContainerRef}>
-            <motion.img
-              id="personNotTalking3"
-              animate={controlsthirdPerson}
-              src={notTalking}
-              alt="person not talking"
-            ></motion.img>
-            <motion.img
-              id="logoWithHair"
-              animate={controlslogoWithHair}
-              src={logoWithHair}
-              alt="logo"
-            ></motion.img>
-            <motion.div
-              className="nextStepBodyContainer"
-              animate={nextStepsBodyAnimationControls}
-            >
-              <motion.img
-                src={nextSteps}
-                className="nextSteps"
-                alt="next steps"
-              ></motion.img>
-              <Button id="btn1" name="FIRST PROJECT" />
-              <Button id="btn2" name="JOIN!" />
-              <Button id="btn3" name="THE TEAM" />
-            </motion.div>
-          </div>
-        )}
-      </div>
       {/*<p id="showMeText" >heeeell yeah!</p>*/}
       <ScreenSizeHint />
+
+      <div ref={divNextSteps} className="NextStepsContainer">
+    {!scrollToGreyActive ? (
+      <div className="showMeActivationDiv">
+        <motion.img
+          id="showMeImgLine"
+          src={showMeImgLine}
+          alt="showMeImgLine"
+        ></motion.img>
+        <motion.h1 id="showMeHeader">
+          LET THE BUBBLES TALK THE FINAL TALK!
+        </motion.h1>
+        {/*<div style={{ border: "20px solid rgba(0, 0, 0, 0)", overflow: "visible", position: "relative" }}>
+           </div>
+        */}
+
+        <Button
+          id="btnLastWords"
+          name="READY?"
+          handleClick={handleScrollToDivgrey}
+        />
+      </div>
+    ) : (
+      <NextSteps currentStation="intro" conditionForAnimStart={startNextStepAnimation}/>
+    )}
+  </div>
+
+
+
     </div>
   );
 }

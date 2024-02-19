@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 
-
 import Slider from "../components/Slider.jsx";
-
-
+import NextSteps from "../components/NextSteps.jsx";
 
 import { Container, Row, Col } from "react-bootstrap";
 //import 'bootstrap/dist/css/bootstrap.min.css';
@@ -45,41 +43,42 @@ const ContactPage = () => {
       try {
         console.log("cccccccccc" + email);
         // Make a POST request to your Node.js server
-        const response = await await axiosInstance.post('/api/contact/saveEmail',
+        const response = await await axiosInstance.post(
+          "/api/contact/saveEmail",
           {
             email: email,
             name: name,
-            tel:tel,
+            tel: tel,
           }
         );
         console.log("Response:", response); // Log the response from the server
-   // Check rate limit status
-   if (response.data.statusCode === 429) {
-    console.log("Rate limit exceeded");
-    // Handle rate limit exceeded case on the frontend
-  } else {
-        // Handle the response from the server
-        if (response.status === 200) {
-          setSavedSuccessfully(true);
-          console.log("Success:", response.data);
-          // Handle success, e.g., redirect to a success page
+        // Check rate limit status
+        if (response.data.statusCode === 429) {
+          console.log("Rate limit exceeded");
+          // Handle rate limit exceeded case on the frontend
         } else {
-          console.error("Server Error:", response.data);
+          // Handle the response from the server
+          if (response.status === 200) {
+            setSavedSuccessfully(true);
+            console.log("Success:", response.data);
+            // Handle success, e.g., redirect to a success page
+          } else {
+            console.error("Server Error:", response.data);
 
-          // Check for specific error condition (adjust based on Mailchimp response)
-          if (response.data.errors && response.data.errors.length > 0) {
-            const firstError = response.data.errors[0];
-            if (
-              firstError.error_code === "ERROR_GENERIC" &&
-              firstError.field === "ADDRESS"
-            ) {
-              console.log("Email is already subscribed.");
-              // Handle the case where the email is already subscribed
-              // Set a state or perform an action accordingly
+            // Check for specific error condition (adjust based on Mailchimp response)
+            if (response.data.errors && response.data.errors.length > 0) {
+              const firstError = response.data.errors[0];
+              if (
+                firstError.error_code === "ERROR_GENERIC" &&
+                firstError.field === "ADDRESS"
+              ) {
+                console.log("Email is already subscribed.");
+                // Handle the case where the email is already subscribed
+                // Set a state or perform an action accordingly
+              }
             }
           }
         }
-      }
       } catch (error) {
         console.error("Error:", error.message);
         // Handle other errors, e.g., network error
@@ -95,8 +94,7 @@ const ContactPage = () => {
     } else if (event.target.name === "email") {
       console.log(event.target.value);
       setEmail(event.target.value);
-    }
-    else if (event.target.name === "tel") {
+    } else if (event.target.name === "tel") {
       console.log(event.target.value);
       setTel(event.target.value);
     }
@@ -109,8 +107,6 @@ const ContactPage = () => {
   */}
 
       <PageHeader image={callMe} />
-
-     
 
       <div style={{ position: "relative", overflow: "visible" }}>
         <svg
@@ -201,7 +197,7 @@ const ContactPage = () => {
 
               <div className="mb-3">
                 <label htmlFor="name" className="form-label">
-                 tel number:
+                  tel number:
                 </label>
                 <input
                   type="telNumber"
@@ -211,18 +207,15 @@ const ContactPage = () => {
                   value={tel}
                   placeholder="optional..for SMS lovers!"
                 />
-              
               </div>
 
-
-<div className="btnEmailListContainer">
-<Button
-                id="contactBtn"
-                name="count me in!"
-                handleClick={handleClick}
-              />
-</div>
-             
+              <div className="btnEmailListContainer">
+                <Button
+                  id="contactBtn"
+                  name="count me in!"
+                  handleClick={handleClick}
+                />
+              </div>
             </div>
           )}
 
@@ -230,6 +223,11 @@ const ContactPage = () => {
    </form>
   */}
         </main>
+      </div>
+      <div
+        style={{ position: "relative", marginTop: "-80%", marginBottom: "0%" }}
+      >
+        <NextSteps currentStation="team" conditionForAnimStart={true} />
       </div>
     </div>
   );

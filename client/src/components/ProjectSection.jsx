@@ -289,7 +289,7 @@ useEffect(() => {
       }
     }
   };
-
+/*
   //if the div 2 is hovered over start the bro animation
   const handleDiv2HoverStart = () => {
     // console.log("introAnimmmmmmmm"+introAnimationComplete);
@@ -299,7 +299,7 @@ useEffect(() => {
       broAnim().then(() => setAnimationComplete(true));
     }
   };
-
+*/
   const logoAnimationTodiv4 = async () => {
     await oneInOnePaintingCotrols.start({
       rotate: -90,
@@ -364,9 +364,23 @@ useEffect(() => {
     return;
   };
 
+
+  /////////useEffectSection
+  const { scrollYProgress: s } = useScroll();
+  useMotionValueEvent(s, "change", (latest) => {
+    if (isInViewdiv3 && broAnimationComplete) {
+      setScrolled(true);
+    }
+  });
+
+  useEffect(() => {
+
   //startbroanimation
   const broAnim = async () => {
+   try{
+   
     if (!scrollToGreyActive) {
+      
       b9Controls.start({
         left: "10%",
         top: "-10%",
@@ -575,17 +589,14 @@ controlsLogoAfterPush.start({opacity:0,transition:{duration:.5}});
     ///props.setBroAnimationComplete(true);
    // console.log("broanimation is compelete" + broAnimationComplete);
     return;
+  }catch{
+//console.log("haaah you got caught!");
+
+  }
   };
 
-  /////////useEffectSection
-  const { scrollYProgress: s } = useScroll();
-  useMotionValueEvent(s, "change", (latest) => {
-    if (isInViewdiv3 && broAnimationComplete) {
-      setScrolled(true);
-    }
-  });
 
-  useEffect(() => {
+
     if (isInViewdiv2) {
       broAnim();
     }

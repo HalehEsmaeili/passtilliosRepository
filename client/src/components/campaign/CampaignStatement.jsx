@@ -86,11 +86,15 @@ function CampaignStatement(props) {
 
   ////wtf useeffect
   const wtfAnim = async () => {
+    try{
     await wtfAnimation.start({
       scale: [1, 1.1],
       opacity: 1,
       transition: { delay: 0.3, duration: 0.5 },
     });
+  }catch{
+
+  }
   };
   useEffect(() => {
     if (isInViewWtfRef) {
@@ -100,10 +104,14 @@ function CampaignStatement(props) {
 
   ///campaign statement
   const campaignImgAnim = async () => {
+    try {
     await campaignImgAnimation.start({
       scale: [1, 1.3, 1.2],
       transition: { delay: 0.3, duration: 0.5 },
     });
+  }catch{
+
+  }
   };
   useEffect(() => {
     if (isInViewCampaignImg) {
@@ -114,6 +122,7 @@ function CampaignStatement(props) {
   useEffect(() => {
     if (isInViewMagicContainerRef) {
       const spiceAnim = async () => {
+        try{
         animateMagicContainer.start({
           scale: [1, 1.2, 1],
           rotate: [0, 30, 0, -30, 0, 20, 0, -20, 0],
@@ -123,7 +132,9 @@ function CampaignStatement(props) {
           opacity: 1,
           transition: { delay: 0.7, type: "yoyo" },
         });
-      };
+      }catch{
+
+      }};
       spiceAnim();
     }
   }, [isInViewMagicContainerRef]);
@@ -131,33 +142,68 @@ function CampaignStatement(props) {
   useEffect(() => {
     if (isInViewYourLifePaintingDiv) {
       const yourLifePaintigAnim = async () => {
-        paintBrushControls.start({
-          left: ["-200%", "4%"],
-          top: ["3%", "0%"],
-          rotate: 90,
-          transition: { type: "yoyo", stiffness: 70, duration: 0.4 },
-        });
-        magnetControls.start({
-          opacity: 0.4,
-          scale: 1,
-          transition: { duration: 0.3 },
-        });
-        magnetControls.start({
-          opacity: 0,
-          transition: { delay: 0.3, duration: 0.1 },
-        });
-        asAControls.start({
-          opacity: 1,
-          right: ["-20vw", "-5vw"],
-          top: ["-8vw", "-.7vw"],
-          rotate: 60,
-          color: "#00EEB9",
-          transition: { delay: 0.5, duration: 0.2 },
-        });
+      try{
+        try {
+          // Other animation without await
+          paintBrushControls.start({
+            left: ["-200%", "4%"],
+            top: ["3%", "0%"],
+            rotate: 90,
+            transition: { type: "yoyo", stiffness: 70, duration: 0.4 },
+          });
+        } catch (error) {
+          console.error("An error occurred during handOfCanvasControls animation:", error);
+        }
+
+      
+        try {
+          // Other animation without await
+       
+          magnetControls.start({
+            opacity: 0.4,
+            scale: 1,
+            transition: { duration: 0.3 },
+          });
+        } catch (error) {
+          console.error("An error occurred during handOfCanvasControls animation:", error);
+        }
+
+        try {
+          // Other animation without await
+          magnetControls.start({
+            opacity: 0,
+            transition: { delay: 0.3, duration: 0.1 },
+          });
+        } catch (error) {
+          console.error("An error occurred during handOfCanvasControls animation:", error);
+        }
+
+       
+        try {
+          // Other animation without await
+          asAControls.start({
+            opacity: 1,
+            right: ["-20vw", "-5vw"],
+            top: ["-8vw", "-.7vw"],
+            rotate: 60,
+            color: "#00EEB9",
+            transition: { delay: 0.5, duration: 0.2 },
+          });
+        } catch (error) {
+          console.error("An error occurred during handOfCanvasControls animation:", error);
+        }
+      
+        try {
+          // Other animation without await
         paintingImgControls.start({
           opacity: 1,
           transition: { delay: 0.7, duration: 0.1 },
         });
+        } catch (error) {
+          console.error("An error occurred during handOfCanvasControls animation:", error);
+        }
+
+
         await lampControls.start({
           opacity: 1,
           transition: { delay: 0.6, duration: 0.3 },
@@ -178,16 +224,39 @@ function CampaignStatement(props) {
           right: ["-18vw", "-80vw"],
           transition: { delay: 0.4, stiffness: 1, duration: 0.7 },
         });
-        handOfCanvasControls.start({
-          opacity: 0,
-          transition: { stiffness: 50, duration: 0.01 },
-        });
+        try {
+          // Other animation without await
+          handOfCanvasControls.start({
+            opacity: 0,
+            transition: { stiffness: 50, duration: 0.01 },
+          });
+        } catch (error) {
+          console.error("An error occurred during handOfCanvasControls animation:", error);
+        }
+      }catch{
+
+      }
       };
       yourLifePaintigAnim();
     }
   }, [isInViewYourLifePaintingDiv]);
 
   useEffect(() => {
+    /////test 
+    axiosInstance.get(`/contentForMapping/${props.pageId}`)
+    .then((response) => {
+     console.log("page mapping works",response);
+      //console.log(response.data.sections);
+      //setSectionData(response.data.sections);
+    })
+    .catch((error) => {
+      console.error("Error retrieving section data:", error);
+      // Handle error
+    });
+
+
+    //////
+    
     axiosInstance.get(`/sections/${props.pageId}/${props.sectionId}`)
       .then((response) => {
         //response.data.sections.section_title;

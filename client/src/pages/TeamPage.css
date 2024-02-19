@@ -1,3 +1,5 @@
+
+
 .TeamPage{
 margin-top: 10%;
     position: relative;
@@ -6,6 +8,23 @@ margin-top: 10%;
     
     
 }
+/*mapped content*/
+.mappedContentContainer{
+position: relative;
+margin-left: 10%;
+margin-right: 10%;
+margin-bottom: 10%;
+
+}
+.mappedContentH{
+
+
+}
+.mappedContentTxt{
+
+
+}
+
 .svg-icon3 {
 
     position: relative;
@@ -63,15 +82,19 @@ rotate: 0deg;
     margin-left: 22%;
     margin-top: 0%;
 }
-#pageTxtP{
-    margin-top: 4%;
-    margin-bottom: 10%;
-  text-align: justify;  
-  margin-bottom: 20%;
-}
+
 .pagetxtLeft{
     position: relative;
     margin-left: 10%;
     margin-bottom:7% ;
     margin-top: 20%;
+}
+@media screen and (min-width: 920px) {
+    .mappedContentContainer{
+        position: relative;
+        margin-left: 15%;
+        margin-right: 5%;
+        margin-bottom: 10%;
+        
+        }
 }

@@ -24,7 +24,8 @@ const PageHeader = (props) => {
           storytellers in the painting of our lives!
         </p>
       </div>
-    
+     
+     {/* <div className="dottedLine" />*/}
 </div>
    
 

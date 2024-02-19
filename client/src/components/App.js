@@ -16,7 +16,7 @@ import React, { useEffect } from 'react';
 import Slider from './Slider';
 import TeamPage from '../pages/TeamPage';
 import ContactPage from '../pages/ContactPage';
-
+import ArtPage from '../pages/ArtPage';
 
  
 
@@ -43,6 +43,7 @@ function App() {
 <Router>
   <Header />
   <Routes> 
+  <Route path="/art" element={<ArtPage />} />
    <Route path="/team" element={<TeamPage />} />
     <Route path="/contact" element={<ContactPage />} />
     <Route path="/home" element={<IntroParallax/>} />

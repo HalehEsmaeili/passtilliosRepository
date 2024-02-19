@@ -1,11 +1,11 @@
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
-import dotenv from 'dotenv';
-import express from 'express';
-import routes from './routes/index.js';
-import pg from 'pg';
-import bodyParser from 'body-parser';
-import cors from 'cors';
+import { fileURLToPath } from "url";
+import { dirname } from "path";
+import dotenv from "dotenv";
+import express from "express";
+import routes from "./routes/index.js";
+import pg from "pg";
+import bodyParser from "body-parser";
+import cors from "cors";
 
 // Get the directory name using ESM features
 const __filename = fileURLToPath(import.meta.url);
@@ -13,7 +13,7 @@ const __dirname = dirname(__filename);
 
 // Load environment variables
 dotenv.config({ path: `${__dirname}/.env` });
-import 'dotenv/config';
+import "dotenv/config";
 
 const app = express();
 const port = 3001;
@@ -23,7 +23,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // Mount routes
-app.use('/api', routes);
+app.use("/api", routes);
 console.log("All Environment Variables:", process.env.DB_NAME);
 /*
 const contactLimiter = rateLimit({
@@ -36,11 +36,10 @@ const contactLimiter = rateLimit({
 app.use('/api/contact/saveEmail', contactLimiter);
 */
 
-
 // Database configuration with connection pool
 const pool = new pg.Pool({
-  user: 'postgres',
-  host: 'localhost',
+  user: "postgres",
+  host: "localhost",
   database: process.env.DB_NAME,
   password: process.env.DB_PASSWORD,
   port: 8001,
@@ -48,17 +47,48 @@ const pool = new pg.Pool({
 
 // Middleware to add the database pool to the request object
 app.use((req, _, next) => {
-  console.log("conntected to db"),
+  console.log("Connected to the database"); // Corrected line
   req.pool = pool;
   next();
 });
+////this function retrieves josn files of titles and texts which are meant to be mapped for that page
+app.get("/contentForMapping/:pageId", async (req, res) => {
+  const pageId = req.params.pageId;
+
+  console.log(pageId);
+  try {
+    const client = await pool.connect();
+
+    // Query to retrieve content based on the provided pageId
+    const query = {
+      text: "SELECT json_content FROM pageContentToMap WHERE pages_id = $1 ORDER BY position",
+      values: [pageId],
+    };
+
+    const result = await client.query(query);
+
+    if (result.rows.length > 0) {
+      const jsonArray = result.rows.map((row) => row.json_content);
+      res.json(jsonArray);
+    } else {
+      res.status(404).json({
+        error:
+          "Nothing on content meant for mapping found for the specified page",
+      });
+    }
+  } catch (error) {
+    console.error("Error retrieving sections:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
 
 // Example route handler using the connection pool
-app.get('/sections/:pageId/:sectionId', async (req, res) => {
-  const { pageId,sectionId } = req.params;
+app.get("/sections/:pageId/:sectionId", async (req, res) => {
+  const { pageId, sectionId } = req.params;
 
   try {
-    const result = await req.pool.query(`
+    const result = await req.pool.query(
+      `
     SELECT
     sections.title AS section_title,
     ARRAY_AGG(DISTINCT headers.content) AS header_contents,
@@ -77,21 +107,25 @@ app.get('/sections/:pageId/:sectionId', async (req, res) => {
     sections.id, sections.title
   ORDER BY
     min_position;
-    `, [pageId,sectionId]);
+    `,
+      [pageId, sectionId]
+    );
 
     if (result.rows.length > 0) {
       res.json({ sections: result.rows[0] });
     } else {
-      res.status(404).json({ error: 'No sections found for the specified page' });
+      res
+        .status(404)
+        .json({ error: "No sections found for the specified page" });
     }
   } catch (error) {
-    console.error('Error retrieving sections:', error);
-    res.status(500).json({ error: 'Internal Server Error' });
+    console.error("Error retrieving sections:", error);
+    res.status(500).json({ error: "Internal Server Error" });
   }
 });
 
 // Catch all unspecified calls
-app.get('*', (_, res) => {
+app.get("*", (_, res) => {
   res.send('<h1 style="text-align: center;">404 Not Found.</h1>');
 });
 
@@ -99,8 +133,6 @@ app.get('*', (_, res) => {
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
-
-
 
 /*
 import { fileURLToPath } from 'url';
