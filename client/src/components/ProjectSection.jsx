@@ -77,7 +77,6 @@ function ProjectSection(props) {
   const [nextStepAnimationStarted, setNextStepAnimationStarted] =
     useState(false);
 
-
   const [scope, animate] = useAnimate();
   const [img1, animateimg1] = useAnimate();
   const [img2, animateimg2] = useAnimate();
@@ -169,30 +168,31 @@ useEffect(()=>{
 
 },[isInViewdiv4]);
 */
-///bro moving 
-useEffect(() => {
-  const blendoutBroLogo=async ()=>{
-   
-    controlslogo.start({
-      opacity: 0,
-      transition: { type: "spring", stiffness: 1000, duration: 0.01 },
-    });
-   
-   await  controlsSecondPersonTalking.start({
-      opacity: 0,
-      transition: {  duration: 0.01 }});
-  
-  
+  ///bro moving
+  useEffect(() => {
+    const blendoutBroLogo = async () => {
+      controlslogo.start({
+        opacity: 0,
+        transition: { type: "spring", stiffness: 1000, duration: 0.01 },
+      });
+
+      await controlsSecondPersonTalking.start({
+        opacity: 0,
+        transition: { duration: 0.01 },
+      });
     };
-  if (broAnimationComplete&&logoAnimationTodiv4Compelete&&props.broMovingToNextSteps) {
-    blendoutBroLogo();
-  }
-
-
-
-}, [props.broMovingToNextSteps,broAnimationComplete,logoAnimationTodiv4Compelete]);
-
-
+    if (
+      broAnimationComplete &&
+      logoAnimationTodiv4Compelete &&
+      props.broMovingToNextSteps
+    ) {
+      blendoutBroLogo();
+    }
+  }, [
+    props.broMovingToNextSteps,
+    broAnimationComplete,
+    logoAnimationTodiv4Compelete,
+  ]);
 
   useEffect(() => {
     if (isInViewdiv3) {
@@ -289,7 +289,7 @@ useEffect(() => {
       }
     }
   };
-/*
+  /*
   //if the div 2 is hovered over start the bro animation
   const handleDiv2HoverStart = () => {
     // console.log("introAnimmmmmmmm"+introAnimationComplete);
@@ -301,69 +301,68 @@ useEffect(() => {
   };
 */
   const logoAnimationTodiv4 = async () => {
-    await oneInOnePaintingCotrols.start({
-      rotate: -90,
-      x: "-1vw",
-      paddingRight: "3vw",
-      transition: { type: "yoyo", duration: 0.3 },
-    });
-    await paintingH1Control.start({
-      x: "10vw",
-      transition: { type: "yoyo", duration: 0.3 },
-    });
-
-    await paintingH1Control.start({
-      x: "-1vw",
-      transition: { type: "yoyo", duration: 0.1 },
-    });
-    controls.start({ x: "100vw", opacity: 0 });
-    await controlslogo.start({
-      x: "10vw",
-      transition: { type: "yoyo", duration: 0.5 },
-    });
-    controlslogoImage.start({
-      rotate: [0, 360, 720, 0],
-      transition: { duration: 1 },
-    });
-   controlslogo.start({
-      x: ["10vw", "19vw", "24vw", "29vw", "45vw"],
-      y: ["316%", "346%", "376%", "400%", "765%"],
-      transition: { type: "yoyo", duration: 1 },
-    });
-   await controlsSecondPerson.start({
-      opacity: 1,
-      right: ["-80vw", "8vw", "2vw"],
-      transition: { type: "yoyo", duration: 0.5 },
-    });
-
-   
-
-    controlsSecondPersonTalking.start({
-      opacity: 1,
-      transition: { type: "yoyo", delay: 0.2, duration: 0.2 },
-    });
-
-    await oneInOnePaintingCotrols.start({
-      rotate: 0,
-      paddingRight: "0vw",
-      transition: { type: "yoyo", duration: 0.3 },
-    });
-    //controlslogo.start({x:["32vw","50vw"],y:["410%","780%"],transition:{type:"yoyo",duration:.5}});
-    if (!scrollToGreyActive) {
-      b10Controls.start({
-        left: "70%",
-        top: "450%",
-        transition: { stiffness: 1, duration: 5 },
+    try {
+      await oneInOnePaintingCotrols.start({
+        rotate: -90,
+        x: "-1vw",
+        paddingRight: "3vw",
+        transition: { type: "yoyo", duration: 0.3 },
       });
-    }
+      await paintingH1Control.start({
+        x: "10vw",
+        transition: { type: "yoyo", duration: 0.3 },
+      });
 
-    // await controlslogo.start({x:["34vw","36vw"],y:["500%","811%"],rotate:-20,transition:{type:"yoyo",duration:.5}});
+      await paintingH1Control.start({
+        x: "-1vw",
+        transition: { type: "yoyo", duration: 0.1 },
+      });
+      controls.start({ x: "100vw", opacity: 0 });
+      await controlslogo.start({
+        x: "10vw",
+        transition: { type: "yoyo", duration: 0.5 },
+      });
+      controlslogoImage.start({
+        rotate: [0, 360, 720, 0],
+        transition: { duration: 1 },
+      });
+      controlslogo.start({
+        x: ["10vw", "19vw", "24vw", "29vw", "45vw"],
+        y: ["316%", "346%", "376%", "400%", "765%"],
+        transition: { type: "yoyo", duration: 1 },
+      });
+      await controlsSecondPerson.start({
+        opacity: 1,
+        right: ["-80vw", "8vw", "2vw"],
+        transition: { type: "yoyo", duration: 0.5 },
+      });
 
-    storyTimeControls.start({ opacity: 1, transition: { delay: 1.5 } });
-    props.setLogoAnimationTodiv4Compelete(true);
-    return;
+      controlsSecondPersonTalking.start({
+        opacity: 1,
+        transition: { type: "yoyo", delay: 0.2, duration: 0.2 },
+      });
+
+      await oneInOnePaintingCotrols.start({
+        rotate: 0,
+        paddingRight: "0vw",
+        transition: { type: "yoyo", duration: 0.3 },
+      });
+      //controlslogo.start({x:["32vw","50vw"],y:["410%","780%"],transition:{type:"yoyo",duration:.5}});
+      if (!scrollToGreyActive) {
+        b10Controls.start({
+          left: "70%",
+          top: "450%",
+          transition: { stiffness: 1, duration: 5 },
+        });
+      }
+
+      // await controlslogo.start({x:["34vw","36vw"],y:["500%","811%"],rotate:-20,transition:{type:"yoyo",duration:.5}});
+
+      storyTimeControls.start({ opacity: 1, transition: { delay: 1.5 } });
+      props.setLogoAnimationTodiv4Compelete(true);
+      return;
+    } catch {}
   };
-
 
   /////////useEffectSection
   const { scrollYProgress: s } = useScroll();
@@ -374,21 +373,18 @@ useEffect(() => {
   });
 
   useEffect(() => {
+    //startbroanimation
+    const broAnim = async () => {
+      try {
+        if (!scrollToGreyActive) {
+          b9Controls.start({
+            left: "10%",
+            top: "-10%",
+            transition: { delay: 1, stiffness: 0.1, duration: 5 },
+          });
+        }
 
-  //startbroanimation
-  const broAnim = async () => {
-   try{
-   
-    if (!scrollToGreyActive) {
-      
-      b9Controls.start({
-        left: "10%",
-        top: "-10%",
-        transition: { delay: 1, stiffness: 0.1, duration: 5 },
-      });
-    }
-
-    /*
+        /*
      console.log('broAnim started');
      await controls.start({ x: "10vw" });
      await controlslogo.start({
@@ -414,68 +410,74 @@ useEffect(() => {
        
   */
 
-    await controls.start({
-      rotate: -45,
-      transition: { type: "spring", stiffness: 50, duration: 0.001 },
-    });
-    b6Controls.start({
-      opacity: 1,
-      top: "500%",
-      left: "10%",
-      transition: { type: "spring", stiffness: 5.5, duration: 0.2 },
-    });
-    b7Controls.start({
-      opacity: 1,
-      top: "920%",
-      left: "67%",
-      transition: { type: "spring", stiffness: 5.5, duration: 0.2 },
-    });
+        await controls.start({
+          rotate: -45,
+          transition: { type: "spring", stiffness: 50, duration: 0.001 },
+        });
+        b6Controls.start({
+          opacity: 1,
+          top: "500%",
+          left: "10%",
+          transition: { type: "spring", stiffness: 5.5, duration: 0.2 },
+        });
+        b7Controls.start({
+          opacity: 1,
+          top: "920%",
+          left: "67%",
+          transition: { type: "spring", stiffness: 5.5, duration: 0.2 },
+        });
 
-    await controls.start({
-      rotate: 0,
-      transition: { type: "spring", stiffness: 50, duration: 0.1 },
-    });
-    controlsschirm.start({ opacity: 1 });
+        await controls.start({
+          rotate: 0,
+          transition: { type: "spring", stiffness: 50, duration: 0.1 },
+        });
+        controlsschirm.start({ opacity: 1 });
 
-    controlslogo.start({
-      opacity: 1,
+        controlslogo.start({
+          opacity: 1,
 
-      transition: { type: "spring", stiffness: 1000, duration: 0.001 },
-    });
+          transition: { type: "spring", stiffness: 1000, duration: 0.001 },
+        });
 
-    controls.start({
-      rotate: 16,
-      transition: { type: "spring", stiffness: 12, duration: 0.01 },
-    });
-    await controlslogo.start({
-      y: ["1000%", "100%"],
-      x: "100%",
+        controls.start({
+          rotate: 16,
+          transition: { type: "spring", stiffness: 12, duration: 0.01 },
+        });
+        await controlslogo.start({
+          y: ["1000%", "100%"],
+          x: "100%",
 
-      transition: { type: "spring", stiffness: 20, duration: 0.3 },
-    });
+          transition: { type: "spring", stiffness: 20, duration: 0.3 },
+        });
 
-    controlsLogoBeforPush.start({ opacity: 1, transition: { duration: 1 } });
-    await controlslogo.start({
-      y: ["100%", "30%"],
-      transition: { stiffness: 1, duration: 1 },
-    });
-    controlsLogoBeforPush.start({ opacity: 0 });
-    controlsLogoAfterPush.start({ opacity: 1, transition: { duration: 0.3 } });
-    await controlslogo.start({
-      y: ["100%", "199%"],
-      transition: { stiffness: 100, duration: 0.3 },
-    });
-    await controlsLogoAfterPush.start({
-      opacity: 0,
-      transition: { duration: 0.01 },
-    });
-    await controlslogo.start({
-      y: ["199%", "100%"],
-      transition: { stiffness: 0.01, duration: 1.5 },
-    });
+        controlsLogoBeforPush.start({
+          opacity: 1,
+          transition: { duration: 1 },
+        });
+        await controlslogo.start({
+          y: ["100%", "30%"],
+          transition: { stiffness: 1, duration: 1 },
+        });
+        controlsLogoBeforPush.start({ opacity: 0 });
+        controlsLogoAfterPush.start({
+          opacity: 1,
+          transition: { duration: 0.3 },
+        });
+        await controlslogo.start({
+          y: ["100%", "199%"],
+          transition: { stiffness: 100, duration: 0.3 },
+        });
+        await controlsLogoAfterPush.start({
+          opacity: 0,
+          transition: { duration: 0.01 },
+        });
+        await controlslogo.start({
+          y: ["199%", "100%"],
+          transition: { stiffness: 0.01, duration: 1.5 },
+        });
 
-    //await controlsLogoBeforPush.start({opacity:1,transition:{delay:-.,duration:1.7}});
-    /*
+        //await controlsLogoBeforPush.start({opacity:1,transition:{delay:-.,duration:1.7}});
+        /*
 await  controlsLogoBeforPush.start({opacity:0,transition:{stiffness:100,duration:.01}});
  controlsLogoAfterPush.start({opacity:1,transition:{stiffness:80,delay:.08,duration:.3}});
   await controlslogo.start({
@@ -484,118 +486,121 @@ transition:{stiffness:1,delay:.08,duration:.3}
 });
 controlsLogoAfterPush.start({opacity:0,transition:{duration:.5}});
 */
-    await controls
-      .start({ opacity: 0, transition: { delay: -0.2, duration: 0.01 } })
-      .catch((error) => console.error(error));
+        await controls
+          .start({ opacity: 0, transition: { delay: -0.2, duration: 0.01 } })
+          .catch((error) => console.error(error));
 
-    await controlsimg2.start({ opacity: 1, x: "10vw" });
-    ////delay-group 1
+        await controlsimg2.start({ opacity: 1, x: "10vw" });
+        ////delay-group 1
 
-    await controlsimg2.start({
-      opacity: 0,
-      transition: { type: "Spring", duration: 0.05, stiffness: 2 },
-    });
-    await controlsimg3.start({ opacity: 1, transition: { duration: 0.2 } });
+        await controlsimg2.start({
+          opacity: 0,
+          transition: { type: "Spring", duration: 0.05, stiffness: 2 },
+        });
+        await controlsimg3.start({ opacity: 1, transition: { duration: 0.2 } });
 
-    controlsBroDialog.start({
-      opacity: 0.3,
-      left: "5%",
-      top: "-20%",
-      scale: 15,
-      transition: { duration: 1.3, stiffness: 1 },
-    });
+        controlsBroDialog.start({
+          opacity: 0.3,
+          left: "5%",
+          top: "-20%",
+          scale: 15,
+          transition: { duration: 1.3, stiffness: 1 },
+        });
 
-    await controlsimg3.start({
-      opacity: 0,
-      transition: { delay: 0.5, duration: 0.1 },
-    });
+        await controlsimg3.start({
+          opacity: 0,
+          transition: { delay: 0.5, duration: 0.1 },
+        });
 
-    await controls.start({ opacity: 1, transition: { delay: 0.05 } });
+        await controls.start({ opacity: 1, transition: { delay: 0.05 } });
 
-    controlsBroDialog.start({
-      opacity: 0,
-      transition: { stiffness: 0.1, delay: -0.5, duration: 1 },
-    });
-    ////delay-group 2
-    await controlsHand.start({
-      pathLength: 1,
-      transition: { type: "Spring", duration: 1, stiffness: 60 },
-    });
-    await controlsHandSVG.start({
-      left: ["22%", "10%", "23%"],
-      rotate: [0, -10, 0],
-      transition: { type: "Spring", duration: 0.2, stiffness: 100 },
-    });
-    // await  controlslogo.start({opacity:1,x:["-30vw","-30.5vw","-30vw","-30.5vw"],rotateZ:[0,10,0,10,0],transition:{type:"yoyo",duration:.5,stiffness:2}})
-    await controlsHand.start({ pathLength: 0 });
-    //await  controlsHandSVG.start({opacity:0});
-    controlsschirm.start({ opacity: 0 });
+        controlsBroDialog.start({
+          opacity: 0,
+          transition: { stiffness: 0.1, delay: -0.5, duration: 1 },
+        });
+        ////delay-group 2
+        await controlsHand.start({
+          pathLength: 1,
+          transition: { type: "Spring", duration: 1, stiffness: 60 },
+        });
+        await controlsHandSVG.start({
+          left: ["22%", "10%", "23%"],
+          rotate: [0, -10, 0],
+          transition: { type: "Spring", duration: 0.2, stiffness: 100 },
+        });
+        // await  controlslogo.start({opacity:1,x:["-30vw","-30.5vw","-30vw","-30.5vw"],rotateZ:[0,10,0,10,0],transition:{type:"yoyo",duration:.5,stiffness:2}})
+        await controlsHand.start({ pathLength: 0 });
+        //await  controlsHandSVG.start({opacity:0});
+        controlsschirm.start({ opacity: 0 });
 
-    //  secondrainbowControl.start({opacity:0});
-    /*
+        //  secondrainbowControl.start({opacity:0});
+        /*
        if(!scrollToGreyActive){
        b9Controls.start({ left:"10%",top:"140%",transition:{delay:1,stiffness:.1,duration:5}});
        }
        */
-    bubbleForLogoControls.start({
-      opacity: 1,
-      left: "16%",
-      top: "427.5%",
-      scale: 1.7,
-      transition: { type: "spring", stiffness: 16, duration: 0.02 },
-    });
-    rainbowSvgControl2.start({ opacity: 0, pathLength: 0 });
+        bubbleForLogoControls.start({
+          opacity: 1,
+          left: "16%",
+          top: "427.5%",
+          scale: 1.7,
+          transition: { type: "spring", stiffness: 16, duration: 0.02 },
+        });
+        rainbowSvgControl2.start({ opacity: 0, pathLength: 0 });
 
-    await firstrainbowControl.start({ rotate: -45 });
+        await firstrainbowControl.start({ rotate: -45 });
 
-    controls.start({ rotate: -25, transition: { stiffness: 6, delay: 0.7 } });
-    await controlslogo.start({
-      y: "300%",
-      transition: {
-        delay: 0.5,
-        type: "spring",
-        stiffness: 60,
-        duration: 0.003,
-      },
-    });
-    /*bubbleForLogoControls.stop();*/
+        controls.start({
+          rotate: -25,
+          transition: { stiffness: 6, delay: 0.7 },
+        });
+        await controlslogo.start({
+          y: "300%",
+          transition: {
+            delay: 0.5,
+            type: "spring",
+            stiffness: 60,
+            duration: 0.003,
+          },
+        });
+        /*bubbleForLogoControls.stop();*/
 
-    await controls.start({ rotate: 0, transition: { delay: 1, stiffness: 5 } });
+        await controls.start({
+          rotate: 0,
+          transition: { delay: 1, stiffness: 5 },
+        });
 
-    await controlslogo.start({
-      y: "150%",
-      x: "165%",
-      transition: { type: "spirng", stiffness: 600, duration: 0.25 },
-    });
-    await firstrainbowControl.start({ rotate: 0 });
-    rainbowSvgControl2.start({ opacity: 1 });
-    await rainbowSvgControl2.start({ pathLength: 1 });
-    await colorSplashControl.start({ opacity: 1 });
-    await bubbleForLogoControls.start({
-      opacity: 0,
-      scale: 7,
-      transition: { type: "spring", duration: 0.06 },
-    });
-    controlslogo.start({
-      y: "315%",
-      x: "27vw",
-      transition: { type: "spring", duration: 0.75 },
-    });
-    await controls.start({
-      x: "4vw",
-      transition: { type: "spring", stiffness: 150, duration: 0.002 },
-    });
-    setBroAnimationComplete(true);
-    ///props.setBroAnimationComplete(true);
-   // console.log("broanimation is compelete" + broAnimationComplete);
-    return;
-  }catch{
-//console.log("haaah you got caught!");
-
-  }
-  };
-
-
+        await controlslogo.start({
+          y: "150%",
+          x: "165%",
+          transition: { type: "spirng", stiffness: 600, duration: 0.25 },
+        });
+        await firstrainbowControl.start({ rotate: 0 });
+        rainbowSvgControl2.start({ opacity: 1 });
+        await rainbowSvgControl2.start({ pathLength: 1 });
+        await colorSplashControl.start({ opacity: 1 });
+        await bubbleForLogoControls.start({
+          opacity: 0,
+          scale: 7,
+          transition: { type: "spring", duration: 0.06 },
+        });
+        controlslogo.start({
+          y: "315%",
+          x: "27vw",
+          transition: { type: "spring", duration: 0.75 },
+        });
+        await controls.start({
+          x: "4vw",
+          transition: { type: "spring", stiffness: 150, duration: 0.002 },
+        });
+        setBroAnimationComplete(true);
+        ///props.setBroAnimationComplete(true);
+        // console.log("broanimation is compelete" + broAnimationComplete);
+        return;
+      } catch {
+        //console.log("haaah you got caught!");
+      }
+    };
 
     if (isInViewdiv2) {
       broAnim();
@@ -961,34 +966,31 @@ How will your life look as a painting 60 years from now? Will it narrate a story
       {/**storytimeH */}
 
       <div ref={div4} className="ArtOrPainting">
-       <div className="storytime-title">
+        <div className="storytime-title">
+          <motion.h1
+            initial={{ opacity: 0 }}
+            animate={storyTimeControls}
+            className="ArtOrPaintingTitle"
+          >
+            well
+          </motion.h1>
 
+          <motion.h1
+            initial={{ opacity: 0 }}
+            animate={storyTimeControls}
+            className="ArtOrPaintingTitle"
+          >
+            Story
+          </motion.h1>
+          <motion.h1
+            initial={{ opacity: 0 }}
+            animate={storyTimeControls}
+            className="ArtOrPaintingTitle"
+          >
+            time!
+          </motion.h1>
 
-  <motion.h1
-          initial={{ opacity: 0 }}
-          animate={storyTimeControls}
-          className="ArtOrPaintingTitle"
-        >
-        well
-        </motion.h1>
-        
-        <motion.h1
-          initial={{ opacity: 0 }}
-          animate={storyTimeControls}
-          className="ArtOrPaintingTitle"
-        >
-          Story
-        </motion.h1>
-        <motion.h1
-          initial={{ opacity: 0 }}
-          animate={storyTimeControls}
-          className="ArtOrPaintingTitle"
-        >
-          time!
-        </motion.h1>
-
- 
- {/* <p id="fightH" className="projectTxt" >painting has been my way to fight for my colors!</p>*/}
+          {/* <p id="fightH" className="projectTxt" >painting has been my way to fight for my colors!</p>*/}
         </div>
         {/**
   
@@ -1021,7 +1023,6 @@ How will your life look as a painting 60 years from now? Will it narrate a story
           Imagine a world painted only in shades of gray, where only black and
           white call the shots. It's a place without the cozy warmth of lively
           colors.In this imaginary place, our eyes reveal emptiness, echoing the
-         
         </p>
       </div>
     </div>

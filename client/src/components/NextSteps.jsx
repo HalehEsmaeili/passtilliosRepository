@@ -30,7 +30,9 @@ const controlslogoWithHair = useAnimationControls();
 const controlsthirdPerson = useAnimationControls();
 const nextStepsBodyAnimationControls = useAnimationControls();
 
-
+const[showBtn1,setShowBtn1]=useState(true);
+const[showBtn2,setShowBtn2]=useState(true);
+const[showBtn3,setShowBtn3]=useState(true);
 
   useEffect(()=>{
     const logoAnimationToNextSteps = async () => {
@@ -63,12 +65,16 @@ const nextStepsBodyAnimationControls = useAnimationControls();
          });
      
          await controlsthirdPerson.start({
-           right: ["10%", "40%", "-80%"],
-           top: ["2%", "10%", "-25%"],
+           right: ["10%", "40%", "-180%"],
+           top: ["2%", "10%", "-30%"],
            opacity: 1,
            transition: { duration: 0.5 },
          });
-     
+         await controlsthirdPerson.start({
+      
+          opacity: 0,
+          
+        });
          //controlsSecondPerson.start({x:["50vw","-47vw"],opacity:1,transition:{duration:.5}});
       
          return;}
@@ -83,6 +89,21 @@ const nextStepsBodyAnimationControls = useAnimationControls();
 console.log("conditionForAnimStart"+props.conditionForAnimStart);
 console.log("isInViewdivNextStep"+isInViewdivNextStep);
   },[isInViewdivNextStep,props.conditionForAnimStart]);
+  useEffect(()=>{
+    
+     
+     ///which page are we in? blend out the btn leading to that page  
+   if(props.dontshow &&props.dontshow==="btn1"){
+    setShowBtn1(false);
+   }
+   else if(props.dontshow &&props.dontshow==="btn2"){
+    setShowBtn2(false);
+   }
+   else if(props.dontshow &&props.dontshow==="btn3"){
+    setShowBtn3(false);
+   }
+
+  },[]);
 
 return (
     <div ref={divNextStepsRef} className="nextstepDiv" >
@@ -107,9 +128,16 @@ return (
             className="nextSteps"
             alt="next steps"
           ></motion.img>
+         {(showBtn1)&&
           <Button id="btn1" name="FIRST PROJECT" />
+         }
+         {(showBtn3)&&
           <Button id="btn2" name="JOIN!" />
+         }
+         {(showBtn2)&&
+  
           <Button id="btn3" name="THE TEAM" />
+         }
         </motion.div>
       </div>
 

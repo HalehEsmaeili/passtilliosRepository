@@ -23,7 +23,7 @@ Instead how about we embrace the true charm of grey? I believe it's about time w
 
 
 <div style={{position:"relative",marginTop:"-100%",marginBottom:"0%"}}>
-<NextSteps currentStation="art" conditionForAnimStart={true} />
+<NextSteps  currentStation="art" conditionForAnimStart={true} />
 
 </div>
 

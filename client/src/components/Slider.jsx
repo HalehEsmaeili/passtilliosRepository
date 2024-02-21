@@ -21,30 +21,28 @@ import sliderCss from "./Slider.css";
 
 const Captioned = Hoc(AwesomeSlider);
  
+//  imagesForCrew
 
-
-function Slider() {
-
-
+function Slider(props) {
+/**
+    
+ * imagesForCrew
+ * 
+ */
+console.log("in slider!!!!!!!!!!!",props.images[0].url);
   return (
     <div className="awesomeSlider">
+ 
+ 
   <Captioned
   className="AwesomeSlider"
   animation="fallAnimation"
   cssModul={sliderCss}
- screens={[
-   {
-     backgroundColor: '#4a9c8c',
-     media: "../public/images/colorSplash/11.png",
-     caption: "I mean, come on! After all that talk about black and white, if you're still inviting me to your dresscode: black & white party, I have to show up rocking this look!",
-   },
-   {
-     backgroundColor: '#4a9c8c',
-     media: "../public/images/colorSplash/11.png",
-     caption: 'The answer is -- ',
-   },
-   // ...
- ]}
+  screens={props.images.map((image, index) => ({
+    backgroundColor: '#4a9c8c', // Set your desired background color
+    media: image.url,
+    caption: image.caption, // Assuming crew.caption is the caption for the image
+  }))}
 />
 
   

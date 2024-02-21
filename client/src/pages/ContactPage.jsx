@@ -1,71 +1,56 @@
-import React, { useState } from "react";
-
+import React, { useEffect, useState } from "react";
 import Slider from "../components/Slider.jsx";
 import NextSteps from "../components/NextSteps.jsx";
-
 import { Container, Row, Col } from "react-bootstrap";
-//import 'bootstrap/dist/css/bootstrap.min.css';
 import callMe from "../public/images/contactPage/call.png";
 import "./TeamPage.css";
 import "./ContactPage.css";
-//import callMeImg from "../public/images/contactPage/contactimg.png";
 import colorGif from "../public/video/yourcolors.gif";
 import welcomeVid from "../public/images/contactPage/welcome.mp4";
 import Button from "../components/Button.js";
-import axios from "axios";
 import axiosInstance from "../Api/axiosInstance.js";
 import PageHeader from "./PageHeader.jsx";
-const ContactPage = () => {
-  // // <Container className="container" fluid style={{width:"100%",backgroundColor:"green"}}>
-  //<img className="headerGif" src={callMe}></img> <img className="headerGif" src={colorGif}></img>
-  //<img className="headerImg" src={callMeImg}></img>
 
+const ContactPage = () => {
   const [formData, setFormData] = useState({
     email: "",
     name: "",
+    city: "", // New state for city
   });
   const [email, setEmail] = useState("");
   const [name, setname] = useState("");
   const [tel, setTel] = useState("");
+  const [city, setCity] = useState(""); // New state for city
   const [btnPressed, setBtnPressed] = useState(false);
   const [savedSuccessfully, setSavedSuccessfully] = useState(false);
   const [savingUnsuccessful, setSavingUnsuccessful] = useState(false);
-  const handleClick = async (e) => {
-    //e.preventDefault();
 
-    if (email === "" || name === "") {
+  const handleClick = async (e) => {
+    if (email === "" || name === "" || city === "") {
       setBtnPressed(true);
     } else {
       setFormData({
         email: email,
         name: name,
+        city: city,
       });
+
       try {
-        console.log("cccccccccc" + email);
-        // Make a POST request to your Node.js server
-        const response = await await axiosInstance.post(
-          "/api/contact/saveEmail",
-          {
-            email: email,
-            name: name,
-            tel: tel,
-          }
-        );
-        console.log("Response:", response); // Log the response from the server
-        // Check rate limit status
+        const response = await axiosInstance.post("/api/contact/saveEmail", {
+          email: email,
+          name: name,
+          tel: tel,
+          city: city,
+        });
+
         if (response.data.statusCode === 429) {
           console.log("Rate limit exceeded");
-          // Handle rate limit exceeded case on the frontend
         } else {
-          // Handle the response from the server
           if (response.status === 200) {
             setSavedSuccessfully(true);
             console.log("Success:", response.data);
-            // Handle success, e.g., redirect to a success page
           } else {
             console.error("Server Error:", response.data);
-
-            // Check for specific error condition (adjust based on Mailchimp response)
             if (response.data.errors && response.data.errors.length > 0) {
               const firstError = response.data.errors[0];
               if (
@@ -73,42 +58,41 @@ const ContactPage = () => {
                 firstError.field === "ADDRESS"
               ) {
                 console.log("Email is already subscribed.");
-                // Handle the case where the email is already subscribed
-                // Set a state or perform an action accordingly
               }
             }
           }
         }
       } catch (error) {
         console.error("Error:", error.message);
-        // Handle other errors, e.g., network error
       }
     }
   };
 
   const handleChange = (event) => {
     setBtnPressed(false);
+
     if (event.target.name === "name") {
-      console.log(event.target.value);
       setname(event.target.value);
     } else if (event.target.name === "email") {
-      console.log(event.target.value);
       setEmail(event.target.value);
     } else if (event.target.name === "tel") {
-      console.log(event.target.value);
       setTel(event.target.value);
+    } else if (event.target.name === "city") {
+      console.log("city"+event.target.value);
+      setCity(event.target.value);
     }
   };
 
+ 
   return (
     <div className="ContactPage">
-      {/**  <img className="headerGif" src={callMe}></img> 
-  <h1 className="headerTxt" >Contact</h1>
-  */}
-
       <PageHeader image={callMe} />
-
       <div style={{ position: "relative", overflow: "visible" }}>
+        {/* Your SVG code here */}
+    
+
+        <main className="form-signin w-100 m-auto">
+        <div style={{ position: "relative", overflow: "visible" }}>
         <svg
           className="svg-icon2"
           width="auto"
@@ -141,22 +125,20 @@ const ContactPage = () => {
             />
           </g>
         </svg>
-        <main className="form-signin w-100 m-auto">
-          {/**<form action="/" method="post"> */}
-          <div className="mb-3">
+        <div className="mb-3">
             <h1 className="h3 mb-3 fw-normal h1contact">
               join the contact list!
             </h1>
           </div>
+</div>
           {savedSuccessfully ? (
             <div className="successContainer">
-              <video id="chicks" autoplay="autoplay" muted loop>
-                {" "}
-                <source src={welcomeVid} type="video/mp4"></source>{" "}
+              <video id="chicks" autoPlay muted loop>
+                <source src={welcomeVid} type="video/mp4"></source>
               </video>
             </div>
           ) : (
-            <div>
+            <div className="InputLabelContainer">
               <div className="mb-3">
                 <label htmlFor="name" className="form-label">
                   your Name:
@@ -179,7 +161,6 @@ const ContactPage = () => {
                 <label htmlFor="e_mail" className="form-label">
                   your Email:
                 </label>
-
                 <input
                   type="email"
                   name="email"
@@ -189,14 +170,31 @@ const ContactPage = () => {
                   value={email}
                   placeholder="name@example.com"
                 />
-
                 {btnPressed && email === "" ? (
                   <p className="errorP">forgot to enter your email?</p>
                 ) : null}
               </div>
 
               <div className="mb-3">
-                <label htmlFor="name" className="form-label">
+                <label htmlFor="city" className="form-label" >
+                  your City:
+                </label>
+                <input
+                  type="text"
+                  name="city"
+                  className="form-control"
+  
+                  onChange={handleChange}
+                  value={city}
+                  placeholder="Where are you located?"
+                />
+                {btnPressed && city === "" ? (
+                  <p className="errorP">forgot to enter your city?</p>
+                ) : null}
+              </div>
+
+              <div className="mb-3">
+                <label htmlFor="tel" className="form-label">
                   tel number:
                 </label>
                 <input
@@ -218,16 +216,11 @@ const ContactPage = () => {
               </div>
             </div>
           )}
-
-          {/**  <button className="w-100 btn btn-lg btn-primary" type="submit">count me in!</button>
-   </form>
-  */}
         </main>
       </div>
-      <div
-        style={{ position: "relative", marginTop: "-80%", marginBottom: "0%" }}
-      >
-        <NextSteps currentStation="team" conditionForAnimStart={true} />
+
+      <div style={{ zIndex: 0, position: "relative", marginTop: "-80%", marginBottom: "0%" }}>
+        <NextSteps dontshow="btn3"  currentStation="contact" conditionForAnimStart={true} />
       </div>
     </div>
   );

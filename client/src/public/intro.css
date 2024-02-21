@@ -563,7 +563,7 @@ h1 {
   width: 15%;
   position: absolute;
   top: 23%;
-  right: -40%;
+  right: -160%;
   z-index: 100000;
 }
 #personNotTalking3 {
@@ -571,7 +571,7 @@ h1 {
   width: 35%;
   position: absolute;
   top: -52%;
-  right: -40%;
+  right: -160%;
   z-index: 10000000000;
 }
 
@@ -984,6 +984,7 @@ line-height: 7vw;
   width: 20%;
 }
 .nextstepDiv{
+ 
   position: relative;
   margin-top: 100%;
  margin-bottom: 0%;
@@ -1591,6 +1592,19 @@ p{
 .bufferForItIsDamnTime-afterClick{
 
   margin-top:0;
+}
+
+/*TODO: next step component*/
+.nextstepDiv{
+ width:60%;
+ margin-left: 23%;
+  position: relative;
+  margin-top: 100%;
+ margin-bottom: 0%;
+  overflow: visible;
+max-height: fit-content;
+/*border: 5px solid green;*/
+  
 }
 
 }

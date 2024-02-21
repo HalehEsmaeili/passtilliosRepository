@@ -1,7 +1,6 @@
 import 'dotenv/config';
 import { Router } from 'express';
 import rateLimit from 'express-rate-limit';
-import axios from 'axios';
 import https from 'https';
 
 const router = Router();
@@ -21,6 +20,10 @@ router.post('/saveEmail', limiter, async (req, res) => {
 console.log("i am in save email post");
   const email = req.body.email;
   const name = req.body.name;
+  const city= req.body.city;
+  const tel= req.body.tel;
+
+
 //const tel=
   const data = {
     members: [
@@ -28,7 +31,9 @@ console.log("i am in save email post");
         email_address: email,
         status: "subscribed",
         merge_fields: {
-          FNAME: name
+          FNAME: name,
+          PHONE: tel,   // Include the phone field here
+          MMERGE6: city // Include the city field here
         }
       }
     ]

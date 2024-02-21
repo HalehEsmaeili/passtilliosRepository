@@ -97,7 +97,7 @@ function Header() {
                 <div className="placeholder">
                   <div className="upside">
                     <a href="#" className="button">
-                      {`WAY${"!"}`}
+                      {`way${"!"}`}
                     </a>
                   </div>
                 </div>
@@ -106,7 +106,7 @@ function Header() {
                 <div className="placeholder">
                   <div className="upside">
                     <a href="#" className="button">
-                      the
+                      on the
                     </a>
                   </div>
                 </div>
@@ -115,7 +115,7 @@ function Header() {
                 <div className="placeholder">
                   <div className="upside">
                     <a href="#" className="button">
-                      on
+                     rest
                     </a>
                   </div>
                 </div>
@@ -123,7 +123,7 @@ function Header() {
               <li>
                 <div className="placeholder">
                   <div className="upside">
-                    <a className="button">rest</a>
+                    <a className="button">pro</a>
                   </div>
                 </div>
               </li>

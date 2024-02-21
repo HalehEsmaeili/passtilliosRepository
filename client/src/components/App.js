@@ -2,18 +2,10 @@ import '../../src/public/App.css';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { BrowserRouter as Router, Route, Routes  } from 'react-router-dom';
-import AnimationSlide from "../components/AnimationSlide";
+
 import IntroParallax from "../components/IntroParallax";
-import {motion,useSpring,useMotionValueEvent, useScroll,useAnimate, delay, animate,useAnimationControls } from "framer-motion";
-import MyButton from './MyButton';
-import { Container, Button, Link } from 'react-floating-action-button';
-import icon1 from '../public/images/twitter.svg';
-import icon2 from '../public/images/insta.svg';
-import splash1 from '../public/images/colorSplash/9.png';
-import splash2 from '../public/images/colorSplash/11.png';
-import splash3 from '../public/images/colorSplash/10.png';
+import {useSpring,useScroll} from "framer-motion";
 import React, { useEffect } from 'react';
-import Slider from './Slider';
 import TeamPage from '../pages/TeamPage';
 import ContactPage from '../pages/ContactPage';
 import ArtPage from '../pages/ArtPage';
@@ -22,8 +14,7 @@ import ArtPage from '../pages/ArtPage';
 
 function App() {
  
- const { scrollYProgress  } = useScroll()
- const scaleX = useSpring(scrollYProgress);
+
 /*
 
     <svg width="100%" height="100%" viewBox="0 0 800 1280" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" xmlSpace="preserve" xmlnsSerif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">

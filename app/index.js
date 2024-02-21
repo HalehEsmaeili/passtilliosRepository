@@ -4,9 +4,12 @@ import dotenv from "dotenv";
 import express from "express";
 import routes from "./routes/index.js";
 import pg from "pg";
+import pool from "./db.js";
 import bodyParser from "body-parser";
 import cors from "cors";
-
+//import AWS  from 'aws-sdk';
+import { GetObjectCommand } from '@aws-sdk/client-s3';
+//const s3 = new S3Client();
 // Get the directory name using ESM features
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -21,36 +24,27 @@ const port = 3001;
 // Middleware
 app.use(bodyParser.json());
 app.use(cors());
+app.use((req, _, next) => {
+  console.log("Connected to the database");
+  req.pool = pool;
+  next();
+});
 
 // Mount routes
 app.use("/api", routes);
 console.log("All Environment Variables:", process.env.DB_NAME);
+
+// Catch all unspecified calls
+app.get("*", (_, res) => {
+  res.send('<h1 style="text-align: center;">404 Not Found.</h1>');
+});
+
+// Start the server
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
+
 /*
-const contactLimiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 20, // limit each IP to 10 requests per windowMs
-  message: 'Too many requests for contact form from this IP, please try again later.',
-});
-
-// Use the rate limiter middleware only for the contact route
-app.use('/api/contact/saveEmail', contactLimiter);
-*/
-
-// Database configuration with connection pool
-const pool = new pg.Pool({
-  user: "postgres",
-  host: "localhost",
-  database: process.env.DB_NAME,
-  password: process.env.DB_PASSWORD,
-  port: 8001,
-});
-
-// Middleware to add the database pool to the request object
-app.use((req, _, next) => {
-  console.log("Connected to the database"); // Corrected line
-  req.pool = pool;
-  next();
-});
 ////this function retrieves josn files of titles and texts which are meant to be mapped for that page
 app.get("/contentForMapping/:pageId", async (req, res) => {
   const pageId = req.params.pageId;
@@ -124,71 +118,6 @@ app.get("/sections/:pageId/:sectionId", async (req, res) => {
   }
 });
 
-// Catch all unspecified calls
-app.get("*", (_, res) => {
-  res.send('<h1 style="text-align: center;">404 Not Found.</h1>');
-});
 
-// Start the server
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
-
-/*
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
-import dotenv from 'dotenv';
-import express from 'express';
-import routes from './routes/index.js';
-import pg from 'pg';
-import bodyParser from 'body-parser';
-import cors from 'cors';
-
-// Get the directory name using ESM features
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-// Load environment variables
-
-dotenv.config({ path: `${__dirname}/.env` });
-import 'dotenv/config';
-const app = express();
-const port = 3001;
-
-// Middleware
-app.use(bodyParser.json());
-app.use(cors());
-
-// Mount routes
-app.use('/api', routes);
-console.log("All Environment Variables:", process.env.DB_NAME);
-// Database configuration
-const db = new pg.Client({
-  user: 'postgres',
-  host: 'localhost',
-  database: process.env.DB_NAME,
-  password: process.env.DB_PASSWORD,
-  port: 8001,
-});
-
-// Connect to the database
-db.connect()
-  .then(() => {
-    console.log('Connected to the database');
-  
-    // Continue with your code
-  })
-  .catch((err) => {
-    console.error('Error connecting to the database:', err.stack);
-  });
-
-// Catch all unspecified calls
-app.get('*', (_, res) => {
-  res.send('<h1 style="text-align: center;">404 Not Found.</h1>');
-});
-
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
 
 */

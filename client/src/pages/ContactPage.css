@@ -3,11 +3,16 @@
   width: 100%;
   height: fit-content;
 }
-
-
 #e_mail {
   margin-left: 5%;
 }
+.InputLabelContainer{
+  position: relative;
+ 
+  
+}
+
+
 /*
 body {
     display: flex;
@@ -35,6 +40,11 @@ body {
   margin-top: -13%;
   margin-left: -2%;
 }
+/*
+div{
+  border:1px solid red;
+}
+*/
 .form-control {
   margin-top: 3%;
   margin-bottom: 1%;
@@ -47,6 +57,10 @@ body {
   padding-top: 1%;
   padding-bottom: 2%;
   margin-left: 4%;
+}
+.form-control input{
+  
+  margin-right: 0%;
 }
 input:hover::placeholder {
   color: rgb(255, 255, 255);
@@ -62,12 +76,6 @@ input::placeholder {
 }
 
 
-label {
-  display: inline-block;
-
-  color: white;
-  font-size: 3vw;
-}
 /*
   h1{
     color:white;
@@ -89,13 +97,7 @@ label {
   padding-top: 2%;
 }
 
-.form-signin {
-  margin-left: 6%;
-  margin-right: 3%;
-  max-width: 90%;
-  padding: 2%;
-  padding-bottom: 0;
-}
+
 .form-signin .form-floating:focus-within {
   z-index: 100;
 }
@@ -194,18 +196,6 @@ label {
   color: white;
 }
 
-.svg-icon2 {
-  position: absolute;
-  top: -37%;
-  left: 10%;
-  width: 8.7%;
-  transform-origin: center;
-  transition: stroke 0.3s; /* Add transition for a smooth color change */
-}
-.svg-icon-path2 {
-  stroke: white;
-  stroke-width: 7;
-}
 
 
 
@@ -220,12 +210,7 @@ label {
   margin-bottom: 20%;
   margin-top: 20%;
 }
-.errorP {
-  color: #00eeb9;
-  margin-left: 23%;
-  margin-top: 0;
-  margin-bottom: 0;
-}
+
 
 #chicks {
   position: relative;
@@ -238,14 +223,76 @@ label {
 .successContainer {
   position: relative;
 }
+
+
+/* Add the following styles to your existing CSS file */
+/* header of form */
+.svg-icon2 {
+  position: absolute;
+  top: 5%;
+  left: 20%;
+  width: 11%;
+  transform-origin: center;
+  transition: stroke 0.3s; /* Add transition for a smooth color change */
+}
+.svg-icon-path2 {
+  stroke: white;
+  stroke-width: 7;
+}
+
 .h1contact {
   position: relative;
-  margin-left: 18%;
-  margin-right: 30%;
+  margin-left: 30%;
+  margin-right: 20%;
   padding-left: 5%;
   margin-bottom: 0;
   line-height: 7.5vw;
 }
+
+/* end of header of form */
+
+
+.form-signin {
+  width: 80%;
+   /* Adjust the maximum width based on your design */
+  margin-left: 7%;
+  margin-right: 13%;
+ 
+}
+
+.mb-3 {
+  margin-bottom: 2%;
+}
+
+.form-label {
+  display: block;
+  margin-top: 2%; 
+  margin-bottom: 1%; 
+  font-weight: bold;
+  margin-left: 5%;
+  display: inline-block;
+  color: white;
+  font-size: 3vw;
+}
+
+.form-control {
+  width: 100%;
+  padding: 2%;
+  margin-bottom: 2.5%; 
+  box-sizing: border-box;
+}
+
+.btnEmailListContainer {
+  margin-top: 2%;
+}
+.errorP {
+  color: #00eeb9;
+  margin-left: 23%;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+
 @media screen and (min-width: 920px) {
   /*
   p {
@@ -253,23 +300,34 @@ label {
     line-height: 3vw;
   }
   */
+/* header of form */
+.svg-icon2 {
+  position: absolute;
+  top: 10%;
+  left: 17%;
+  width: 10%;
+  transform-origin: center;
+  transition: stroke 0.3s; /* Add transition for a smooth color change */
+}
+.svg-icon-path2 {
+  stroke: white;
+  stroke-width: 7;
+}
 
-  .h1contact {
-    position: relative;
-    margin-left: 20%;
-    margin-right: 10%;
-    padding-left: 5%;
-    margin-bottom: 0;
-    line-height: 7.5vw;
-  }
-  label {
-    display: inline-block;
-    padding-right: 2%;
-    color: white;
-    font-size: 2vw;
-  }
+.h1contact {
+  position: relative;
+  margin-left: 25%;
+  margin-right: 25%;
+  padding-left: 5%;
+  margin-bottom: 0;
+  line-height: 5vw;
+  font-size: 4vw;
+}
+
+/* end of header of form */
+ 
   .form-signin {
-    border: 0.3vw solid #00eeb9;
+    border: 0.1vw solid #00eeb9;
     border-radius: 2%;
     width: 60%;
     margin-left: 15%;
@@ -280,45 +338,14 @@ label {
     padding-right: 7%;
   }
 
-  /*#f90e9b,#5a00b4,60%,#00EEB9*/
-  .svg-icon2 {
-    position: absolute;
-    top: -34%;
-    left: 22%;
-    width: 8%;
-    transform-origin: center;
-    transition: stroke 0.3s; /* Add transition for a smooth color change */
-  }
-  .svg-icon-path2 {
-    stroke: white;
-    stroke-width: 5;
-  }
-  .btnEmailListContainer {
-    padding-left: 2%;
-
-    position: relative;
-    width: 70%;
-    margin-top: -10%;
-  }
-
-  .contactTextContainer {
-    position: relative;
-    margin-top: -20%;
-    width: 60%;
+  .form-label {
+    display: block;
+    margin-top: 2%; 
+    margin-bottom: 1%; /* Adjust the margin as needed */
+    font-weight: bold;
     margin-left: 5%;
-    margin-right: 0%;
-  }
-  .form-control {
-    margin-top: 3%;
-    margin-bottom: 1%;
-    font-size: 1vw;
-    color: #0d0431;
-    opacity: 1;
-    border: 4px solid white;
     display: inline-block;
-    width: 65%;
-    padding-top: 1%;
-    padding-bottom: 2%;
-    margin-left: 4%;
+    color: white;
+    font-size: 1.7vw;
   }
 }

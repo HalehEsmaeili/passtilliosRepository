@@ -220,7 +220,7 @@ function IntroParallax() {
   //////////////////////animation functions
 
   useEffect(() => {
-    axiosInstance.get(`/sections/${1}/${2}`)
+    axiosInstance.get(`/api/content/sections/${1}/${2}`)
       .then((response) => {
         console.log("responsoe for grey");
         console.log(response.data.sections);
@@ -238,7 +238,7 @@ function IntroParallax() {
 
     ///fetch texts for the grey 2
     axiosInstance
-      .get(`/sections/${1}/${3}`)
+      .get(`/api/content/sections/${1}/${3}`)
       .then((response) => {
         console.log("responsoe for grey");
         console.log(response.data.sections);
@@ -932,8 +932,8 @@ if(isInViewGreyTxt){
       }),
     */
       //setIntroAnimationComplete(true);
-      }catch(error){
-       // console.error('Error in introAnim:', error);
+      }catch{
+      
       }
     };
    
@@ -958,19 +958,7 @@ if(isInViewGreyTxt){
       b5Controls.stop();
    
     };
-  }, [introLogoControl,
-    lControls,
-    eControls,
-    tControls,
-    sControls,
-    gControls,
-    oControls,
-    zeichenControls,
-    b2Controls,
-    b2Controls,
-    b3Controls,
-    b4Controls,
-    b5Controls]);
+  }, []);
   //border:"2px solid yellow"
   return (
     <div

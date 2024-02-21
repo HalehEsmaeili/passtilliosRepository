@@ -3,7 +3,7 @@ import "../../public/intro.css";
 import "./CampaignStatement.css";
 import axios from "axios";
 import axiosInstance from "../../Api/axiosInstance.js";
-import parazzit from "../../public/images/campaign/parazit.mp4"
+import parazzit from "../../public/images/campaign/parazit.mp4";
 //1901 change the h1s positioning css.
 //the local deployment works with serve,but with heroku not yet
 //heroku logs --tail -a passtilliostest1
@@ -59,8 +59,6 @@ function CampaignStatement(props) {
 
   ////////////////////////animation controls
 
-
-
   ///life as painting
 
   //////your life as a painting
@@ -86,15 +84,13 @@ function CampaignStatement(props) {
 
   ////wtf useeffect
   const wtfAnim = async () => {
-    try{
-    await wtfAnimation.start({
-      scale: [1, 1.1],
-      opacity: 1,
-      transition: { delay: 0.3, duration: 0.5 },
-    });
-  }catch{
-
-  }
+    try {
+      await wtfAnimation.start({
+        scale: [1, 1.1],
+        opacity: 1,
+        transition: { delay: 0.3, duration: 0.5 },
+      });
+    } catch {}
   };
   useEffect(() => {
     if (isInViewWtfRef) {
@@ -105,13 +101,11 @@ function CampaignStatement(props) {
   ///campaign statement
   const campaignImgAnim = async () => {
     try {
-    await campaignImgAnimation.start({
-      scale: [1, 1.3, 1.2],
-      transition: { delay: 0.3, duration: 0.5 },
-    });
-  }catch{
-
-  }
+      await campaignImgAnimation.start({
+        scale: [1, 1.3, 1.2],
+        transition: { delay: 0.3, duration: 0.5 },
+      });
+    } catch {}
   };
   useEffect(() => {
     if (isInViewCampaignImg) {
@@ -122,19 +116,18 @@ function CampaignStatement(props) {
   useEffect(() => {
     if (isInViewMagicContainerRef) {
       const spiceAnim = async () => {
-        try{
-        animateMagicContainer.start({
-          scale: [1, 1.2, 1],
-          rotate: [0, 30, 0, -30, 0, 20, 0, -20, 0],
-          transition: { delay: 0.2, type: "yoyo" },
-        });
-        animateMagic.start({
-          opacity: 1,
-          transition: { delay: 0.7, type: "yoyo" },
-        });
-      }catch{
-
-      }};
+        try {
+          animateMagicContainer.start({
+            scale: [1, 1.2, 1],
+            rotate: [0, 30, 0, -30, 0, 20, 0, -20, 0],
+            transition: { delay: 0.2, type: "yoyo" },
+          });
+          animateMagic.start({
+            opacity: 1,
+            transition: { delay: 0.7, type: "yoyo" },
+          });
+        } catch {}
+      };
       spiceAnim();
     }
   }, [isInViewMagicContainerRef]);
@@ -142,122 +135,136 @@ function CampaignStatement(props) {
   useEffect(() => {
     if (isInViewYourLifePaintingDiv) {
       const yourLifePaintigAnim = async () => {
-      try{
         try {
-          // Other animation without await
-          paintBrushControls.start({
-            left: ["-200%", "4%"],
-            top: ["3%", "0%"],
-            rotate: 90,
-            transition: { type: "yoyo", stiffness: 70, duration: 0.4 },
-          });
-        } catch (error) {
-          console.error("An error occurred during handOfCanvasControls animation:", error);
-        }
+          try {
+            // Other animation without await
+            paintBrushControls.start({
+              left: ["-200%", "4%"],
+              top: ["3%", "0%"],
+              rotate: 90,
+              transition: { type: "yoyo", stiffness: 70, duration: 0.4 },
+            });
+          } catch (error) {
+            console.error(
+              "An error occurred during handOfCanvasControls animation:",
+              error
+            );
+          }
 
-      
-        try {
-          // Other animation without await
-       
-          magnetControls.start({
-            opacity: 0.4,
-            scale: 1,
-            transition: { duration: 0.3 },
-          });
-        } catch (error) {
-          console.error("An error occurred during handOfCanvasControls animation:", error);
-        }
+          try {
+            // Other animation without await
 
-        try {
-          // Other animation without await
-          magnetControls.start({
-            opacity: 0,
-            transition: { delay: 0.3, duration: 0.1 },
-          });
-        } catch (error) {
-          console.error("An error occurred during handOfCanvasControls animation:", error);
-        }
+            magnetControls.start({
+              opacity: 0.4,
+              scale: 1,
+              transition: { duration: 0.3 },
+            });
+          } catch (error) {
+            console.error(
+              "An error occurred during handOfCanvasControls animation:",
+              error
+            );
+          }
 
-       
-        try {
-          // Other animation without await
-          asAControls.start({
+          try {
+            // Other animation without await
+            magnetControls.start({
+              opacity: 0,
+              transition: { delay: 0.3, duration: 0.1 },
+            });
+          } catch (error) {
+            console.error(
+              "An error occurred during handOfCanvasControls animation:",
+              error
+            );
+          }
+
+          try {
+            // Other animation without await
+            asAControls.start({
+              opacity: 1,
+              right: ["-20vw", "-5vw"],
+              top: ["-8vw", "-.7vw"],
+              rotate: 60,
+              color: "#00EEB9",
+              transition: { delay: 0.5, duration: 0.2 },
+            });
+          } catch (error) {
+            console.error(
+              "An error occurred during handOfCanvasControls animation:",
+              error
+            );
+          }
+
+          try {
+            // Other animation without await
+            paintingImgControls.start({
+              opacity: 1,
+              transition: { delay: 0.7, duration: 0.1 },
+            });
+          } catch (error) {
+            console.error(
+              "An error occurred during handOfCanvasControls animation:",
+              error
+            );
+          }
+
+          await lampControls.start({
             opacity: 1,
-            right: ["-20vw", "-5vw"],
-            top: ["-8vw", "-.7vw"],
-            rotate: 60,
-            color: "#00EEB9",
-            transition: { delay: 0.5, duration: 0.2 },
+            transition: { delay: 0.6, duration: 0.3 },
           });
-        } catch (error) {
-          console.error("An error occurred during handOfCanvasControls animation:", error);
-        }
-      
-        try {
-          // Other animation without await
-        paintingImgControls.start({
-          opacity: 1,
-          transition: { delay: 0.7, duration: 0.1 },
-        });
-        } catch (error) {
-          console.error("An error occurred during handOfCanvasControls animation:", error);
-        }
 
-
-        await lampControls.start({
-          opacity: 1,
-          transition: { delay: 0.6, duration: 0.3 },
-        });
-
-        await greyCloudOutCanvasControls.start({
-          right: ["-80vw", "-18vw"],
-          scale: 3,
-          transition: { stiffness: 1, duration: 5 },
-        });
-        await handOfCanvasControls.start({ opacity: 0.5 });
-        handOfCanvasControls.start({
-          rotate: [-50, 50, -40, 40],
-          scale: [1.2, 1],
-          transition: { type: "yoyo", stiffness: 50, duration: 0.3 },
-        });
-        await greyCloudOutCanvasControls.start({
-          right: ["-18vw", "-80vw"],
-          transition: { delay: 0.4, stiffness: 1, duration: 0.7 },
-        });
-        try {
-          // Other animation without await
+          await greyCloudOutCanvasControls.start({
+            right: ["-80vw", "-18vw"],
+            scale: 3,
+            transition: { stiffness: 1, duration: 5 },
+          });
+          await handOfCanvasControls.start({ opacity: 0.5 });
           handOfCanvasControls.start({
-            opacity: 0,
-            transition: { stiffness: 50, duration: 0.01 },
+            rotate: [-50, 50, -40, 40],
+            scale: [1.2, 1],
+            transition: { type: "yoyo", stiffness: 50, duration: 0.3 },
           });
-        } catch (error) {
-          console.error("An error occurred during handOfCanvasControls animation:", error);
-        }
-      }catch{
-
-      }
+          await greyCloudOutCanvasControls.start({
+            right: ["-18vw", "-80vw"],
+            transition: { delay: 0.4, stiffness: 1, duration: 0.7 },
+          });
+          try {
+            // Other animation without await
+            handOfCanvasControls.start({
+              opacity: 0,
+              transition: { stiffness: 50, duration: 0.01 },
+            });
+          } catch (error) {
+            console.error(
+              "An error occurred during handOfCanvasControls animation:",
+              error
+            );
+          }
+        } catch {}
       };
       yourLifePaintigAnim();
     }
   }, [isInViewYourLifePaintingDiv]);
 
   useEffect(() => {
-    /////test 
-    axiosInstance.get(`/contentForMapping/${props.pageId}`)
-    .then((response) => {
-     console.log("page mapping works",response);
-      //console.log(response.data.sections);
-      //setSectionData(response.data.sections);
-    })
-    .catch((error) => {
-      console.error("Error retrieving section data:", error);
-      // Handle error
-    });
-
+    /////test
+    axiosInstance
+      .get(`/api/content/contentForMapping/${props.pageId}`)
+      .then((response) => {
+        console.log("page mapping works", response);
+        //console.log(response.data.sections);
+        //setSectionData(response.data.sections);
+      })
+      .catch((error) => {
+        console.error("Error retrieving section data:", error);
+        // Handle error
+      });
 
     //////
-    
-    axiosInstance.get(`/sections/${props.pageId}/${props.sectionId}`)
+
+    axiosInstance
+      .get(`/api/content/sections/${props.pageId}/${props.sectionId}`)
       .then((response) => {
         //response.data.sections.section_title;
         setHeaders(response.data.sections.header_contents);
@@ -274,17 +281,13 @@ function CampaignStatement(props) {
 
   return (
     <div>
-
-     <div className="meetPasstilliosContainer">
-     <div className="videoContanier">
-  
-    {/*<video  id="parazitVid" autoplay="autoplay" muted loop> <source src={parazzit} type="video/mp4"></source>
+      <div className="meetPasstilliosContainer">
+        <div className="videoContanier">
+          {/*<video  id="parazitVid" autoplay="autoplay" muted loop> <source src={parazzit} type="video/mp4"></source>
   </video>*/}
-    <h1 className="centerH" >
-        I'm a sucker for certain kind of stories!
-          </h1>
-          </div>
-    { /*
+          <h1 className="centerH">I'm a sucker for certain kind of stories!</h1>
+        </div>
+        {/*
       <h1 className="centerH" >
            meet passtillios!
           </h1>
@@ -292,15 +295,22 @@ function CampaignStatement(props) {
     a passion project born from the heart of an ordinary person taking a leap of faith to champion a vision that feels like home.
           </p>
 */}
-         
-          
-     <p  className="meetPasstilliosTxt">
-     Stories where seemingly regular, ordinary folks come together and manage to create something extraordinary, especially against all odds? Oh boy, that just tugs at my heartstrings! Whether it's a true story from a TED Talk or a fictional plot from a movie, these narratives simply fill my heart with joy. At some point, I decided to take that joy and make it the heartbeat of this project, Passtillios! Through this venture, I aim to create a space where more of these incredible stories can unfold. a place for unique and vibrant experiences to bloom in our sometimes too black-and-white world. Picture it: regular folks like us making extraordinary memories that stick with us forever...what am I after? let me put it this way...
-          </p>
-          </div>
+
+        <p className="meetPasstilliosTxt">
+          Stories where seemingly regular, ordinary folks come together and
+          manage to create something extraordinary, especially against all odds?
+          Oh boy, that just tugs at my heartstrings! Whether it's a true story
+          from a TED Talk or a fictional plot from a movie, these narratives
+          simply fill my heart with joy. At some point, I decided to take that
+          joy and make it the heartbeat of this project, Passtillios! Through
+          this venture, I aim to create a space where more of these incredible
+          stories can unfold. a place for unique and vibrant experiences to
+          bloom in our sometimes too black-and-white world. Picture it: regular
+          folks like us making extraordinary memories that stick with us
+          forever...what am I after? let me put it this way...
+        </p>
+      </div>
       <div className="yourColorsDiv">
-    
-      
         {headers ? (
           <h1 id="campaignH" className="campaignText">
             {headers[0]}...
@@ -326,12 +336,9 @@ function CampaignStatement(props) {
         )}
         <h1 id="useWhatYouCan" className="tooFastH">
           start where you are, use what you have, do what you can principle!
-            </h1>
-        
-         
+        </h1>
+
         <div style={{ position: "relative" }}>
-      
-           
           {headers ? (
             <h1 id="whatIHave" className="tooFastH">
               {headers[1]}
