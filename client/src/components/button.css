@@ -107,7 +107,7 @@
     #f90ee7,
     #5b42f3 40%,
     #00eeb9,
-    #fec125
+    orange
   );
 }
 #btn3 {
@@ -201,5 +201,6 @@
   left: 23%;
   font-size: 3vw;
   border-radius: 4px;
+ top: 40%;
 }
 

@@ -28,11 +28,6 @@ import {
 } from "framer-motion";
 import Highlighted from "../components/Highlighted.js";
 import useWindowDimensions from "./useWindowDimensions.js";
-import throatCleaning from "../public/images/broDIV2/1.png";
-import poking from "../public/images/broDIV2/needle.png";
-import talking from "../public/images/broDIV2/3.png";
-import notTalking from "../public/images/broDIV2/2.png";
-import schirm from "../public/images/broDIV2/schirm.png";
 import logo from "../public/images/logo.png";
 
 /////your life as a painting
@@ -61,9 +56,7 @@ import splash2 from "../public/images/colorSplash/5.png";
 import splash3 from "../public/images/colorSplash/11.png";
 import splash4 from "../public/images/colorSplash/12.png";
 import splash5 from "../public/images/colorSplash/13.png";
-import splash6 from "../public/images/colorSplash/14.png";
-import splash7 from "../public/images/colorSplash/15.png";
-import splash8 from "../public/images/colorSplash/16.png";
+
 import splash9 from "../public/images/colorSplash/7.png";
 import splash10 from "../public/images/colorSplash/2.png";
 import splash11 from "../public/images/colorSplash/3.png";
@@ -83,11 +76,6 @@ function IntroParallax() {
 
   const [scrollToGreyActive, setScrollToGreyActive] = useState(false);
   const [scrollToNextStepsActive, setScrollToNextStepsActive] = useState(false);
-
-  const [broAnimHasStarted, setBroAnimHasStarted] = useState(false);
-  const [div3AnimHasStarted, setDiv3HasStarted] = useState(false);
-  const [logoAnimationTodiv4HasStarted, setLogoAnimationTodiv4HasStarted] =
-    useState(false);
   const [introAnimationComplete, setIntroAnimationComplete] = useState(false);
   const [logoAnimationTodiv4Compelete, setLogoAnimationTodiv4Compelete] =
     useState(false);
@@ -97,8 +85,6 @@ function IntroParallax() {
 
   const [isGreyContentVisible, setGreyContentVisible] = useState(false);
 
-  const [animationComplete, setAnimationComplete] = useState(false);
-  const [broAnimationComplete, setBroAnimationComplete] = useState(false);
   const [startNextStepAnimation, setStartNextStepAnimation] =
     useState(false);
 
@@ -857,6 +843,11 @@ if(isInViewGreyTxt){
         left: "70%",
         transition: { type: "spring", stiffness: 20, duration: 0.2 },
       }),
+      b1Controls.start({
+        top: "11%",
+        left: "7%",
+        transition: { type: "spring", stiffness: 14, duration: 0.1 },
+      }),
   
       /*
     b8Controls.start({
@@ -867,11 +858,7 @@ if(isInViewGreyTxt){
     });
   */
       /////
-      b1Controls.start({
-        top: "11%",
-        left: "7%",
-        transition: { type: "spring", stiffness: 14, duration: 0.1 },
-      }),
+     
       lControls.start({
         opacity: 1,
         top: "-200%",

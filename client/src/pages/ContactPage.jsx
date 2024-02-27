@@ -13,7 +13,7 @@ const ContactPage = () => {
  
   return (
     <div className="ContactPage">
-      <PageHeader image={callMe} />
+      <PageHeader image={callMe} page="contact" />
       <div style={{ position: "relative", overflow: "visible" }}>
   
        <ContactList/>

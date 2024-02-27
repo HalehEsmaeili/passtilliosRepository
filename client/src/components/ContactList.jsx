@@ -45,6 +45,7 @@ const ContactList = () => {
   const [btnPressed, setBtnPressed] = useState(false);
   const [savedSuccessfully, setSavedSuccessfully] = useState(false);
   const [savingUnsuccessful, setSavingUnsuccessful] = useState(false);
+  const [tooManyTries, setTooManyTries] = useState(false);
   const [telError, setTelError] = useState("");
   const [emailError, setEmailError] = useState("");
   const [error, setError] = useState("");
@@ -141,7 +142,7 @@ const ContactList = () => {
         } else {
           // Handle different HTTP status codes here
           if (response.status === 429) {
-            console.log("Rate limit exceeded");
+            console.log("Rate limit exceeded in right place");
           } else if (response.status === 400) {
             // Handle 400 error (validation error)
             setError(response.data.errors);
@@ -155,34 +156,18 @@ const ContactList = () => {
         console.error("Validation Error:", error);
         if (error.response) {
           if (error.response.status === 429) {
-            console.log("Rate limit exceeded");
-          } else if (error.response.status === 400) {
-            // Handle 400 error (validation error)
-            setError(error.response.data.errors);
-            console.error("Validation Error:", error.response.data.errors);
-            // Assuming there's a specific field causing the validation error
-            if (
-              error.response.data.errors &&
-              error.response.data.errors.length > 0
-            ) {
-              const firstError = error.response.data.errors[0];
-              if (
-                firstError.type === "field" &&
-                firstError.field === "email" &&
-                firstError.msg === "Invalid email address"
-              ) {
-                // Set a user-friendly message for the specific validation error
-                setError("Invalid email address. Please enter a valid email.");
-              } else {
-                // Handle other validation errors as needed
-              }
-            }
-          } else {
+            console.log("Rate limit exceeded in catch");
+            setSavingUnsuccessful(true);
+            setTooManyTries(true);
+            setSavedSuccessfully(false);
+          }  else {
             // Handle other errors
             console.error("Server Error:", error.response.data);
+            setSavingUnsuccessful(true);
+        setTooManyTries(false);
+        setSavedSuccessfully(false);
           }
-        } else {
-          console.error("Network Error:", error.message);
+       
         }
       }
     }
@@ -314,7 +299,7 @@ handleFilteringAndSetting(newValue,Country.getAllCountries(),country,setCountry,
 //useStateval is either city,state or country use state whic hare json files
 const handleFilteringAndSetting=(newInputValue,listTOFilter,useState_Val,set_useState_Val,suggestion_useState_Val,setSuggestions)=>{
   const filteredValues = listTOFilter.filter((item) => {
-    return cleanString(item.name).startsWith(cleanString(newInputValue));
+    return cleanString(item.name).includes(cleanString(newInputValue));
   });
  
         ///only if there is exactly one match to the entered state set the stateIsoCode
@@ -379,20 +364,40 @@ const handleFilteringAndSetting=(newInputValue,listTOFilter,useState_Val,set_use
         </svg>
 
         <div className="mb-3">
-          <h1 className="h3  fw-normal h1contact">join the contact list!</h1>
+         {savedSuccessfully? <h1 className="h3  fw-normal h1contact">welcome {name? name:""}! 🎉🥳🍾</h1>:
+         (savingUnsuccessful?
+          <h1 className="h3  fw-normal h1contact">oooops!</h1>
+        : <h1 className="h3  fw-normal h1contact">join the contact list!</h1> )
+         }
+         
+         
         </div>
       </div>
       {savedSuccessfully ? (
         <div className="successContainer">
-          <video id="chicks" autoPlay muted loop>
+          <video className="contactListVid" autoPlay muted loop>
             <source
               src="https://passtillios-bucket-web.s3.amazonaws.com/contact/success.mp4"
               type="video/mp4"
             ></source>
           </video>
+          <p className="contactListMsg">   Hey {name}! 🌟 So stoked to welcome you to the Passtillios crew! Your trust means the world to me. it will be aweome so buckel up because we're about to embark on an epic journey, collecting some incredible stories together. I'll be dropping you a welcome email soon, so keep an eye out! Take care, and get ready for the awesomeness ahead!🚀🎨✨
+          </p>
         </div>
-      ) : (
-        <div className="InputLabelContainer">
+      ) : (savingUnsuccessful?(tooManyTries?  <video className="contactListVid" autoPlay muted >
+            <source
+              src="https://passtillios-bucket-web.s3.amazonaws.com/contact/too-many-trys.mp4"
+              type="video/mp4"
+            ></source>
+          </video>
+        :<video className="contactListVid" autoPlay muted >
+            <source
+              src="https://passtillios-bucket-web.s3.amazonaws.com/contact/fail.mp4"
+              type="video/mp4"
+            ></source>
+          </video>
+
+      ):<div className="InputLabelContainer">
           {/*telError && <p className="errorP">{telError}</p>*/}
 
           <div className="mb-3">
@@ -467,11 +472,12 @@ const handleFilteringAndSetting=(newInputValue,listTOFilter,useState_Val,set_use
               </label>
               <button
                 style={{
-                  width:"28%",
-                  fontSize:"1.7vw",
-                  padding:"0.5% 0",
+                  width:"25%",
+                  fontSize:"1.5vw",
+                  border:"none",
+                 padding:".7% 0",
                   backgroundImage:
-                    "linear-gradient(102deg, #f90ee7, #5b42f3 40%, #00eeb9)",
+                  "linear-gradient(102deg, #f90ee7, #5b42f3 60%, #00eeb9)",
                     marginLeft:"1%"
                 }}
                 type="button"
@@ -528,11 +534,12 @@ const handleFilteringAndSetting=(newInputValue,listTOFilter,useState_Val,set_use
               </label>
               <button
                  style={{
-                  width:"28%",
+                  width:"27%",
                   fontSize:"1.7vw",
-                  padding:"0.5% 0",
+                  border:"none",
+                 padding:".7% 0",
                   backgroundImage:
-                  "linear-gradient(102deg, #f90ee7, #5b42f3 40%, #00eeb9)",
+                  "linear-gradient(102deg, #f90ee7, #5b42f3 60%, #00eeb9)",
                 marginLeft:"1%"
                 }}
                 type="button"
@@ -588,11 +595,12 @@ const handleFilteringAndSetting=(newInputValue,listTOFilter,useState_Val,set_use
 
               <button
                   style={{
+                 border:"none",
+                 padding:".7% 0",
                   width:"28%",
                   fontSize:"1.7vw",
-                  padding:"0.5% 0",
                   backgroundImage:
-                  "linear-gradient(102deg, #f90ee7, #5b42f3 40%, #00eeb9)",
+                  "linear-gradient(102deg, #f90ee7, #5b42f3 60%, #00eeb9)",
                     marginLeft:"1%"
                 }}
                 type="button"

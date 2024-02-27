@@ -3,7 +3,7 @@ import callMe from "../public/images/contactPage/call.png";
 import { Country, State, City } from "country-state-city";
 
 const InputHelper = (props) => {
-  const[inputHelperIntstruction,setInputHelperIntstruction]=useState("ok! you type, I search for top matches, you click! type the english name of your");
+  const[inputHelperIntstruction,setInputHelperIntstruction]=useState("you type, I search for top matches, you click! deal? ;) now type the english name of your");
   const[showInputHelperIntstruction,setShowInputHelperIntstruction]=useState(true);
   return (
     <div
@@ -20,28 +20,35 @@ const InputHelper = (props) => {
           marginLeft: "5%",
           marginRight: "10%",
           textAlign: "center",
+          overflow:"visible"
         }}
       >{(props.conditionsFullfilled?
       
       
       <div    style={{
                 marginBottom: 0,
+                overflow:"visible",
               }}>
     
-     <h4 style={{marginLeft:"5%",marginRight:"5%",color:"white"}} >{inputHelperIntstruction}  {props.currentInput}</h4>
+     <h4 style={{marginLeft:"10%",marginRight:"2%",color:"white",fontSize:"1.9vw",lineHeight:"4.3vw"}} >{inputHelperIntstruction}  {props.currentInput}</h4>
         {props.arrayofSuggestions.length > 0 &&
-        props.arrayofSuggestions.length < 15 ? (
-          <div style={{marginBottom:0}}>
+        props.arrayofSuggestions.length < 25 ? (
+          <div style={{overflow:"visible",width: "100%",marginLeft:"5%",marginRight:"0%",marginBottom:0}}>
            
             {props.arrayofSuggestions.map((item) => (
               <button
               onClick={()=>props.setValue(item)}
                 key={item.isoCode}
                 style={{
-                  border: "none",
+               fontSize:"2vw",
+                  border: ".5vw solid #f90ee7",
+                  padding:"1% 1%",
                   marginLeft: "1%",
-                  backgroundColor: "#f90ee7",
-                  /* Add any other styles as needed */
+                  marginBottom: "1%",
+                  color:"white",
+                  fontWeight:"400",
+                  backgroundColor: "#5b42f3",
+                  /* "#f90ee7" Add any other styles as needed */
                 }}
                 type="button"
                 className="btn btn-primary"
@@ -52,10 +59,10 @@ const InputHelper = (props) => {
             ))}
           </div>
         ) : (
-          <div>"..."</div>
+          <div></div>
         )}
 </div>
-        : <h4 style={{color:"white"}} >first fill the field above</h4>)}
+        : <h4  style={{marginLeft:"15%",marginRight:"2%",color:"white",fontSize:"1.9vw",lineHeight:"4.3vw"}} >first fill the field above</h4>)}
       </div>
 {  /* <img
         style={{

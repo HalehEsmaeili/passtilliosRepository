@@ -9,6 +9,13 @@
   margin-bottom: 18%;
   margin-top: 9%;
 }
+.headersBubble {
+  position: absolute;
+  opacity: 1;
+  width: 16%;
+  top: 400%;
+  left: -30%;
+}
 .dottedLine {
   border-top: 1px dotted #ffffff; /* Dotted line style */
   margin-left: 25%;
@@ -56,7 +63,7 @@
 .headerContainer {
   position: relative;
   display: flex;
-
+  z-index: 10000;
   overflow: visible;
 }
 @media screen and (min-width: 920px) {
