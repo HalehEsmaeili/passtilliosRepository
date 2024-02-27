@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect,useState} from "react";
 import AwesomeSlider from 'react-awesome-slider';
 //import  hoc from 'react-awesome-slider/src/hoc/captioned-images/hoc';
 import Hoc from "./Hoc";
@@ -24,16 +24,23 @@ const Captioned = Hoc(AwesomeSlider);
 //  imagesForCrew
 
 function Slider(props) {
+  const[images,setImages]=useState();
 /**
     
  * imagesForCrew
  * 
  */
-console.log("in slider!!!!!!!!!!!",props.images[0].url);
+useEffect(() => {
+  // Add data fetching or side effect logic here
+  // This will run when the component mounts or when props.images changes
+  setImages(props.images);
+  console.log("in slider!!!!!!!!!!!", props.images[0].url);
+}, [props.images]);
+
   return (
     <div className="awesomeSlider">
  
- 
+ {images?(
   <Captioned
   className="AwesomeSlider"
   animation="fallAnimation"
@@ -43,7 +50,9 @@ console.log("in slider!!!!!!!!!!!",props.images[0].url);
     media: image.url,
     caption: image.caption, // Assuming crew.caption is the caption for the image
   }))}
-/>
+/>):<div></div>
+ }
+  
 
   
    {

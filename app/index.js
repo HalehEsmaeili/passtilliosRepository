@@ -25,7 +25,6 @@ const port = 3001;
 app.use(bodyParser.json());
 app.use(cors());
 app.use((req, _, next) => {
-  console.log("Connected to the database");
   req.pool = pool;
   next();
 });

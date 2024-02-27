@@ -1,3 +1,4 @@
+/*@import '../tailwind.config.js';*/ /* Adjust the path based on the actual location of tailwind.config.js */
 .App {
   text-align: center;
 }

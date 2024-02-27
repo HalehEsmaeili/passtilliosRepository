@@ -25,7 +25,7 @@ const ContentMapUtil = (props) => {
               {item.title}
             </h1>
             <p className="mappedContentTxt" id={`text-${index}`}>
-              {item.text}dfognvof enwüäo rignb häojb vn doäinv
+              {item.text}
             </p>
           </div>
         ))

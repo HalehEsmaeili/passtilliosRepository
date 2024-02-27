@@ -1,14 +1,29 @@
+/*@import '../tailwind.config.js';*/
+/*
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+.my-tailwind-component {
+  @apply bg-gradient-to-r from-green-400 to-blue-500 p-8 !important;
+}
+*/
+/* MyComponent.css */
+
+
 .ContactPage {
   position: relative;
   width: 100%;
   height: fit-content;
 }
 #e_mail {
-  margin-left: 5%;
+  margin-top: 3%;
 }
 .InputLabelContainer{
+
   position: relative;
- 
+  overflow: visible;
   
 }
 
@@ -127,6 +142,19 @@ input::placeholder {
     #fec125
   );
 }
+/*TODO*/
+input:-webkit-autofill {
+  appearance: none;
+  color: white!important;
+  background-image: linear-gradient(
+    144deg,
+    #f90ee7,
+    #5b42f3 40%,
+    #00eeb9,
+    #fec125
+  )!important;
+  background-color:white!important;
+}
 
 .bd-placeholder-img {
   font-size: 1.125em;
@@ -173,26 +201,10 @@ input::placeholder {
   white-space: nowrap;
   -webkit-overflow-scrolling: touch;
 }
-.btn-bd-primary {
-  --bd-violet-bg: #712cf9;
-  --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
-  --bs-btn-font-weight: 600;
-  --bs-btn-color: var(--bs-white);
-  --bs-btn-bg: var(--bd-violet-bg);
-  --bs-btn-border-color: var(--bd-violet-bg);
-  --bs-btn-hover-color: var(--bs-white);
-  --bs-btn-hover-bg: #6528e0;
-  --bs-btn-hover-border-color: #6528e0;
-  --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
-  --bs-btn-active-color: var(--bs-btn-hover-color);
-  --bs-btn-active-bg: #5a23c8;
-  --bs-btn-active-border-color: #5a23c8;
-}
-.bd-mode-toggle {
-  z-index: 1500;
-}
+
+
 .btn {
-  background-color: #e91d5a;
+  
   color: white;
 }
 
@@ -261,7 +273,10 @@ input::placeholder {
 }
 
 .mb-3 {
-  margin-bottom: 2%;
+position: relative;
+width: 100%;
+margin-bottom: 2%;
+overflow: visible;
 }
 
 .form-label {
@@ -287,7 +302,8 @@ input::placeholder {
 }
 .errorP {
   color: #00eeb9;
-  margin-left: 23%;
+  font-size: 1.5vw;
+  margin-left: 5%;
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -327,6 +343,7 @@ input::placeholder {
 /* end of header of form */
  
   .form-signin {
+    overflow: visible;
     border: 0.1vw solid #00eeb9;
     border-radius: 2%;
     width: 60%;
@@ -349,3 +366,4 @@ input::placeholder {
     font-size: 1.7vw;
   }
 }
+
