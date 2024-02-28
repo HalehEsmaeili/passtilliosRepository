@@ -9,6 +9,17 @@
   margin-bottom: 18%;
   margin-top: 9%;
 }
+.linedown{
+  position: relative;
+  display: inline-block;
+  rotate: 220deg;
+  width: 90%;
+margin-left: -46%;
+margin-top: -23%;
+
+}
+
+
 .headersBubble {
   position: absolute;
   opacity: 1;
@@ -31,9 +42,9 @@
 }
 
 .headerTextContainer {
+  overflow: visible;
   position: relative;
-  margin-top:15%;
- 
+  margin-top:25%;
   width: 100%;
 }
 .h1PageHeader {
@@ -42,6 +53,7 @@
   margin-right: 25%;
   margin-bottom: 0;
   line-height: 7.5vw;
+  text-align: center;
 }
 .txtPageHeader {
   font-size: 2.8vw;
@@ -51,7 +63,7 @@
   margin-left: 25%;
   margin-right: 25%;
 }
-.headerGif {
+.lineup {
   position: absolute;
   display: inline-block;
   rotate: 30deg;

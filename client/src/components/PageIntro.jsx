@@ -1,0 +1,102 @@
+import React, { useState,useRef, useEffect } from "react";
+import "./pageintro.css";
+//import 'bootstrap/dist/css/bootstrap.min.css';
+
+import {
+    useInView,
+  motion,
+  useAnimationControls
+} from "framer-motion";
+
+////////intro images
+import introSpice from "../public/images/Intro/spiceIntro.png";
+import magicLeft from "../public/images/Intro/43.png";
+import magicRight from "../public/images/Intro/44.png";
+
+const PageIntro=(props)=>{
+
+    const animateMagicContainer = useAnimationControls();
+    const animateMagic = useAnimationControls();
+    const titleControlls=useAnimationControls();
+    const magicContainerRef = useRef(null);
+    const isInViewMagicContainerRef = useInView(magicContainerRef, {
+      once: true,
+      amount: 0.8,
+    });
+  
+
+    useEffect(() => {
+      
+          const spiceAnim = async () => {
+            try{
+            animateMagicContainer.start({
+              scale: [1, 1.2, 1],
+              rotate: [0, 30, 0, -30, 0, 20, 0, -20, 0],
+              transition: { delay: 0.2, type: "yoyo" },
+            });
+             animateMagic.start({
+              opacity: 1,
+              transition: { delay: 0.7, type: "yoyo" },
+            });
+
+            await titleControlls.start({
+                opacity: 1,
+                transition: { delay: 0.7, type: "yoyo" },
+
+               });
+          }catch{
+    
+    
+          }
+          
+          };
+         if(isInViewMagicContainerRef){
+            spiceAnim();
+         }
+        
+    
+      }, [isInViewMagicContainerRef]);
+   
+   return (
+
+<div  className="pageintro-container">
+{/**this is the magic div */}
+<div ref ={magicContainerRef} className="magicContainer-pi">
+            <motion.img
+              className="grid-item-spice-pi"
+              src={introSpice}
+              initial={{ opacity: 1 }}
+              animate={animateMagicContainer}
+              alt="spice"
+            ></motion.img>
+            <motion.img
+              className="grid-item-magicLeft-pi"
+              initial={{ opacity: 0 }}
+              animate={animateMagic}
+              src={magicLeft}
+              alt="magicLeft"
+            ></motion.img>
+            <motion.img
+              className="grid-item-magicRight-pi"
+              initial={{ opacity: 0 }}
+              animate={animateMagic}
+              src={magicRight}
+              alt="magicRight"
+            ></motion.img>
+            
+            <motion.h1 animate={titleControlls} className="pageintroH">NETWORKING page</motion.h1>
+            </div>
+
+
+<p  className="pageintroP">
+things are getting way too grey around here. How about we each throw in our unique color palette and spice things up a bit? Let's bring some cool vibes and shake off the monotony!
+
+</p>
+</div>
+
+   );  
+
+
+};
+export default PageIntro;
+

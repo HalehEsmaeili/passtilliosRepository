@@ -111,7 +111,7 @@ function IntroParallax() {
 
   const greydiv = useRef(null);
 
-  const magicContainerRef = useRef(null);
+
  
   const campaignImgRef = useRef(null);
   
@@ -119,6 +119,7 @@ function IntroParallax() {
     once: true,
     amount: 0.7,
   });
+  const magicContainerRef = useRef(null);
   const isInViewMagicContainerRef = useInView(magicContainerRef, {
     once: true,
     amount: 0.3,

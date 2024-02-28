@@ -29,21 +29,37 @@ const b5Controls = useAnimationControls();
 
 
 const [imageUrls, setImageUrls] = useState([]);
+const [shapeImageUrls, setShapeImageUrls] = useState([]);
+const [wordImageUrls, setWordImageUrls] = useState([]);
 
 useEffect(() => {
   const fetchImages = async () => {
     try {
-      const folderPath = `headerPage/${props.page}/`;
+      const folderPath = `headerPage/${props.page}/shapes`;
       // Replace 'your-server-url' with the actual URL of your Express server
       const response = await axiosInstance.post(`api/image/getImages`, { folderPath });
     //setImageUrls([props.image,props.image,props.image]);
 
       // Assuming the response data is an object with a 'urls' property
-      setImageUrls(response.data.urls);
+      setShapeImageUrls(response.data.urls);
+      //setImageUrls(response.data.urls);
       //console.log("image url",response.data.urls);
     } catch (error) {
       console.error('Error fetching images:', error);
     }
+////fetch words
+    try {
+      const folderPath = `headerPage/${props.page}/words`;
+      // Replace 'your-server-url' with the actual URL of your Express server
+      const response = await axiosInstance.post(`api/image/getImages`, { folderPath });
+    //setImageUrls([props.image,props.image,props.image]);
+      // Assuming the response data is an object with a 'urls' property
+      setWordImageUrls(response.data.urls);
+      //console.log("image url",response.data.urls);
+    } catch (error) {
+      console.error('Error fetching images:', error);
+    }
+
   };
 
   fetchImages();
@@ -108,7 +124,7 @@ useEffect(()=>{
 
 
 
-const animationControlsArray = [{
+const wordAnimationControlsArray = [{
   top: "-120%",
   left: "90%",
   transition: { type: "spring", stiffness: 2, duration: 0.2 },
@@ -133,6 +149,31 @@ const animationControlsArray = [{
   transition: { type: "spring", stiffness: 2.9, duration: 0.2 },
 }];
 
+
+const shapeAnimationControlsArray = [{
+  top: "-120%",
+  left: "90%",
+  transition: { type: "spring", stiffness: 2, duration: 0.2 },
+}, {
+  top: "-140%",
+  left: "40%",
+  transition: { type: "spring", stiffness: 3.1, duration: 0.2 },
+}, {
+  opacity: 1,
+  top: "-140%",
+  left: "60%",
+  transition: { type: "spring", stiffness: 1.5, duration: 0.2 },
+}, {
+  opacity: 1,
+  top: "-100%",
+  left: "70%",
+  transition: { type: "spring", stiffness: 4, duration: 0.2 },
+}, {
+  opacity: 1,
+  top: "-100%",
+  left: "50%",
+  transition: { type: "spring", stiffness: 2.9, duration: 0.2 },
+}];
 //<img className="bubbles"  src="https://passtillios-bucket-web.s3.amazonaws.com/contact/too-many-trys.mp4"></img>
  // // <Container className="container" fluid style={{width:"100%",backgroundColor:"green"}}>
   return (
@@ -142,26 +183,37 @@ const animationControlsArray = [{
 
 
     {/* Render your images using the 'imageUrls' state */}
-    {(imageUrls && imageUrls.length>0)? imageUrls.map((imageUrl, index) => (
-        <motion.img className="headersBubble" key={index} src={imageUrl} alt={`b ${index}`} animate={animationControlsArray[index]} />
+    {(shapeImageUrls && shapeImageUrls.length>0)? shapeImageUrls.map((imageUrl, index) => (
+        <motion.img className="headersBubble" key={index} src={imageUrl} alt={`b ${index}`} animate={shapeAnimationControlsArray[index]} />
       ))
       :<div></div>
       }
+
+      {(wordImageUrls && wordImageUrls.length>0)? wordImageUrls.map((imageUrl, index) => (
+        <motion.img className="headersBubble" key={index} src={imageUrl} alt={`b ${index}`} animate={wordAnimationControlsArray[index]} />
+      ))
+      :<div></div>
+      }
+
    
-    <img className="headerGif" src={lines}></img>
+    <img className="lineup" src={lines}></img>
     <img className="headerImage" src={props.image}></img>
     </div>
 <div className="headerTextContainer">
-        <h1 className="h1PageHeader">Contact</h1>
-
-        <p className="txtPageHeader" id="pageTxtP">
+<h1 style={{fontSize:"12vw",color:"#00eeb9" ,marginLeft:"20%",marginBottom:"-5%"}}>“</h1>
+        <h1 className="h1PageHeader">No One Can Whistle A Symphony, It Takes An Orchestra to Play It!
+             ― Halford Luccock
+        </h1>
+        <h1 style={{fontSize:"12vw",color:"#f90ee7" ,marginLeft:"76%",marginTop:"2%"}}>”</h1>
+       { /*<p className="txtPageHeader" id="pageTxtP">
           it is about time to embrace the true charm of grey! lets step by step
           guide it back to being the background color; the perfect backdrop
           where vibrant and unique colors can take the lead as the main
           storytellers in the painting of our lives!
-        </p>
+        </p>*/}
+        <img className="linedown" src={lines}></img>
       </div>
-     
+      
      {/* <div className="dottedLine" />*/}
 </div>
    

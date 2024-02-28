@@ -1,20 +1,3 @@
-.tw {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    border-radius: 0.5rem;
-    --tw-bg-opacity: 1;
-    background-color: rgb(94 234 212 / var(--tw-bg-opacity));
-    padding: 2rem;
-}
- 
-    .twContianer {
-    position: fixed;
-    top: 4rem;
-    width: 18rem;
-} 
-   
-
 body {
     overflow-x: hidden;
     background-color:#0D0431;
@@ -31,3 +14,4 @@ body {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
       monospace;
   }
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInRhaWx3aW5kLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSIsImZpbGUiOiJpbmRleC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJib2R5IHtcclxuICAgIG92ZXJmbG93LXg6IGhpZGRlbjtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IzBEMDQzMTtcclxuICAgIG1hcmdpbjogMDtcclxuICBcclxuICAgIGZvbnQtZmFtaWx5OiAtYXBwbGUtc3lzdGVtLCBCbGlua01hY1N5c3RlbUZvbnQsIFwiRXhvIDJcIiwgJ1NlZ29lIFVJJywgJ1JvYm90bycsICdPeHlnZW4nLFxyXG4gICAgICAnVWJ1bnR1JywgJ0NhbnRhcmVsbCcsICdGaXJhIFNhbnMnLCAnRHJvaWQgU2FucycsICdIZWx2ZXRpY2EgTmV1ZScsXHJcbiAgICAgIHNhbnMtc2VyaWY7XHJcbiAgICAtd2Via2l0LWZvbnQtc21vb3RoaW5nOiBhbnRpYWxpYXNlZDtcclxuICAgIC1tb3otb3N4LWZvbnQtc21vb3RoaW5nOiBncmF5c2NhbGU7XHJcbiAgfVxyXG4gIFxyXG4gIGNvZGUge1xyXG4gICAgZm9udC1mYW1pbHk6IHNvdXJjZS1jb2RlLXBybywgTWVubG8sIE1vbmFjbywgQ29uc29sYXMsICdDb3VyaWVyIE5ldycsXHJcbiAgICAgIG1vbm9zcGFjZTtcclxuICB9Il19 */

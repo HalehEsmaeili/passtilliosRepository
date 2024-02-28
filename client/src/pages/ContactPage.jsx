@@ -9,13 +9,14 @@ import axiosInstance from "../Api/axiosInstance.js";
 import PageHeader from "./PageHeader.jsx";
 import { isEmail, isMobilePhone } from 'validator'; 
 import ContactList from "../components/ContactList.jsx";
+import PageIntro from "../components/PageIntro.jsx";
 const ContactPage = () => {
  
   return (
     <div className="ContactPage">
       <PageHeader image={callMe} page="contact" />
       <div style={{ position: "relative", overflow: "visible" }}>
-  
+      <PageIntro title="" paragraph=""/>
        <ContactList/>
       </div>
 
