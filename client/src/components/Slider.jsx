@@ -34,7 +34,7 @@ useEffect(() => {
   // Add data fetching or side effect logic here
   // This will run when the component mounts or when props.images changes
   setImages(props.images);
-  console.log("in slider!!!!!!!!!!!", props.images[0].url);
+  console.log("in slider!!!!!!!!!!!", props.images[0]);
 }, [props.images]);
 
   return (
@@ -46,7 +46,7 @@ useEffect(() => {
   animation="fallAnimation"
   cssModul={sliderCss}
   screens={props.images.map((image, index) => ({
-    backgroundColor: '#4a9c8c', // Set your desired background color
+    backgroundColor: '#0d0431', // Set your desired background color
     media: image.url,
     caption: image.caption, // Assuming crew.caption is the caption for the image
   }))}

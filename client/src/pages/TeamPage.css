@@ -10,19 +10,33 @@ margin-top: 10%;
 }
 /*mapped content*/
 .mappedContentContainer{
+  
 position: relative;
-margin-left: 10%;
-margin-right: 10%;
+margin-left: 20%;
+margin-right: 20%;
 margin-bottom: 10%;
+display: flex;
+flex-direction:column;
+align-items: center;
 
 }
 .mappedContentH{
-
+   
+    color:#f90ee7;
+    color:#00eeb9;
+    color: #fec125;
+    font-size: 3.5vw;
+    line-height: 6vw;
+    display: inline-block;
+    text-align: center;
 
 }
 .mappedContentTxt{
-
-
+    font-size: 2.2vw;
+    line-height: 5.5vw;
+    display: inline-block;
+    text-align: center;
+  
 }
 
 .svg-icon3 {
@@ -90,11 +104,5 @@ rotate: 0deg;
     margin-top: 20%;
 }
 @media screen and (min-width: 920px) {
-    .mappedContentContainer{
-        position: relative;
-        margin-left: 15%;
-        margin-right: 5%;
-        margin-bottom: 10%;
-        
-        }
+   
 }

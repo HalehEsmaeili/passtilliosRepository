@@ -7,23 +7,22 @@ import "./ContactPage.css";
 
 import axiosInstance from "../Api/axiosInstance.js";
 import PageHeader from "./PageHeader.jsx";
-import { isEmail, isMobilePhone } from 'validator'; 
-import ContactList from "../components/ContactList.jsx";
 import PageIntro from "../components/PageIntro.jsx";
-const ContactPage = () => {
- 
-    useEffect(() => {
-      // Scroll to the top when the component mounts
-      window.scrollTo(0, 0);
-    }, []);
+const Campaign = () => {
+ useEffect(()=>{
+    window.scrollTo(0, 0);
+ },[]);
+   
+
   return (
     <div className="ContactPage">
-      <PageHeader pageId={3} image={callMe} page="contact" />
+      <PageHeader pageId={3} sectionId={1} image={callMe} page="contact" />
       <div style={{ position: "relative", overflow: "visible" }}>
       <PageIntro title="" paragraph=""/>
-       <ContactList/>
+      <h1>take out your bucketlists!</h1>
+<h1>that what you feel uncomfortable dreaming about? but you can not stop wondering what if??</h1>
+<h1>this is that dream for me!</h1>
       </div>
-
       <div style={{ zIndex: 0, position: "relative", marginTop: "-80%", marginBottom: "0%" }}>
         <NextSteps dontshow="btn3"  currentStation="contact" conditionForAnimStart={true} />
       </div>
@@ -31,4 +30,4 @@ const ContactPage = () => {
   );
 };
 
-export default ContactPage;
+export default Campaign;

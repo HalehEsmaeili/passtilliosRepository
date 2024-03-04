@@ -8,12 +8,14 @@ import PageHeader from "./PageHeader.jsx";
 import NextSteps from "../components/NextSteps.jsx";
 import { formatCrewData } from "../Utils/crewUtils.js";
 import MappedContent from "../Utils/contentMapUtil.jsx";
+import PageIntro from "../components/PageIntro.jsx";
 const TeamPage = () => {
   const [mappingJson, setMappingJson] = useState([]);
+
   const [imagesForCrew, setImagesForCrew] = useState([]);
 
   useEffect(() => {
-   
+    window.scrollTo(0, 0);
     axiosInstance
       .post("/api/crew/get-crew", { pageId: 2 })
       .then((response) => {
@@ -35,7 +37,8 @@ const TeamPage = () => {
       .catch((error) => {
         console.error("Error retrieving section data:", error);
       });
-  }, []);
+    },[]);
+
 
   // Define a function to handle images for each crew member
   /*
@@ -49,7 +52,9 @@ const TeamPage = () => {
 
   return (
     <div className="TeamPage">
-      <PageHeader image={teamImg} />
+      <PageHeader pageId={2} sectionId={10}  image={teamImg} page="team"/>
+     <PageIntro/>
+     
       <div className="contactTextContainer">
         {/**
          <h1 className="pagetxt" id="pageHeaderH">

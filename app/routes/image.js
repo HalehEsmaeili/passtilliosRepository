@@ -26,19 +26,24 @@ router.post('/getImages', async (req, res) => {
 
   const params = {
     Bucket: bucketName,
-    Prefix: folderPath, // Optional: If your images are stored in a specific folder
+    Prefix: folderPath, 
   };
 
   try {
     // Use AWS SDK v3 to send a ListObjectsCommand to list objects in the specified S3 bucket
     const data = await s3.send(new ListObjectsCommand(params));
-  
-    // Construct URLs for each image
+  console.log("data.Contents",data.Contents);
+    // Construct URLs for each image.slice(1)
+   if(data && data.Contents) {
     const urls = data.Contents.slice(1).map((object) => {
+      console.log("generated url:",object.Key);
       return `https://${bucketName}.s3.amazonaws.com/${object.Key}`;
+    
     });
+  
+    res.json({ urls });}
 
-    res.json({ urls });
+  
   } catch (err) {
     console.error(err);  // Log the error for debugging
     res.status(500).json({ error: 'Unable to list objects in the S3 bucket.' });

@@ -9,6 +9,8 @@ import {
   useAnimationControls,
 } from "framer-motion";
 
+import { useNavigate } from "react-router-dom";
+
 
 ///components
 import Button from "./Button.js";
@@ -20,7 +22,7 @@ import nextSteps from "../public/images/div4/nextStepFinal.png";
 import notTalking from "../public/images/broDIV2/2.png";
 
 function NextSteps(props) {
- 
+  const navigate = useNavigate();
   //refs
   const divNextStepsRef = useRef(null);
   const isInViewdivNextStep = useInView(divNextStepsRef, {once:true, amount: 0.1 });
@@ -128,16 +130,29 @@ return (
             className="nextSteps"
             alt="next steps"
           ></motion.img>
-         {(showBtn1)&&
-          <Button id="btn1" name="FIRST PROJECT" />
-         }
-         {(showBtn3)&&
-          <Button id="btn2" name="JOIN!" />
-         }
-         {(showBtn2)&&
+         {(showBtn1?
+
+          <Button id="btn1" name="CAMPAIGN" handleClick={()=>navigate("/campaign")} />
+:
+<Button id="btn1" name="ART PAGE" handleClick={()=>navigate("/art")} />
+
+         
+          ) }
+         {(showBtn3?
+          <Button id="btn2" name="JOIN!" handleClick={()=>navigate("/contact")}  />
+          :
+<Button id="btn2" name="ART PAGE" handleClick={()=>navigate("/art")} />
+
+
+         )}
+         {(showBtn2?
   
-          <Button id="btn3" name="THE TEAM" />
-         }
+          <Button id="btn3" name="THE TEAM"  handleClick={()=>navigate("/team")}  />
+          :
+<Button id="btn3" name="ART PAGE" handleClick={()=>navigate("/art")} />
+
+
+         )}
         </motion.div>
       </div>
 

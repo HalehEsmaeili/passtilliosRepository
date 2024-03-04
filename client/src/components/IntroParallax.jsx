@@ -98,7 +98,7 @@ function IntroParallax() {
   const [visibletime, setvisible] = useState(0);
   const [scrolled, setScrolled] = useState(false);
   const [isnextArrowClickable, setIsNextArrowClickable] = useState(true);
-
+const[splittedTxt,setSlittedTxt]=useState([]);
   ///////////refs and useinview aniamtion set up
 
   const div0 = useRef(null);
@@ -207,6 +207,8 @@ function IntroParallax() {
   //////////////////////animation functions
 
   useEffect(() => {
+
+
     axiosInstance.get(`/api/content/sections/${1}/${2}`)
       .then((response) => {
         console.log("responsoe for grey");
@@ -224,8 +226,9 @@ function IntroParallax() {
       });
 
     ///fetch texts for the grey 2
+        // .get(`/api/content/sections/${1}/${3}`)
     axiosInstance
-      .get(`/api/content/sections/${1}/${3}`)
+    .get(`/api/content/sections/intro/grey`)
       .then((response) => {
         console.log("responsoe for grey");
         console.log(response.data.sections);
@@ -826,22 +829,22 @@ if(isInViewGreyTxt){
   
       b3Controls.start({
         opacity: 1,
-        top: "40%",
-        left: "45%",
+        top: "50%",
+        left: "35%",
         transition: { type: "spring", stiffness: 17, duration: 0.2 },
       }),
   
       b4Controls.start({
         opacity: 1,
         top: "60%",
-        left: "-70%",
+        left: "-65%",
         transition: { type: "spring", stiffness: 15, duration: 0.2 },
       }),
   
       b5Controls.start({
         opacity: 1,
         top: "10%",
-        left: "70%",
+        left: "60%",
         transition: { type: "spring", stiffness: 20, duration: 0.2 },
       }),
       b1Controls.start({
@@ -950,7 +953,7 @@ if(isInViewGreyTxt){
   //border:"2px solid yellow"
   return (
     <div
-      style={{ overflowY: "hidden", maxHeight: "fit-content", marginBottom: 0 }}
+      style={{ overflowY: "hidden", maxHeight: "fit-content", marginBottom: 0,marginTop: "0%" }}
     >
       <motion.div ref={div0} className="div0">
         <motion.div className="bubbleContainerIntro" animate={b3Controls}>
@@ -1075,7 +1078,8 @@ if(isInViewGreyTxt){
 <video id="yourcolorsVid"  autoplay="autoplay" muted loop> <source src={teamHeaderVid} type="image/gif"></source>  </video> 
 */}
 
-      <CampaignStatement pageId={1} sectionId={1} />
+      <CampaignStatement  pageTitle="intro"
+sectionTitle="projectSection" pageId={1} sectionId={1} />
 
       <motion.div className="divGrey" ref={greydiv}>
         <motion.div className="bubbleContainerGrey" animate={b1Controls}>
@@ -1443,6 +1447,8 @@ if(isInViewGreyTxt){
         </video>
       )}
       <ProjectSection
+        pageId={1}
+        sectionId={1}
         setLogoAnimationTodiv4Compelete={setLogoAnimationTodiv4Compelete}
         broMovingToNextSteps={broMovingToNextSteps}
       />

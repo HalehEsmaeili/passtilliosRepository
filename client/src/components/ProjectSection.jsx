@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef, useHover } from "react";
-
+import axiosInstance from "../Api/axiosInstance";
 import "../public/intro.css";
 import "./projectsection.css";
 //1901 change the h1s positioning css.
@@ -11,8 +11,7 @@ import "./projectsection.css";
 //vids
 //import teamHeaderVid from "../public/video/teamGif.gif";
 
-import whatpaintingsVid from "../public/video/bro2.mp4";
-import bobVid from "../public/images/nextSteps/28.mp4";
+
 import bobpng from "../public/images/nextSteps/person2.png";
 import bob from "../public/images/nextSteps/person.png";
 //import Button from "./Button.js";
@@ -23,8 +22,6 @@ import {
   useScroll,
   useAnimate,
   useAnimationControls,
-  useMotionValue,
-  useAnimation,
 } from "framer-motion";
 
 import throatCleaning from "../public/images/broDIV2/1.png";
@@ -51,6 +48,10 @@ import colorSplash from "../public/images/layoutPart1/paintsplashReal.png";
 ////div4 and div5 imports
 
 function ProjectSection(props) {
+
+ const [headers,setHeaders]=useState();
+ const [texts,setTexts]=useState();
+
   const text =
     "Imagine a world painted only in shades of gray, where only black and white call the shots. It's a place without the cozy warmth of lively colors.In this imaginary place, our eyes reveal emptiness, echoing the loneliness inside. The once-fiery passion in hearts, eager to use their unique colors to make a beautiful difference on our collective canvas of life, now flickers, struggling to survive in a world that only wants us to be either black or white.Creativity and inspiration take a backseat. Life in this gray and expected canvas feels like a broken record, missing the beat of unpredictability that makes it exciting and dance-worthy!";
   const whatPaintingRef = useRef(null);
@@ -81,7 +82,7 @@ function ProjectSection(props) {
   const [img1, animateimg1] = useAnimate();
   const [img2, animateimg2] = useAnimate();
   const [img3, animateimg3] = useAnimate();
-  const [img1visible, setimage1visible] = useState(false);
+
 
   const [scrolled, setScrolled] = useState(false);
   const [isnextArrowClickable, setIsNextArrowClickable] = useState(true);
@@ -168,6 +169,29 @@ useEffect(()=>{
 
 },[isInViewdiv4]);
 */
+////fetch content
+
+useEffect(() => {
+
+  //////
+
+  axiosInstance
+    .get(`/api/content/sections/${props.pageId}/${props.sectionId}`)
+    .then((response) => {
+      //response.data.sections.section_title;
+      setHeaders(response.data.sections.header_contents);
+      setTexts(response.data.sections.text_contents);
+
+      //console.log(response.data.sections);
+      //setSectionData(response.data.sections);
+    })
+    .catch((error) => {
+      console.error("Error retrieving section data for project section:", error);
+      // Handle error
+    });
+}, []);
+
+
   ///bro moving
   useEffect(() => {
     const blendoutBroLogo = async () => {
@@ -193,6 +217,7 @@ useEffect(()=>{
     broAnimationComplete,
     logoAnimationTodiv4Compelete,
   ]);
+
 
   useEffect(() => {
     if (isInViewdiv3) {

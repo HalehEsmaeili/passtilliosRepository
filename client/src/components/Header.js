@@ -123,7 +123,9 @@ function Header() {
               <li>
                 <div className="placeholder">
                   <div className="upside">
-                    <a className="button">pro</a>
+                  <Link to="/campaign" className="button">
+                      <img src={team} className="customIconCss" />
+                  </Link>
                   </div>
                 </div>
               </li>

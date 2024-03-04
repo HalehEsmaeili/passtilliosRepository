@@ -147,13 +147,8 @@
   text-transform: uppercase;
 }
 
-@media (min-width: 768px) {
-  .button-64 {
-    font-size: 24px;
-    min-width: 196px;
-  }
-}
-@media (max-width: 540px) {
+
+@media (max-width: 700px) {
   .button-64 {
     font-size: 0.5vw;
     min-width: none;
@@ -161,13 +156,11 @@
 
   #btn3 {
     text-align: left;
-    padding-left: 4vw;
-
     position: absolute;
 
-    padding-right: 0vw;
+   
     top: 55%;
-    right: 9%;
+    right: 12%;
     background-color: #0d0431;
     background-image: none;
     /*background-image: linear-gradient(144deg,#00EEB9,#FEC125,#5B42F3 50%,#F90EE7);*/
@@ -176,12 +169,13 @@
     width: 4vw;
     position: absolute;
     top: 76%;
-    right: 2%;
+    right: 7%;
+    left: 60%;
     background-color: #0d0431;
     background-image: none;
     text-align: right;
-    padding-left: 0;
-    padding-right: 5vw;
+  
+  
   }
   #btn1 {
     z-index: 1;

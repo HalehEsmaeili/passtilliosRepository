@@ -477,7 +477,7 @@ const handleFilteringAndSetting=(newInputValue,listTOFilter,useState_Val,set_use
                   border:"none",
                  padding:".7% 0",
                   backgroundImage:
-                  "linear-gradient(102deg, #f90ee7, #5b42f3 60%, #00eeb9)",
+                  "linear-gradient(102deg, #f90ee7,#5b42f3 70%,#00eeb9,#fec125)",
                     marginLeft:"1%"
                 }}
                 type="button"
@@ -539,7 +539,7 @@ const handleFilteringAndSetting=(newInputValue,listTOFilter,useState_Val,set_use
                   border:"none",
                  padding:".7% 0",
                   backgroundImage:
-                  "linear-gradient(102deg, #f90ee7, #5b42f3 60%, #00eeb9)",
+                  "linear-gradient(102deg, #f90ee7,#5b42f3 70%,#00eeb9,#fec125)",
                 marginLeft:"1%"
                 }}
                 type="button"
@@ -600,7 +600,8 @@ const handleFilteringAndSetting=(newInputValue,listTOFilter,useState_Val,set_use
                   width:"28%",
                   fontSize:"1.7vw",
                   backgroundImage:
-                  "linear-gradient(102deg, #f90ee7, #5b42f3 60%, #00eeb9)",
+                  "linear-gradient(102deg, #f90ee7,#5b42f3 70%,#00eeb9,#fec125)",
+                   
                     marginLeft:"1%"
                 }}
                 type="button"

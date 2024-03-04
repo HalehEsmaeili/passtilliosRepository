@@ -134,13 +134,13 @@ input::placeholder {
 }
 
 .form-signin input[type="telNumber"] {
-  color: white;
+  color:#0d0431;
   background-image: linear-gradient(
     102deg,
     #f90ee7,
-    #5b42f3 30%,
+    #5b42f3 40%,
     #00eeb9,
-   orange
+    orange
   );
 
 }
