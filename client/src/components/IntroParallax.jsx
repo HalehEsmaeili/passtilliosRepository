@@ -373,7 +373,7 @@ const[splittedTxt,setSlittedTxt]=useState([]);
         overAnim.start({ opacity: 1 });
 
       }catch{
-        console.log("haaaaaaaaaaaaaaaaaaaaah");
+    
       }
 
       };
@@ -496,16 +496,17 @@ const[splittedTxt,setSlittedTxt]=useState([]);
       greyCloudDownControl.start({
         x: "-15vw",
         y: "-10%",
-        rotate: 20,
-        scale: 1.3,
+        rotate: 30,
+        scale: 1.4,
+        opacity: 0.9,
         transition: { duration: 2 },
       });
       greyCloudControl.start({
-        x: "28vw",
+        x: "20vw",
         y: "-30%",
-        rotate: -40,
+        rotate: -90,
         opacity: 0.5,
-        scale: 1.7,
+        scale: 1.6,
         transition: { duration: 2.5 },
       });
       b1EmptyControls.start({

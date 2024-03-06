@@ -40,8 +40,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start-client": "react-scripts start",
+    "build": "react-scripts build  && (cd ../app && npm install)",
     "build:tailwind": "postcss src/tailwind.css -o src/index.css",
     "test": "react-scripts test",
     "eject": "react-scripts eject",

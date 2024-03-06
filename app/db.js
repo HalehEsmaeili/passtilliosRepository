@@ -2,11 +2,11 @@ import pg from 'pg';
 
 // Database configuration with connection pool
 const pool = new pg.Pool({
-  user: "postgres",
-  host: "localhost",
+  user: process.env.DB_USER,
+  host:  process.env.DB_HOST,
   database: process.env.DB_NAME,
   password: process.env.DB_PASSWORD,
-  port: 8001,
+  port: process.env.DB_PORT,
 });
 
 export default pool;

@@ -11,8 +11,7 @@ function Footer() {
   
     return (
      <div style={{marginTop:"10%",textAlign:'center',marginBottom:0}}>
-    {/* <p style={{textAlign:'center',color:'white'}} className="mt-5 mb-3 text-body-secondary">&copy; passtillios 2024</p>*/}
-    
+   
     <Link to="/Impressum" className="button">
     <p style={{display:'inline-block',textAlign:'center',color:'white'}} className="mt-5 mb-3 text-body-secondary">Impressum</p>
      </Link>
@@ -20,7 +19,8 @@ function Footer() {
     <p style={{display:'inline-block',textAlign:'center',color:'white'}} className="mt-5 mb-3 text-body-secondary">Datenschutz</p>
      </Link>
       
-
+  <p style={{textAlign:'center',color:'white'}} className="mt-5 mb-3 text-body-secondary">&copy; passtillios 2022</p>
+    
       </div>
     );
   }

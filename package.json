@@ -1,13 +1,7 @@
 {
-  "dependencies": {
-    "dotenv": "^16.4.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-marker": "^1.0.1",
-    "react-scripts": "^5.0.1"
-  },
+ 
   "scripts": {
-    "start": "react-scripts start",
+    "start": "cd server && node index.js",
     "build": "react-scripts build",
     "build:tailwind": "postcss  src/tailwind.css -o src/index.css",
     "test": "cd client && npm test",
@@ -15,8 +9,23 @@
     "heroku-postbuild": "cd client && npm run build",
     "serve": "cd client && npm run serve"
   },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.515.0",
+    "aws-sdk": "^2.1561.0",
+    "axios": "^1.6.7",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.1",
+    "express": "^4.18.2",
+    "express-rate-limit": "^7.1.5",
+    "express-validator": "^7.0.1",
+    "pg": "^8.11.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-marker": "^1.0.1",
+    "react-scripts": "^5.0.1"
+  },
   "devDependencies": {
-    "postcss": "^8.4.35",
-    "tailwindcss": "^3.4.1"
+    
   }
 }

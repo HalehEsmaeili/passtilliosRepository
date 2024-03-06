@@ -19,7 +19,7 @@ dotenv.config({ path: `${__dirname}/.env` });
 import "dotenv/config";
 
 const app = express();
-const port = 3001;
+const port = process.env.PORT || 3001;
 
 // Middleware
 app.use(bodyParser.json());
@@ -29,13 +29,29 @@ app.use((req, _, next) => {
   next();
 });
 
+
+
+
+
 // Mount routes
 app.use("/api", routes);
 console.log("All Environment Variables:", process.env.DB_NAME);
 
+app.get("/*", (req, res) => {
+ res.sendFile(
+  path.join(__dirname,"../client/build/index.html"),
+function(err){
+  if(err){
+    res.status(500).send(err);
+  }
+}
+  );
+});
+
+
 // Catch all unspecified calls
 app.get("*", (_, res) => {
-  res.send('<h1 style="text-align: center;">404 Not Found.</h1>');
+  res.send([]);
 });
 
 // Start the server
