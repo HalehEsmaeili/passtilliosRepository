@@ -31,11 +31,13 @@ app.use((req, _, next) => {
 
 
 
-
-
 // Mount routes
 app.use("/api", routes);
+/*
 console.log("All Environment Variables:", process.env.DB_NAME);
+
+// Serve static assets (e.g., CSS, JavaScript) from the build folder
+app.use(express.static(path.join(__dirname, '../client/build')));
 
 app.get("/*", (req, res) => {
  res.sendFile(
@@ -48,10 +50,14 @@ function(err){
   );
 });
 
-
+*/
 // Catch all unspecified calls
-app.get("*", (_, res) => {
-  res.send([]);
+
+
+
+// Serve the React app for all other routes
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
 });
 
 // Start the server
