@@ -9,7 +9,7 @@ const router = Router();
 // Rate limit configuration
 const limiter = rateLimit({
   windowMs: 20 * 60 * 1000, // 20 minutes
-  max: 0, // limit each IP to 2 requests per windowMs
+  max: 3, // limit each IP to 2 requests per windowMs
   handler: (req, res) => {
     // Send a custom response when the rate limit is exceeded
     res.status(429).json({
