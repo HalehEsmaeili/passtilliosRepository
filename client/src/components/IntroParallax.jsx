@@ -1213,7 +1213,14 @@ sectionTitle="projectSection" pageId={1} sectionId={1} />
                  {texts[0]}
                 </p>
               ) : (
-                ""
+                 
+                <p className="greyTxt">
+              
+                Instead how about we embrace the true charm of grey? I believe
+                its about time we guide it back to being the background color;
+                the perfect backdrop where vibrant and unique colors can take
+                the lead as the main storytellers in the painting of our lives!
+                </p>
               )}
               {/** <Highlighted text={text} highlight="Imagine unique colors" /> */}
             </div>

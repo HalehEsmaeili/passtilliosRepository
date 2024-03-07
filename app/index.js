@@ -3,12 +3,10 @@ import { dirname } from "path";
 import dotenv from "dotenv";
 import express from "express";
 import routes from "./routes/index.js";
-import pg from "pg";
 import pool from "./db.js";
 import bodyParser from "body-parser";
 import cors from "cors";
 //import AWS  from 'aws-sdk';
-import { GetObjectCommand } from '@aws-sdk/client-s3';
 //const s3 = new S3Client();
 // Get the directory name using ESM features
 const __filename = fileURLToPath(import.meta.url);
@@ -56,8 +54,8 @@ function(err){
 
 
 // Serve the React app for all other routes
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
+app.get('/*', (req, res) => {
+//  res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
 });
 
 // Start the server
