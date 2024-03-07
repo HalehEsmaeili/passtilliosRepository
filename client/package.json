@@ -42,7 +42,7 @@
   },
   "scripts": {
     "start-client": "react-scripts start",
-    "build": "react-scripts build  && (cd ../app && npm install)",
+    "build": "react-scripts build",
     "build:tailwind": "postcss src/tailwind.css -o src/index.css",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
