@@ -313,7 +313,7 @@ function CampaignStatement(props) {
       <div className="yourColorsDiv">
         {headers ? (
           <h1 id="campaignH" className="campaignText">
-            {headers[0]}...
+            {headers[1]}...
           </h1>
         ) : (
           <h1 id="campaignH" className="campaignText">
@@ -341,7 +341,7 @@ function CampaignStatement(props) {
         <div style={{ position: "relative" }}>
           {headers ? (
             <h1 id="whatIHave" className="tooFastH">
-              {headers[1]}
+              {headers[2]}
             </h1>
           ) : (
             ""
@@ -466,7 +466,7 @@ function CampaignStatement(props) {
           <div className="arrowContainer">
             <img className="arrowImage" src={arrow}></img>
           </div>
-          {headers ? (
+          {texts ? (
             <p id="journeyTxt" className="campaignText">
               {texts[2]}
             </p>
