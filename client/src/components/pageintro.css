@@ -7,7 +7,7 @@
 .magicContainer-pi {
     overflow: visible;
     position: relative;
-    margin-top: 40%;
+    margin-top: -42%;
     width:45%;
     margin-left: 28%;
     margin-right: 28%;
@@ -56,9 +56,9 @@ rotate:6deg;
     display: inline-block;
     margin-left:22% ;
     margin-right:22% ;
-    margin-top:0% ;
+    margin-top:-5% ;
     margin-bottom:0% ;
-    font-size: 1.2em;
+    font-size: 2.6vw;
     text-transform: lowercase;
     line-height: 5vw;
     text-align: center;
@@ -73,3 +73,20 @@ rotate:6deg;
     font-size: 5.5vw;
     text-align: center;
   }
+
+
+  @media screen and (min-width: 1200px) {
+  .pageintroP{
+    position: relative;
+    display: inline-block;
+    margin-left:22% ;
+    margin-right:22% ;
+    margin-top:0% ;
+    margin-bottom:0% ;
+    font-size: 1.5vw;
+    text-transform: lowercase;
+    line-height: 5vw;
+    text-align: center;
+    /*color: #fec125;*/
+  }
+}

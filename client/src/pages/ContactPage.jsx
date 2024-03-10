@@ -8,7 +8,7 @@ import "./ContactPage.css";
 import axiosInstance from "../Api/axiosInstance.js";
 import PageHeader from "./PageHeader.jsx";
 import { isEmail, isMobilePhone } from 'validator'; 
-import ContactList from "../components/ContactList.jsx";
+import ContactList from "../components/contactListBrevo.jsx";
 import PageIntro from "../components/PageIntro.jsx";
 const ContactPage = () => {
  

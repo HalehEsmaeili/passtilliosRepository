@@ -1,4 +1,5 @@
 import React, { useState,useRef, useEffect } from "react";
+import "../pages/pages.css";
 import "./pageintro.css";
 import colorTiles from "../public/images/header/colorTiles.png";
 //import 'bootstrap/dist/css/bootstrap.min.css';
@@ -65,7 +66,6 @@ const PageIntro=(props)=>{
 
 
  
-
 <div ref ={magicContainerRef} className="magicContainer-pi">
             <motion.img
               className="grid-item-spice-pi"
@@ -91,13 +91,16 @@ const PageIntro=(props)=>{
             
            
             </div>
-<img style={{opacity:1,marginTop:"0%",marginBottom:"0%",display:"inline-block",marginLeft:"40%",width:"20%"}} src={colorTiles}></img>
-       
+
+
+            <img className="pages-imgs" style={{opacity:1,marginTop:"15%",marginBottom:"5%",display:"inline-block",marginLeft:"40%",width:"20%"}} src={colorTiles}></img>
+    
 <h1  className="pageintroP">
 things are getting way too grey around here. How about we each throw in our unique color palette and spice things up a bit? Let's bring some cool vibes and shake off the monotony!
 </h1>
      <img style={{opacity:1,marginTop:"0%",marginBottom:"0%",display:"inline-block",marginLeft:"40%",width:"20%"}} src={colorTiles}></img>
 
+     
 </div>
 
    );  

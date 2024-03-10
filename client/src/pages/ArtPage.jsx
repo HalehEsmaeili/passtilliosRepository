@@ -2,6 +2,7 @@ import React,{useEffect,useState} from "react";
 import axiosInstance from "../Api/axiosInstance.js";
 import Slider from "../components/Slider.jsx";
 //import 'bootstrap/dist/css/bootstrap.min.css';
+import "./pages.css";
 import "./ArtPage.css";
 import paintImg from "../public/images/artpage/whitePaint.png";
 import thePainting from "../public/images/artpage/thePainting.png";
@@ -84,14 +85,17 @@ const ArtPage = () => {
    <div >
 <PageHeader pageId={4}  page="Art" image={paintImg}/> 
 <PageIntro/>
-<h1 className="ArtpageH">so rember the painting I showed you in the home page?</h1>
-<img className="thePainting" src={thePainting}></img>
-<h1 className="ArtpageH">what do I plan to do with it?</h1>
+<h1 className="h1-subthemes ">so rember the painting I showed you in the home page?</h1>
+<img className="pages-imgs " src={thePainting}></img>
+<h1 className="h1-subthemes ">what do I plan to do with it?</h1>
 {(productImages && productImages.length>0)?
   <Slider images={productImages}/>
   :<div></div>
 }
-
+<div className="mappedContentContainer">
+<h1 className="mappedContentH">no selling before the campaign launch!</h1>
+<p className="mappedContentTxt">so rember the painting I showed you in the home page?so rember the painting I showed you in the home page?so rember the painting I showed you in the home page?so rember the painting I showed you in the home page?so rember the painting I showed you in the home page?</p>
+</div>
 {/**TODO:headers :Slider */}
 {/**TODO:headers :what i plan to do with it? */}
 {/**TODO:headers :why ? */}

@@ -70,11 +70,11 @@ margin-top: -23%;
 .pageintroh{
   opacity: 1;
   position: relative;
-  margin-top: 0%;
+  margin-top: 10%;
   margin-left:30% ;
   margin-right:30% ;
-  margin-bottom: -30%;
-  font-size: 5.5vw;
+  margin-bottom: -20%;
+  font-size: 5vw;
   text-align: center;
 }
 .txtPageHeader {
