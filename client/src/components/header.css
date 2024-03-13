@@ -11,10 +11,10 @@ input{
 
 .svg-icon {overflow: visible;
   z-index: 1000 !important;
-  position: absolute;
-left:16vw;
+  position: relative;
+left:56%;
 top:20%;
- width: 6vw; 
+ width: 18%; 
  transform-origin: right;
   transition: stroke 0.3s; /* Add transition for a smooth color change */
 }
@@ -29,18 +29,21 @@ top:20%;
 stroke:#0D0431;
 stroke-width:7;
 }
+/*
 @media (max-width: 600px) {
   
   .svg-icon {overflow: visible;
-    z-index: 1000 !important;
+  z-index: 1000 !important;
   left:16vw;
-  top:30%;
-   width: 20%; 
+  top:60%;
+   width: 22%; 
    transform-origin: right;
-    transition: stroke 0.3s; /* Add transition for a smooth color change */
+    transition: stroke 0.3s; 
   }
-  
+
+
 }
+*/
 .icon {
   position: absolute;
   top: 70%;
@@ -94,7 +97,7 @@ border-bottom-right-radius: 70%;
 }
 .menu__toggle {
   z-index: 11;
-  position: absolute;
+  position: relative;
   top: -15vw;
   left: -15vw;
   width: 30vw;
