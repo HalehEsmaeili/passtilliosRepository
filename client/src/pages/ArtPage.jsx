@@ -85,6 +85,11 @@ const ArtPage = () => {
    <div >
 <PageHeader pageId={4}  page="Art" image={paintImg}/> 
 <PageIntro/>
+<Slider images={[{
+         url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/art/products/colorTiles.png",
+              caption: "test",
+             
+}]}/>
 <h1 className="h1-subthemes ">so rember the painting I showed you in the home page?</h1>
 <img className="pages-imgs " src={thePainting}></img>
 <h1 className="h1-subthemes ">what do I plan to do with it?</h1>

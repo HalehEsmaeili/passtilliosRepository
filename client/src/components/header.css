@@ -35,7 +35,7 @@ stroke-width:7;
   .svg-icon {overflow: visible;
     z-index: 1000 !important;
  
-  top:15vw;
+  top:16vw;
    width: 22%; 
    transform-origin: right;
     transition: stroke 0.3s; 
