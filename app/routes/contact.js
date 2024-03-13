@@ -1,6 +1,7 @@
 import 'dotenv/config';
 import { Router } from 'express';
 import rateLimit from 'express-rate-limit';
+import  fetch from 'node-fetch';
 import https from 'https';
 import { check, validationResult } from 'express-validator';
 
@@ -18,23 +19,17 @@ const limiter = rateLimit({
     });
   },
 });
-const SibApiV3Sdk = require('sib-api-v3-sdk');
 
-// Set up SendinBlue API key
-var defaultClient = SibApiV3Sdk.ApiClient.instance;
-var apiKey = defaultClient.authentications['api-key'];
-apiKey.apiKey = 'YOUR API KEY';
 
-// Create ContactsApi instance
-var apiInstance = new SibApiV3Sdk.ContactsApi();
+
 
 // Define route to save email in SendinBlue contact list
-router.post('/save-email', [
+router.post('/save-to-tempo-contactlist-brevo', [
   limiter,
   check('email').isEmail().withMessage('Invalid email address'),
   check('name').notEmpty().withMessage('Name is required'),
   check('city').notEmpty().withMessage('City is required'),
-  check('tel').optional().isMobilePhone('any', { strictMode: false }).withMessage('Telephone must be a valid phone number')
+ // check('tel').optional().isMobilePhone('any', { strictMode: false }).withMessage('Telephone must be a valid phone number')
 
 ], async (req, res) => {
   const errors = validationResult(req);
@@ -47,26 +42,40 @@ router.post('/save-email', [
   const city = req.body.city;
   const state = req.body.state;
   const country = req.body.country;
-  const tel = req.body.tel;
+ // const tel = req.body.tel;
+ // SMS: tel
   if (!email) {
     return res.status(400).json({ error: 'Email is required' });
   }
 
-  // Create a new contact
-  var createContact = new SibApiV3Sdk.CreateContact({
-    email: email
-  });
-
-  // Call SendinBlue API to create the contact
-  apiInstance.createContact(createContact)
-    .then(function(data) {
-      console.log('API called successfully. Returned data: ' + data);
-      res.status(200).json({ message: 'Email saved successfully' });
+  const url ='https://api.brevo.com/v3/contacts/doubleOptinConfirmation';
+  const options = {
+    method: 'POST',
+    headers: {
+      accept: 'application/json',
+      'content-type': 'application/json',
+      'api-key': process.env.BREVO_API_KEY,
+    },
+    body: JSON.stringify({
+      attributes: {
+        VORNAME: name,
+        EMAIL:email,
+        COUNTRY: country,
+        STATE: state,
+        CITY: city,
+       
+      },
+      includeListIds: [process.env.BREVO_LIST_ID ],
+      email: email,
+      templateId: process.env.BREVO_TEMPLATE_ID ,
+      redirectionUrl: process.env.BREVO_REDIRECT_URL
     })
-    .catch(function(error) {
-      console.error(error);
-      res.status(500).json({ error: 'Internal Server Error' });
-    });
+  };
+  
+  fetch(url, options)
+    .then(res => res.json())
+    .then(json => console.log(json))
+    .catch(err => console.error('error:' + err));
 });
 
 // Apply the rate limiter to all requests to the '/saveEmail' route

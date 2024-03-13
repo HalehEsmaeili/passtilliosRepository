@@ -15,21 +15,27 @@ import Campaign from '../pages/Campaign';
 function App() {
  return (
     <div style={{marginBottom:0}} >
-<Router>
-  <Header />
-  <Routes> 
-  <Route path="/art" element={<ArtPage />} />
-   <Route path="/team" element={<TeamPage />} />
-   <Route path="/campaign" element={<Campaign />} />
-    <Route path="/contact" element={<ContactPage />} />
-    <Route path="/home" element={<IntroParallax/>} />
-    <Route path="/Impressum" element={<IntroParallax/>} />
-    <Route index element={ <IntroParallax/>} />
-    
-    {/* Add more routes for other components */}
-    </Routes> 
+   <Router>
+        <Switch>
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/contact/success" element={<ContactPage savedsuccessful={true} />} />
+        </Switch>
+
+        <Header />
+        <Routes>
+          <Route path="/art" element={<ArtPage />} />
+          <Route path="/team" element={<TeamPage />} />
+          <Route path="/campaign" element={<Campaign />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/home" element={<IntroParallax />} />
+          <Route path="/Impressum" element={<IntroParallax />} />
+          <Route index element={<IntroParallax />} />
+        </Routes>
+        <Footer />
+      </Router>    
+  
     <Footer />
-</Router>
+
     
     
 
