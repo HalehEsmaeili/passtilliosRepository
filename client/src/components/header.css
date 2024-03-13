@@ -29,20 +29,20 @@ top:6vw;
 stroke:#0D0431;
 stroke-width:7;
 }
-/*
+
 @media (max-width: 600px) {
   
   .svg-icon {overflow: visible;
     z-index: 1000 !important;
-  left:16vw;
-  top:70%;
+ 
+  top:15vw;
    width: 22%; 
    transform-origin: right;
     transition: stroke 0.3s; 
   }
   
 }
-*/
+
 .icon {
   position: absolute;
   top: 70%;
