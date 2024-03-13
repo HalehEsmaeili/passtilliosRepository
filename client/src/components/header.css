@@ -8,6 +8,7 @@ input{
 
 }
 
+
 .svg-icon {overflow: visible;
   z-index: 1000 !important;
   position: absolute;
@@ -28,7 +29,18 @@ top:20%;
 stroke:#0D0431;
 stroke-width:7;
 }
-
+@media (max-width: 600px) {
+  
+  .svg-icon {overflow: visible;
+    z-index: 1000 !important;
+  left:16vw;
+  top:30%;
+   width: 20%; 
+   transform-origin: right;
+    transition: stroke 0.3s; /* Add transition for a smooth color change */
+  }
+  
+}
 .icon {
   position: absolute;
   top: 70%;
