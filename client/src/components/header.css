@@ -8,8 +8,8 @@ input{
 
 }
 
-.svg-icon {
-  z-index: 1000;
+.svg-icon {overflow: visible;
+  z-index: 1000 !important;
   position: absolute;
 left:16vw;
 top:20%;
@@ -21,10 +21,10 @@ top:20%;
 /* Style the SVG to be white when its parent has a 'clicked' class */
 .clicked .svg-icon-path {
   stroke: white; /* Change the fill color to white */
- 
+  z-index: 1000 !important;
 }
 .svg-icon-path {
-  
+  z-index: 1000 !important;
 stroke:#0D0431;
 stroke-width:7;
 }
@@ -324,4 +324,9 @@ text-transform:uppercase ;
 
 width: 5vw;
 }
+.radioHeader{
+  opacity: 0!important;
+
+}
+
 

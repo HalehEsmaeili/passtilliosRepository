@@ -58,9 +58,9 @@ function Header() {
               <div className="hamburger"></div>
             </div>
           </div>
-          <input type="radio" name="arrow--up" id="degree--up-0" />
-          <input type="radio" name="arrow--up" id="degree--up-1" />
-          <input type="radio" name="arrow--up" id="degree--up-2" />
+          <input type="radio" name="arrow--up" className="radioHeader" id="degree--up-0" />
+          <input type="radio" name="arrow--up" className="radioHeader" id="degree--up-1" />
+          <input type="radio" name="arrow--up" className="radioHeader" id="degree--up-2" />
           <div className="menu__listings">
             <ul className="circle">
               <li>
