@@ -11,22 +11,20 @@ import axiosInstance from "../Api/axiosInstance.js";
 import { isEmail, isMobilePhone } from "validator";
 import InputHelper from "./InputHelper.jsx";
 const ContactList = () => {
-  
   const [showInfoForState, setShowInfoForState] = useState(false);
   const [showInfoForCity, setShowInfoForCity] = useState(false);
   const [email, setEmail] = useState("");
   const [name, setname] = useState("");
   const [tel, setTel] = useState("");
 
-
-  const [city, setCity] = useState({name:""}); // New state for city
+  const [city, setCity] = useState({ name: "" }); // New state for city
   const [cityPlaceholder, setCityPlaceholder] = useState(
     "first choose a state:)"
   );
   //const [allcities, setAllCities] = useState([]);
   const [citySuggestions, setCitySuggestions] = useState([]);
 
-  const [state, setState] = useState({name:"",isoCode:""});
+  const [state, setState] = useState({ name: "", isoCode: "" });
   const [statePlaceholder, setStatePlaceholder] = useState(
     "great! which state in Germany?"
   );
@@ -35,7 +33,7 @@ const ContactList = () => {
     State.getStatesOfCountry("DE")
   );
 
-  const [country, setCountry] = useState({name:"Germany",isoCode:"DE"});
+  const [country, setCountry] = useState({ name: "Germany", isoCode: "DE" });
   const [countryPlaceholder, setCountryPlaceholder] = useState(
     "no way... welcome! which country then?"
   );
@@ -44,7 +42,7 @@ const ContactList = () => {
     Country.getAllCountries()
   );
   const [showInfoForCountry, setShowInfoForCountry] = useState(false);
-  
+
   const [btnPressed, setBtnPressed] = useState(false);
   const [savedSuccessfully, setSavedSuccessfully] = useState(false);
   const [savingUnsuccessful, setSavingUnsuccessful] = useState(false);
@@ -55,54 +53,35 @@ const ContactList = () => {
   const [stateIsoCode, setStateIsoCode] = useState("");
   const [helperTxt, setHelperTxt] = useState("");
 
-////recaptcha
-const[recaptchaSuccess,setRecaptchaSuccess]=useState(false);
-const[recaptchaFail,setRecaptchaFail]=useState(false);
-const[recaptchaExpired,setRecaptchaExpired]=useState(false);
-////useeffects for country,state,city
+  ////recaptcha
+  const [recaptchaSuccess, setRecaptchaSuccess] = useState(false);
+  const [recaptchaFail, setRecaptchaFail] = useState(false);
+  const [recaptchaExpired, setRecaptchaExpired] = useState(false);
+  ////useeffects for country,state,city
   useEffect(() => {
-    console.log("i am triggered by",country.name);
-    if (country.isoCode==="") {
-    //setCountry.isoCode("");
-    setStatePlaceholder(
-      "lets first find your country;)"
-    );
-    } else{
-      setStatePlaceholder(
-        "great! which state in " + country.name+ " ?"
-      );
+    console.log("i am triggered by", country.name);
+    if (country.isoCode === "") {
+      //setCountry.isoCode("");
+      setStatePlaceholder("lets first find your country;)");
+    } else {
+      setStatePlaceholder("great! which state in " + country.name + " ?");
     }
-     
-    
-
   }, [country]);
 
   useEffect(() => {
-    console.log("state: i am triggered by",state.name);
+    console.log("state: i am triggered by", state.name);
     //handleFilteringAndSetting(newValue,Country.getAllCountries(),country,setCountry,countrySuggestions,setCountrySuggestions);
-   
-   
-    if (state.isoCode==="") {
-      setCityPlaceholder(
-        "lets first find your state;)"
-      );
-    }else{
-     setCityPlaceholder(
-        "great! which city in " + state.name+ " ?"
-      );
-    }
 
+    if (state.isoCode === "") {
+      setCityPlaceholder("lets first find your state;)");
+    } else {
+      setCityPlaceholder("great! which city in " + state.name + " ?");
+    }
   }, [state]);
 
+  const handleRecaptcha = () => {};
 
- const handleRecaptcha=()=>{
-
- };
-
-
-
-
- /*
+  /*
   const handleBlur = (event) => {
     console.log("im in handle blur");
     if (event.target.name === "country") {
@@ -122,17 +101,14 @@ const[recaptchaExpired,setRecaptchaExpired]=useState(false);
   };
 */
 
-const handleSubmit = (event) => {
-  event.preventDefault();
-  // Füge hier deine Submit-Logik hinzu
-}
-
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // Füge hier deine Submit-Logik hinzu
+  };
 
   const handleClick = async (e) => {
-    
     //make sure country state city are valid values othere wise set them to ""
-   
-    
+
     if (!isMobilePhone(tel, "de-DE", { strictMode: false })) {
       setTelError("Invalid phone number");
     }
@@ -141,22 +117,24 @@ const handleSubmit = (event) => {
       !isEmail(email) ||
       email === "" ||
       name === "" ||
-      city.name === ""||
-      country.isoCode===""||
-      state.isoCode===""
+      city.name === "" ||
+      country.isoCode === "" ||
+      state.isoCode === ""
     ) {
-      
       setBtnPressed(true);
     } else {
       try {
-        const response = await axiosInstance.post("/api/contact/saveEmail", {
-          email: email,
-          name: name,
-          tel: tel,
-          country:country.name,
-          state: state.name,
-          city: city.name,
-        });
+        const response = await axiosInstance.post(
+          "/api/contact/save-to-tempo-contactlist-brevo",
+          {
+            email: email,
+            name: name,
+            // tel: tel,
+            country: country.name,
+            state: state.name,
+            city: city.name,
+          }
+        );
 
         if (response.status === 200) {
           setSavedSuccessfully(true);
@@ -182,14 +160,13 @@ const handleSubmit = (event) => {
             setSavingUnsuccessful(true);
             setTooManyTries(true);
             setSavedSuccessfully(false);
-          }  else {
+          } else {
             // Handle other errors
             console.error("Server Error:", error.response.data);
             setSavingUnsuccessful(true);
-        setTooManyTries(false);
-        setSavedSuccessfully(false);
+            setTooManyTries(false);
+            setSavedSuccessfully(false);
           }
-       
         }
       }
     }
@@ -199,7 +176,7 @@ const handleSubmit = (event) => {
     return lvl1.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
   };
   const handleChange = (event) => {
-   // console.log("handleChange is triggered by",event.target.value);
+    // console.log("handleChange is triggered by",event.target.value);
     setBtnPressed(false);
 
     if (event.target.name === "name") {
@@ -230,38 +207,51 @@ const handleSubmit = (event) => {
       */
     } else if (event.target.name === "country") {
       const newValue = event.target.value;
-      console.log("country",country);
+      console.log("country", country);
       if (newValue.length < country.name.length) {
         console.log("Deletion occurred");
-        setCountry({name:newValue, isoCode:""});
+        setCountry({ name: newValue, isoCode: "" });
         setStatePlaceholder("first choose the country:)");
-        setState({name:"",isoCode:""});
+        setState({ name: "", isoCode: "" });
       }
-// Filter states based on the entered text (inputName,newInputValue,listTOFilter,useState_Val,set_useState_Val,setPlaceholder,suggestion_useState_Val,setSuggestions)
-handleFilteringAndSetting(newValue,Country.getAllCountries(),country,setCountry,countrySuggestions,setCountrySuggestions);
+      // Filter states based on the entered text (inputName,newInputValue,listTOFilter,useState_Val,set_useState_Val,setPlaceholder,suggestion_useState_Val,setSuggestions)
+      handleFilteringAndSetting(
+        newValue,
+        Country.getAllCountries(),
+        country,
+        setCountry,
+        countrySuggestions,
+        setCountrySuggestions
+      );
       //console.log("the current state saved isssss", state);
     } else if (event.target.name === "state") {
-    if(country.isoCode===""){
-      setState({name:"",isoCode:""});
-      setStatePlaceholder("first enter the country:)");
-    }else{
-    
-      const newValue = event.target.value;
-      // Filter states based on the entered text
-      /*
+      if (country.isoCode === "") {
+        setState({ name: "", isoCode: "" });
+        setStatePlaceholder("first enter the country:)");
+      } else {
+        const newValue = event.target.value;
+        // Filter states based on the entered text
+        /*
       const filteredStates = State.getStatesOfCountry(countryIsoCode).filter((stateItem) => {
         return cleanString(stateItem.name).startsWith(cleanString(newValue));
       });
       */
-      if (newValue.length < state.name.length) {
-        setState({name:newValue,isoCode:""});
-        setCityPlaceholder("first choose the state:)");
-        setCity({name:""});
-      }
-      handleFilteringAndSetting(newValue,State.getStatesOfCountry(country.isoCode),state,setState,stateSuggestions,setStateSuggestions);
-      ///only if there is exactly one match to the entered state set the stateIsoCode
-      // Compare the lengths to detect deletions
-     /*
+        if (newValue.length < state.name.length) {
+          setState({ name: newValue, isoCode: "" });
+          setCityPlaceholder("first choose the state:)");
+          setCity({ name: "" });
+        }
+        handleFilteringAndSetting(
+          newValue,
+          State.getStatesOfCountry(country.isoCode),
+          state,
+          setState,
+          stateSuggestions,
+          setStateSuggestions
+        );
+        ///only if there is exactly one match to the entered state set the stateIsoCode
+        // Compare the lengths to detect deletions
+        /*
       if (filteredStates.length === 1 && newValue.length >= state.length) {
         //console.log("Deletion occurred");
         setStateIsoCode(filteredStates[0].isoCode);
@@ -277,12 +267,12 @@ handleFilteringAndSetting(newValue,Country.getAllCountries(),country,setCountry,
         }
       }
       */
-    }
+      }
       //console.log("the current state saved isssss", state);
     } else if (event.target.name === "city") {
       if (state.isoCode === "") {
         console.log("iso code state is" + stateIsoCode);
-        setCity({name:""});
+        setCity({ name: "" });
         setCityPlaceholder("first enter the state:)");
       } else {
         // console.log("iso code should be setted " + stateIsoCode);
@@ -292,11 +282,18 @@ handleFilteringAndSetting(newValue,Country.getAllCountries(),country,setCountry,
         if (newValue.length < city.name.length) {
           console.log("Deletion occurred");
           setCityPlaceholder("which city are you in?");
-          setCity({name:newValue});
+          setCity({ name: newValue });
         }
-        handleFilteringAndSetting(newValue,City.getCitiesOfState(country.isoCode, state.isoCode),city,setCity,citySuggestions,setCitySuggestions);
-       
-   /*
+        handleFilteringAndSetting(
+          newValue,
+          City.getCitiesOfState(country.isoCode, state.isoCode),
+          city,
+          setCity,
+          citySuggestions,
+          setCitySuggestions
+        );
+
+        /*
     const filteredCities = allcities.filter((cityItem) => {
           return cleanString(cityItem.name).startsWith(cleanString(newVal));
         });
@@ -318,36 +315,43 @@ handleFilteringAndSetting(newValue,Country.getAllCountries(),country,setCountry,
       }
     }
   };
-//useStateval is either city,state or country use state whic hare json files
-const handleFilteringAndSetting=(newInputValue,listTOFilter,useState_Val,set_useState_Val,suggestion_useState_Val,setSuggestions)=>{
-  const filteredValues = listTOFilter.filter((item) => {
-    return cleanString(item.name).includes(cleanString(newInputValue));
-  });
- 
-        ///only if there is exactly one match to the entered state set the stateIsoCode
-        if (filteredValues.length === 1 && newInputValue.length >= useState_Val.name.length) {
-         
-          set_useState_Val(filteredValues[0]);
-          setSuggestions(filteredValues);
-          /*
+  //useStateval is either city,state or country use state whic hare json files
+  const handleFilteringAndSetting = (
+    newInputValue,
+    listTOFilter,
+    useState_Val,
+    set_useState_Val,
+    suggestion_useState_Val,
+    setSuggestions
+  ) => {
+    const filteredValues = listTOFilter.filter((item) => {
+      return cleanString(item.name).includes(cleanString(newInputValue));
+    });
+
+    ///only if there is exactly one match to the entered state set the stateIsoCode
+    if (
+      filteredValues.length === 1 &&
+      newInputValue.length >= useState_Val.name.length
+    ) {
+      set_useState_Val(filteredValues[0]);
+      setSuggestions(filteredValues);
+      /*
          
           setPlaceholder(
             "great! which "+inputName+ " in " + filteredValues[0].name
           );
           */
-        } else {
-          if (filteredValues.length === 0 && suggestion_useState_Val.length === 1) {
-            console.log("i am in fitered val 0",suggestion_useState_Val[0] );
-            set_useState_Val(suggestion_useState_Val[0]);
-          } else {
-            console.log("no matches yet just saving" + newInputValue);
-            set_useState_Val({name:newInputValue,isoCode:""});
-            setSuggestions(filteredValues);
-          }
-        }
-  
-
-};
+    } else {
+      if (filteredValues.length === 0 && suggestion_useState_Val.length === 1) {
+        console.log("i am in fitered val 0", suggestion_useState_Val[0]);
+        set_useState_Val(suggestion_useState_Val[0]);
+      } else {
+        console.log("no matches yet just saving" + newInputValue);
+        set_useState_Val({ name: newInputValue, isoCode: "" });
+        setSuggestions(filteredValues);
+      }
+    }
+  };
 
   return (
     <main className="form-signin w-100 m-auto">
@@ -386,13 +390,15 @@ const handleFilteringAndSetting=(newInputValue,listTOFilter,useState_Val,set_use
         </svg>
 
         <div className="mb-3">
-         {savedSuccessfully? <h1 className="h3  fw-normal h1contact">welcome {name? name:""}! 🎉🥳🍾</h1>:
-         (savingUnsuccessful?
-          <h1 className="h3  fw-normal h1contact">oooops!</h1>
-        : <h1 className="h3  fw-normal h1contact">join the contact list!</h1> )
-         }
-         
-         
+          {savedSuccessfully ? (
+            <h1 className="h3  fw-normal h1contact">
+              welcome {name ? name : ""}! 🎉🥳🍾
+            </h1>
+          ) : savingUnsuccessful ? (
+            <h1 className="h3  fw-normal h1contact">oooops!</h1>
+          ) : (
+            <h1 className="h3  fw-normal h1contact">join the contact list!</h1>
+          )}
         </div>
       </div>
       {savedSuccessfully ? (
@@ -403,23 +409,34 @@ const handleFilteringAndSetting=(newInputValue,listTOFilter,useState_Val,set_use
               type="video/mp4"
             ></source>
           </video>
-          <p className="contactListMsg">   Hey {name}! 🌟 So stoked to welcome you to the Passtillios crew! Your trust means the world to me. it will be aweome so buckel up because we're about to embark on an epic journey, collecting some incredible stories together. I'll be dropping you a welcome email soon, so keep an eye out! Take care, and get ready for the awesomeness ahead!🚀🎨✨
+          <p className="contactListMsg">
+            {" "}
+            Hey {name}! 🌟 So stoked to welcome you to the Passtillios crew!
+            Your trust means the world to me. it will be aweome so buckel up
+            because we're about to embark on an epic journey, collecting some
+            incredible stories together. I'll be dropping you a welcome email
+            soon, so keep an eye out! Take care, and get ready for the
+            awesomeness ahead!🚀🎨✨
           </p>
         </div>
-      ) : (savingUnsuccessful?(tooManyTries?  <video className="contactListVid" autoPlay muted >
+      ) : savingUnsuccessful ? (
+        tooManyTries ? (
+          <video className="contactListVid" autoPlay muted>
             <source
               src="https://passtillios-bucket-web.s3.amazonaws.com/contact/too-many-trys.mp4"
               type="video/mp4"
             ></source>
           </video>
-        :<video className="contactListVid" autoPlay muted >
+        ) : (
+          <video className="contactListVid" autoPlay muted>
             <source
               src="https://passtillios-bucket-web.s3.amazonaws.com/contact/fail.mp4"
               type="video/mp4"
             ></source>
           </video>
-
-      ):<div className="InputLabelContainer">
+        )
+      ) : (
+        <div className="InputLabelContainer">
           {/*telError && <p className="errorP">{telError}</p>*/}
 
           <div className="mb-3">
@@ -441,7 +458,6 @@ const handleFilteringAndSetting=(newInputValue,listTOFilter,useState_Val,set_use
           </div>
 
           <div className="mb-3">
-
             <label htmlFor="e_mail" className="form-label">
               {name === "" ? "your" : name + "’s"} Email:
             </label>
@@ -467,11 +483,11 @@ const handleFilteringAndSetting=(newInputValue,listTOFilter,useState_Val,set_use
           <div style={{ marginBottom: 0 }} className="mb-3">
             {showInfoForCountry && (
               <InputHelper
-            setValue={(val)=>{
-                setCountry(val);
-                setShowInfoForCountry(false);
-               }}
-               conditionsFullfilled={true}
+                setValue={(val) => {
+                  setCountry(val);
+                  setShowInfoForCountry(false);
+                }}
+                conditionsFullfilled={true}
                 currentInput="country"
                 arrayofSuggestions={countrySuggestions}
               />
@@ -486,7 +502,7 @@ const handleFilteringAndSetting=(newInputValue,listTOFilter,useState_Val,set_use
                 marginBottom: "2%",
                 marginLeft: "0%",
                 //paddingLeft:0,
-                overflow:"visible"
+                overflow: "visible",
               }}
             >
               <label htmlFor="state" className="form-label">
@@ -494,13 +510,13 @@ const handleFilteringAndSetting=(newInputValue,listTOFilter,useState_Val,set_use
               </label>
               <button
                 style={{
-                  width:"25%",
-                  fontSize:"1.5vw",
-                  border:"none",
-                 padding:".7% 0",
+                  width: "25%",
+                  fontSize: "1.5vw",
+                  border: "none",
+                  padding: ".7% 0",
                   backgroundImage:
-                  "linear-gradient(102deg, #f90ee7,#5b42f3 70%,#00eeb9,#fec125)",
-                    marginLeft:"1%"
+                    "linear-gradient(102deg, #f90ee7,#5b42f3 70%,#00eeb9,#fec125)",
+                  marginLeft: "1%",
                 }}
                 type="button"
                 className="btn btn-primary"
@@ -508,7 +524,7 @@ const handleFilteringAndSetting=(newInputValue,listTOFilter,useState_Val,set_use
                   setShowInfoForCountry((prevShowInfo) => !prevShowInfo)
                 }
               >
-             {showInfoForCountry?"close ":"show "} country helper
+                {showInfoForCountry ? "close " : "show "} country helper
               </button>
               <input
                 type="text"
@@ -522,7 +538,10 @@ const handleFilteringAndSetting=(newInputValue,listTOFilter,useState_Val,set_use
             </div>
 
             {btnPressed && country.isoCode === "" ? (
-              <p className="errorP">no matches found for the input above. make sure it is the english name.</p>
+              <p className="errorP">
+                no matches found for the input above. make sure it is the
+                english name.
+              </p>
             ) : null}
           </div>
 
@@ -530,12 +549,12 @@ const handleFilteringAndSetting=(newInputValue,listTOFilter,useState_Val,set_use
           <div style={{ marginBottom: 0 }} className="mb-3">
             {showInfoForState && (
               <InputHelper
-               setValue={(val)=>{
-                setState(val);
-                setShowInfoForState(false);
-               }}
+                setValue={(val) => {
+                  setState(val);
+                  setShowInfoForState(false);
+                }}
                 currentInput="state"
-                conditionsFullfilled={country.isoCode!==""?true:false}
+                conditionsFullfilled={country.isoCode !== "" ? true : false}
                 arrayofSuggestions={stateSuggestions}
               />
             )}
@@ -548,21 +567,21 @@ const handleFilteringAndSetting=(newInputValue,listTOFilter,useState_Val,set_use
                 paddingTop: "0%",
                 marginBottom: "2%",
                 marginLeft: "0%",
-                overflow:"visible"
+                overflow: "visible",
               }}
             >
               <label htmlFor="state" className="form-label">
                 {name === "" ? "your" : name + "’s"} State:
               </label>
               <button
-                 style={{
-                  width:"27%",
-                  fontSize:"1.7vw",
-                  border:"none",
-                 padding:".7% 0",
+                style={{
+                  width: "27%",
+                  fontSize: "1.7vw",
+                  border: "none",
+                  padding: ".7% 0",
                   backgroundImage:
-                  "linear-gradient(102deg, #f90ee7,#5b42f3 70%,#00eeb9,#fec125)",
-                marginLeft:"1%"
+                    "linear-gradient(102deg, #f90ee7,#5b42f3 70%,#00eeb9,#fec125)",
+                  marginLeft: "1%",
                 }}
                 type="button"
                 className="btn btn-primary"
@@ -570,7 +589,7 @@ const handleFilteringAndSetting=(newInputValue,listTOFilter,useState_Val,set_use
                   setShowInfoForState((prevShowInfo) => !prevShowInfo)
                 }
               >
-          {showInfoForState?"close ":"show "} state helper
+                {showInfoForState ? "close " : "show "} state helper
               </button>
               <input
                 type="text"
@@ -583,23 +602,26 @@ const handleFilteringAndSetting=(newInputValue,listTOFilter,useState_Val,set_use
             </div>
 
             {btnPressed && state.isoCode === "" ? (
-              <p className="errorP">no matches found for the input above. make sure it is the english name.</p>
+              <p className="errorP">
+                no matches found for the input above. make sure it is the
+                english name.
+              </p>
             ) : null}
           </div>
 
           <div style={{ marginBottom: 0 }} className="mb-3">
             {showInfoForCity && (
               <InputHelper
-               setValue={(val)=>{
-                setCity(val);
-                setShowInfoForCity(false);
-               }}
+                setValue={(val) => {
+                  setCity(val);
+                  setShowInfoForCity(false);
+                }}
                 currentInput="city"
-                conditionsFullfilled={state.isoCode!==""?true:false}
+                conditionsFullfilled={state.isoCode !== "" ? true : false}
                 arrayofSuggestions={citySuggestions}
               />
             )}
-   
+
             <div
               style={{
                 ziIndex: 10,
@@ -608,7 +630,7 @@ const handleFilteringAndSetting=(newInputValue,listTOFilter,useState_Val,set_use
                 paddingTop: "0%",
                 marginBottom: "2%",
                 marginLeft: "0%",
-                overflow:"visible"
+                overflow: "visible",
               }}
             >
               <label htmlFor="city" className="form-label">
@@ -616,25 +638,23 @@ const handleFilteringAndSetting=(newInputValue,listTOFilter,useState_Val,set_use
               </label>
 
               <button
-                  style={{
-                 border:"none",
-                 padding:".7% 0",
-                  width:"28%",
-                  fontSize:"1.7vw",
+                style={{
+                  border: "none",
+                  padding: ".7% 0",
+                  width: "28%",
+                  fontSize: "1.7vw",
                   backgroundImage:
-                  "linear-gradient(102deg, #f90ee7,#5b42f3 70%,#00eeb9,#fec125)",
-                   
-                    marginLeft:"1%"
+                    "linear-gradient(102deg, #f90ee7,#5b42f3 70%,#00eeb9,#fec125)",
+
+                  marginLeft: "1%",
                 }}
                 type="button"
                 className="btn"
-                onClick={() =>{
+                onClick={() => {
                   setShowInfoForCity((prevShowInfo) => !prevShowInfo);
-                }
-                
-                }
+                }}
               >
-               {showInfoForCity?"close ":"show "} city helper
+                {showInfoForCity ? "close " : "show "} city helper
               </button>
 
               <input
@@ -648,11 +668,14 @@ const handleFilteringAndSetting=(newInputValue,listTOFilter,useState_Val,set_use
             </div>
 
             {btnPressed && city.name === "" ? (
-              <p className="errorP">no matches found for the input above. make sure it is the english name.</p>
+              <p className="errorP">
+                no matches found for the input above. make sure it is the
+                english name.
+              </p>
             ) : null}
           </div>
 
-          <div className="mb-3">
+          {/* <div className="mb-3">
             <label htmlFor="tel" className="form-label">
               {name === "" ? "your" : name + "’s"} phone number:
             </label>
@@ -664,83 +687,214 @@ const handleFilteringAndSetting=(newInputValue,listTOFilter,useState_Val,set_use
               value={tel}
               placeholder="optional..for SMS lovers!"
             />
-            {/* Display error message for phone number */}
-            {telError && <p className="errorP">{telError}</p>}
+          Display error message for phone number
+            telError && <p className="errorP">{telError}</p>
+          </div>*/}
+
+          <div></div>
+          <div
+            style={{
+              width: " 100%",
+              margin: " 0 auto",
+              position: "relative",
+              display: "inline-block",
+              marginLeft: "5%",
+            }}
+          >
+            {/* <input style={{width:"10%",marginLeft:"20%",position:"relative",display:"inline-block"}} type="submit" value="Submit" />
+             */}
+          </div>
+          <div
+            style={{
+              overflow: "visible",
+              position: "relative",
+              marginBottom: 0,
+              overflow: "visible",
+            }}
+          >
+            <input
+              type="checkbox"
+              style={{
+                color: "white",
+                width: "5%",
+                position: "absolute",
+                display: "inline-block",
+                left: "5%",
+                top: "60%",
+              }}
+              value="1"
+              id="OPT_IN"
+              name="OPT_IN"
+            />
+            <img
+              src={contactlistCanva}
+              style={{
+                width: "10%",
+                display: "inline-block",
+                padding: "0%",
+                top: "15%",
+                left: "5%",
+                position: "absolute",
+              }}
+            ></img>
+            <p
+              style={{
+                width: "80%",
+                display: "inline-block",
+                marginLeft: "20%",
+                fontSize: "2vw",
+                lineHeight: "4vw",
+              }}
+            >
+              I agree to join the Passtillios contact list 🤙, ensuring that I
+              receive important project updates and timely calls to action. I
+              accept the terms of the data privacy statement. If at any point I
+              wish to discontinue receiving communications, I understand that I
+              can effortlessly opt out by clicking the provided link in the
+              update emails or by sending an email to
+              remove-me-from-contactlist@passtillios.com🤝
+            </p>
           </div>
 
-          <div >
-          
-     
- 
+          <p></p>
 
-        </div>
-        <div style={{ width:" 100%",margin:" 0 auto",position:"relative",display:"inline-block",marginLeft:"5%"}} >
-       
-         
-         {/* <input style={{width:"10%",marginLeft:"20%",position:"relative",display:"inline-block"}} type="submit" value="Submit" />
-        */}
-       
-        </div>
-        <div style={{overflow:"visible",position:"relative",marginBottom:0,overflow:"visible"}}>
-        <input type="checkbox" style={{color:"white", width:"5%", position:"absolute",display:"inline-block",left:"5%",top:"60%"}}  value="1" id="OPT_IN" name="OPT_IN" />
-        <img src={contactlistCanva} style={{width:"10%",display:"inline-block",padding:"0%",top:"15%",left:"5%",position:"absolute"}}></img>
-            <p style={{width:"80%",display:"inline-block",marginLeft:"20%",fontSize:"2vw",lineHeight:"4vw"}}>
-           I agree to join the Passtillios contact list 🤙, ensuring that I receive important project updates and timely calls to action. I accept the terms of the data privacy statement. If at any point I wish to discontinue receiving communications, I understand that I can effortlessly opt out by clicking the provided link in the update emails or by sending an email to remove-me-from-contactlist@passtillios.com🤝
-            </p> 
-             
-              </div>
-            
-              <p>
-               
-              </p>
-        
-        <div >
-          <div class="sib-form__declaration" >
-            <div class="declaration-block-icon">
-              <svg class="icon__SVG" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <symbol id="svgIcon-sphere" viewBox="0 0 63 63">
-                    <path class="path1" d="M31.54 0l1.05 3.06 3.385-.01-2.735 1.897 1.05 3.042-2.748-1.886-2.738 1.886 1.044-3.05-2.745-1.897h3.393zm13.97 3.019L46.555 6.4l3.384.01-2.743 2.101 1.048 3.387-2.752-2.1-2.752 2.1 1.054-3.382-2.745-2.105h3.385zm9.998 10.056l1.039 3.382h3.38l-2.751 2.1 1.05 3.382-2.744-2.091-2.743 2.091 1.054-3.381-2.754-2.1h3.385zM58.58 27.1l1.04 3.372h3.379l-2.752 2.096 1.05 3.387-2.744-2.091-2.75 2.092 1.054-3.387-2.747-2.097h3.376zm-3.076 14.02l1.044 3.364h3.385l-2.743 2.09 1.05 3.392-2.744-2.097-2.743 2.097 1.052-3.377-2.752-2.117 3.385-.01zm-9.985 9.91l1.045 3.364h3.393l-2.752 2.09 1.05 3.393-2.745-2.097-2.743 2.097 1.05-3.383-2.751-2.1 3.384-.01zM31.45 55.01l1.044 3.043 3.393-.008-2.752 1.9L34.19 63l-2.744-1.895-2.748 1.891 1.054-3.05-2.743-1.9h3.384zm-13.934-3.98l1.036 3.364h3.402l-2.752 2.09 1.053 3.393-2.747-2.097-2.752 2.097 1.053-3.382-2.743-2.1 3.384-.01zm-9.981-9.91l1.045 3.364h3.398l-2.748 2.09 1.05 3.392-2.753-2.1-2.752 2.096 1.053-3.382-2.743-2.102 3.384-.009zM4.466 27.1l1.038 3.372H8.88l-2.752 2.097 1.053 3.387-2.743-2.09-2.748 2.09 1.053-3.387L0 30.472h3.385zm3.069-14.025l1.045 3.382h3.395L9.23 18.56l1.05 3.381-2.752-2.09-2.752 2.09 1.053-3.381-2.744-2.1h3.384zm9.99-10.056L18.57 6.4l3.393.01-2.743 2.1 1.05 3.373-2.754-2.092-2.751 2.092 1.053-3.382-2.744-2.1h3.384zm24.938 19.394l-10-4.22a2.48 2.48 0 00-1.921 0l-10 4.22A2.529 2.529 0 0019 24.75c0 10.47 5.964 17.705 11.537 20.057a2.48 2.48 0 001.921 0C36.921 42.924 44 36.421 44 24.75a2.532 2.532 0 00-1.537-2.336zm-2.46 6.023l-9.583 9.705a.83.83 0 01-1.177 0l-5.416-5.485a.855.855 0 010-1.192l1.177-1.192a.83.83 0 011.177 0l3.65 3.697 7.819-7.916a.83.83 0 011.177 0l1.177 1.191a.843.843 0 010 1.192z" fill="#0092FF"></path>
-                  </symbol>
-                </defs>
-              </svg>
-             {/* <svg class="svgIcon-sphere" style="width:63px; height:63px;">
+          <div>
+            <div class="sib-form__declaration">
+              <div class="declaration-block-icon">
+                <svg
+                  class="icon__SVG"
+                  width="0"
+                  height="0"
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <defs>
+                    <symbol id="svgIcon-sphere" viewBox="0 0 63 63">
+                      <path
+                        class="path1"
+                        d="M31.54 0l1.05 3.06 3.385-.01-2.735 1.897 1.05 3.042-2.748-1.886-2.738 1.886 1.044-3.05-2.745-1.897h3.393zm13.97 3.019L46.555 6.4l3.384.01-2.743 2.101 1.048 3.387-2.752-2.1-2.752 2.1 1.054-3.382-2.745-2.105h3.385zm9.998 10.056l1.039 3.382h3.38l-2.751 2.1 1.05 3.382-2.744-2.091-2.743 2.091 1.054-3.381-2.754-2.1h3.385zM58.58 27.1l1.04 3.372h3.379l-2.752 2.096 1.05 3.387-2.744-2.091-2.75 2.092 1.054-3.387-2.747-2.097h3.376zm-3.076 14.02l1.044 3.364h3.385l-2.743 2.09 1.05 3.392-2.744-2.097-2.743 2.097 1.052-3.377-2.752-2.117 3.385-.01zm-9.985 9.91l1.045 3.364h3.393l-2.752 2.09 1.05 3.393-2.745-2.097-2.743 2.097 1.05-3.383-2.751-2.1 3.384-.01zM31.45 55.01l1.044 3.043 3.393-.008-2.752 1.9L34.19 63l-2.744-1.895-2.748 1.891 1.054-3.05-2.743-1.9h3.384zm-13.934-3.98l1.036 3.364h3.402l-2.752 2.09 1.053 3.393-2.747-2.097-2.752 2.097 1.053-3.382-2.743-2.1 3.384-.01zm-9.981-9.91l1.045 3.364h3.398l-2.748 2.09 1.05 3.392-2.753-2.1-2.752 2.096 1.053-3.382-2.743-2.102 3.384-.009zM4.466 27.1l1.038 3.372H8.88l-2.752 2.097 1.053 3.387-2.743-2.09-2.748 2.09 1.053-3.387L0 30.472h3.385zm3.069-14.025l1.045 3.382h3.395L9.23 18.56l1.05 3.381-2.752-2.09-2.752 2.09 1.053-3.381-2.744-2.1h3.384zm9.99-10.056L18.57 6.4l3.393.01-2.743 2.1 1.05 3.373-2.754-2.092-2.751 2.092 1.053-3.382-2.744-2.1h3.384zm24.938 19.394l-10-4.22a2.48 2.48 0 00-1.921 0l-10 4.22A2.529 2.529 0 0019 24.75c0 10.47 5.964 17.705 11.537 20.057a2.48 2.48 0 001.921 0C36.921 42.924 44 36.421 44 24.75a2.532 2.532 0 00-1.537-2.336zm-2.46 6.023l-9.583 9.705a.83.83 0 01-1.177 0l-5.416-5.485a.855.855 0 010-1.192l1.177-1.192a.83.83 0 011.177 0l3.65 3.697 7.819-7.916a.83.83 0 011.177 0l1.177 1.191a.843.843 0 010 1.192z"
+                        fill="#0092FF"
+                      ></path>
+                    </symbol>
+                  </defs>
+                </svg>
+                {/* <svg class="svgIcon-sphere" style="width:63px; height:63px;">
                 <use xlink:href="#svgIcon-sphere"></use>
               </svg>
               <svg className="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512">
                 <path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z" />
               </svg>
               */}
-            </div>
-            
-            <div style={{overflow:"visible",position:"relative",marginBottom:0,overflow:"visible"}}>
-             <img src={brevoLogo} style={{width:"7%",display:"inline-block",padding:"0%",top:"15%",left:"5%",position:"absolute"}}></img>
-              <input type="checkbox" style={{color:"white", width:"5%", position:"absolute",display:"inline-block",left:"5%",top:"60%"}}  value="1" id="OPT_IN" name="OPT_IN" />
-              <p style={{width:"80%",display:"inline-block",marginLeft:"20%",fontSize:"2vw",lineHeight:"4vw"}}>
-              Brevo is the platform where your information will be collected, kept safe and managed. By submitting this form you agree that the personal data you provided will be transferred to Brevo for processing in accordance with Brevo's Privacy Policy.👉 <a style={{color:"#f90e9b"}} href="https://www.brevo.com/en/legal/privacypolicy/">Brevo's Privacy Policy.</a></p>
+              </div>
+
+              <div
+                style={{
+                  overflow: "visible",
+                  position: "relative",
+                  marginBottom: 0,
+                  overflow: "visible",
+                }}
+              >
+                <img
+                  src={brevoLogo}
+                  style={{
+                    width: "7%",
+                    display: "inline-block",
+                    padding: "0%",
+                    top: "15%",
+                    left: "5%",
+                    position: "absolute",
+                  }}
+                ></img>
+                <input
+                  type="checkbox"
+                  style={{
+                    color: "white",
+                    width: "5%",
+                    position: "absolute",
+                    display: "inline-block",
+                    left: "5%",
+                    top: "60%",
+                  }}
+                  value="1"
+                  id="OPT_IN"
+                  name="OPT_IN"
+                />
+                <p
+                  style={{
+                    width: "80%",
+                    display: "inline-block",
+                    marginLeft: "20%",
+                    fontSize: "2vw",
+                    lineHeight: "4vw",
+                  }}
+                >
+                  Brevo is the platform where your information will be
+                  collected, kept safe and managed. By submitting this form you
+                  agree that the personal data you provided will be transferred
+                  to Brevo for processing in accordance with Brevo's Privacy
+                  Policy.👉{" "}
+                  <a
+                    style={{ color: "#f90e9b" }}
+                    href="https://www.brevo.com/en/legal/privacypolicy/"
+                  >
+                    Brevo's Privacy Policy.
+                  </a>
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-        <div style={{ marginBottom:0,display: "flex", flexDirection: "column" }}>
-  <p style={{ fontSize: "2vw",marginLeft: "20%" , textAlign: "left", lineHeight: "4vw", marginBottom: "5%" }}>
-  and finally, only those with hearts please!</p>
-  <p style={{ fontSize: "2vw",marginLeft: "20%" , textAlign: "left", lineHeight: "4vw", marginBottom: "5%" }}>
-   😜🤞🙃👇
-  </p>
-  <ReCAPTCHA
-    style={{ width:"100%",marginLeft: "20%" ,marginTop: "5%",marginBottom: "0%" ,display:"inline-block",overflow:"visible"}}
-    size="normal"
-    sitekey="6LdFAZMpAAAAAPNO5cTGqgATYFjlCBMgGVi8-c7v"
-    onChange={() => setRecaptchaSuccess(true)}
-    onErrored={() => setRecaptchaFail(true)}
-  />
-</div>
+          <div
+            style={{
+              marginBottom: 0,
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
+            <p
+              style={{
+                fontSize: "2vw",
+                marginLeft: "20%",
+                textAlign: "left",
+                lineHeight: "4vw",
+                marginBottom: "5%",
+              }}
+            >
+             you human?
+            </p>
+            <p
+              style={{
+                fontSize: "2vw",
+                marginLeft: "20%",
+                textAlign: "left",
+                lineHeight: "4vw",
+                marginBottom: "5%",
+              }}
+            >
+              🤞😜👇
+            </p>
+            <ReCAPTCHA
+              style={{
+                width: "100%",
+                marginLeft: "20%",
+                marginTop: "5%",
+                marginBottom: "0%",
+                display: "inline-block",
+                overflow: "visible",
+              }}
+              size="normal"
+              sitekey="6LdFAZMpAAAAAPNO5cTGqgATYFjlCBMgGVi8-c7v"
+              onChange={() => setRecaptchaSuccess(true)}
+              onErrored={() => setRecaptchaFail(true)}
+            />
+          </div>
 
           <div className="btnEmailListContainer">
             <Button
               id="contactBtn"
               name="count me in!"
-              form="sib-form" type="submit"
+              form="sib-form"
+              type="submit"
               handleClick={handleClick}
             />
           </div>
