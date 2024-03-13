@@ -93,13 +93,18 @@ const PageIntro=(props)=>{
             </div>
 
 
-            <img className="pages-imgs" style={{opacity:1,marginTop:"15%",marginBottom:"5%",display:"inline-block",marginLeft:"40%",width:"20%"}} src={colorTiles}></img>
-    
+             {/**
+    <img style={{opacity:1,marginTop:"0%",marginBottom:"0%",display:"inline-block",marginLeft:"40%",width:"20%"}} src={colorTiles}></img>
+
+     */} 
+     
 <h1  className="pageintroP">
 things are getting way too grey around here. How about we each throw in our unique color palette and spice things up a bit? Let's bring some cool vibes and shake off the monotony!
 </h1>
-     <img style={{opacity:1,marginTop:"0%",marginBottom:"0%",display:"inline-block",marginLeft:"40%",width:"20%"}} src={colorTiles}></img>
+    {/**
+    <img style={{opacity:1,marginTop:"0%",marginBottom:"0%",display:"inline-block",marginLeft:"40%",width:"20%"}} src={colorTiles}></img>
 
+     */} 
      
 </div>
 

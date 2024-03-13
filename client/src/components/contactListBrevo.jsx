@@ -42,7 +42,8 @@ const ContactList = () => {
     Country.getAllCountries()
   );
   const [showInfoForCountry, setShowInfoForCountry] = useState(false);
-
+  const [agreedToBrevo, setAgreedToBrevo] = useState(false);
+  const [agreedToJoin, setAgreedToJoin] = useState(false);
   const [btnPressed, setBtnPressed] = useState(false);
   const [savedSuccessfully, setSavedSuccessfully] = useState(false);
   const [savingUnsuccessful, setSavingUnsuccessful] = useState(false);
@@ -722,9 +723,13 @@ const ContactList = () => {
                 left: "5%",
                 top: "60%",
               }}
-              value="1"
+              value="0"
               id="OPT_IN"
               name="OPT_IN"
+              onChange={(event) => {
+          setAgreedToJoin(event.target.checked);
+          setBtnPressed(false);
+        }}s
             />
             <img
               src={contactlistCanva}
@@ -754,6 +759,11 @@ const ContactList = () => {
               update emails or by sending an email to
               remove-me-from-contactlist@passtillios.com🤝
             </p>
+            {btnPressed &&  agreedToJoin=== false ? (
+              <p className="errorP">
+              your agreement above is required
+              </p>
+            ) : null}
           </div>
 
           <p></p>
@@ -819,6 +829,10 @@ const ContactList = () => {
                   value="1"
                   id="OPT_IN"
                   name="OPT_IN"
+                  onChange={(event) => {
+          setAgreedToBrevo(event.target.checked);
+          setBtnPressed(false);
+        }}
                 />
                 <p
                   style={{
@@ -830,7 +844,7 @@ const ContactList = () => {
                   }}
                 >
                   Brevo is the platform where your information will be
-                  collected, kept safe and managed. By submitting this form you
+                  collected and managed. By submitting this form you
                   agree that the personal data you provided will be transferred
                   to Brevo for processing in accordance with Brevo's Privacy
                   Policy.👉{" "}
@@ -841,6 +855,11 @@ const ContactList = () => {
                     Brevo's Privacy Policy.
                   </a>
                 </p>
+                {btnPressed &&  agreedToBrevo=== false ? (
+              <p className="errorP">
+          your agreement above is required
+              </p>
+            ) : null}
               </div>
             </div>
           </div>
