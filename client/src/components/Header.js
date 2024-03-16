@@ -24,8 +24,6 @@ function Header() {
           <div className="menu__toggle" onClick={handleToggleClick}>
             <svg
               className="svg-icon"
-              width="auto"
-              height="auto"
               viewBox="0 0 212 322"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"

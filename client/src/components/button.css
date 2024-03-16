@@ -86,7 +86,7 @@
 #btn2:hover {
   background-image: linear-gradient(
     144deg,
-    #f90ee7,
+    #f90e9b,
     #5b42f3 40%,
     #00eeb9,
     #fec125
@@ -95,7 +95,7 @@
 #btn1:hover {
   background-image: linear-gradient(
     144deg,
-    #f90ee7,
+    #f90e9b,
     #5b42f3 40%,
     #00eeb9,
     #fec125
@@ -104,7 +104,7 @@
 #btn3:hover {
   background-image: linear-gradient(
     144deg,
-    #f90ee7,
+    #f90e9b,
     #5b42f3 40%,
     #00eeb9,
     orange
@@ -158,9 +158,8 @@
     text-align: left;
     position: absolute;
 
-   
     top: 55%;
-    right: 12%;
+    right: 10%;
     background-color: #0d0431;
     background-image: none;
     /*background-image: linear-gradient(144deg,#00EEB9,#FEC125,#5B42F3 50%,#F90EE7);*/
@@ -170,7 +169,7 @@
     position: absolute;
     top: 76%;
     right: 7%;
-    left: 60%;
+    left: 50%;
     background-color: #0d0431;
     background-image: none;
     text-align: right;

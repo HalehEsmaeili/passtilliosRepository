@@ -46,7 +46,7 @@ useEffect(() => {
   animation="fallAnimation"
   cssModul={sliderCss}
   screens={props.images.map((image, index) => ({
-    backgroundColor: '#0d0431', // Set your desired background color
+    backgroundColor: '#090225', // Set your desired background color
     media: image.url,
     caption: image.caption, // Assuming crew.caption is the caption for the image
   }))}

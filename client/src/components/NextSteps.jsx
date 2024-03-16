@@ -3,9 +3,6 @@ import "../public/intro.css";
 import {
   motion,
   useInView,
-  useMotionValueEvent,
-  useScroll,
-  useAnimate,
   useAnimationControls,
 } from "framer-motion";
 
@@ -16,7 +13,7 @@ import { useNavigate } from "react-router-dom";
 import Button from "./Button.js";
 
 ////images
-import logoWithHair from "../public/images/logo.png";
+import logoWithHair from "../public/images/logoLineWhite.png";
 //import logoWithHair from "../public/images/div4/headLogoHair.png";
 import nextSteps from "../public/images/div4/nextStepFinal.png";
 import notTalking from "../public/images/broDIV2/2.png";
@@ -115,12 +112,17 @@ return (
           src={notTalking}
           alt="person not talking"
         ></motion.img>
+     
         <motion.img
+         onClick={()=>navigate("/home")}
           id="logoWithHair"
           animate={controlslogoWithHair}
           src={logoWithHair}
           alt="logo"
+          style={{ cursor: "pointer", backgroundImage:"linear-gradient(100deg, #f90e9b,#5b42f3 60%,#00eeb9,orange)",padding:".5%",borderRadius:"50%"}}
         ></motion.img>
+      
+       
         <motion.div
           className="nextStepBodyContainer"
           animate={nextStepsBodyAnimationControls}

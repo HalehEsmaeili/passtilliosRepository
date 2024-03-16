@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef, useHover } from "react";
 import axiosInstance from "../Api/axiosInstance";
 import "../public/intro.css";
-import "./projectsection.css";
+
 //1901 change the h1s positioning css.
 //the local deployment works with serve,but with heroku not yet
 //heroku logs --tail -a passtilliostest1
@@ -839,7 +839,7 @@ How will your life look as a painting 60 years from now? Will it narrate a story
               <motion.path
                 animate={rainbowSvgControl}
                 id="VectorGreen"
-                opacity="0.7"
+             
                 d="M-156 76L976.537 1203"
                 stroke="#00EEB9"
                 stroke-width="40"
@@ -847,7 +847,7 @@ How will your life look as a painting 60 years from now? Will it narrate a story
               <motion.path
                 animate={rainbowSvgControl}
                 id="VectorYellow"
-                opacity="0.7"
+          
                 d="M-33.3589 0L1080 1108"
                 stroke="#F8A813"
                 stroke-width="40"
@@ -855,7 +855,7 @@ How will your life look as a painting 60 years from now? Will it narrate a story
               <motion.path
                 animate={rainbowSvgControl}
                 id="VectorPink"
-                opacity="0.7"
+              
                 d="M-89.8849 40L1022.46 1148"
                 stroke="#D146BF"
                 stroke-width="40"
@@ -900,7 +900,7 @@ How will your life look as a painting 60 years from now? Will it narrate a story
               <motion.path
                 animate={rainbowSvgControl2}
                 id="VectorGreen2"
-                opacity="0.7"
+                opacity="1"
                 d="M1016.5 -162.164L-126.552 975.612"
                 stroke="#00EEB9"
                 stroke-width="40"
@@ -908,7 +908,7 @@ How will your life look as a painting 60 years from now? Will it narrate a story
               <motion.path
                 animate={rainbowSvgControl2}
                 id="VectorYellow2"
-                opacity="0.7"
+                opacity="1"
                 d="M1092.72 -38.0966L-31.0608 1080.41"
                 stroke="#F8A813"
                 stroke-width="40"
@@ -916,7 +916,7 @@ How will your life look as a painting 60 years from now? Will it narrate a story
               <motion.path
                 animate={rainbowSvgControl2}
                 id="VectorPink2"
-                opacity="0.7"
+                opacity="1"
                 d="M1052.57 -95.3013L-71.2069 1022.19"
                 stroke="#D146BF"
                 stroke-width="40"

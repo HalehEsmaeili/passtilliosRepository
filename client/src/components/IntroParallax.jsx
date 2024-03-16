@@ -173,13 +173,10 @@ const[splittedTxt,setSlittedTxt]=useState([]);
   const b3Controls = useAnimationControls();
   const b4Controls = useAnimationControls();
   const b5Controls = useAnimationControls();
-  const b6Controls = useAnimationControls();
-  const b7Controls = useAnimationControls();
-  const b8Controls = useAnimationControls();
   const b9Controls = useAnimationControls();
   const b10Controls = useAnimationControls();
   const b11Controls = useAnimationControls();
-  const b12Controls = useAnimationControls();
+
   const b1EmptyControls = useAnimationControls();
   const b2EmptyControls = useAnimationControls();
   const b5EmptyControls = useAnimationControls();
@@ -191,7 +188,7 @@ const[splittedTxt,setSlittedTxt]=useState([]);
   const animateMagic = useAnimationControls();
   const logoLineAnimation = useAnimationControls();
 
-  const campaignImgAnimation = useAnimationControls();
+
   /*
   const[animateimg1,setimg1animate]=useState(false);
   const[animateimg2,setimg2animate]=useState(true);
@@ -397,7 +394,7 @@ const[splittedTxt,setSlittedTxt]=useState([]);
   }*/
   };
 
-  const handleClickOfNext = (e) => {};
+ 
   const handleScrollToDivgrey = (e) => {
     setBroMovingToNextSteps(true);
     setScrollToGreyActive(true);
@@ -496,17 +493,18 @@ const[splittedTxt,setSlittedTxt]=useState([]);
       greyCloudDownControl.start({
         x: "-15vw",
         y: "-10%",
-        rotate: 30,
+        rotate: 60,
         scale: 1.4,
         opacity: 0.9,
         transition: { duration: 2 },
       });
       greyCloudControl.start({
-        x: "20vw",
-        y: "-30%",
-        rotate: -90,
+        x: "-20vw",
+        y: "10%",
+        rotate: -70,
         opacity: 0.5,
-        scale: 1.6,
+        scale: 1.9,
+
         transition: { duration: 2.5 },
       });
       b1EmptyControls.start({
@@ -533,20 +531,7 @@ const[splittedTxt,setSlittedTxt]=useState([]);
 
   
   useEffect(() => {
-    /*
-  if(isInViewdivNextStep){
-    b11Controls.start({top:"1280%",left:"10%",transition:{stiffness:1,duration:2}});   
-  }
-   logoAnimationTodiv4Compelete &&
-  */
-///the conditiong right now is trivializing the scrollToNextStepsActive->dependebility on the button being pressed!
- /**
-  *  (isInViewdivNextStep &&
-      scrollToNextStepsActive &&
-      !startNextStepAnimation)|| (isInViewdivNextStep &&
-        !startNextStepAnimation)
-  */
-
+   
 if (
       isInViewdivNextStep &&
       scrollToNextStepsActive &&
@@ -563,205 +548,7 @@ if (
     scrollToNextStepsActive,
     startNextStepAnimation,
   ]);
-  /*
-  useEffect(()=>{
-  const greyAnim = async () => {
-  greyCloudDownControl.start({x:"-15vw",y:"-10%",rotate:20,scale:1.3, transition:{duration:1.5}});
-  greyCloudControl.start({x:"28vw",y:"-30%",rotate:-40,opacity:.5,scale:1.7, transition:{duration:2}});
-  b1EmptyControls.start({
-    scale:2,
-    opacity:0,
-    transition:  {duration:.01}
-  });
  
-   b1Controls.start({
-    opacity:0,
-    transition:  {duration:2.3}
-  });
-  await greyToAnimate.start({opacity:1});
-} ;
-
-if(isInViewGreyTxt){
- setGreyContentVisible(true);
- greyAnim();
-}
-
-},[]);
-*/
-   /*
-  useEffect(() => {
- 
-    const introAnim = async () => {
-      //console.log("introAnim started");
-      //await introLogoControl.start({x:"-30vw",transition:{delay:1,stiffness:700}});
-  
-      await introLogoControl.start({
-        y: ["0%", "-20%"],
-        transition: { delay: 2, type: "spring", stiffness: 100, duration: 0.06 },
-      });
-      //setletsgoBubbleShow(()=>{true});
-      //console.log("set bubbbble"+letsGoBubbleShow);
-      lControls.start({
-        opacity: 1,
-  
-        transition: { duration: 0.001 },
-      });
-      eControls.start({
-        opacity: 1,
-  
-        transition: { duration: 0.001 },
-      });
-      tControls.start({
-        opacity: 1,
-  
-        transition: { duration: 0.001 },
-      });
-      sControls.start({
-        opacity: 1,
-  
-        transition: { duration: 0.001 },
-      });
-      gControls.start({
-        opacity: 1,
-  
-        transition: { duration: 0.001 },
-      });
-      oControls.start({
-        opacity: 1,
-  
-        transition: { duration: 0.001 },
-      });
-      await zeichenControls.start({
-        opacity: 1,
-  
-        transition: { duration: 0.001 },
-      });
-      ///colorful bubblessss animation
-  
-      b1Controls.start({
-        x: ["-.3vw", "0vw", "-.3vw"],
-        y: [".3vh", "0vh", ".3vh"],
-        transition: { type: "yoyo", repeat: Infinity, duration: 3 },
-      });
-      b2Controls.start({
-        top: "-100%",
-        left: "70%",
-        transition: { type: "spring", stiffness: 22, duration: 0.2 },
-      });
-  
-      b3Controls.start({
-        opacity: 1,
-        top: "40%",
-        left: "45%",
-        transition: { type: "spring", stiffness: 17, duration: 0.2 },
-      });
-  
-      b4Controls.start({
-        opacity: 1,
-        top: "60%",
-        left: "-70%",
-        transition: { type: "spring", stiffness: 15, duration: 0.2 },
-      });
-  
-      b5Controls.start({
-        opacity: 1,
-        top: "10%",
-        left: "70%",
-        transition: { type: "spring", stiffness: 20, duration: 0.2 },
-      });
-  
-      /*
-    b8Controls.start({
-      opacity:1,
-      top:"260%",
-      left:"60%",
-      transition:  {type:"spring",stiffness:8,duration:.2}
-    });
-  */
-      /////
-      /*
-      b1Controls.start({
-        top: "11%",
-        left: "7%",
-        transition: { type: "spring", stiffness: 14, duration: 0.1 },
-      });
-      lControls.start({
-        opacity: 1,
-        top: "-200%",
-        left: "-5%",
-        scale: 1.5,
-        transition: { type: "spring", stiffness: 10, duration: 0.9 },
-      });
-      eControls.start({
-        top: "-200%",
-        left: "0%",
-        opacity: 1,
-  
-        scale: 1.4,
-        transition: { type: "spring", stiffness: 9.5, duration: 0.9 },
-      });
-      tControls.start({
-        opacity: 1,
-        top: "-200%",
-        left: "5%",
-        scale: 1.3,
-        transition: { type: "spring", stiffness: 9, duration: 0.9 },
-      });
-      sControls.start({
-        opacity: 1,
-        top: "-200%",
-        left: "10%",
-        scale: 1.2,
-        transition: { type: "spring", stiffness: 8.5, duration: 0.9 },
-      });
-      gControls.start({
-        opacity: 1,
-        top: "-130%",
-        left: "15%",
-        transition: { type: "spring", stiffness: 7.8, duration: 0.5 },
-      });
-      oControls.start({
-        opacity: 1,
-        top: "-130%",
-        left: "20%",
-        transition: { type: "spring", stiffness: 7.2, duration: 0.5 },
-      });
-      zeichenControls.start({
-        opacity: 1,
-        top: "-100%",
-        left: "25%",
-        transition: { type: "spring", stiffness: 6.8, duration: 0.2 },
-      });
-  
-      await introLogoControl.start({
-        y: "10000%",
-        transition: { type: "spring", stiffness: 100, duration: 0.02 },
-      });
-      introLogoControl.start({
-        opacity: 0,
-        transition: { duration: 0.02 },
-      });
-  
-      setIntroAnimationComplete(true);
-    
-    };
-
-    if ("scrollRestoration" in window.history) {
-      window.history.scrollRestoration = "manual";
-    }
-    window.scrollTo(0, 0);
-
-  
-    // Cleanup function to clear the timeout in case the component unmounts before the timeout
-    return () => {
-      //clearTimeout(timeoutId);
-    
-    };
-  }, []);
-
-    */
-
-
   useEffect(() => {
   
     const introAnim = async () => {
@@ -973,7 +760,7 @@ if(isInViewGreyTxt){
         <motion.div className="bubbleContainerIntro" animate={b4Controls}>
           <motion.img
             className="emptyBubble"
-            src={bubble4}
+            src={bubble3}
             alt="b4"
           ></motion.img>
           <motion.img

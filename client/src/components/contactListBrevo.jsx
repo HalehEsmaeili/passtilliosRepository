@@ -55,9 +55,31 @@ const ContactList = () => {
   const [helperTxt, setHelperTxt] = useState("");
 
   ////recaptcha
-  const [recaptchaSuccess, setRecaptchaSuccess] = useState(false);
-  const [recaptchaFail, setRecaptchaFail] = useState(false);
-  const [recaptchaExpired, setRecaptchaExpired] = useState(false);
+  const [recaptchaToken, setRechatchaToken] = useState(null);
+  //const [recaptchaFail, setRecaptchaFail] = useState(false);
+  const [recaptchaSuccess, setRecaptchaSuccess] = useState();
+  useEffect(() => {
+    axiosInstance
+      .get(`/api/contact/verify-recaptcha`, { recaptchaToken: recaptchaToken })
+      .then((response) => {
+        console.log("responsoe for grey");
+        console.log(response.data.sections);
+        //response.data.sections.section_title;
+        if (response.success) {
+          setRecaptchaSuccess(true);
+        } else {
+          setRecaptchaSuccess(false);
+        }
+
+        //console.log(response.data.sections);
+        //setSectionData(response.data.sections);
+      })
+      .catch((error) => {
+        console.error("Error retrieving section data:", error);
+        // Handle error
+      });
+  }, [recaptchaToken]);
+
   ////useeffects for country,state,city
   useEffect(() => {
     console.log("i am triggered by", country.name);
@@ -120,7 +142,11 @@ const ContactList = () => {
       name === "" ||
       city.name === "" ||
       country.isoCode === "" ||
-      state.isoCode === ""
+      state.isoCode === "" ||
+      !agreedToBrevo ||
+      !agreedToJoin ||
+      recaptchaSuccess === null ||
+      recaptchaSuccess === false
     ) {
       setBtnPressed(true);
     } else {
@@ -393,12 +419,12 @@ const ContactList = () => {
         <div className="mb-3">
           {savedSuccessfully ? (
             <h1 className="h3  fw-normal h1contact">
-              welcome {name ? name : ""}! 🎉🥳🍾
+              only 1 last step left to do!{name ? name : ""}! 🎉🥳🍾
             </h1>
           ) : savingUnsuccessful ? (
             <h1 className="h3  fw-normal h1contact">oooops!</h1>
           ) : (
-            <h1 className="h3  fw-normal h1contact">join the contact list!</h1>
+            <h1 className="h3  fw-normal h1contact">join the contact list</h1>
           )}
         </div>
       </div>
@@ -727,9 +753,10 @@ const ContactList = () => {
               id="OPT_IN"
               name="OPT_IN"
               onChange={(event) => {
-          setAgreedToJoin(event.target.checked);
-          setBtnPressed(false);
-        }}s
+                setAgreedToJoin(event.target.checked);
+                setBtnPressed(false);
+              }}
+              s
             />
             <img
               src={contactlistCanva}
@@ -759,10 +786,8 @@ const ContactList = () => {
               update emails or by sending an email to
               remove-me-from-contactlist@passtillios.com🤝
             </p>
-            {btnPressed &&  agreedToJoin=== false ? (
-              <p className="errorP">
-              your agreement above is required
-              </p>
+            {btnPressed && agreedToJoin === false ? (
+              <p className="errorP">your agreement above is required</p>
             ) : null}
           </div>
 
@@ -830,9 +855,9 @@ const ContactList = () => {
                   id="OPT_IN"
                   name="OPT_IN"
                   onChange={(event) => {
-          setAgreedToBrevo(event.target.checked);
-          setBtnPressed(false);
-        }}
+                    setAgreedToBrevo(event.target.checked);
+                    setBtnPressed(false);
+                  }}
                 />
                 <p
                   style={{
@@ -843,11 +868,10 @@ const ContactList = () => {
                     lineHeight: "4vw",
                   }}
                 >
-                  Brevo is the platform where your information will be
-                  collected and managed. By submitting this form you
-                  agree that the personal data you provided will be transferred
-                  to Brevo for processing in accordance with Brevo's Privacy
-                  Policy.👉{" "}
+                  Brevo is the platform where your information will be collected
+                  and managed. By submitting this form you agree that the
+                  personal data you provided will be transferred to Brevo for
+                  processing in accordance with Brevo's Privacy Policy.👉{" "}
                   <a
                     style={{ color: "#f90e9b" }}
                     href="https://www.brevo.com/en/legal/privacypolicy/"
@@ -855,16 +879,15 @@ const ContactList = () => {
                     Brevo's Privacy Policy.
                   </a>
                 </p>
-                {btnPressed &&  agreedToBrevo=== false ? (
-              <p className="errorP">
-          your agreement above is required
-              </p>
-            ) : null}
+                {btnPressed && agreedToBrevo === false ? (
+                  <p className="errorP">your agreement above is required</p>
+                ) : null}
               </div>
             </div>
           </div>
           <div
             style={{
+              overflow: "visible",
               marginBottom: 0,
               display: "flex",
               flexDirection: "column",
@@ -879,7 +902,7 @@ const ContactList = () => {
                 marginBottom: "5%",
               }}
             >
-             you human?
+              you human?
             </p>
             <p
               style={{
@@ -903,9 +926,16 @@ const ContactList = () => {
               }}
               size="normal"
               sitekey="6LdFAZMpAAAAAPNO5cTGqgATYFjlCBMgGVi8-c7v"
-              onChange={() => setRecaptchaSuccess(true)}
-              onErrored={() => setRecaptchaFail(true)}
+              onChange={(token) => {
+                setRechatchaToken(token);
+              }}
+              onExpired={() => setRechatchaToken(null)}
+              onErrored={() => setRecaptchaSuccess(false)}
             />
+            {btnPressed &&
+            (recaptchaSuccess === null || recaptchaSuccess === false) ? (
+              <p className="errorP">it didnt work out here</p>
+            ) : null}
           </div>
 
           <div className="btnEmailListContainer">

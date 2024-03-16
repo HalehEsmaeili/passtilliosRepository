@@ -148,7 +148,7 @@ h1 {
   color: whitesmoke;
 }
 .parent {
-  background-color: #0d0431;
+  background-color: #090225;
   position: relative;
 }
 .divForLogoContainer {
@@ -452,6 +452,7 @@ h1 {
 }
 
 #rainbowStart {
+
 }
 #personNotTalking {
   opacity: 1;
@@ -491,7 +492,7 @@ h1 {
   justify-self: end;
 }
 #colorSplashImg {
-  width: 54%;
+  width: 52%;
   opacity: 0;
   z-index: 1000;
   margin-left: 0;
@@ -1202,7 +1203,7 @@ max-height: fit-content;
 }
 
 #onSvgtxt1 {
-  background-color: #0d0431;
+  background-color: #090225;
   position: absolute;
   top: 20%;
   left: 30%;
@@ -1210,7 +1211,7 @@ max-height: fit-content;
   text-align: center;
 }
 #onSvgtxt2 {
-  background-color: #0d0431;
+  background-color: #090225;
   position: absolute;
   top: 75%;
   left: 30%;

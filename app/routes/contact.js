@@ -148,4 +148,31 @@ router.post(
   }
 );
 
+
+// Endpoint to handle reCAPTCHA verification
+router.post('/verify-recaptcha', async (req, res) => {
+  const { recaptchaToken } = req.body;
+
+  try {
+    // Replace 'YOUR_SECRET_KEY' with your actual reCAPTCHA secret key
+    const secretKey = 'YOUR_SECRET_KEY';
+    const verificationURL = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${recaptchaToken}`;
+
+    // Verify reCAPTCHA token with Google's reCAPTCHA API
+    const response = await axios.post(verificationURL);
+    const { success } = response.data;
+
+    if (success) {
+      // reCAPTCHA verification successful
+      res.json({ success: true, message: 'reCAPTCHA verification successful' });
+    } else {
+      // reCAPTCHA verification failed
+      res.json({ success: false, message: 'reCAPTCHA verification failed' });
+    }
+  } catch (error) {
+    console.error('Error verifying reCAPTCHA:', error.message);
+    res.status(500).json({ success: false, message: 'Internal server error' });
+  }
+});
+
 export default router;

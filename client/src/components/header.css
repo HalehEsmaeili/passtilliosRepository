@@ -4,18 +4,16 @@ input{
   opacity: 1;
 }
 .headerDiv{
-
-
 }
 
 
 .svg-icon {overflow: visible;
   z-index: 1000 !important;
   position: absolute;
-left:16vw;
-top:6vw;
- width: 6vw; 
- transform-origin: right;
+  left:16vw;
+  top:6vw;
+  width: 6vw; 
+  transform-origin: right;
   transition: stroke 0.3s; /* Add transition for a smooth color change */
 }
 
@@ -25,7 +23,7 @@ top:6vw;
   z-index: 1000 !important;
 }
 .svg-icon-path {
-  z-index: 1000 !important;
+z-index: 1000 !important;
 stroke:#090225;
 stroke-width:7;
 }
@@ -78,15 +76,17 @@ stroke-width:7;
   bottom: -8px;
 }
 .menu {
+
   pointer-events: none;
 }
-/*change the widths*/
+/*change the widths position: fixed;*/
 .menu--circle {
+
   position: absolute;
-  z-index: 13;
-  width: 80vw;
-  height: 80vw;
-  background-color: #090225;
+  z-index: 100000000000;
+  width: 60%;
+  height:100%;
+  background-color: #09022500;
 border-bottom-right-radius: 70%;
   overflow: hidden;
 }
