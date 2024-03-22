@@ -10,12 +10,13 @@ input{
 .svg-icon {overflow: visible;
   z-index: 1000 !important;
   position: absolute;
-  left:16vw;
-  top:6vw;
+  left:56%;
+  top:55%;
   width: 6vw; 
   transform-origin: right;
   transition: stroke 0.3s; /* Add transition for a smooth color change */
 }
+
 
 /* Style the SVG to be white when its parent has a 'clicked' class */
 .clicked .svg-icon-path {
@@ -27,7 +28,7 @@ z-index: 1000 !important;
 stroke:#090225;
 stroke-width:7;
 }
-
+/*
 @media (max-width: 600px) {
   
   .svg-icon {overflow: visible;
@@ -40,7 +41,7 @@ stroke-width:7;
   }
   
 }
-
+*/
 .icon {
   position: absolute;
   top: 70%;
