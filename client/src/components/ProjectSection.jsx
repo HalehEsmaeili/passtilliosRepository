@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef, useHover } from "react";
 import axiosInstance from "../Api/axiosInstance";
 import "../public/intro.css";
-
+import Slider from "./Slider.jsx";
 //1901 change the h1s positioning css.
 //the local deployment works with serve,but with heroku not yet
 //heroku logs --tail -a passtilliostest1
@@ -908,7 +908,7 @@ How will your life look as a painting 60 years from now? Will it narrate a story
               <motion.path
                 animate={rainbowSvgControl2}
                 id="VectorYellow2"
-                opacity="1"
+            opacity="1"
                 d="M1092.72 -38.0966L-31.0608 1080.41"
                 stroke="#F8A813"
                 stroke-width="40"
@@ -993,26 +993,26 @@ How will your life look as a painting 60 years from now? Will it narrate a story
       <div ref={div4} className="ArtOrPainting">
         <div className="storytime-title">
           <motion.h1
-            initial={{ opacity: 0 }}
+            initial={{ opacity: 1 }}
             animate={storyTimeControls}
             className="ArtOrPaintingTitle"
           >
-            well
+           let me
           </motion.h1>
 
           <motion.h1
-            initial={{ opacity: 0 }}
+            initial={{ opacity: 1 }}
             animate={storyTimeControls}
             className="ArtOrPaintingTitle"
           >
-            Story
+         explain
           </motion.h1>
           <motion.h1
             initial={{ opacity: 0 }}
             animate={storyTimeControls}
             className="ArtOrPaintingTitle"
           >
-            time!
+      
           </motion.h1>
 
           {/* <p id="fightH" className="projectTxt" >painting has been my way to fight for my colors!</p>*/}
@@ -1038,7 +1038,59 @@ How will your life look as a painting 60 years from now? Will it narrate a story
 </div>
 
   </motion.video> */}
-        <p className="projectTxt">
+  <Slider images={[
+  {
+         url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/1.png",
+              caption: "",
+             
+},{
+         url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/2.png", 
+              caption: "I wish something can break through to you and play the reminder in that very moment! that even the greyness surrounding you, resisting your bold, vibrant colors, will one day realize it needed them all along"
+             
+},
+{
+  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/3.png",
+              caption: "cause remember, even the color grey looks its best when paired with bright colors!",
+             
+}
+,{
+  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/4.png",
+              caption: "so dont give in to the greyness of your surroundings instead help inspire your grey surrounding with your unique colors!",
+             
+},
+
+{
+  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/5.png",
+              caption: "I have managed to keep my true colors alive one painting at a time! now I wonder if these paintings have the potential to be that reminder for someone out there...",
+             
+},
+{
+  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/6.png",
+              caption: "I have managed to keep my true colors alive one painting at a time! now I wonder if these paintings have the potential to be that reminder for someone out there...",
+             
+},
+{
+  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/7.png",
+              caption: "I have managed to keep my true colors alive one painting at a time! now I wonder if these paintings have the potential to be that reminder for someone out there...",
+             
+}
+,
+{
+  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/8.png",
+              caption: "I have managed to keep my true colors alive one painting at a time! now I wonder if these paintings have the potential to be that reminder for someone out there...",
+             
+}
+,
+{
+  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/9.png",
+              caption: "I have managed to keep my true colors alive one painting at a time! now I wonder if these paintings have the potential to be that reminder for someone out there...",
+             
+}
+
+
+]}/>
+
+       { /*<p className="projectTxt">
           Imagine a world painted only in shades of gray, where only black and
           white call the shots. It's a place without the cozy warmth of lively
           colors.In this imaginary place, our eyes reveal emptiness, echoing the
@@ -1048,7 +1100,7 @@ How will your life look as a painting 60 years from now? Will it narrate a story
           Imagine a world painted only in shades of gray, where only black and
           white call the shots. It's a place without the cozy warmth of lively
           colors.In this imaginary place, our eyes reveal emptiness, echoing the
-        </p>
+        </p>*/}
       </div>
     </div>
   );

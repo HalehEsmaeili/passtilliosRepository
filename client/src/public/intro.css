@@ -13,6 +13,7 @@ div {
   overflow: hidden;
 }
 h1 {
+  
   color: white;
   font-family: "Exo 2", sans-serif;
   font-size: 5vw;
@@ -101,6 +102,15 @@ p {
   left: 30%;
   width: 60%;
 }
+.bubbleContainerGrey img {
+  float: left;
+  margin-top: -40%;
+  margin-right: 40%;
+  margin-left: 0%;
+  width: 33%;
+  z-index: -1;
+  position: relative;
+}
 .bubbleContainerIntro {
   display: grid;
   grid-template-columns: 100%;
@@ -185,8 +195,9 @@ h1 {
 }
 
 .divGreyContent {
-  margin-left: 10%;
-  margin-right: 10%;
+  width: 100%;
+  margin-left: 0%;
+  margin-right: 0%;
   position: relative;
   display: grid;
   grid-template-areas:
@@ -219,6 +230,7 @@ h1 {
   display: inline-block;
   align-self: left;
 }
+/*
 .divGrey img {
   float: left;
   margin-top: -40%;
@@ -227,31 +239,44 @@ h1 {
   width: 33%;
   z-index: -1;
   position: relative;
-}
+}*/
 .greyToAnimate {
   position: absolute;
   opacity: 30%;
   width: 10%;
 }
 #greyUP {
-  position: absolute;
+  position: relative;
   width: 90%;
-  left: -50vw;
-  top: 20%;
+  margin-left: -50%;
+  margin-top: 3%;
+  margin-bottom: -30%;
   z-index: 10000;
 }
 #greyDown {
-  width: 80%;
+  width: 60%;
+  rotate: 30deg;
   position: absolute;
-  left: 80vw;
-  top: 110%;
-  z-index: 10000;
+  left: 22%;
+  top: 2%;
+  z-index: 1000;
+
+}
+#greyDown3 {
+  width: 70%;
+  rotate: 90deg;
+  position: absolute;
+  left: 86%;
+  top: 100%;
+  z-index: 1000;
 }
 #greyDown2 {
+
   position: absolute;
-  left: -20vw;
-  top: 1%;
+  left: -40%;
+  top: -20%;
   width: 90%;
+z-index:1;
 }
 #greySplashs {
   position: absolute;
@@ -366,13 +391,7 @@ h1 {
   top: 8.2%;
   z-index: 10;
 }
-#wtf {
-  opacity: 0;
-  position: absolute;
-  left: -2%;
-  width: 40%;
-  top: 81.4%;
-}
+
 
 #yourcolorsIMG {
   width: 68%;
@@ -1201,7 +1220,10 @@ max-height: fit-content;
   font-size: 5vw;
   line-height: 9vw;
 }
-
+#greyTitle{
+  display: inline-block;
+margin-left: 11%;
+}
 #onSvgtxt1 {
   background-color: #090225;
   position: absolute;
@@ -1416,6 +1438,7 @@ max-height: fit-content;
   font-size: 1.6vw; 
   line-height: 4vw;
 }
+/*
 #greyUP {
   position: absolute;
   opacity: 60%;
@@ -1438,6 +1461,7 @@ max-height: fit-content;
   top: 10%;
   width: 70%;
 }
+*/
 
 .GridItemGreyTitle {
   grid-area: header;
@@ -1560,6 +1584,9 @@ position: relative;
   font-size: 7vw;
   line-height:10vw ;
   align-self: left;
+}
+#greyTitle{
+  margin-left: 10%;
 }
 
 .secondGreyHeader {

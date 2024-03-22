@@ -5,6 +5,7 @@ import "../public/intro.css";
 import CampaignStatement from "./campaign/CampaignStatement.jsx";
 import ProjectSection from "./ProjectSection.jsx";
 import NextSteps from "./NextSteps.jsx";
+import Slider from "./Slider.jsx";
 import ScreenSizeHint from "./ScreenSizeHint.jsx";
 //1901 change the h1s positioning css.
 //the local deployment works with serve,but with heroku not yet
@@ -29,13 +30,13 @@ import {
 import Highlighted from "../components/Highlighted.js";
 import useWindowDimensions from "./useWindowDimensions.js";
 import logo from "../public/images/logo.png";
-
+import { useLanguageContext } from "../context/LanguageContext";
 /////your life as a painting
 
 /////bubbles for lets go
 import l from "../public/images/bubbles/7.png";
 import e from "../public/images/bubbles/8.png";
-import t from "../public/images/bubbles/9.png";
+import tt from "../public/images/bubbles/9.png";
 import ss from "../public/images/bubbles/10.png";
 import g from "../public/images/bubbles/11.png";
 import o from "../public/images/bubbles/12.png";
@@ -71,6 +72,7 @@ import greyUP from "../public/images/greyDivGrey/2.png";
 
 
 function IntroParallax() {
+  const { t } = useLanguageContext();
   const text =
     "Imagine a world painted only in shades of gray, where only black and white call the shots. It's a place without the cozy warmth of lively colors.In this imaginary place, our eyes reveal emptiness, echoing the loneliness inside. The once-fiery passion in hearts, eager to use their unique colors to make a beautiful difference on our collective canvas of life, now flickers, struggling to survive in a world that only wants us to be either black or white.Creativity and inspiration take a backseat. Life in this gray and expected canvas feels like a broken record, missing the beat of unpredictability that makes it exciting and dance-worthy!";
 
@@ -106,7 +108,7 @@ const[splittedTxt,setSlittedTxt]=useState([]);
   const div3 = useRef(null);
   const finalWordsDiv = useRef(null);
   const divNextSteps = useRef(null);
-  const nextStepBodyContainerRef = useRef(null);
+  //const nextStepBodyContainerRef = useRef(null);
   const isInViewdivNextStep = useInView(divNextSteps, { amount: 0.7 });
 
   const greydiv = useRef(null);
@@ -129,9 +131,9 @@ const[splittedTxt,setSlittedTxt]=useState([]);
 
   //const isInViewdiv0=useInView(div0, {once:true});
   //const isInViewDivGrey=useInView(greydiv, {once:true});
-  const isInViewdiv2 = useInView(div2, { once: true, amount: 1 });
+ 
   const isInViewdiv3 = useInView(div3, { once: true, amount: 0.8 });
-  const isInViewdiv0= useInView(div0, { once: true, amount: 0.2 });
+
   //const [isHovered,handleHover]=useHover();
   ///////dont let grey take over
   const dontAnim = useAnimationControls();
@@ -491,19 +493,20 @@ const[splittedTxt,setSlittedTxt]=useState([]);
     const greyAnim = async () => {
       try{
       greyCloudDownControl.start({
-        x: "-15vw",
-        y: "-10%",
-        rotate: 60,
-        scale: 1.4,
+       opacity:1,
+        x: "-40%",
+        y: "22%",
+        rotate:10,
+        scale: 1.6,
         opacity: 0.9,
         transition: { duration: 2 },
       });
       greyCloudControl.start({
-        x: "-20vw",
-        y: "10%",
-        rotate: -70,
+        x: "-20%",
+        y: "1%",
+        rotate: -67,
         opacity: 0.5,
-        scale: 1.9,
+        scale: 1.7,
 
         transition: { duration: 2.5 },
       });
@@ -556,7 +559,7 @@ if (
         
      await  introLogoControl.start({
         y: ["10%","-26%"],
-        transition: { delay: 1, type: "spring", stiffness: 100, duration: .05 },
+        transition: { delay: 2.4, type: "spring", stiffness: 100, duration: .05 },
       });
       await introLogoControl.start({
         y: "10000%",
@@ -780,7 +783,7 @@ if (
           <motion.img
             src={logo}
             initial={{ y:"0%" }}
-            style={{ scale: 1.3, marginBottom: "5%" }}
+            style={{width:"25%" , marginBottom: "8%" }}
             animate={introLogoControl}
             alt="logo"
           ></motion.img>
@@ -790,7 +793,7 @@ if (
             animate={{ opacity: 1 }}
             transition={{ type: "yoyo" }}
           >
-            ITS ABOUT DAMN TIME WE INFUSE SOME MAGIC AND SPICE INTO OUR LIVES!
+          {t("homeTitle")}
           </motion.h1>
 
           <motion.img
@@ -807,7 +810,7 @@ if (
           ></motion.img>
           <motion.img
             className="bubbles"
-            src={t}
+            src={tt}
             animate={tControls}
             alt="t"
           ></motion.img>
@@ -980,22 +983,75 @@ sectionTitle="projectSection" pageId={1} sectionId={1} />
           alt="grey cloud"
           animate={greyCloudDownControl}
         ></motion.img>
-
+           <motion.img
+          id="greyDown3"
+          src={greyDown}
+          alt="grey cloud"
+          animate={greyCloudDownControl}
+        ></motion.img>
+   {/*<div className="divGreyContent"></div>*/}
         {!scrollToGreyActive ? (
-          <div className="divGreyContent">
-            <div className="GridItemGreyTitle">
+          <div >
+        
+                {/**      <div >className="GridItemGreyTitle"     </div>*/} 
+      
               {headers ? (
-                <h1 id="greyy">{headers[0]}</h1>
+                <h1 id="greyTitle">{headers[0]}</h1>
               ) : (
-                <h1 id="greyy">THE GREY EPIDEMIC</h1>
+                <h1 id="greyTitle">THE GREY EPIDEMIC</h1>
               )}
-            </div>
+
+           
+
+        
+            <Slider images={[
+  {
+         url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/grey1/slideshow/1.png",
+              caption: "",
+             
+},{
+         url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/grey1/slideshow/2.png", 
+              caption: "I wish something can break through to you and play the reminder in that very moment! that even the greyness surrounding you, resisting your bold, vibrant colors, will one day realize it needed them all along"
+             
+},
+{
+  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/grey1/slideshow/3.png",
+              caption: "cause remember, even the color grey looks its best when paired with bright colors!",
+             
+}
+,{
+  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/grey1/slideshow/4.png",
+              caption: "so dont give in to the greyness of your surroundings instead help inspire your grey surrounding with your unique colors!",
+             
+},
+
+{
+  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/grey1/slideshow/5.png",
+              caption: "I have managed to keep my true colors alive one painting at a time! now I wonder if these paintings have the potential to be that reminder for someone out there...",
+             
+},
+{
+  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/grey1/slideshow/6.png",
+              caption: "I have managed to keep my true colors alive one painting at a time! now I wonder if these paintings have the potential to be that reminder for someone out there...",
+             
+}
+
+                     ]}/>
+
             {/**<Highlighted
                   text={texts[0]}
                   highlight="Imagine unique colors"
                 /> */}
-            <div className="GridItemGreyText">
-              {texts ? (
+       
+               
+          
+               
+
+
+        {  /*  <div className="GridItemGreyText">  </div>*/}
+       
+           
+              {/*texts ? (
                 <p className="greyTxt">
                  {texts[0]}
                 </p>
@@ -1008,9 +1064,9 @@ sectionTitle="projectSection" pageId={1} sectionId={1} />
                 the perfect backdrop where vibrant and unique colors can take
                 the lead as the main storytellers in the painting of our lives!
                 </p>
-              )}
+              )*/}
               {/** <Highlighted text={text} highlight="Imagine unique colors" /> */}
-            </div>
+          
           </div>
         ) : (
           <div>
