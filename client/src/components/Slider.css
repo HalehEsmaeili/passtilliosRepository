@@ -13,11 +13,11 @@
   --organic-arrow-thickness: 3vw;
   --organic-arrow-border-radius: 0px;
   --organic-arrow-height: 5vw;
-  --organic-arrow-color: #0ddebb;
+  --organic-arrow-color: #00eeb9;
   --control-button-width: 100%;
   --control-button-height: 25%;
   --control-button-background: transparent;
-  --control-bullet-color: #19e63f;
+  --control-bullet-color: #00eeb9;
   --control-bullet-active-color: #ff00c8;
   --loader-bar-color: #ea1ad8;
   --loader-bar-height: 10vh;
@@ -34,11 +34,11 @@
   width: 100%;
 }
 .awssld__bullets--active {
-  color: #e619d5;
+  color: #00eeb9;
 }
 .nav {
   position: relative;
-  background-color: #54dc6d;
+  background-color: #00eeb9;
   z-index: 11111111;
 }
 
@@ -72,8 +72,8 @@ element.style {
 
 .awssld {
   padding-bottom: 10vw;
-  --organic-arrow-color: #0ddebb;
-  --loader-bar-color: #ea1ad8;
+  --organic-arrow-color: #ea1ad8;
+  --loader-bar-color: #00eeb9;
   --control-bullet-active-color: var(--organic-arrow-color);
 
   position: relative;
@@ -100,7 +100,7 @@ element.style {
     background-color 0.175s ease-out;
 }
 .awssld__bullets--active {
-  background: #19e63f;
+  background: #00eeb9;
 }
 @media screen and (max-width: 520px) {
   .awssld__controls {

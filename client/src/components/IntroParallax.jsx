@@ -70,7 +70,6 @@ import magicRight from "../public/images/Intro/44.png";
 import greyDown from "../public/images/greyDivGrey/1.png";
 import greyUP from "../public/images/greyDivGrey/2.png";
 
-
 function IntroParallax() {
   const { t } = useLanguageContext();
   const text =
@@ -87,8 +86,7 @@ function IntroParallax() {
 
   const [isGreyContentVisible, setGreyContentVisible] = useState(false);
 
-  const [startNextStepAnimation, setStartNextStepAnimation] =
-    useState(false);
+  const [startNextStepAnimation, setStartNextStepAnimation] = useState(false);
 
   const [h1moved, setH1Moved] = useState(false);
   const [greyDustPositionX, setGreyDustPositionX] = useState(500);
@@ -100,7 +98,7 @@ function IntroParallax() {
   const [visibletime, setvisible] = useState(0);
   const [scrolled, setScrolled] = useState(false);
   const [isnextArrowClickable, setIsNextArrowClickable] = useState(true);
-const[splittedTxt,setSlittedTxt]=useState([]);
+  const [splittedTxt, setSlittedTxt] = useState([]);
   ///////////refs and useinview aniamtion set up
 
   const div0 = useRef(null);
@@ -113,10 +111,8 @@ const[splittedTxt,setSlittedTxt]=useState([]);
 
   const greydiv = useRef(null);
 
-
- 
   const campaignImgRef = useRef(null);
-  
+
   const isInViewCampaignImg = useInView(campaignImgRef, {
     once: true,
     amount: 0.7,
@@ -127,11 +123,11 @@ const[splittedTxt,setSlittedTxt]=useState([]);
     amount: 0.3,
   });
 
-  const isInViewGreyTxt = useInView(greydiv, { once: true, amount: 0.1 });
+  const isInViewGreyTxt = useInView(greydiv, { once: true, amount: 0.44 });
 
   //const isInViewdiv0=useInView(div0, {once:true});
   //const isInViewDivGrey=useInView(greydiv, {once:true});
- 
+
   const isInViewdiv3 = useInView(div3, { once: true, amount: 0.8 });
 
   //const [isHovered,handleHover]=useHover();
@@ -147,7 +143,7 @@ const[splittedTxt,setSlittedTxt]=useState([]);
   const greyCloudDownControl = useAnimationControls();
   const introLogoControl = useAnimationControls();
   const greyToAnimate = useAnimationControls();
- 
+
   ////bubble attack
 
   const splash1Controls = useAnimationControls();
@@ -155,7 +151,7 @@ const[splittedTxt,setSlittedTxt]=useState([]);
   const splash3Controls = useAnimationControls();
   const splash4Controls = useAnimationControls();
   const splash5Controls = useAnimationControls();
-  
+
   //////
 
   const nextButtonControls = useAnimationControls();
@@ -190,7 +186,6 @@ const[splittedTxt,setSlittedTxt]=useState([]);
   const animateMagic = useAnimationControls();
   const logoLineAnimation = useAnimationControls();
 
-
   /*
   const[animateimg1,setimg1animate]=useState(false);
   const[animateimg2,setimg2animate]=useState(true);
@@ -198,7 +193,6 @@ const[splittedTxt,setSlittedTxt]=useState([]);
   */
 
   const [headers, setHeaders] = useState(null);
-  const [texts, setTexts] = useState(null);
 
   const [headers2, setHeaders2] = useState(null);
   const [texts2, setTexts2] = useState(null);
@@ -206,8 +200,7 @@ const[splittedTxt,setSlittedTxt]=useState([]);
   //////////////////////animation functions
 
   useEffect(() => {
-
-
+    /*
     axiosInstance.get(`/api/content/sections/${1}/${2}`)
       .then((response) => {
         console.log("responsoe for grey");
@@ -239,20 +232,18 @@ const[splittedTxt,setSlittedTxt]=useState([]);
         console.error("Error retrieving section data:", error);
         // Handle error
       });
+      */
   }, []);
 
-  
   useEffect(() => {
     const svgLineAnim = async () => {
       // animateMagicContainer.start({scale:[1,1.2,1],rotate:[0,30,0,-30,0,20,0,-20,0], transition:{delay:.2,type:"yoyo"}});
-     try{
-      await logoLineAnimation.start({
-        pathLength: 1,
-        transition: { delay: 3, duration: 3, transition: { stiffness: 2 } },
-      });
-    }catch{
-
-    }
+      try {
+        await logoLineAnimation.start({
+          pathLength: 1,
+          transition: { delay: 3, duration: 3, transition: { stiffness: 2 } },
+        });
+      } catch {}
     };
     if (scrollToGreyActive) {
       svgLineAnim();
@@ -262,21 +253,17 @@ const[splittedTxt,setSlittedTxt]=useState([]);
   useEffect(() => {
     if (isInViewMagicContainerRef) {
       const spiceAnim = async () => {
-        try{
-        animateMagicContainer.start({
-          scale: [1, 1.2, 1],
-          rotate: [0, 30, 0, -30, 0, 20, 0, -20, 0],
-          transition: { delay: 0.2, type: "yoyo" },
-        });
-        animateMagic.start({
-          opacity: 1,
-          transition: { delay: 0.7, type: "yoyo" },
-        });
-      }catch{
-
-
-      }
-      
+        try {
+          animateMagicContainer.start({
+            scale: [1, 1.2, 1],
+            rotate: [0, 30, 0, -30, 0, 20, 0, -20, 0],
+            transition: { delay: 0.2, type: "yoyo" },
+          });
+          animateMagic.start({
+            opacity: 1,
+            transition: { delay: 0.7, type: "yoyo" },
+          });
+        } catch {}
       };
       spiceAnim();
     }
@@ -284,7 +271,6 @@ const[splittedTxt,setSlittedTxt]=useState([]);
 
   useEffect(() => {
     if (isInViewdiv3) {
-      
       nextButtonControls.start({
         opactity: 1,
         left: ["-10%", "92%", "82%"],
@@ -296,91 +282,94 @@ const[splittedTxt,setSlittedTxt]=useState([]);
   useEffect(() => {
     if (scrollToGreyActive) {
       const bubbleBurstAnim = async () => {
-        try{
-        b2Controls.start({
-          left: "85%",
-          top: "120%",
-          transition: { stiffness: 0.1, duration: 5 },
-        });
-        b5Controls.start({
-          left: "-17%",
-          top: "10%",
-          x: ["-5vw", "16vw"],
-          y: ["10vw", "28vw"],
-          transition: { delay: 1, stiffness: 0.1, duration: 5 },
-        });
-        b10Controls.start({
-          left: "-10%",
-          top: "-34%",
-          transition: { zIndex: 100000, delay: 4, stiffness: 0.1, duration: 5 },
-        });
-        b9Controls.start({
-          left: "78%",
-          top: "-18%",
-          transition: { delay: 1.3, stiffness: 0.1, duration: 9 },
-        });
+        try {
+          b2Controls.start({
+            left: "85%",
+            top: "120%",
+            transition: { stiffness: 0.1, duration: 5 },
+          });
+          b5Controls.start({
+            left: "-17%",
+            top: "57%",
+            x: ["-5vw", "16vw"],
+            y: ["10%", "15%"],
+            transition: { delay: 1, stiffness: 0.1, duration: 5 },
+          });
+          b10Controls.start({
+            left: "-4%",
+            top: "-49%",
+            transition: {
+              zIndex: 100000,
+              delay: 4,
+              stiffness: 0.1,
+              duration: 5,
+            },
+          });
+          b9Controls.start({
+            left: "78%",
+            top: "-18%",
+            transition: { delay: 1.3, stiffness: 0.1, duration: 9 },
+          });
 
-        await b11Controls.start({
-          left: "15%",
-          top: "-42%",
-          transition: { stiffness: 1, duration: 5 },
-        });
+          await b11Controls.start({
+            left: "15%",
+            top: "-54%",
+            transition: { stiffness: 1, duration: 5 },
+          });
 
-        b11EmptyControls.start({
-          scale: 6,
-          opacity: 0,
-          transition: { duration: 0.1 },
-        });
+          b11EmptyControls.start({
+            scale: 6,
+            opacity: 0,
+            transition: { duration: 0.1 },
+          });
 
-        await splash5Controls.start({ scale: 6, transition: {} });
-        dontAnim.start({ opacity: 1 });
+          await splash5Controls.start({ scale: 6, transition: {} });
+          dontAnim.start({ opacity: 1 });
 
-        b2EmptyControls.start({
-          scale: 6,
-          opacity: 0,
-          transition: { delay: 1, duration: 0.1 },
-        });
-        await splash2Controls.start({
-          opacity: 1,
-          scale: 5.5,
-          transition: { delay: 1 },
-        });
-        letAnim.start({ opacity: 1 });
+          b2EmptyControls.start({
+            scale: 6,
+            opacity: 0,
+            transition: { delay: 1, duration: 0.1 },
+          });
+          await splash2Controls.start({
+            opacity: 1,
+            scale: 5.5,
+            transition: { delay: 1 },
+          });
+          letAnim.start({ opacity: 1 });
 
-        b5EmptyControls.start({
-          scale: 6,
-          opacity: 0,
-          transition: { delay: 0.5, duration: 0.1 },
-        });
-        await splash1Controls.start({ scale: 4.5, transition: { delay: 0.5 } });
-        greyAnim.start({ opacity: 1 });
+          b5EmptyControls.start({
+            scale: 6,
+            opacity: 0,
+            transition: { delay: 0.5, duration: 0.1 },
+          });
+          await splash1Controls.start({
+            scale: 5.1,
+            transition: { delay: 0.5 },
+          });
+          greyAnim.start({ opacity: 1 });
 
-        b10EmptyControls.start({
-          scale: 10,
-          opacity: 0,
-          transition: { delay: 2, duration: 0.1 },
-        });
-        await splash4Controls.start({ scale: 6.5, transition: { delay: 2 } });
-        takeAnim.start({ opacity: 1 });
+          b10EmptyControls.start({
+            scale: 10,
+            opacity: 0,
+            transition: { delay: 2, duration: 0.1 },
+          });
+          await splash4Controls.start({ scale: 6.5, transition: { delay: 2 } });
+          takeAnim.start({ opacity: 1 });
 
-        b9EmptyControls.start({
-          scale: 6,
-          opacity: 0,
-          transition: { delay: 0.5, duration: 0.1 },
-        });
-        await splash3Controls.start({ scale: 6, transition: { delay: 0.5 } });
-        overAnim.start({ opacity: 1 });
-
-      }catch{
-    
-      }
-
+          b9EmptyControls.start({
+            scale: 6,
+            opacity: 0,
+            transition: { delay: 0.5, duration: 0.1 },
+          });
+          await splash3Controls.start({ scale: 6, transition: { delay: 0.5 } });
+          overAnim.start({ opacity: 1 });
+        } catch {}
       };
       bubbleBurstAnim();
     }
   }, [scrollToGreyActive]);
 
-  
   const handleScrollToDivNext = (e) => {
     setScrollToNextStepsActive(true);
     // Access the current property of the ref to get the DOM element
@@ -396,7 +385,6 @@ const[splittedTxt,setSlittedTxt]=useState([]);
   }*/
   };
 
- 
   const handleScrollToDivgrey = (e) => {
     setBroMovingToNextSteps(true);
     setScrollToGreyActive(true);
@@ -445,7 +433,7 @@ const[splittedTxt,setSlittedTxt]=useState([]);
     }
   };
 */
- /*
+  /*
   const logoAnimationToNextSteps = async () => {
     controlsSecondPerson.start({ opacity: 0, transition: { duration: 0.3 } });
     await controlslogo.start({ opacity: 0, transition: { duration: 0.3 } });
@@ -491,39 +479,37 @@ const[splittedTxt,setSlittedTxt]=useState([]);
   /////////useEffectSection
   useEffect(() => {
     const greyAnim = async () => {
-      try{
-      greyCloudDownControl.start({
-       opacity:1,
-        x: "-40%",
-        y: "22%",
-        rotate:10,
-        scale: 1.6,
-        opacity: 0.9,
-        transition: { duration: 2 },
-      });
-      greyCloudControl.start({
-        x: "-20%",
-        y: "1%",
-        rotate: -67,
-        opacity: 0.5,
-        scale: 1.7,
+      try {
+        greyCloudDownControl.start({
+          opacity: 1,
+          x: "-40%",
+          y: "22%",
+          rotate: 10,
+          scale: 1.6,
+          opacity: 0.9,
+          transition: { duration: 2 },
+        });
+        greyCloudControl.start({
+          x: "-20%",
+          y: "1%",
+          rotate: -67,
+          opacity: 0.5,
+          scale: 1.7,
 
-        transition: { duration: 2.5 },
-      });
-      b1EmptyControls.start({
-        scale: 2,
-        opacity: 0,
-        transition: { duration: 0.01 },
-      });
-      b1Controls.stop();
-      b1Controls.start({
-        opacity: 0,
-        transition: { duration: 2.3 },
-      });
-      await greyToAnimate.start({ opacity: 1 });
-    }catch{
-    
-    }
+          transition: { duration: 2.5 },
+        });
+        b1EmptyControls.start({
+          scale: 2,
+          opacity: 0,
+          transition: { duration: 0.01 },
+        });
+        b1Controls.stop();
+        b1Controls.start({
+          opacity: 0,
+          transition: { duration: 2.3 },
+        });
+        await greyToAnimate.start({ opacity: 1 });
+      } catch {}
     };
 
     if (isInViewGreyTxt && introAnimationComplete && greyScrolled) {
@@ -532,17 +518,14 @@ const[splittedTxt,setSlittedTxt]=useState([]);
     }
   }, [isInViewGreyTxt, introAnimationComplete, greyScrolled]);
 
-  
   useEffect(() => {
-   
-if (
+    if (
       isInViewdivNextStep &&
       scrollToNextStepsActive &&
       !startNextStepAnimation
     ) {
       console.log("im in setting it to true!!!!!!!!!!!!!!!");
       setStartNextStepAnimation(true);
-   
     }
   }, [
     isInViewdivNextStep,
@@ -551,100 +534,106 @@ if (
     scrollToNextStepsActive,
     startNextStepAnimation,
   ]);
- 
+
   useEffect(() => {
-  
     const introAnim = async () => {
       try {
-        
-     await  introLogoControl.start({
-        y: ["10%","-26%"],
-        transition: { delay: 2.4, type: "spring", stiffness: 100, duration: .05 },
-      });
-      await introLogoControl.start({
-        y: "10000%",
-        transition: {  delay: -.9,type: "spring", stiffness: 100, duration: 0.02 },
-      });
-      await introLogoControl.start({
-        opacity: 0,
-        transition: { duration: 0.02 },
-      });
-      setIntroAnimationComplete(true);
-      //setletsgoBubbleShow(()=>{true});
-      //console.log("set bubbbble"+letsGoBubbleShow);
-      await Promise.all([
-      
-      lControls.start({
-        opacity: 1,
-  
-        transition: { duration: 0.001 },
-      }),
-      eControls.start({
-        opacity: 1,
-  
-        transition: { duration: 0.001 },
-      }),
-      tControls.start({
-        opacity: 1,
-  
-        transition: { duration: 0.001 },
-      }),
-      sControls.start({
-        opacity: 1,
-  
-        transition: { duration: 0.001 },
-      }),
-      gControls.start({
-        opacity: 1,
-  
-        transition: { duration: 0.001 },
-      }),
-      oControls.start({
-        opacity: 1,
-  
-        transition: { duration: 0.001 },
-      }),
-    zeichenControls.start({
-        opacity: 1,
-  
-        transition: { duration: 0.001 },
-      }),
-      ///colorful bubblessss animation
-  
-    
-      b2Controls.start({
-        top: "-100%",
-        left: "70%",
-        transition: { type: "spring", stiffness: 22, duration: 0.2 },
-      }),
-  
-      b3Controls.start({
-        opacity: 1,
-        top: "50%",
-        left: "35%",
-        transition: { type: "spring", stiffness: 17, duration: 0.2 },
-      }),
-  
-      b4Controls.start({
-        opacity: 1,
-        top: "60%",
-        left: "-65%",
-        transition: { type: "spring", stiffness: 15, duration: 0.2 },
-      }),
-  
-      b5Controls.start({
-        opacity: 1,
-        top: "10%",
-        left: "60%",
-        transition: { type: "spring", stiffness: 20, duration: 0.2 },
-      }),
-      b1Controls.start({
-        top: "11%",
-        left: "7%",
-        transition: { type: "spring", stiffness: 14, duration: 0.1 },
-      }),
-  
-      /*
+        await introLogoControl.start({
+          y: ["10%", "-26%"],
+          transition: {
+            delay: 2.4,
+            type: "spring",
+            stiffness: 100,
+            duration: 0.05,
+          },
+        });
+        await introLogoControl.start({
+          y: "10000%",
+          transition: {
+            delay: -0.9,
+            type: "spring",
+            stiffness: 100,
+            duration: 0.02,
+          },
+        });
+        await introLogoControl.start({
+          opacity: 0,
+          transition: { duration: 0.02 },
+        });
+        setIntroAnimationComplete(true);
+        //setletsgoBubbleShow(()=>{true});
+        //console.log("set bubbbble"+letsGoBubbleShow);
+        await Promise.all([
+          lControls.start({
+            opacity: 1,
+
+            transition: { duration: 0.001 },
+          }),
+          eControls.start({
+            opacity: 1,
+
+            transition: { duration: 0.001 },
+          }),
+          tControls.start({
+            opacity: 1,
+
+            transition: { duration: 0.001 },
+          }),
+          sControls.start({
+            opacity: 1,
+
+            transition: { duration: 0.001 },
+          }),
+          gControls.start({
+            opacity: 1,
+
+            transition: { duration: 0.001 },
+          }),
+          oControls.start({
+            opacity: 1,
+
+            transition: { duration: 0.001 },
+          }),
+          zeichenControls.start({
+            opacity: 1,
+
+            transition: { duration: 0.001 },
+          }),
+          ///colorful bubblessss animation
+
+          b2Controls.start({
+            top: "-100%",
+            left: "70%",
+            transition: { type: "spring", stiffness: 22, duration: 0.2 },
+          }),
+
+          b3Controls.start({
+            opacity: 1,
+            top: "50%",
+            left: "35%",
+            transition: { type: "spring", stiffness: 17, duration: 0.2 },
+          }),
+
+          b4Controls.start({
+            opacity: 1,
+            top: "60%",
+            left: "-65%",
+            transition: { type: "spring", stiffness: 15, duration: 0.2 },
+          }),
+
+          b5Controls.start({
+            opacity: 1,
+            top: "10%",
+            left: "60%",
+            transition: { type: "spring", stiffness: 20, duration: 0.2 },
+          }),
+          b1Controls.start({
+            top: "11%",
+            left: "7%",
+            transition: { type: "spring", stiffness: 14, duration: 0.1 },
+          }),
+
+          /*
     b8Controls.start({
       opacity:1,
       top:"260%",
@@ -652,75 +641,69 @@ if (
       transition:  {type:"spring",stiffness:8,duration:.2}
     });
   */
-      /////
-     
-      lControls.start({
-        opacity: 1,
-        top: "-200%",
-        left: "-5%",
-        scale: 1.5,
-        transition: { type: "spring", stiffness: 10, duration: 0.9 },
-      }),
-      eControls.start({
-        top: "-200%",
-        left: "0%",
-        opacity: 1,
-  
-        scale: 1.4,
-        transition: { type: "spring", stiffness: 9.5, duration: 0.9 },
-      }),
-      tControls.start({
-        opacity: 1,
-        top: "-200%",
-        left: "5%",
-        scale: 1.3,
-        transition: { type: "spring", stiffness: 9, duration: 0.9 },
-      }),
-      sControls.start({
-        opacity: 1,
-        top: "-200%",
-        left: "10%",
-        scale: 1.2,
-        transition: { type: "spring", stiffness: 8.5, duration: 0.9 },
-      }),
-      gControls.start({
-        opacity: 1,
-        top: "-130%",
-        left: "15%",
-        transition: { type: "spring", stiffness: 7.8, duration: 0.5 },
-      }),
-      oControls.start({
-        opacity: 1,
-        top: "-130%",
-        left: "20%",
-        transition: { type: "spring", stiffness: 7.2, duration: 0.5 },
-      }),
-    zeichenControls.start({
-        opacity: 1,
-        top: "-100%",
-        left: "25%",
-        transition: { type: "spring", stiffness: 6.8, duration: 0.2 },
-      })
-  
-  
-    ]);
+          /////
 
+          lControls.start({
+            opacity: 1,
+            top: "-200%",
+            left: "-5%",
+            scale: 1.5,
+            transition: { type: "spring", stiffness: 10, duration: 0.9 },
+          }),
+          eControls.start({
+            top: "-200%",
+            left: "0%",
+            opacity: 1,
 
-    /*
+            scale: 1.4,
+            transition: { type: "spring", stiffness: 9.5, duration: 0.9 },
+          }),
+          tControls.start({
+            opacity: 1,
+            top: "-200%",
+            left: "5%",
+            scale: 1.3,
+            transition: { type: "spring", stiffness: 9, duration: 0.9 },
+          }),
+          sControls.start({
+            opacity: 1,
+            top: "-200%",
+            left: "10%",
+            scale: 1.2,
+            transition: { type: "spring", stiffness: 8.5, duration: 0.9 },
+          }),
+          gControls.start({
+            opacity: 1,
+            top: "-130%",
+            left: "15%",
+            transition: { type: "spring", stiffness: 7.8, duration: 0.5 },
+          }),
+          oControls.start({
+            opacity: 1,
+            top: "-130%",
+            left: "20%",
+            transition: { type: "spring", stiffness: 7.2, duration: 0.5 },
+          }),
+          zeichenControls.start({
+            opacity: 1,
+            top: "-100%",
+            left: "25%",
+            transition: { type: "spring", stiffness: 6.8, duration: 0.2 },
+          }),
+        ]);
+
+        /*
       b1Controls.start({
         x: ["-.3vw", "0vw", "-.3vw"],
         y: [".3vh", "0vh", ".3vh"],
         transition: { type: "yoyo", repeat: Infinity, duration: 3 },
       }),
     */
-      //setIntroAnimationComplete(true);
-      }catch{
-      
-      }
+        //setIntroAnimationComplete(true);
+      } catch {}
     };
-   
 
-   introAnim();
+    introAnim();
 
     // Cleanup function to clear the timeout in case the component unmounts before the timeout
     return () => {
@@ -738,13 +721,17 @@ if (
       b3Controls.stop();
       b4Controls.stop();
       b5Controls.stop();
-   
     };
   }, []);
   //border:"2px solid yellow"
   return (
     <div
-      style={{ overflowY: "hidden", maxHeight: "fit-content", marginBottom: 0,marginTop: "0%" }}
+      style={{
+        overflowY: "hidden",
+        maxHeight: "fit-content",
+        marginBottom: 0,
+        marginTop: "0%",
+      }}
     >
       <motion.div ref={div0} className="div0">
         <motion.div className="bubbleContainerIntro" animate={b3Controls}>
@@ -782,8 +769,8 @@ if (
         >
           <motion.img
             src={logo}
-            initial={{ y:"0%" }}
-            style={{width:"25%" , marginBottom: "8%" }}
+            initial={{ y: "0%" }}
+            style={{ width: "25%", marginBottom: "8%" }}
             animate={introLogoControl}
             alt="logo"
           ></motion.img>
@@ -793,7 +780,7 @@ if (
             animate={{ opacity: 1 }}
             transition={{ type: "yoyo" }}
           >
-          {t("homeTitle")}
+            {t("homeTitle")}
           </motion.h1>
 
           <motion.img
@@ -869,8 +856,12 @@ if (
 <video id="yourcolorsVid"  autoplay="autoplay" muted loop> <source src={teamHeaderVid} type="image/gif"></source>  </video> 
 */}
 
-      <CampaignStatement  pageTitle="intro"
-sectionTitle="projectSection" pageId={1} sectionId={1} />
+      <CampaignStatement
+        pageTitle="intro"
+        sectionTitle="projectSection"
+        pageId={1}
+        sectionId={1}
+      />
 
       <motion.div className="divGrey" ref={greydiv}>
         <motion.div className="bubbleContainerGrey" animate={b1Controls}>
@@ -905,7 +896,7 @@ sectionTitle="projectSection" pageId={1} sectionId={1} />
 
         <motion.div
           className="bubbleContainerGrey"
-          initial={{ zIndex: 4000000 }}
+          initial={{ zIndex: 400000000 }}
           animate={b5Controls}
         >
           <motion.img
@@ -983,75 +974,66 @@ sectionTitle="projectSection" pageId={1} sectionId={1} />
           alt="grey cloud"
           animate={greyCloudDownControl}
         ></motion.img>
-           <motion.img
+        <motion.img
           id="greyDown3"
           src={greyDown}
           alt="grey cloud"
           animate={greyCloudDownControl}
         ></motion.img>
-   {/*<div className="divGreyContent"></div>*/}
+        {/*<div className="divGreyContent"></div>*/}
         {!scrollToGreyActive ? (
-          <div >
-        
-                {/**      <div >className="GridItemGreyTitle"     </div>*/} 
-      
-              {headers ? (
-                <h1 id="greyTitle">{headers[0]}</h1>
-              ) : (
-                <h1 id="greyTitle">THE GREY EPIDEMIC</h1>
-              )}
+          <div>
+            {/**      <div >className="GridItemGreyTitle"     </div>*/}
 
-           
+            {headers ? (
+              <h1 id="greyTitle">{headers[0]}</h1>
+            ) : (
+              <h1 id="greyTitle">THE GREY EPIDEMIC</h1>
+            )}
 
-        
-            <Slider images={[
-  {
-         url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/grey1/slideshow/1.png",
-              caption: "",
-             
-},{
-         url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/grey1/slideshow/2.png", 
-              caption: "I wish something can break through to you and play the reminder in that very moment! that even the greyness surrounding you, resisting your bold, vibrant colors, will one day realize it needed them all along"
-             
-},
-{
-  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/grey1/slideshow/3.png",
-              caption: "cause remember, even the color grey looks its best when paired with bright colors!",
-             
-}
-,{
-  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/grey1/slideshow/4.png",
-              caption: "so dont give in to the greyness of your surroundings instead help inspire your grey surrounding with your unique colors!",
-             
-},
+            <Slider
+              images={[
+                {
+                  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/intro/grey1/slideshow/1.png",
+                  caption: "",
+                },
+                {
+                  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/intro/grey1/slideshow/2.png",
+                  caption:
+                    "I wish something can break through to you and play the reminder in that very moment! that even the greyness surrounding you, resisting your bold, vibrant colors, will one day realize it needed them all along",
+                },
+                {
+                  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/intro/grey1/slideshow/3.png",
+                  caption:
+                    "cause remember, even the color grey looks its best when paired with bright colors!",
+                },
+                {
+                  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/intro/grey1/slideshow/4.png",
+                  caption:
+                    "so dont give in to the greyness of your surroundings instead help inspire your grey surrounding with your unique colors!",
+                },
 
-{
-  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/grey1/slideshow/5.png",
-              caption: "I have managed to keep my true colors alive one painting at a time! now I wonder if these paintings have the potential to be that reminder for someone out there...",
-             
-},
-{
-  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/grey1/slideshow/6.png",
-              caption: "I have managed to keep my true colors alive one painting at a time! now I wonder if these paintings have the potential to be that reminder for someone out there...",
-             
-}
-
-                     ]}/>
+                {
+                  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/intro/grey1/slideshow/5.png",
+                  caption:
+                    "I have managed to keep my true colors alive one painting at a time! now I wonder if these paintings have the potential to be that reminder for someone out there...",
+                },
+                {
+                  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/intro/grey1/slideshow/6.png",
+                  caption:
+                    "I have managed to keep my true colors alive one painting at a time! now I wonder if these paintings have the potential to be that reminder for someone out there...",
+                },
+              ]}
+            />
 
             {/**<Highlighted
                   text={texts[0]}
                   highlight="Imagine unique colors"
                 /> */}
-       
-               
-          
-               
 
+            {/*  <div className="GridItemGreyText">  </div>*/}
 
-        {  /*  <div className="GridItemGreyText">  </div>*/}
-       
-           
-              {/*texts ? (
+            {/*texts ? (
                 <p className="greyTxt">
                  {texts[0]}
                 </p>
@@ -1065,8 +1047,7 @@ sectionTitle="projectSection" pageId={1} sectionId={1} />
                 the lead as the main storytellers in the painting of our lives!
                 </p>
               )*/}
-              {/** <Highlighted text={text} highlight="Imagine unique colors" /> */}
-          
+            {/** <Highlighted text={text} highlight="Imagine unique colors" /> */}
           </div>
         ) : (
           <div>
@@ -1272,7 +1253,12 @@ sectionTitle="projectSection" pageId={1} sectionId={1} />
           ></motion.img>
         </motion.div>
         <motion.div
-          initial={{ position: "absolute", top: "1300%", left: "7%" }}
+          initial={{
+            display: "inlineBlock",
+            position: "absolute",
+            top: "-1500%",
+            left: "7%",
+          }}
           animate={b11Controls}
           className="bubbleDiv2"
         >
@@ -1308,33 +1294,35 @@ sectionTitle="projectSection" pageId={1} sectionId={1} />
       <ScreenSizeHint />
 
       <div ref={divNextSteps} className="NextStepsContainer">
-    {!scrollToGreyActive ? (
-      <div className="showMeActivationDiv">
+        {!scrollToGreyActive ? (
+          <div className="showMeActivationDiv">
+            {/*
         <motion.img
           id="showMeImgLine"
           src={showMeImgLine}
           alt="showMeImgLine"
         ></motion.img>
-        <motion.h1 id="showMeHeader">
-          LET THE BUBBLES TALK THE FINAL TALK!
-        </motion.h1>
-        {/*<div style={{ border: "20px solid rgba(0, 0, 0, 0)", overflow: "visible", position: "relative" }}>
+        */}
+            <motion.h1 id="showMeHeader">
+              LET THE BUBBLES TALK THE FINAL TALK!
+            </motion.h1>
+            {/*<div style={{ border: "20px solid rgba(0, 0, 0, 0)", overflow: "visible", position: "relative" }}>
            </div>
         */}
 
-        <Button
-          id="btnLastWords"
-          name="READY?"
-          handleClick={handleScrollToDivgrey}
-        />
+            <Button
+              id="btnLastWords"
+              name="READY?"
+              handleClick={handleScrollToDivgrey}
+            />
+          </div>
+        ) : (
+          <NextSteps
+            currentStation="intro"
+            conditionForAnimStart={startNextStepAnimation}
+          />
+        )}
       </div>
-    ) : (
-      <NextSteps currentStation="intro" conditionForAnimStart={startNextStepAnimation}/>
-    )}
-  </div>
-
-
-
     </div>
   );
 }

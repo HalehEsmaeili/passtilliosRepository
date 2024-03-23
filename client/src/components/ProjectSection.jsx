@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef, useHover } from "react";
+import { useLanguageContext } from "../context/LanguageContext";
 import axiosInstance from "../Api/axiosInstance";
 import "../public/intro.css";
 import Slider from "./Slider.jsx";
@@ -48,12 +49,11 @@ import colorSplash from "../public/images/layoutPart1/paintsplashReal.png";
 ////div4 and div5 imports
 
 function ProjectSection(props) {
-
+  const { t } = useLanguageContext();
  const [headers,setHeaders]=useState();
  const [texts,setTexts]=useState();
 
-  const text =
-    "Imagine a world painted only in shades of gray, where only black and white call the shots. It's a place without the cozy warmth of lively colors.In this imaginary place, our eyes reveal emptiness, echoing the loneliness inside. The once-fiery passion in hearts, eager to use their unique colors to make a beautiful difference on our collective canvas of life, now flickers, struggling to survive in a world that only wants us to be either black or white.Creativity and inspiration take a backseat. Life in this gray and expected canvas feels like a broken record, missing the beat of unpredictability that makes it exciting and dance-worthy!";
+ 
   const whatPaintingRef = useRef(null);
   const [scrollToGreyActive, setScrollToGreyActive] = useState(false);
   const [scrollToNextStepsActive, setScrollToNextStepsActive] = useState(false);
@@ -692,7 +692,7 @@ useEffect(()=>{
         <motion.div className="div1">
           <motion.div
             className="logoContainer"
-            initial={{ y: "1000%" }}
+            initial={{ y: "1400%" }}
             animate={controlslogo}
             ref={scope}
           >
@@ -1035,55 +1035,56 @@ How will your life look as a painting 60 years from now? Will it narrate a story
     <p class="grid-container">Imagine a world painted only in shades of gray, where only black and white call the shots. It's a place without the cozy warmth of lively colors.In this imaginary place, our eyes reveal emptiness, echoing the loneliness inside. The once-fiery passion in hearts, eager to use their unique colors to make a beautiful difference on our collective canvas of life, now flickers, struggling to survive in a world that only wants us to be either black or white.Creativity and inspiration take a backseat. Life in this gray and expected canvas feels like a broken record, missing the beat of unpredictability that makes it exciting and dance-worthy!
    
     </p>
-</div>
+</div>{t("intro.projectsection.slideshow.caption1")}
 
   </motion.video> */}
+ 
   <Slider images={[
   {
-         url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/1.png",
-              caption: "",
+         url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/intro/projectPainting/slideshow/1.png",
+              caption:  t("intro.projectsection.slideshow.caption.1")
              
 },{
-         url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/2.png", 
-              caption: "I wish something can break through to you and play the reminder in that very moment! that even the greyness surrounding you, resisting your bold, vibrant colors, will one day realize it needed them all along"
+         url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/intro/projectPainting/slideshow/2.png", 
+              caption:  t("intro.projectsection.slideshow.caption.2")
              
 },
 {
-  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/3.png",
-              caption: "cause remember, even the color grey looks its best when paired with bright colors!",
+  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/intro/projectPainting/slideshow/3.png",
+              caption:  t("intro.projectsection.slideshow.caption.3")
              
 }
 ,{
-  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/4.png",
-              caption: "so dont give in to the greyness of your surroundings instead help inspire your grey surrounding with your unique colors!",
+  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/intro/projectPainting/slideshow/4.png",
+              caption: t("intro.projectsection.slideshow.caption.4"),
              
 },
 
 {
-  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/5.png",
-              caption: "I have managed to keep my true colors alive one painting at a time! now I wonder if these paintings have the potential to be that reminder for someone out there...",
+  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/intro/projectPainting/slideshow/5.png",
+              caption:  t("intro.projectsection.slideshow.caption.5"),
              
 },
 {
-  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/6.png",
-              caption: "I have managed to keep my true colors alive one painting at a time! now I wonder if these paintings have the potential to be that reminder for someone out there...",
+  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/intro/projectPainting/slideshow/6.png",
+              caption:t("intro.projectsection.slideshow.caption.6"),
              
 },
 {
-  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/7.png",
-              caption: "I have managed to keep my true colors alive one painting at a time! now I wonder if these paintings have the potential to be that reminder for someone out there...",
+  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/intro/projectPainting/slideshow/7.png",
+              caption: t("intro.projectsection.slideshow.caption.7"),
              
 }
 ,
 {
-  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/8.png",
-              caption: "I have managed to keep my true colors alive one painting at a time! now I wonder if these paintings have the potential to be that reminder for someone out there...",
+  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/intro/projectPainting/slideshow/8.png",
+              caption: t("intro.projectsection.slideshow.caption.8"),
              
 }
 ,
 {
-  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/9.png",
-              caption: "I have managed to keep my true colors alive one painting at a time! now I wonder if these paintings have the potential to be that reminder for someone out there...",
+  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/intro/projectPainting/slideshow/9.png",
+              caption: t("intro.projectsection.slideshow.caption.9"),
              
 }
 
