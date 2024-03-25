@@ -1,185 +1,319 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,useRef } from "react";
+import {
+  motion,
+  useScroll,
+useInView,
+
+  useAnimation,
+
+  useMotionValueEvent,
+} from "framer-motion";
 import NextSteps from "../components/NextSteps.jsx";
 import callMe from "../public/images/contactPage/call.png";
 
 import "./pages.css";
 import "./ContactPage.css";
+import "./campaign.css";
 
 import axiosInstance from "../Api/axiosInstance.js";
 import PageHeader from "./PageHeader.jsx";
 import PageIntro from "../components/PageIntro.jsx";
 import Slider from "../components/Slider.jsx";
 const Campaign = () => {
- useEffect(()=>{
-    window.scrollTo(0, 0);
- },[]);
+ 
+  
+  const roadmapcontainer = useRef(null);
+  const isInViewRoadmapcontainer = useInView(roadmapcontainer, { amount: 0.1 });
+
+  const { scrollYProgress } = useScroll();
+  const svgLengthControls = useAnimation();
+  useEffect(() => {
+    svgLengthControls.set({ pathLength: 0 });
+ 
+  }, [svgLengthControls]);
+  useEffect(() => {
+
+  window.scrollTo(0, 0);
+  }, []);
+
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+  console.log("sc",latest);
+   if(isInViewRoadmapcontainer){
+    if(latest<0.2){
+      svgLengthControls.start({ pathLength: latest*0});
+    }else if (.5>latest>0.2){
+      svgLengthControls.start({ pathLength: latest*1});
+    }else{
+      svgLengthControls.start({ pathLength: latest*1.34});
+    }
+ 
+   }
+   
+ 
    
 
+  });
+ 
+  //const { scrollYProgress } = useScroll();
+  /*
+  useEffect(() => {
+  console.log("scrolled",scrollYProgress);
+  svgLengthControls.start({pathLength:scrollYProgress});
+}, [scrollYProgress]);
+ const svglength = useSpring(scrollYProgress, {
+  pathLength:scrollYProgress,
+   stiffness: 100,
+   damping: 30,
+   restDelta: 0.001
+ });*/
   return (
     <div className="ContactPage">
       <PageHeader pageId={5} sectionId={1} image={callMe} page="campaign" />
       <div style={{ position: "relative", overflow: "visible" }}>
-      <PageIntro title="" paragraph=""/>
-      <Slider images={[
-  {
-         url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/1.png",
+        <PageIntro title="" paragraph="" />
+        <Slider
+          images={[
+            {
+              url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/1.png",
               caption: "",
-             
-},{
-         url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/2.png", 
-              caption: "I wish something can break through to you and play the reminder in that very moment! that even the greyness surrounding you, resisting your bold, vibrant colors, will one day realize it needed them all along"
-             
-},
-{
-  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/3.png",
-              caption: "cause remember, even the color grey looks its best when paired with bright colors!",
-             
-}
-,{
-  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/4.png",
-              caption: "so dont give in to the greyness of your surroundings instead help inspire your grey surrounding with your unique colors!",
-             
-},
+            },
+            {
+              url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/2.png",
+              caption:
+                "I wish something can break through to you and play the reminder in that very moment! that even the greyness surrounding you, resisting your bold, vibrant colors, will one day realize it needed them all along",
+            },
+            {
+              url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/3.png",
+              caption:
+                "cause remember, even the color grey looks its best when paired with bright colors!",
+            },
+            {
+              url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/4.png",
+              caption:
+                "so dont give in to the greyness of your surroundings instead help inspire your grey surrounding with your unique colors!",
+            },
 
-{
-  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/5.png",
-              caption: "I have managed to keep my true colors alive one painting at a time! now I wonder if these paintings have the potential to be that reminder for someone out there...",
-             
-},
-{
-  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/6.png",
-              caption: "I have managed to keep my true colors alive one painting at a time! now I wonder if these paintings have the potential to be that reminder for someone out there...",
-             
-},
-{
-  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/7.png",
-              caption: "I have managed to keep my true colors alive one painting at a time! now I wonder if these paintings have the potential to be that reminder for someone out there...",
-             
-}
-,
-{
-  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/8.png",
-              caption: "I have managed to keep my true colors alive one painting at a time! now I wonder if these paintings have the potential to be that reminder for someone out there...",
-             
-}
-,
-{
-  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/9.png",
-              caption: "I have managed to keep my true colors alive one painting at a time! now I wonder if these paintings have the potential to be that reminder for someone out there...",
-             
-}
+            {
+              url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/5.png",
+              caption:
+                "I have managed to keep my true colors alive one painting at a time! now I wonder if these paintings have the potential to be that reminder for someone out there...",
+            },
+            {
+              url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/6.png",
+              caption:
+                "I have managed to keep my true colors alive one painting at a time! now I wonder if these paintings have the potential to be that reminder for someone out there...",
+            },
+            {
+              url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/7.png",
+              caption:
+                "I have managed to keep my true colors alive one painting at a time! now I wonder if these paintings have the potential to be that reminder for someone out there...",
+            },
+            {
+              url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/8.png",
+              caption:
+                "I have managed to keep my true colors alive one painting at a time! now I wonder if these paintings have the potential to be that reminder for someone out there...",
+            },
+            {
+              url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/9.png",
+              caption:
+                "I have managed to keep my true colors alive one painting at a time! now I wonder if these paintings have the potential to be that reminder for someone out there...",
+            },
+          ]}
+        />
+        <h1 className="h1-subthemes">
+          Now, I can't ask you to share your boldest dreams without doing it
+          myself, right? So, let me take you into my world first.
+        </h1>
 
+        <h1 className="h1-leftAligned">
+          it was Tuesday 21 March 2017,persian new year, thisis what I watched..
+        </h1>
+        <div
+        ref={roadmapcontainer}
+          style={{
+            zIndex: 10,
+            position: "relative",
+            width: "100%",
+            top: "30%",
+            left: "12%",
+            overflow: "visible",
+          }}
+        >
+  
 
-]}/>
-<div style={{position:"absolute", width:"100%" }}>
-<svg width="90%" height="100%" viewBox="0 0 4280 22851" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path id="Vector 14" d="M1725.5 80.5C1725.5 124.683 1761.32 160.5 1805.5 160.5C1849.68 160.5 1885.5 124.683 1885.5 80.5C1885.5 36.3172 1849.68 0.5 1805.5 0.5C1761.32 0.5 1725.5 36.3172 1725.5 80.5ZM3913.04 3981L3903.37 3969.53L3913.04 3981ZM902.536 4571.5L889.594 4563.92L889.594 4563.92L902.536 4571.5ZM378.719 5677L392.962 5681.71L378.719 5677ZM902.536 7757L899.914 7742.23L899.914 7742.23L902.536 7757ZM3913.04 7966L3925.92 7973.68L3925.92 7973.68L3913.04 7966ZM2040.1 8897.5L2043.82 8912.03L2040.1 8897.5ZM657.035 10440.5L645.1 10449.6L645.1 10449.6L657.035 10440.5ZM3769.54 10440.5L3764.37 10454.6L3764.37 10454.6L3769.54 10440.5ZM3201.72 12668.5L3205.15 12683.1L3205.93 12682.9L3206.68 12682.7L3201.72 12668.5ZM657.035 13266.5L659.36 13281.3L659.917 13281.2L660.466 13281.1L657.035 13266.5ZM378.721 15055.5L384.835 15041.8L384.835 15041.8L378.721 15055.5ZM1338.71 20881.5L1328.82 20870.2L1323.71 20874.7L1323.71 20881.5L1338.71 20881.5ZM1338.71 22829.5L1327.75 22839.7L1337.98 22850.7L1348.94 22840.5L1338.71 22829.5ZM1632.54 22555.5L1642.77 22566.5L1670.61 22540.5H1632.54V22555.5ZM1083.04 22555.5V22540.5H1048.52L1072.07 22565.7L1083.04 22555.5ZM1338.71 21578L1353.71 21578L1353.71 21578L1338.71 21578ZM1790.5 80.5V1419H1820.5V80.5H1790.5ZM1790.5 1419C1790.5 1540.99 1821.63 1639.53 1877.17 1718.02C1932.63 1796.4 2011.72 1853.77 2106.05 1894.73C2294.21 1976.46 2545.3 1993.92 2799.24 1981.67C3053.6 1969.4 3312.78 1927.2 3518.19 1888.17C3620.89 1868.65 3710.37 1849.88 3778.93 1836.05C3813.28 1829.12 3842.3 1823.45 3865.21 1819.51C3888.49 1815.51 3904.38 1813.5 3913.04 1813.5V1783.5C3901.45 1783.5 3883.15 1785.99 3860.13 1789.94C3836.75 1793.96 3807.36 1799.71 3773 1806.64C3704.16 1820.53 3615.07 1839.22 3512.59 1858.69C3307.65 1897.64 3050.07 1939.54 2797.8 1951.7C2545.11 1963.89 2299.68 1946.13 2118 1867.22C2027.4 1827.87 1953.22 1773.56 1901.66 1700.69C1850.17 1627.92 1820.5 1535.64 1820.5 1419H1790.5ZM3913.04 1813.5C3986.8 1813.5 4045.95 1841.95 4093.22 1892.74C4140.89 1943.95 4176.81 2018.31 4202.14 2110.05C4252.81 2293.57 4259.86 2542.03 4238.46 2799.29C4217.08 3056.27 4167.43 3320.67 4105.61 3535.46C4074.7 3642.87 4040.84 3737.57 4006.09 3812.61C3971.11 3888.14 3936.01 3942.01 3903.37 3969.53L3922.71 3992.47C3960.6 3960.51 3997.95 3901.57 4033.31 3825.22C4068.9 3748.37 4103.26 3652.12 4134.44 3543.76C4196.82 3327.03 4246.82 3060.68 4268.36 2801.77C4289.87 2543.15 4283.11 2290.59 4231.06 2102.07C4205.03 2007.79 4167.36 1928.36 4115.18 1872.3C4062.6 1815.81 3995.65 1783.5 3913.04 1783.5V1813.5ZM3903.37 3969.53C3717.69 4126.11 3454.54 4214.28 3158.21 4264.68C2862.08 4315.05 2534.69 4327.42 2221.8 4333.75C1909.47 4340.07 1610.98 4340.37 1374.65 4366.87C1256.43 4380.13 1152.81 4400.04 1070.23 4430.95C987.76 4461.81 924.519 4504.31 889.594 4563.92L915.478 4579.08C945.469 4527.9 1001.4 4488.74 1080.74 4459.04C1159.97 4429.39 1260.78 4409.83 1378 4396.69C1612.54 4370.38 1908.92 4370.09 2222.41 4363.75C2535.33 4357.41 2864.7 4345.03 3163.24 4294.26C3461.56 4243.51 3730.98 4154.14 3922.71 3992.47L3903.37 3969.53ZM889.594 4563.92C643.722 4983.55 460.53 5381.53 364.476 5672.29L392.962 5681.71C488.177 5393.47 670.347 4997.45 915.478 4579.08L889.594 4563.92ZM364.476 5672.29C225.207 6093.89 85.2346 6664.19 116.141 7105.93C131.591 7326.75 189.911 7518.14 315.203 7642.08C441.226 7766.74 631.951 7820.28 905.159 7771.77L899.914 7742.23C632.914 7789.64 453.269 7736.46 336.301 7620.75C218.602 7504.32 161.31 7321.69 146.068 7103.84C115.591 6668.24 253.918 6102.61 392.962 5681.71L364.476 5672.29ZM905.159 7771.77C1474.38 7670.69 2355.49 7505.8 3029.52 7474.67C3197.94 7466.89 3353.09 7467.49 3486.99 7479.45C3621.08 7491.42 3732.9 7514.72 3815.22 7551.79C3897.47 7588.83 3948.26 7638.62 3964.69 7702.81C3981.24 7767.5 3964.07 7851.14 3900.15 7958.32L3925.92 7973.68C3991.64 7863.49 4013.17 7771.25 3993.75 7695.37C3974.21 7619 3914.35 7563.53 3827.54 7524.44C3740.81 7485.38 3625.17 7461.67 3489.66 7449.56C3353.95 7437.44 3197.35 7436.89 3028.14 7444.7C2351.68 7475.95 1468.25 7641.31 899.914 7742.23L905.159 7771.77ZM3900.15 7958.32C3821.75 8089.78 3689.32 8207.83 3527.82 8312.5C3366.47 8417.07 3177.11 8507.64 2986.06 8584.52C2603.94 8738.3 2216.65 8836.71 2036.37 8882.97L2043.82 8912.03C2224.04 8865.79 2613.09 8766.95 2997.26 8612.35C3189.34 8535.05 3380.61 8443.65 3544.13 8337.67C3707.51 8231.79 3844.19 8110.72 3925.92 7973.68L3900.15 7958.32ZM2036.37 8882.97C1306.64 9070.21 841.591 9305.47 617.288 9572.55C504.722 9706.58 452.492 9849.01 458.554 9997.12C464.603 10144.9 528.618 10296.6 645.1 10449.6L668.971 10431.4C554.918 10281.6 494.252 10135.7 488.529 9995.89C482.819 9856.38 531.725 9721.08 640.261 9591.84C858.162 9332.39 1315.18 9098.99 2043.82 8912.03L2036.37 8882.97ZM645.1 10449.6C679.356 10494.6 743.55 10521.1 826.263 10536C909.649 10551 1015.27 10554.6 1136.5 10550.9C1378.99 10543.4 1687.22 10506.1 2011.36 10467.9C2335.89 10429.6 2676.7 10390.4 2985.59 10378.8C3294.9 10367.2 3570.14 10383.4 3764.37 10454.6L3774.7 10426.4C3574.61 10353 3294.32 10337.2 2984.46 10348.9C2674.18 10360.5 2332.19 10399.9 2007.85 10438.1C1683.14 10476.4 1376.46 10513.4 1135.57 10520.9C1015.11 10524.6 911.912 10520.9 831.566 10506.5C750.547 10491.9 696.09 10467 668.971 10431.4L645.1 10449.6ZM3764.37 10454.6C3911.12 10508.4 4012.01 10648.7 4064.47 10838.3C4116.88 11027.8 4120.15 11264.2 4073.41 11505.1C3979.81 11987.6 3687.09 12482.5 3196.76 12654.3L3206.68 12682.7C3710.85 12506 4008.13 11999.2 4102.86 11510.9C4150.28 11266.4 4147.3 11025.2 4093.39 10830.3C4039.54 10635.7 3934.05 10484.9 3774.7 10426.4L3764.37 10454.6ZM3198.29 12653.9L653.603 13251.9L660.466 13281.1L3205.15 12683.1L3198.29 12653.9ZM654.709 13251.7C410.657 13290 245.737 13412.5 142.558 13577.6C39.7025 13742.2 -1.25191 13948.2 0.029066 14153.6C1.3106 14359.1 44.8597 14565.1 112.31 14730.9C146.04 14813.7 185.889 14886.9 229.703 14944.9C273.414 15002.8 321.708 15046.5 372.607 15069.2L384.835 15041.8C340.236 15021.9 295.636 14982.4 253.645 14926.8C211.758 14871.3 173.097 14800.6 140.096 14719.5C74.0846 14557.4 31.2862 14355.1 30.0285 14153.4C28.7702 13951.7 69.0847 13751.8 168 13593.5C266.591 13435.7 423.945 13318.3 659.36 13281.3L654.709 13251.7ZM372.607 15069.2C393.851 15078.7 423.568 15085.2 459.501 15089.7C495.696 15094.3 539.308 15097 588.975 15098.3C688.302 15101.1 812.967 15098.5 952.997 15094.5C1233.38 15086.4 1576.04 15072.7 1904.82 15084C2233.96 15095.3 2547.15 15131.7 2769.05 15222.8C2879.88 15268.3 2966.69 15327 3021.65 15401.9C3076.29 15476.3 3100.36 15568 3083.7 15681.8L3113.38 15686.2C3131.09 15565.3 3105.54 15465.5 3045.83 15384.1C2986.44 15303.2 2894.17 15241.8 2780.45 15195.1C2553.26 15101.7 2235.47 15065.3 1905.85 15054C1575.88 15042.7 1231.99 15056.5 952.139 15064.5C812.051 15068.5 688.174 15071 589.798 15068.3C540.614 15067 498.085 15064.3 463.255 15059.9C428.163 15055.5 401.974 15049.5 384.835 15041.8L372.607 15069.2ZM3083.7 15681.8C3050.18 15910.7 2893.69 16093.7 2678.23 16249.1C2462.82 16404.4 2190.82 16530.6 1930.19 16646.6C1670.45 16762.2 1421.12 16868.2 1254.33 16982.6C1170.89 17039.9 1106.41 17100.3 1071.88 17166.8C1036.86 17234.2 1033.18 17306.7 1069.41 17385.3L1096.66 17372.7C1064.26 17302.4 1067.81 17239.7 1098.5 17180.6C1129.68 17120.6 1189.4 17063.5 1271.3 17007.3C1435.2 16894.9 1681.12 16790.3 1942.39 16674C2202.76 16558.1 2477.5 16430.8 2695.78 16273.4C2914.01 16116 3078.15 15926.8 3113.38 15686.2L3083.7 15681.8ZM1069.41 17385.3C1140.51 17539.5 1285.89 17628.7 1459.07 17703.4C1545.76 17740.8 1640.54 17775 1737.34 17811.8C1834.37 17848.6 1933.84 17888.1 2031.05 17936.5C2225.31 18033.1 2409.98 18164.6 2546.31 18379.2C2682.66 18593.8 2771.54 18892.9 2771.54 19326H2801.54C2801.54 18888.8 2711.79 18583.7 2571.63 18363.1C2431.43 18142.5 2241.71 18007.7 2044.4 17909.6C1945.82 17860.6 1845.22 17820.6 1747.99 17783.7C1650.52 17746.7 1556.83 17712.9 1470.95 17675.9C1299 17601.7 1162.82 17516.2 1096.66 17372.7L1069.41 17385.3ZM2771.54 19326C2771.54 19828.6 2507.79 20130.8 2195.22 20349.5C2038.66 20459 1870.31 20547.2 1716.72 20629C1563.76 20710.5 1424.51 20786.2 1328.82 20870.2L1348.61 20892.8C1441.17 20811.5 1577.02 20737.5 1730.83 20655.5C1884 20573.9 2054.08 20484.8 2212.41 20374.1C2529.63 20152.2 2801.54 19841.9 2801.54 19326H2771.54ZM1348.94 22840.5L1642.77 22566.5L1622.31 22544.5L1328.48 22818.5L1348.94 22840.5ZM1632.54 22540.5H1083.04V22570.5H1632.54V22540.5ZM1072.07 22565.7L1327.75 22839.7L1349.68 22819.3L1094 22545.3L1072.07 22565.7ZM1323.71 20881.5L1323.71 21578L1353.71 21578L1353.71 20881.5L1323.71 20881.5ZM1323.71 21578L1323.71 22829.5L1353.71 22829.5L1353.71 21578L1323.71 21578Z" fill="#00EEB9"/>
-</svg>
+<motion.svg
+            className="roadmapSvgLine"
+            viewBox="0 0 4766 29696"
+            fill="none"
+            preserveAspectRatio="xMinYMin meet"
+            xmlns="http://www.w3.org/2000/svg"
+          > 
+         
+        
 
+<motion.path
+             stroke="white"
+             animate={svgLengthControls}
+             id="pathroadmap"
+             d="M2241.37 0C2241.37 1012.33 2381.39 3525.22 2241.37 4222.5C2100.59 4923.5 421.589 4037 421.589 4777.5C421.589 5215.5 265.088 5559.5 661.588 5632.5C1989.95 5877.07 2705.09 5486.5 4561.59 5559.5V7760.5L202.589 7822C-89.4108 7822 15.0892 9490.5 108.589 10116.5C108.589 10116.5 35.5884 10314.5 2434.09 10314.5C3026.59 10314.5 3132.59 12160 2715.59 12806.5C2563.41 13042.4 1964.59 13078 890.589 13078C592.285 13078 -298.802 14609.4 744.589 14913C1641.59 15174 3973.77 14772.1 3247.59 15466C1829.09 16821.5 -1111.41 17968.5 484.088 18448C1132.92 18643 2903.32 17772 3247.59 18959C3550.09 20002 367.162 19880.1 692.81 20867.5C1036.81 21910.5 1120.09 21545 2204.59 21879L1162.09 23745.5L1996.09 25278.5L1714.59 26237.5L2215.09 27176V29533"
+              stroke-width="22"/>
+ 
 
-</div>
+  
+ 
 
-<h1 className="h1-leftAligned">Let me take you back to Tuesday 21 March 2017, </h1>
-<p className="txt p-leftAligned">
-where this dream started; it was our new year in iran and this is what i saw on tv...
-</p>
-      <div class="iframe-container">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/5f5TQZi5_08?si=sOdm_GZ03iEaUL6s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-     </div>
+ 
+</motion.svg>
+ 
 
-     <h1 className="h1-leftAligned">Now let me take you through the exact inner dialogue my 18 year old self went through after watching this video... </h1>
-<p className="txt p-leftAligned">
-Wouldn't it be cool to do something similar with other students in the future university I will go to?
-Even one step further! What if we invited othere universities (even all around the world???) to join in and do their own version!
-Then people will vote on the best video, and the winning team will get a week of an epic trip that would create them more memories and deepen their connections...
-But how can we financially support this?
-Well, what if we could find a company or an investor who would sponsor that trip?
-It could be a possibility, right? but it is too childish and wierd!!! forget it!
-</p>
+         
+         
+         
+         
+         
+         
+         
+          <div class="iframe-container roadmap-iframe-container">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/5f5TQZi5_08?si=sOdm_GZ03iEaUL6s"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+          {/* <h1 id="roadmap-h1-persian" className="h1-roadmap" >the Persian New Year and I watched this video on TV... </h1>*/}
 
-     
-      <h1 className="h1-leftAligned">
-4 years after that I came accross this video...
-</h1>
+          <h1 id="roadmap-h1-buzzing" className="roadmap-h1-subthemes">
+            {" "}
+            here's what's buzzing around my brain as I am watching this video
+          </h1>
 
-      <div class="iframe-container">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/H2rG4Dg6xyI?si=dp8dOseok1MS53_V" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-  </div>
-  <h1 className="h1-leftAligned">
-this video helped me realize what a key role making dreams come true together with otheres can play
-</h1>
-  <h1 className="h1-leftAligned">
- in creating magically powerful communities truly capable of the miracouls...
-</h1>
+          <p id="roadmapTxt1" className="roadmapTxt">
+            Wouldn't it be cool to pull off something like this with my future
+            uni pals? And hey, why not spread the fun? What if we got other
+            colleges, even from around the globe, to join in and make their own
+            versions?
+          </p>
+          <p id="roadmapTxt2" className="roadmapTxt">
+            Then, we could let people vote on the best one, and ta-da! The
+            winning gang bags an awesome week-long trip, bonding and making
+            memories along the way. But, how on earth would we pay for it? Maybe
+            we could snag some sponsorships from a company or an investor. But
+            hey, let's not get too carried away. It's a bit childish.
+          </p>
+          <h1 id="h1-dismissed" className="h1-leftAligned">
+            so just like that I dismissed that dream.
+          </h1>
+          <h1 id="roadmap-h1-4years" className="h1-leftAligned">
+            4 years after that I came across this video...
+          </h1>
 
-  <h1 className="h1-leftAligned">
-  then, I dared to resurface my "childish wierd" dream again!
-</h1>
-  <h1 className="h1-leftAligned">
-but this time I stated seroulsy building on that childish dream...and the result is the project you see in formt of you!
-</h1>
- <h1 className="h1-leftAligned">
-now here is a slide show why on whyyou should help make this childish dream come true...
-</h1>
-     
-     <Slider images={[
-  {
-         url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/1.png",
+          <div id="roadmap-iframe-container2" class="iframe-container">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/H2rG4Dg6xyI?si=dp8dOseok1MS53_V"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+
+          <h1 id="roadmap-h1-realization" className="h1-roadmap">
+            Through this video, I realized two things. 1.the power of just
+            asking!
+          </h1>
+          <h1 id="roadmap-h1-realization1" className="h1-roadmap"></h1>
+          <h1 id="roadmap-h1-realization2" className="h1-roadmap">
+            1.how making dreams come true together with others is the key to
+            creating communities capable of the miraculous!
+          </h1>
+          <h1 id="roadmap-h1-resurface" className="h1-roadmap">
+            Then, I dared to resurface my "childish weird" dream again!
+          </h1>
+
+          <h1 id="roadmap-h1-building" className="h1-roadmap">
+            But this time, I started seriously building on that childish dream
+          </h1>
+          <h1 id="roadmap-h1-project" className="h1-roadmap">
+            and the result is the project you see in front of you!
+          </h1>
+
+          <h1 id="roadmap-h1-slideshow" className="h1-roadmap">
+            Now, here's a slideshow on why you should help make this childish
+            dream come true...
+          </h1>
+        </div>
+
+        <Slider
+          images={[
+            {
+              url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/1.png",
               caption: "",
-             
-},{
-         url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/2.png", 
-              caption: "I wish something can break through to you and play the reminder in that very moment! that even the greyness surrounding you, resisting your bold, vibrant colors, will one day realize it needed them all along"
-             
-},
-{
-  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/3.png",
-              caption: "cause remember, even the color grey looks its best when paired with bright colors!",
-             
-}
-,{
-  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/4.png",
-              caption: "so dont give in to the greyness of your surroundings instead help inspire your grey surrounding with your unique colors!",
-             
-},
+            },
+            {
+              url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/2.png",
+              caption:
+                "I wish something can break through to you and play the reminder in that very moment! that even the greyness surrounding you, resisting your bold, vibrant colors, will one day realize it needed them all along",
+            },
+            {
+              url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/3.png",
+              caption:
+                "cause remember, even the color grey looks its best when paired with bright colors!",
+            },
+            {
+              url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/4.png",
+              caption:
+                "so dont give in to the greyness of your surroundings instead help inspire your grey surrounding with your unique colors!",
+            },
 
-{
-  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/5.png",
-              caption: "I have managed to keep my true colors alive one painting at a time! now I wonder if these paintings have the potential to be that reminder for someone out there...",
-             
-},
-{
-  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/6.png",
-              caption: "I have managed to keep my true colors alive one painting at a time! now I wonder if these paintings have the potential to be that reminder for someone out there...",
-             
-},
-{
-  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/7.png",
-              caption: "I have managed to keep my true colors alive one painting at a time! now I wonder if these paintings have the potential to be that reminder for someone out there...",
-             
-}
-,
-{
-  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/8.png",
-              caption: "I have managed to keep my true colors alive one painting at a time! now I wonder if these paintings have the potential to be that reminder for someone out there...",
-             
-}
-,
-{
-  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/9.png",
-              caption: "I have managed to keep my true colors alive one painting at a time! now I wonder if these paintings have the potential to be that reminder for someone out there...",
-             
-}
+            {
+              url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/5.png",
+              caption:
+                "I have managed to keep my true colors alive one painting at a time! now I wonder if these paintings have the potential to be that reminder for someone out there...",
+            },
+            {
+              url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/6.png",
+              caption:
+                "I have managed to keep my true colors alive one painting at a time! now I wonder if these paintings have the potential to be that reminder for someone out there...",
+            },
+            {
+              url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/7.png",
+              caption:
+                "I have managed to keep my true colors alive one painting at a time! now I wonder if these paintings have the potential to be that reminder for someone out there...",
+            },
+            {
+              url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/8.png",
+              caption:
+                "I have managed to keep my true colors alive one painting at a time! now I wonder if these paintings have the potential to be that reminder for someone out there...",
+            },
+            {
+              url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/9.png",
+              caption:
+                "I have managed to keep my true colors alive one painting at a time! now I wonder if these paintings have the potential to be that reminder for someone out there...",
+            },
+          ]}
+        />
 
-
-]}/>
-
-
-
-      <div style={{ zIndex: 0, position: "relative", marginTop: "-80%", marginBottom: "0%" }}>
-        <NextSteps dontshow="btn3"  currentStation="contact" conditionForAnimStart={true} />
+        <div
+          style={{
+            zIndex: 0,
+            position: "relative",
+            marginTop: "-80%",
+            marginBottom: "0%",
+          }}
+        >
+          <NextSteps
+            dontshow="btn3"
+            currentStation="contact"
+            conditionForAnimStart={true}
+          />
+        </div>
       </div>
-    </div>
     </div>
   );
 };
