@@ -1,11 +1,11 @@
 {
   "files": {
     "main.css": "/static/css/main.70d462c8.css",
-    "main.js": "/static/js/main.596fef99.js",
+    "main.js": "/static/js/main.7969e86b.js",
     "static/js/651.47184ffe.chunk.js": "/static/js/651.47184ffe.chunk.js",
     "static/media/yourcolors.gif": "/static/media/yourcolors.24f54106c2588d4ae63e.gif",
     "static/media/callme.gif": "/static/media/callme.00b15035410857808976.gif",
-    "static/media/1.png": "/static/media/1.72824a53263e95b88bf4.png",
+    "static/media/1.png": "/static/media/1.6efa4fc6f70ec38e3a7f.png",
     "static/media/3.png": "/static/media/3.d6fd2388739f08c07634.png",
     "static/media/2.png": "/static/media/2.2cd2b37f789dd6d45418.png",
     "static/media/4.png": "/static/media/4.932db309e02d160e20a5.png",
@@ -47,10 +47,12 @@
     "static/media/person2.png": "/static/media/person2.e2a1fe885235dfd7baad.png",
     "static/media/fa-regular-400.ttf": "/static/media/fa-regular-400.adc51aab4d771ab65f81.ttf",
     "static/media/logoLineWhite.png": "/static/media/logoLineWhite.bfcc8abe3a24474ee592.png",
+    "static/media/campaignIcon.png": "/static/media/campaignIcon.f87f854813fb984948ae.png",
     "static/media/call.png": "/static/media/call.d77f827403ca7a790505.png",
+    "static/media/teamIconWhite.png": "/static/media/teamIconWhite.6626a8820e8adbb34790.png",
     "static/media/needle.png": "/static/media/needle.2899e5a37b9fe1357298.png",
+    "static/media/campaignIconWhite.png": "/static/media/campaignIconWhite.0452a70a32984e8f3027.png",
     "static/media/lines.png": "/static/media/lines.e87cd213940a81f32810.png",
-    "static/media/team.png": "/static/media/team.c23fc7f650ab299e84a1.png",
     "static/media/person.png": "/static/media/person.a88a3860cce45c6aa3c7.png",
     "static/media/nextStepFinal.png": "/static/media/nextStepFinal.59bc7b0fa6bf09c43f66.png",
     "static/media/arrow.png": "/static/media/arrow.77b988c0fbeb41eb8efc.png",
@@ -61,11 +63,11 @@
     "static/media/fa-v4compatibility.woff2": "/static/media/fa-v4compatibility.b3049b13a93f07e026fc.woff2",
     "index.html": "/index.html",
     "main.70d462c8.css.map": "/static/css/main.70d462c8.css.map",
-    "main.596fef99.js.map": "/static/js/main.596fef99.js.map",
+    "main.7969e86b.js.map": "/static/js/main.7969e86b.js.map",
     "651.47184ffe.chunk.js.map": "/static/js/651.47184ffe.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.70d462c8.css",
-    "static/js/main.596fef99.js"
+    "static/js/main.7969e86b.js"
   ]
 }

@@ -3,7 +3,7 @@ import Slider from "../components/Slider.jsx";
 import { Container, Row, Col } from "react-bootstrap";
 import axiosInstance from "../Api/axiosInstance.js";
 import "./TeamPage.css";
-import teamImg from "../public/images/teampage/team.png";
+import teamImg from "../public/images/teampage/teamIconWhite.png";
 import PageHeader from "./PageHeader.jsx";
 import NextSteps from "../components/NextSteps.jsx";
 import { formatCrewData } from "../Utils/crewUtils.js";

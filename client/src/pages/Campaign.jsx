@@ -7,7 +7,7 @@ useInView,
   useMotionValueEvent,
 } from "framer-motion";
 import NextSteps from "../components/NextSteps.jsx";
-import callMe from "../public/images/contactPage/call.png";
+import campaign from "../public/images/campaignPage/campaignIconWhite.png";
 import music from "../public/images/campaignPage/music.png";
 import "./pages.css";
 import "./ContactPage.css";
@@ -64,7 +64,7 @@ const Campaign = () => {
  });*/
   return (
     <div className="ContactPage">
-      <PageHeader pageId={5} sectionId={1} image={callMe}  />
+      <PageHeader pageId={5} sectionId={1} image={campaign}  />
       <div style={{ position: "relative",overflow:"hidden" }}>
         <PageIntro page="campaign" title="" paragraph="" />
         <Slider

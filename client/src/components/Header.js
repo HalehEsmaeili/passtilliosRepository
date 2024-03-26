@@ -9,7 +9,7 @@ import contact from "../public/images/iconsMenu/2.png";
 import art from "../public/images/iconsMenu/3.png";
 import insta from "../public/images/iconsMenu/4.png";
 import team from "../public/images/iconsMenu/1.png";
-
+import campaign from "../public/images/iconsMenu/campaignIcon.png";
 function Header() {
   const handleToggleClick = () => {
     const menuToggle = document.querySelector(".menu__toggle");
@@ -78,7 +78,7 @@ function Header() {
                       <img
                         src={home}
                         className="customIconCss"
-                        alt="Team Icon"
+                        alt="home Icon"
                       />
                     </Link>
                   </div>
@@ -122,7 +122,7 @@ function Header() {
                 <div className="placeholder">
                   <div className="upside">
                   <Link to="/campaign" className="button">
-                      <img src={team} className="customIconCss" />
+                      <img src={campaign} className="customIconCss" />
                   </Link>
                   </div>
                 </div>
