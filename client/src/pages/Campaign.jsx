@@ -35,12 +35,12 @@ const Campaign = () => {
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
   console.log("sc",latest);
    if(isInViewRoadmapcontainer){
-    if(latest<0.3){
+    if(latest<0.4){
       svgLengthControls.start({ pathLength: latest*0});
-    }else if (.55>latest>0.3){
-      svgLengthControls.start({ pathLength: latest*1.1,transition:{stiffness:1}});
+    }else if (.5>latest>0.4){
+      svgLengthControls.start({ pathLength: latest*.5,transition:{stiffness:1}});
     }else{
-      svgLengthControls.start({ pathLength: latest*1.29,transition:{stiffness:1}});
+      svgLengthControls.start({ pathLength: latest*1.2,transition:{stiffness:1}});
     }
  
    }
@@ -116,8 +116,8 @@ const Campaign = () => {
             },
           ]}
         />
-       <h1 className="h1-shareMyDream">Now, let me now "Walk it like I Talk it" !</h1>
-<img style={{top:"17.8%",left:"72%", position:"absolute", width:"10%"}} src={music}></img>
+       <h1 className="h1-shareMyDream">Now, let me now " Walk it like I Talk it " !</h1>
+<img style={{top:"18.7%",left:"72%", position:"absolute", width:"10%"}} src={music}></img>
 
 <p className="p-shareMyDream">
 I mean practice what you preach right? so to kick things into high gear and set the stage for you to share your own versions of "daringly naive dreams," let me whisk you away into my world first!
@@ -145,22 +145,15 @@ I mean practice what you preach right? so to kick things into high gear and set 
             xmlns="http://www.w3.org/2000/svg"
           > 
          
-        
-
+     
 <motion.path
-             stroke="white"
+            
              animate={svgLengthControls}
              id="pathroadmap"        
-d="M2106.37 0C2106.37 1012.33 2209.62 3188.72 2069.59 3886C1928.81 4587 286.589 4037 286.589 4777.5C286.589 5215.5 123.425 5632.5 526.589 5632.5C1950 5632.5 2580.59 5559.5 4426.59 5559.5V7760.5L67.5894 7822C67.5894 7822 67.5892 9452 67.5894 10314.5C67.5894 10314.5 349.088 10314.5 2299.09 10314.5C2891.59 10314.5 2831 11782.5 2502.5 12576C2352.9 12937.4 1783.01 12765.1 755.589 13078C67.5894 13287.5 -433.801 14609.4 609.589 14913C1506.59 15174 3838.77 14772.1 3112.59 15466C1694.09 16821.5 -315.5 17637.5 349.088 18448C778.668 18971.9 2768.32 17772 3112.59 18959C3415.09 20002 454.499 19833 557.81 20867.5C609.589 21386 985.088 21545 2069.59 21879L1027.09 23745.5L2530 25353L1572.5 26474.5L2080.09 27240.5V29533" stroke="#00EEB9" 
-stroke-width="22"
+             d="M2050.37 0C2050.37 1012.33 2153.62 3188.72 2013.59 3886C1872.81 4587 230.589 4037 230.589 4777.5C230.589 5215.5 67.4248 5632.5 470.589 5632.5C1894 5632.5 2524.59 5559.5 4370.59 5559.5V7760.5L11.5894 7822C11.5894 7822 11.5893 9452 11.5894 10314.5H2598C2598 10314.5 2598 10628.5 2598 12792C2598 13380.5 1712.71 13033.5 651 13195.5C135.5 13274.2 -229.5 14731 553.589 14913C1463.54 15124.5 3782.77 15120.6 3056.59 15814.5C1638.09 17170 -371.5 17637.5 293.088 18448C722.668 18971.9 2712.32 17772 3056.59 18959C3359.09 20002 398.499 19833 501.81 20867.5C553.589 21386 929.088 21545 2013.59 21879L971.088 23745.5L2474 25353L1516.5 26474.5L2013.59 27793V30227"
+             stroke="#00EEB9"
+             stroke-width="22"/>
 
-/>
-
- 
-  
- 
-
- 
 </motion.svg>
  
 
@@ -171,7 +164,7 @@ stroke-width="22"
          
          
          
-          <div class="iframe-container roadmap-iframe-container">
+          <div className="iframe-container roadmap-iframe-container">
             <iframe
               width="560"
               height="315"
@@ -209,10 +202,10 @@ stroke-width="22"
             4 years after that I came across this video...
           </h1>
 
-          <div id="roadmap-iframe-container2" className="iframe-container">
+          <div id="roadmap-iframe-container2" className="iframe-container roadmap-iframe-container">
             <iframe
-              width="560"
-              height="315"
+              width="100%"
+              height="100%"
               src="https://www.youtube.com/embed/H2rG4Dg6xyI?si=dp8dOseok1MS53_V"
               title="YouTube video player"
               frameborder="0"
