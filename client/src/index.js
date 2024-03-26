@@ -12,10 +12,12 @@ import { LanguageContextProvider } from './context/LanguageContext';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+ 
     <LanguageContextProvider>
     <LanguageSelect/>
       <App />
     </LanguageContextProvider>
+
   </React.StrictMode>
 );
 
