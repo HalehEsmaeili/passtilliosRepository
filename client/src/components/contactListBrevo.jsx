@@ -899,7 +899,7 @@ const ContactList = () => {
                 marginLeft: "20%",
                 textAlign: "left",
                 lineHeight: "4vw",
-                marginBottom: "5%",
+                marginBottom: "0%",
               }}
             >
               you human?
@@ -919,12 +919,12 @@ const ContactList = () => {
               style={{
                 width: "100%",
                 marginLeft: "20%",
-                marginTop: "5%",
+                marginTop: "0%",
                 marginBottom: "0%",
                 display: "inline-block",
                 overflow: "visible",
               }}
-              size="normal"
+              size="compact"
               sitekey="6LdFAZMpAAAAAPNO5cTGqgATYFjlCBMgGVi8-c7v"
               onChange={(token) => {
                 setRechatchaToken(token);

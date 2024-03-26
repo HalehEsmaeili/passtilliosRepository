@@ -52,8 +52,8 @@ const TeamPage = () => {
 
   return (
     <div className="TeamPage">
-      <PageHeader pageId={2} sectionId={10}  image={teamImg} page="team"/>
-     <PageIntro/>
+      <PageHeader pageId={2} sectionId={10}  image={teamImg} />
+     <PageIntro page="team"/>
      
       <div className="contactTextContainer">
         {/**

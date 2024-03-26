@@ -18,9 +18,9 @@ const ContactPage = () => {
     }, []);
   return (
     <div className="ContactPage">
-      <PageHeader pageId={3} image={callMe} page="contact" />
+      <PageHeader pageId={3} image={callMe} />
       <div style={{ position: "relative", overflow: "visible" }}>
-      <PageIntro title="" paragraph=""/>
+      <PageIntro page="contact" title="" paragraph=""/>
        <ContactList/>
       </div>
 

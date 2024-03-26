@@ -83,8 +83,8 @@ const introTxt="Art is a superpower that speaks in its own language of colors, t
 
   return (
    <div >
-<PageHeader pageId={4}  page="Art" image={paintImg}/> 
-<PageIntro txt={introTxt}/>
+<PageHeader pageId={4} image={paintImg}/> 
+<PageIntro page="ART" txt={introTxt}/>
 <Slider images={[{
          url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/art/teaserslideshow/1.png",
               caption: "When the world around you becomes rigid and conformist, and you find yourself in a solitary battle to make room for the playfulness, free-spiritedness, and the out of the box...when you begin to doubt it all and consider blending in with your surroundings to fit in... ",

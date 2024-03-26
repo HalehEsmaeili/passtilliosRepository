@@ -301,7 +301,6 @@ const bubbleAnimationControlsArray = [{
 {/**      
 <img style={{opacity:1,marginTop:"0%",display:"inline-block",marginLeft:"40%",width:"20%"}} src={colorTiles}></img>
 */}
-        <motion.h1 className="pageintroh">{props.page} page</motion.h1>
       </div>
       
      {/* <div className="dottedLine" />*/}

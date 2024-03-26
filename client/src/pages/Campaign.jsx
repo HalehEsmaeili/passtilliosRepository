@@ -1,21 +1,17 @@
-import React, { useEffect, useState,useRef } from "react";
+import React, { useEffect,useRef } from "react";
 import {
   motion,
   useScroll,
 useInView,
-
   useAnimation,
-
   useMotionValueEvent,
 } from "framer-motion";
 import NextSteps from "../components/NextSteps.jsx";
 import callMe from "../public/images/contactPage/call.png";
-
+import music from "../public/images/campaignPage/music.png";
 import "./pages.css";
 import "./ContactPage.css";
 import "./campaign.css";
-
-import axiosInstance from "../Api/axiosInstance.js";
 import PageHeader from "./PageHeader.jsx";
 import PageIntro from "../components/PageIntro.jsx";
 import Slider from "../components/Slider.jsx";
@@ -39,12 +35,12 @@ const Campaign = () => {
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
   console.log("sc",latest);
    if(isInViewRoadmapcontainer){
-    if(latest<0.2){
+    if(latest<0.3){
       svgLengthControls.start({ pathLength: latest*0});
-    }else if (.5>latest>0.2){
-      svgLengthControls.start({ pathLength: latest*1});
+    }else if (.55>latest>0.3){
+      svgLengthControls.start({ pathLength: latest*1.1,transition:{stiffness:1}});
     }else{
-      svgLengthControls.start({ pathLength: latest*1.34});
+      svgLengthControls.start({ pathLength: latest*1.29,transition:{stiffness:1}});
     }
  
    }
@@ -68,9 +64,9 @@ const Campaign = () => {
  });*/
   return (
     <div className="ContactPage">
-      <PageHeader pageId={5} sectionId={1} image={callMe} page="campaign" />
-      <div style={{ position: "relative", overflow: "visible" }}>
-        <PageIntro title="" paragraph="" />
+      <PageHeader pageId={5} sectionId={1} image={callMe}  />
+      <div style={{ position: "relative",overflow:"hidden" }}>
+        <PageIntro page="campaign" title="" paragraph="" />
         <Slider
           images={[
             {
@@ -120,13 +116,15 @@ const Campaign = () => {
             },
           ]}
         />
-        <h1 className="h1-subthemes">
-          Now, I can't ask you to share your boldest dreams without doing it
-          myself, right? So, let me take you into my world first.
-        </h1>
+       <h1 className="h1-shareMyDream">Now, let me now "Walk it like I Talk it" !</h1>
+<img style={{top:"17.8%",left:"72%", position:"absolute", width:"10%"}} src={music}></img>
 
-        <h1 className="h1-leftAligned">
-          it was Tuesday 21 March 2017,persian new year, thisis what I watched..
+<p className="p-shareMyDream">
+I mean practice what you preach right? so to kick things into high gear and set the stage for you to share your own versions of "daringly naive dreams," let me whisk you away into my world first!
+</p>
+
+        <h1 id="roadmapstartTxt" >
+        Tuesday 21 March 2017, persian new year, this was on TV..
         </h1>
         <div
         ref={roadmapcontainer}
@@ -135,12 +133,10 @@ const Campaign = () => {
             position: "relative",
             width: "100%",
             top: "30%",
-            left: "12%",
-            overflow: "visible",
+            overflow: "hidden"
           }}
         >
   
-
 <motion.svg
             className="roadmapSvgLine"
             viewBox="0 0 4766 29696"
@@ -154,11 +150,13 @@ const Campaign = () => {
 <motion.path
              stroke="white"
              animate={svgLengthControls}
-             id="pathroadmap"
-             d="M2241.37 0C2241.37 1012.33 2381.39 3525.22 2241.37 4222.5C2100.59 4923.5 421.589 4037 421.589 4777.5C421.589 5215.5 265.088 5559.5 661.588 5632.5C1989.95 5877.07 2705.09 5486.5 4561.59 5559.5V7760.5L202.589 7822C-89.4108 7822 15.0892 9490.5 108.589 10116.5C108.589 10116.5 35.5884 10314.5 2434.09 10314.5C3026.59 10314.5 3132.59 12160 2715.59 12806.5C2563.41 13042.4 1964.59 13078 890.589 13078C592.285 13078 -298.802 14609.4 744.589 14913C1641.59 15174 3973.77 14772.1 3247.59 15466C1829.09 16821.5 -1111.41 17968.5 484.088 18448C1132.92 18643 2903.32 17772 3247.59 18959C3550.09 20002 367.162 19880.1 692.81 20867.5C1036.81 21910.5 1120.09 21545 2204.59 21879L1162.09 23745.5L1996.09 25278.5L1714.59 26237.5L2215.09 27176V29533"
-              stroke-width="22"/>
- 
+             id="pathroadmap"        
+d="M2106.37 0C2106.37 1012.33 2209.62 3188.72 2069.59 3886C1928.81 4587 286.589 4037 286.589 4777.5C286.589 5215.5 123.425 5632.5 526.589 5632.5C1950 5632.5 2580.59 5559.5 4426.59 5559.5V7760.5L67.5894 7822C67.5894 7822 67.5892 9452 67.5894 10314.5C67.5894 10314.5 349.088 10314.5 2299.09 10314.5C2891.59 10314.5 2831 11782.5 2502.5 12576C2352.9 12937.4 1783.01 12765.1 755.589 13078C67.5894 13287.5 -433.801 14609.4 609.589 14913C1506.59 15174 3838.77 14772.1 3112.59 15466C1694.09 16821.5 -315.5 17637.5 349.088 18448C778.668 18971.9 2768.32 17772 3112.59 18959C3415.09 20002 454.499 19833 557.81 20867.5C609.589 21386 985.088 21545 2069.59 21879L1027.09 23745.5L2530 25353L1572.5 26474.5L2080.09 27240.5V29533" stroke="#00EEB9" 
+stroke-width="22"
 
+/>
+
+ 
   
  
 
@@ -211,7 +209,7 @@ const Campaign = () => {
             4 years after that I came across this video...
           </h1>
 
-          <div id="roadmap-iframe-container2" class="iframe-container">
+          <div id="roadmap-iframe-container2" className="iframe-container">
             <iframe
               width="560"
               height="315"
@@ -305,6 +303,7 @@ const Campaign = () => {
             position: "relative",
             marginTop: "-80%",
             marginBottom: "0%",
+            overflow:"hidden"
           }}
         >
           <NextSteps

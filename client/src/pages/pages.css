@@ -65,7 +65,7 @@
     .iframe-container {
         position: relative;
         display: inline-block;
-        width: 100%;
+        width: fit-content;
         margin-left: 25%;
         padding-bottom: 56.25%; /* 16:9 aspect ratio */
       }

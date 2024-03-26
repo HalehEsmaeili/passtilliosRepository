@@ -5,7 +5,7 @@ import colorTiles from "../public/images/header/colorTiles.png";
 //import 'bootstrap/dist/css/bootstrap.min.css';
 
 import {
-    useInView,
+  useInView,
   motion,
   useAnimationControls
 } from "framer-motion";
@@ -31,7 +31,7 @@ const PageIntro=(props)=>{
       
           const spiceAnim = async () => {
             try{
-            animateMagicContainer.start({
+              animateMagicContainer.start({
               scale: [1, 1.2, 1],
               rotate: [0, 30, 0, -30, 0, 20, 0, -20, 0],
               transition: { delay: 0.2, type: "yoyo" },
@@ -94,7 +94,9 @@ const PageIntro=(props)=>{
 
 
              {/**<img style={{opacity:1,marginTop:"0%",marginBottom:"0%",display:"inline-block",marginLeft:"40%",width:"20%"}} src={colorTiles}></img> */} 
+    
      
+     <motion.h1 className="pageintroh">{props.page} page</motion.h1>
 <h1  className="pageintroP">
 Art is a superpower that speaks in its own language of colors, textures, and vibes, hitting you right in the feels and connecting people who just get it. So, how do we tap into that magic for our project? That's what this page is for!
 </h1>
