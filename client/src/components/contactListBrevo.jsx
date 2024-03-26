@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import callMe from "../public/images/contactPage/call.png";
+
 import { Country, State, City } from "country-state-city";
 import ReCAPTCHA from "react-google-recaptcha";
 import brevoLogo from "../public/images/contactPage/BREVO.png";
@@ -925,7 +926,7 @@ const ContactList = () => {
                 overflow: "visible",
               }}
               size="compact"
-              sitekey="6LdFAZMpAAAAAPNO5cTGqgATYFjlCBMgGVi8-c7v"
+              sitekey={process.env.REACT_APP_SITE_KEY}
               onChange={(token) => {
                 setRechatchaToken(token);
               }}
