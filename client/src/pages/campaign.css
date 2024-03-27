@@ -59,7 +59,7 @@
     padding-right: 1.5%;
     background-color: #090225;
     position: absolute;
-    top: 29.4%;
+    top: 30%;
     left: 0%;
     right:40%;
     text-align: center;
@@ -225,6 +225,7 @@
     stroke-width:30px;
     stroke:#00EEB9;
     stroke-linecap:round;
+   /* stroke-dasharray: 10;*/
     stroke-dashoffset:0;
   }
   .p-shareMyDream{

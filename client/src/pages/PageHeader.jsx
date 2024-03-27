@@ -1,16 +1,12 @@
 import React, { useState, useEffect } from "react";
-import Slider from "../components/Slider.jsx";
-import { Container, Row, Col } from 'react-bootstrap';
+
 //import 'bootstrap/dist/css/bootstrap.min.css';
-import callMe from "../public/images/contactPage/callme.gif";
+
 import "./PageHeader.css";
-import axiosInstance from "../Api/axiosInstance.js";
-import splash6 from "../public/images/colorSplash/14.png";
-import splash7 from "../public/images/colorSplash/15.png";
-import splash8 from "../public/images/colorSplash/16.png";
+
 //import callMeImg from "../public/images/contactPage/contactimg.png";
 import lines from "../public/images/contactPage/lines.png";
-import colorTiles from "../public/images/header/colorTiles.png";
+
 import {
   motion,
   useInView,
@@ -20,10 +16,10 @@ import {
   useAnimationControls,
 } from "framer-motion";
 
-
+import { useLanguageContext } from "../context/LanguageContext";
 const PageHeader = (props) => {
 /*
-  const b1Controls = useAnimationControls();
+const b1Controls = useAnimationControls();
 const b2Controls = useAnimationControls();
 const b3Controls = useAnimationControls();
 const b4Controls = useAnimationControls();
@@ -34,8 +30,27 @@ const [wordImageUrls, setWordImageUrls] = useState([]);
 const [quote, setQuote] = useState([]);
 
 */
+const { t } = useLanguageContext();
 const [splittedTxt,setSplittedTxt]=useState([]);
-const [images, setImages] = useState([]);
+
+
+useEffect(() => {
+  const splitText = () => {
+    try {
+ 
+    
+       setSplittedTxt(t(`pageheader.quote.${props.page}`).split('-'));
+   
+     
+ 
+    } catch (error) {
+
+    }
+  };
+
+  splitText();
+}, [props.page]);
+
 
 
 
@@ -106,7 +121,7 @@ useEffect(()=>{
     .then((response) => {
       console.log("response for quote", response.data.sections.text_contents[0]);
       const originalText = response.data.sections.text_contents[0];
-      // Split the string using '--' as the delimiter
+    Split the string using '--' as the delimiter
        setSplittedTxt(originalText.split('-'));
 
     })
@@ -120,7 +135,7 @@ useEffect(()=>{
 
 },[props.pageId,props.sectionId]);
 */
-
+/** /* 
 useEffect(() => {
   const fetchData = async () => {
     try {
@@ -142,7 +157,7 @@ useEffect(() => {
   fetchData();
 }, [props.pageId]);
 
-
+*/
 /*
 useEffect(()=>{
 
@@ -228,28 +243,28 @@ const wordAnimationControlsArray = [{
 
 
 const bubbleAnimationControlsArray = [{
-  top: "0%",
+  top: "-100%",
   left: "75%",
-  transition: { type: "spring", stiffness: 5, duration: 0.2 },
+  transition: { type: "spring", stiffness: 2.1, duration: 0.2 },
 }, {
-  top: "-25%",
+  top: "-250%",
+  left: "165%",
+  transition: { type: "spring", stiffness: 3.1, duration: 0.2 },
+}, {
+  opacity: 1,
+  top: "-400%",
+  left: "160%",
+  transition: { type: "spring", stiffness: 3.5, duration: 0.2 },
+}, {
+  opacity: 1,
+  top: "-100%",
   left: "45%",
-  transition: { type: "spring", stiffness: 6.1, duration: 0.2 },
+  transition: { type: "spring", stiffness: 3, duration: 0.2 },
 }, {
   opacity: 1,
-  top: "4%",
-  left: "4%",
-  transition: { type: "spring", stiffness: 7.5, duration: 0.2 },
-}, {
-  opacity: 1,
-  top: "30%",
-  left: "23%",
-  transition: { type: "spring", stiffness: 4, duration: 0.2 },
-}, {
-  opacity: 1,
-  top: "560%",
-  left: "50%",
-  transition: { type: "spring", stiffness: 3.9, duration: 0.2 },
+  top: "-300%",
+  left: "100%",
+  transition: { type: "spring", stiffness: 4.1, duration: 0.2 },
 }];
 //<img className="bubbles"  src="https://passtillios-bucket-web.s3.amazonaws.com/contact/too-many-trys.mp4"></img>
  // // <Container className="container" fluid style={{width:"100%",backgroundColor:"green"}}>
@@ -271,11 +286,11 @@ const bubbleAnimationControlsArray = [{
 <div className="headerTextContainer">
 <div style={{position:"relative",overflow:"visible"}}>
   {/* Render your images using the 'imageUrls' state */}
-  {(images && images.length>0)? images.map((image, index) => (
-        <motion.img className="headersBubble" key={index} src={image.url} alt={`b ${index}`} animate={bubbleAnimationControlsArray[index]} />
+  {(props.page? bubbleAnimationControlsArray.map((bubble, index) => (
+        <motion.img className="headersBubble" key={index} src={`s3://passtillios-bucket-web/headerPage/${props.page}/b${index}.png`} alt={`b ${index}`} animate={bubbleAnimationControlsArray[index]} />
       ))
       :<div></div>
-      }
+      )}
 
 <img className="lineup" src={lines}></img>
 <img className="headerImage" src={props.image}></img>

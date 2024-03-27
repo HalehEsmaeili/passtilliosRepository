@@ -1,13 +1,26 @@
 {
     "homeTitle":"it'S about damn time we infuse some magic and spice into our lives.",
-    "intro.projectsection.slideshow.caption.1": "the campaign about to kick off is basically a treasure hunt for some hidden gems in your bucket lists. What gems? Well, those dreams or items you've tucked away in your bucket list, filled with crazy connecting and memory-making powers. I'm on a mission to uncover them." ,
-    "intro.projectsection.slideshow.caption.2": "These dreams, I like to call them hidden gems, hold the potential to bring people together for an unforgettable adventure. And here's the kicker: your bucket list might just be hiding one of them! for more info, check out the campaign page" ,
-    "intro.projectsection.slideshow.caption.3": "So, buckle up! Soon, I'll be reaching out to all of you to spill your ideas. We'll pick a couple, create projects around them, and get everyone on board to make it a reality. But how can you tell if an item in your bucket list is the real deal for this project? Let me break it down for you. The treasures I'm after share these four characteristics:" ,
-    "intro.projectsection.slideshow.caption.4": "You know those dreams that feel impossible alone, but become achievable when you team up with others? Yeah, those are the ones. They're like puzzles waiting for a squad to crack." ,
-    "intro.projectsection.slideshow.caption.5": "It's not just about creating a memorable moment for yourself; it's about making memories that we'll all be talking about for ages." ,
-    "intro.projectsection.slideshow.caption.6": "It's all about teamwork. These dreams thrive on collaboration, igniting connections and friendships like nothing else." , 
-    "intro.projectsection.slideshow.caption.7": "And finally if it makes you squirm a bit? Perfect. That discomfort is an extra bonus that means you're onto something big." ,
+    "intro.projectsection.slideshow.caption.1": "the campaign is about to launch is a treasure hunt for the hidden gems in your bucket lists. What gems? Your dreams, bursting with connecting and memory-making powers. I'm on a mission to uncover them.",
+    "intro.projectsection.slideshow.caption.2": "These dreams I'm on the lookout for, spark connection, capable of bringing people together for epic adventures. Your bucket list might just hold one. Why the hunt? Because I firmly believe in the magic of dreams to unite us and create unforgettable shared experiences." ,
+    "intro.projectsection.slideshow.caption.3": "So, buckle up! Soon, I'll ask you to share your ideas. We'll pick a couple, craft projects around them together with you, and make them real. But how do you know if you have got one of those hidden gems for this project? Here are the traits to look for:" ,
+    "intro.projectsection.slideshow.caption.4": "dreams that are impossible alone but doable with a group of people joining hands? Yeah, those are the ones." ,
+    "intro.projectsection.slideshow.caption.5": "dreams that not only fill your cup but also create bonds and unique shared memories for everyone involved. Memories we'll cherish and talk about for ages" ,
+    "intro.projectsection.slideshow.caption.6": "Teamwork is vital for that dream to come true. These dreams breed collaboration, sparking new connections and friendships." , 
+    "intro.projectsection.slideshow.caption.7": "Feeling a bit uncomfortable talking about them? Perfect. That discomfort is an extra bonus that means you're onto something big." ,
     "intro.projectsection.slideshow.caption.8": "Now, let's talk money. Like any other project, money is a big factor, right? Having investors on board would be awesome, but it's crucial to find the perfect fit. So, to make sure we have the luxury of time to find that perfect match without having to delay the campaign launch due to financial reasons,",
-    "intro.projectsection.slideshow.caption.9": "I've decided to incorporate my paintings into the mix. I'll be selling products featuring those paintings, designed to add a splash of color to the everyday black and white aspects of life, whether it's your outfits or your home, one collection at a time. This serves two important purposes: first, so that those who resonate with my art can invite it into their everyday lives, and second, the proceeds will support the campaign." 
+    "intro.projectsection.slideshow.caption.9": "I've decided to incorporate my paintings into the mix. I'll be selling products featuring those paintings, designed to add a splash of color to the everyday black and white aspects of life, whether it's your outfits or your home, one collection at a time. ",
+    "intro.projectsection.slideshow.caption.10": "This serves two important purposes: first, so that those who resonate with my art can invite it into their everyday lives, and second, the proceeds will support the campaign. read more on the art page." ,
+
+
+
+   "pageheader.quote.art":"The purpose of art is washing away the dust of daily life off our souls.-Pablo Picasso",
+   "pageheader.quote.campaign2":"A dream you dream alone is only a dream. A dream you dream together is reality-John Lennon",
+   "pageheader.quote.campaign":"Invisible threads are the stronest ties.-Friedrich Nietzsche",
+   "pageheader.quote.campaign1":"It takes 2 flints to make a fire-Louisa May Alcott",
+   "pageheader.quote.contact":"A single leaf working alone provides no shade.-Chuck Page",
+   "pageheader.quote.team1":"Talent wins games, but teamwork and intelligence win championships-Michael Jordan",
+   "pageheader.quote.team2":"I have never scored a goal in my life without getting a pass from someone else.-Abby Wambach",
+   "pageheader.quote.team":"No one can whistle a symphony. it takes a whole orchestra to play it.-H.E.Luccock"
+
 
 }

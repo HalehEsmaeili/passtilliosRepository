@@ -15,9 +15,10 @@ import "./campaign.css";
 import PageHeader from "./PageHeader.jsx";
 import PageIntro from "../components/PageIntro.jsx";
 import Slider from "../components/Slider.jsx";
+import { useLanguageContext } from "../context/LanguageContext";
 const Campaign = () => {
  
-  
+  const { t } = useLanguageContext();
   const roadmapcontainer = useRef(null);
   const isInViewRoadmapcontainer = useInView(roadmapcontainer, { amount: 0.1 });
 
@@ -33,22 +34,17 @@ const Campaign = () => {
   }, []);
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
-  console.log("sc",latest);
+
    if(isInViewRoadmapcontainer){
     if(latest<0.4){
       svgLengthControls.start({ pathLength: latest*0});
-    }else if (.5>latest>0.4){
-      svgLengthControls.start({ pathLength: latest*.5,transition:{stiffness:1}});
+    }else if (.52>latest>0.4){
+      svgLengthControls.start({ pathLength: latest*.5,transition:{stiffness:100}});
     }else{
-      svgLengthControls.start({ pathLength: latest*1.2,transition:{stiffness:1}});
+      svgLengthControls.start({ pathLength: latest*1.18,transition:{stiffness:100}});
     }
  
-   }
-   
- 
-   
-
-  });
+   }});
  
   //const { scrollYProgress } = useScroll();
   /*
@@ -64,9 +60,9 @@ const Campaign = () => {
  });*/
   return (
     <div className="ContactPage">
-      <PageHeader pageId={5} sectionId={1} image={campaign}  />
+      <PageHeader page="campaign" quote="camapign-me" image={campaign}  />
       <div style={{ position: "relative",overflow:"hidden" }}>
-        <PageIntro page="campaign" title="" paragraph="" />
+        <PageIntro page="campaign" />
         <Slider
           images={[
             {
@@ -116,8 +112,8 @@ const Campaign = () => {
             },
           ]}
         />
-       <h1 className="h1-shareMyDream">Now, let me now " Walk it like I Talk it " !</h1>
-<img style={{top:"18.7%",left:"72%", position:"absolute", width:"10%"}} src={music}></img>
+       <h1 className="h1-shareMyDream">Now, let me "Walk it like I Talk it" !</h1>
+<img style={{top:"18.4%",left:"70%", position:"absolute", width:"7%"}} src={music}></img>
 
 <p className="p-shareMyDream">
 I mean practice what you preach right? so to kick things into high gear and set the stage for you to share your own versions of "daringly naive dreams," let me whisk you away into my world first!
@@ -147,12 +143,11 @@ I mean practice what you preach right? so to kick things into high gear and set 
          
      
 <motion.path
-            
-             animate={svgLengthControls}
-             id="pathroadmap"        
+             id="pathroadmap"  
+             animate={svgLengthControls}      
              d="M2050.37 0C2050.37 1012.33 2153.62 3188.72 2013.59 3886C1872.81 4587 230.589 4037 230.589 4777.5C230.589 5215.5 67.4248 5632.5 470.589 5632.5C1894 5632.5 2524.59 5559.5 4370.59 5559.5V7760.5L11.5894 7822C11.5894 7822 11.5893 9452 11.5894 10314.5H2598C2598 10314.5 2598 10628.5 2598 12792C2598 13380.5 1712.71 13033.5 651 13195.5C135.5 13274.2 -229.5 14731 553.589 14913C1463.54 15124.5 3782.77 15120.6 3056.59 15814.5C1638.09 17170 -371.5 17637.5 293.088 18448C722.668 18971.9 2712.32 17772 3056.59 18959C3359.09 20002 398.499 19833 501.81 20867.5C553.589 21386 929.088 21545 2013.59 21879L971.088 23745.5L2474 25353L1516.5 26474.5L2013.59 27793V30227"
-             stroke="#00EEB9"
-             stroke-width="22"/>
+             
+            />
 
 </motion.svg>
  

@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef, useHover } from "react";
-import axios from "axios";
 import axiosInstance from "../Api/axiosInstance.js";
 import "../public/intro.css";
 import CampaignStatement from "./campaign/CampaignStatement.jsx";
@@ -7,30 +6,19 @@ import ProjectSection from "./ProjectSection.jsx";
 import NextSteps from "./NextSteps.jsx";
 import Slider from "./Slider.jsx";
 import ScreenSizeHint from "./ScreenSizeHint.jsx";
-//1901 change the h1s positioning css.
-//the local deployment works with serve,but with heroku not yet
-//heroku logs --tail -a passtilliostest1
-// "start": "node app/index.js"
-//https://github.com/HalehEsmaeili/passtilliosRepository
-//heroku git:remote -a passtilliosfrontendtest
-//vids
-//import teamHeaderVid from "../public/video/teamGif.gif";
-
 import bobVid from "../public/images/nextSteps/28.mp4";
-import showMeImgLine from "../public/images/nextSteps/showMeSec.png";
 import Button from "./Button.js";
 import {
   motion,
   useInView,
   useMotionValueEvent,
   useScroll,
-  useAnimate,
   useAnimationControls,
 } from "framer-motion";
-import Highlighted from "../components/Highlighted.js";
-import useWindowDimensions from "./useWindowDimensions.js";
+//import Highlighted from "../components/Highlighted.js";
+//import useWindowDimensions from "./useWindowDimensions.js";
 import logo from "../public/images/logo.png";
-import { useLanguageContext } from "../context/LanguageContext";
+
 /////your life as a painting
 
 /////bubbles for lets go
@@ -48,9 +36,7 @@ import bubble2 from "../public/images/EmptyBubbles/2.png";
 import bubble3 from "../public/images/EmptyBubbles/3.png";
 import bubble4 from "../public/images/EmptyBubbles/4.png";
 import bubble5 from "../public/images/EmptyBubbles/5.png";
-import bubble6 from "../public/images/EmptyBubbles/6.png";
-import bubble7 from "../public/images/EmptyBubbles/7.png";
-import bubble8 from "../public/images/EmptyBubbles/8.png";
+
 ////////color splashes for the bubbles
 import splash1 from "../public/images/colorSplash/9.png";
 import splash2 from "../public/images/colorSplash/5.png";
@@ -69,12 +55,10 @@ import magicRight from "../public/images/Intro/44.png";
 //////////greydiv imports
 import greyDown from "../public/images/greyDivGrey/1.png";
 import greyUP from "../public/images/greyDivGrey/2.png";
-
+import { useLanguageContext } from "../context/LanguageContext";
 function IntroParallax() {
   const { t } = useLanguageContext();
-  const text =
-    "Imagine a world painted only in shades of gray, where only black and white call the shots. It's a place without the cozy warmth of lively colors.In this imaginary place, our eyes reveal emptiness, echoing the loneliness inside. The once-fiery passion in hearts, eager to use their unique colors to make a beautiful difference on our collective canvas of life, now flickers, struggling to survive in a world that only wants us to be either black or white.Creativity and inspiration take a backseat. Life in this gray and expected canvas feels like a broken record, missing the beat of unpredictability that makes it exciting and dance-worthy!";
-
+  
   const [scrollToGreyActive, setScrollToGreyActive] = useState(false);
   const [scrollToNextStepsActive, setScrollToNextStepsActive] = useState(false);
   const [introAnimationComplete, setIntroAnimationComplete] = useState(false);
@@ -88,17 +72,11 @@ function IntroParallax() {
 
   const [startNextStepAnimation, setStartNextStepAnimation] = useState(false);
 
-  const [h1moved, setH1Moved] = useState(false);
-  const [greyDustPositionX, setGreyDustPositionX] = useState(500);
-  const [scope, animate] = useAnimate();
-  const [img1, animateimg1] = useAnimate();
-  const [img2, animateimg2] = useAnimate();
-  const [img3, animateimg3] = useAnimate();
+  
+  
 
-  const [visibletime, setvisible] = useState(0);
-  const [scrolled, setScrolled] = useState(false);
-  const [isnextArrowClickable, setIsNextArrowClickable] = useState(true);
-  const [splittedTxt, setSlittedTxt] = useState([]);
+  
+
   ///////////refs and useinview aniamtion set up
 
   const div0 = useRef(null);
@@ -113,10 +91,7 @@ function IntroParallax() {
 
   const campaignImgRef = useRef(null);
 
-  const isInViewCampaignImg = useInView(campaignImgRef, {
-    once: true,
-    amount: 0.7,
-  });
+ 
   const magicContainerRef = useRef(null);
   const isInViewMagicContainerRef = useInView(magicContainerRef, {
     once: true,

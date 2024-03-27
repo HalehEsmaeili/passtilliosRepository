@@ -18,7 +18,7 @@ const LanguageSelect = () => {
     <label  style={{color:"white",display:"inline-block",marginRight:"5%",marginLeft:"5%"}} value={0}>/</label>
     <label  style={{color:"white",display:"inline-block",marginLeft:"5%"}}  value={1}>de</label>*/}
       {Object.keys(languages).map((lng) => (
-        <button onClick={onClickLanguageChange} style={{fontSize:"2.5vw",borderRadius:"3%",border:"0px solid #5a00b4",padding:"10%",marginRight:"2%",width:"10%",backgroundColor:"#090225",color:"white",display:"inline-block",cursor: "pointer",marginBottom:"2%"}} key={languages[lng].nativeName} value={lng}>
+        <button onClick={onClickLanguageChange} style={{fontSize:"2.2vw",borderRadius:"3%",border:"0px solid #5a00b4",padding:"10%",marginRight:"2%",width:"10%",backgroundColor:"#090225",color:"white",display:"inline-block",cursor: "pointer",marginBottom:"2%"}} key={languages[lng].nativeName} value={lng}>
           {lng}
         </button>
      

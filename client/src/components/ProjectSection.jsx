@@ -1086,6 +1086,11 @@ How will your life look as a painting 60 years from now? Will it narrate a story
   url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/intro/projectPainting/slideshow/9.png",
               caption: t("intro.projectsection.slideshow.caption.9"),
              
+},
+{
+  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/intro/projectPainting/slideshow/10.png",
+              caption: t("intro.projectsection.slideshow.caption.10"),
+             
 }
 
 

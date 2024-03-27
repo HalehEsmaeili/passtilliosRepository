@@ -9,9 +9,10 @@ import NextSteps from "../components/NextSteps.jsx";
 import { formatCrewData } from "../Utils/crewUtils.js";
 import MappedContent from "../Utils/contentMapUtil.jsx";
 import PageIntro from "../components/PageIntro.jsx";
+import { useLanguageContext } from "../context/LanguageContext";
 const TeamPage = () => {
   const [mappingJson, setMappingJson] = useState([]);
-
+  const { t } = useLanguageContext();
   const [imagesForCrew, setImagesForCrew] = useState([]);
 
   useEffect(() => {
@@ -52,7 +53,7 @@ const TeamPage = () => {
 
   return (
     <div className="TeamPage">
-      <PageHeader pageId={2} sectionId={10}  image={teamImg} />
+      <PageHeader page="team" quote="arttttt-me" image={teamImg} />
      <PageIntro page="team"/>
      
       <div className="contactTextContainer">

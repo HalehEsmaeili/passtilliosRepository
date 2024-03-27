@@ -4,23 +4,23 @@ import callMe from "../public/images/contactPage/call.png";
 
 //import "./TeamPage.css";
 import "./ContactPage.css";
-
 import axiosInstance from "../Api/axiosInstance.js";
 import PageHeader from "./PageHeader.jsx";
 import { isEmail, isMobilePhone } from 'validator'; 
 import ContactList from "../components/contactListBrevo.jsx";
 import PageIntro from "../components/PageIntro.jsx";
+import { useLanguageContext } from "../context/LanguageContext";
 const ContactPage = () => {
- 
+  const { t } = useLanguageContext();
     useEffect(() => {
       // Scroll to the top when the component mounts
       window.scrollTo(0, 0);
     }, []);
   return (
     <div className="ContactPage">
-      <PageHeader pageId={3} image={callMe} />
+      <PageHeader  page="contact" quote="arttttt-me" image={callMe} />
       <div style={{ position: "relative", overflow: "visible" }}>
-      <PageIntro page="contact" title="" paragraph=""/>
+      <PageIntro page="Networking" title="" paragraph=""/>
        <ContactList/>
       </div>
 

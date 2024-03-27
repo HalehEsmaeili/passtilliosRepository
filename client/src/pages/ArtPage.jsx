@@ -9,12 +9,14 @@ import thePainting from "../public/images/artpage/thePainting.png";
 import PageHeader from "./PageHeader.jsx";
 import NextSteps from "../components/NextSteps.jsx";
 import PageIntro from "../components/PageIntro.jsx";
+import { useLanguageContext } from "../context/LanguageContext";
+
 
 const ArtPage = () => {
  // // <Container className="container" fluid style={{width:"100%",backgroundColor:"green"}}>
   //<img className="headerGif" src={callMe}></img>
   const [productImages, setProductImages] = useState([]);
-
+  const { t } = useLanguageContext();
   useEffect(() => {
     // Scroll to the top when the component mounts
     window.scrollTo(0, 0);
@@ -83,8 +85,8 @@ const introTxt="Art is a superpower that speaks in its own language of colors, t
 
   return (
    <div >
-<PageHeader pageId={4} image={paintImg}/> 
-<PageIntro page="ART" txt={introTxt}/>
+<PageHeader  page="art" quote="arttttt-me" image={paintImg}/> 
+<PageIntro page="art" txt={introTxt}/>
 <Slider images={[{
          url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/art/teaserslideshow/1.png",
               caption: "When the world around you becomes rigid and conformist, and you find yourself in a solitary battle to make room for the playfulness, free-spiritedness, and the out of the box...when you begin to doubt it all and consider blending in with your surroundings to fit in... ",
