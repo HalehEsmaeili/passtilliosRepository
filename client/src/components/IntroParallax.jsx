@@ -65,9 +65,7 @@ function IntroParallax() {
   const [logoAnimationTodiv4Compelete, setLogoAnimationTodiv4Compelete] =
     useState(false);
   const [broMovingToNextSteps, setBroMovingToNextSteps] = useState(false);
-
   const [greyScrolled, setGreyScrolled] = useState(false);
-
   const [isGreyContentVisible, setGreyContentVisible] = useState(false);
 
   const [startNextStepAnimation, setStartNextStepAnimation] = useState(false);

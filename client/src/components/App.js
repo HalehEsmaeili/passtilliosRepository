@@ -7,7 +7,8 @@ import TeamPage from '../pages/TeamPage';
 import ContactPage from '../pages/ContactPage';
 import ArtPage from '../pages/ArtPage';
 import Campaign from '../pages/Campaign';
-
+import Impressum from "../pages/Impressum";
+import DatenSchutz from "../pages/DatenSchutz";
  
 
 function App() {
@@ -25,9 +26,10 @@ function App() {
     <Route path="/contact" element={<ContactPage />} />
     <Route path="/contact/success" element={<ContactPage savedsuccessful={true}/>} />
     <Route path="/home" element={<IntroParallax/>} />
-    <Route path="/Impressum" element={<IntroParallax/>} />
+    <Route path="/impressum" element={ <Impressum/>} />
+    <Route path="/datenschutz" element={ <DatenSchutz/>} />
     <Route index element={ <IntroParallax/>} />
-    
+  
     {/* Add more routes for other components */}
     </Routes> 
     <Footer />

@@ -249,22 +249,22 @@ const bubbleAnimationControlsArray = [{
 }, {
   top: "-250%",
   left: "165%",
-  transition: { type: "spring", stiffness: 3.1, duration: 0.2 },
+  transition: { type: "spring", stiffness: 1.1, duration: 0.2 },
 }, {
   opacity: 1,
   top: "-400%",
   left: "160%",
-  transition: { type: "spring", stiffness: 3.5, duration: 0.2 },
+  transition: { type: "spring", stiffness: 1.5, duration: 0.2 },
 }, {
   opacity: 1,
   top: "-100%",
   left: "45%",
-  transition: { type: "spring", stiffness: 3, duration: 0.2 },
+  transition: { type: "spring", stiffness: 1.6, duration: 0.2 },
 }, {
   opacity: 1,
   top: "-300%",
   left: "100%",
-  transition: { type: "spring", stiffness: 4.1, duration: 0.2 },
+  transition: { type: "spring", stiffness: 2, duration: 0.2 },
 }];
 //<img className="bubbles"  src="https://passtillios-bucket-web.s3.amazonaws.com/contact/too-many-trys.mp4"></img>
  // // <Container className="container" fluid style={{width:"100%",backgroundColor:"green"}}>
@@ -285,13 +285,20 @@ const bubbleAnimationControlsArray = [{
     </div>
 <div className="headerTextContainer">
 <div style={{position:"relative",overflow:"visible"}}>
-  {/* Render your images using the 'imageUrls' state */}
-  {(props.page? bubbleAnimationControlsArray.map((bubble, index) => (
-        <motion.img className="headersBubble" key={index} src={`s3://passtillios-bucket-web/headerPage/${props.page}/b${index}.png`} alt={`b ${index}`} animate={bubbleAnimationControlsArray[index]} />
-      ))
-      :<div></div>
-      )}
-
+ {/* Render your images using the 'imageUrls' state */}
+{props.page ? (
+  bubbleAnimationControlsArray.map((bubble, index) => (
+    <motion.img
+      className="headersBubble"
+      key={index}
+      src={`https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/headerPage/${props.page}/${index}.png`}
+      alt={`b${index}`}
+      animate={bubbleAnimationControlsArray[index]}
+    />
+  ))
+) : (
+  <div></div>
+)}
 <img className="lineup" src={lines}></img>
 <img className="headerImage" src={props.image}></img>
 </div>

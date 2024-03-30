@@ -1,0 +1,35 @@
+.datenschutzh{
+    color:#00eeb9;
+
+}
+.datenschutzpNum{
+    font-size: 3vw;
+    color:#f90e9b;
+    color:#00eeb9;
+    color:whitesmoke;
+    color:#00eeb9;
+}
+.datenschutzp{
+    font-size: 2.5vw;
+
+}
+@media screen and (min-width: 1000px) {
+    
+    .datenschutzh{
+     
+    
+    }
+    .datenschutzpNum{
+        font-size: 2.1vw;
+        
+        color:#f90e9b;
+        color:#00eeb9;
+        color:whitesmoke;
+        color:#00eeb9;
+    }
+    .datenschutzp{
+        font-size: 1.9vw;
+        line-height: 250%;
+    
+    }
+}
