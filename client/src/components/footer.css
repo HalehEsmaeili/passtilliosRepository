@@ -1,0 +1,30 @@
+/* Footer.css */
+
+.footer {
+    background-color: #090225;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .footer-link {
+    cursor: pointer;
+    text-decoration: none;
+    color: #ffffff;
+    margin: 0 10px;
+  }
+  .footer-link:hover{
+   
+    color: #00EEB9;
+    margin: 0 10px;
+  }
+  
+  .separator {
+    color: #ffffff;
+  }
+  
