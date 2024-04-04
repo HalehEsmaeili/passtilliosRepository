@@ -9,13 +9,13 @@ import ArtPage from '../pages/ArtPage';
 import Campaign from '../pages/Campaign';
 import Impressum from "../pages/Impressum";
 import DatenSchutz from "../pages/DatenSchutz";
- 
+ import CookieBanner from './CookieBanner';
 
 function App() {
  return (
     <div style={{overflow:"hidden",marginBottom:0}} >
  
-
+ <CookieBanner />
 
 <Router>
 <Header />

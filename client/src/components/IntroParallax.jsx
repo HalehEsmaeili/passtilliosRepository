@@ -1084,6 +1084,7 @@ function IntroParallax() {
         )}
       </motion.div>
       <div className="div2Bubblecontainer">
+      
         {scrollToGreyActive ? (
           <div className="logoSvgLineContainer" ref={finalWordsDiv}>
             <svg
