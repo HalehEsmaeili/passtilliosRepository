@@ -15,7 +15,7 @@ function App() {
  return (
     <div style={{overflow:"hidden",marginBottom:0}} >
  
- <CookieBanner />
+
 
 <Router>
 <Header />
@@ -32,6 +32,7 @@ function App() {
   
     {/* Add more routes for other components */}
     </Routes> 
+    <CookieBanner />
     <Footer />
 </Router>
     
