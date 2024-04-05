@@ -65,10 +65,13 @@
     text-align: center;
 }
 #roadmap-iframe-container2{
-  
+    width:100%;
+    display: block;
+    visibility: visible;
     position: absolute;
     left: 10%;
     top: 35.8%;
+    z-index: 100;
 
 
 }
@@ -175,7 +178,8 @@
 
 
 .roadmap-iframe-container{
-  
+  display: block;
+  visibility: visible;
        position: absolute;
        left: 0%;
        top: 5%;
@@ -185,6 +189,7 @@
 .roadmap-h1-subthemes{
     background-color: #090225;
     font-size: 2.2vw;
+
     text-align: left;
     margin-bottom: 5%;
     margin-top: 65%;
