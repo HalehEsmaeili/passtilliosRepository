@@ -49,9 +49,7 @@ margin-top: -23%;
   margin-left: 21%;
   margin-right: 21%;
   margin-bottom: 0;
-  font-size: 4vw;
   text-transform: lowercase;
-  line-height: 6vw;
   text-align: center;
 }
 #quoteFrom{
@@ -64,7 +62,6 @@ margin-top: -23%;
   color: white;
   margin-top: -10%;
   margin-bottom: 5%;
-  font-size: 3vw;
   text-transform: lowercase;
 }
 .pageintroh{
@@ -74,11 +71,9 @@ margin-top: -23%;
   margin-left:30% ;
   margin-right:30% ;
   margin-bottom: 0%;
-  font-size: 5vw;
   text-align: center;
 }
 .txtPageHeader {
-  font-size: 2.8vw;
   /*line-height: 200%;*/
   line-height: 4.8vw;
   position: relative;
@@ -129,7 +124,7 @@ text-align: justify;
 margin-bottom: 20%;
 }
 .txtPageHeader {
-  font-size: 1vw;
+
   line-height: 3vw;
 position: relative;
 margin-left: 15%;
@@ -146,7 +141,7 @@ width: 100%;
   margin-left: 25%;
   margin-right: 25%;
   margin-bottom: 0;
-  font-size: 2vw;
+
   text-transform: lowercase;
   line-height: 4vw;
   text-align: center;
@@ -155,7 +150,6 @@ width: 100%;
   color: #fec125;
   color:#00eeb9;
   margin-top: -7%;
-  font-size: 3vw;
   text-transform: lowercase;
 }
 .lineup {

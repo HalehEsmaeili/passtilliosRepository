@@ -114,17 +114,17 @@ const introTxt="Art is a superpower that speaks in its own language of colors, t
 }
 
 ]}/>
-<h1 className="h1-subthemes ">remember the painting I showed you in the home page?</h1>
+<h3 className="h1-subthemes ">remember the painting I showed you in the home page?</h3>
 <img className="pages-imgs " src={thePainting}></img>
 
-<h1 className="h1-subthemes ">what do I plan to do with it?</h1>
+<h3 className="h1-subthemes ">what do I plan to do with it?</h3>
 
 {(productImages && productImages.length>0)?
   <Slider images={productImages}/>
   :<div></div>
 }
 <div className="mappedContentContainer">
-<h1 className="mappedContentH">selling will open shortly before the campaign launch!</h1>
+<h3 className="mappedContentH">selling will open shortly before the campaign launch!</h3>
 <p className="mappedContentTxt">The money generated will be poured back into the project, fueling our journey to make even more extraordinary dreams a reality.
 
 Intrigued by the campaign? Dive deeper on the campaign page!</p>

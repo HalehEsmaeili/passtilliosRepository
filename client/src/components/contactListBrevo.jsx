@@ -419,13 +419,13 @@ const ContactList = () => {
 
         <div className="mb-3">
           {savedSuccessfully ? (
-            <h1 className="h3  fw-normal h1contact">
+            <h3 className="h3  fw-normal h2contact">
               only 1 last step left to do!{name ? name : ""}! 🎉🥳🍾
-            </h1>
+            </h3>
           ) : savingUnsuccessful ? (
-            <h1 className="h3  fw-normal h1contact">oooops!</h1>
+            <h3 className="fw-normal h1contact">oooops!</h3>
           ) : (
-            <h1 className="h3  fw-normal h1contact">join the contact list</h1>
+            <h3 className="fw-normal h1contact">join the contact list</h3>
           )}
         </div>
       </div>
@@ -744,7 +744,7 @@ const ContactList = () => {
               type="checkbox"
               style={{
                 color: "white",
-                width: "5%",
+                width: "10%",
                 position: "absolute",
                 display: "inline-block",
                 left: "5%",
@@ -762,22 +762,16 @@ const ContactList = () => {
             <img
               src={contactlistCanva}
               style={{
-                width: "10%",
+                width: "8%",
                 display: "inline-block",
-                padding: "0%",
-                top: "15%",
+                top: "2%",
                 left: "5%",
+                zIndex:-1,
                 position: "absolute",
               }}
             ></img>
             <p
-              style={{
-                width: "80%",
-                display: "inline-block",
-                marginLeft: "20%",
-                fontSize: "2vw",
-                lineHeight: "4vw",
-              }}
+              className="conditionsTxt"
             >
               I agree to join the Passtillios contact list 🤙, ensuring that I
               receive important project updates and timely calls to action. I
@@ -834,7 +828,7 @@ const ContactList = () => {
                 <img
                   src={brevoLogo}
                   style={{
-                    width: "7%",
+                    width: "5%",
                     display: "inline-block",
                     padding: "0%",
                     top: "15%",
@@ -845,13 +839,13 @@ const ContactList = () => {
                 <input
                   type="checkbox"
                   style={{
-                    color: "white",
-                    width: "5%",
-                    position: "absolute",
-                    display: "inline-block",
-                    left: "5%",
-                    top: "60%",
-                  }}
+                color: "white",
+                width: "10%",
+                position: "absolute",
+                display: "inline-block",
+                left: "5%",
+                top: "60%",
+              }}
                   value="1"
                   id="OPT_IN"
                   name="OPT_IN"
@@ -861,13 +855,7 @@ const ContactList = () => {
                   }}
                 />
                 <p
-                  style={{
-                    width: "80%",
-                    display: "inline-block",
-                    marginLeft: "20%",
-                    fontSize: "2vw",
-                    lineHeight: "4vw",
-                  }}
+                className="conditionsTxt"
                 >
                   Brevo is the platform where your information will be collected
                   and managed. By submitting this form you agree that the
@@ -924,6 +912,7 @@ const ContactList = () => {
                 marginBottom: "0%",
                 display: "inline-block",
                 overflow: "visible",
+          
               }}
               size="compact"
               sitekey={process.env.REACT_APP_SITE_KEY}

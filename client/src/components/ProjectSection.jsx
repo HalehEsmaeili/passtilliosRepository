@@ -938,8 +938,9 @@ How will your life look as a painting 60 years from now? Will it narrate a story
           alt="person talking"
         ></motion.img>
 
-        <div className="atATime">
-          {/**<h1 id="crazyProjectH">1 crazy project,</h1> */}
+<div className="atATime">
+          {/**   
+          <h1 id="crazyProjectH">1 crazy project,</h1> */}
           <motion.div animate={atATimeSlideControls} className="atATimeSlide">
             <motion.h1
               className="projectStatement"
@@ -963,7 +964,7 @@ How will your life look as a painting 60 years from now? Will it narrate a story
               initial={{ opacity: 1 }}
               animate={oneCrazyProject}
             >
-              1 crazy project,{" "}
+              1 crazy project,
             </motion.h1>
           </motion.div>
 
@@ -983,10 +984,10 @@ How will your life look as a painting 60 years from now? Will it narrate a story
         { image:'../public/images/colorSplash/11.png'},
       ]}/>
        <Carousel texts={['1 carzy project','2 carzy project','3 carzy project']}/>
-
+  
 
        */}
-        </div>
+       </div>
       </motion.div>
       {/**storytimeH */}
 

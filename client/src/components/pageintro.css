@@ -5,13 +5,13 @@
   
 }
 .pageintroh{
+
   opacity: 1;
   position: relative;
   margin-top: 0%;
   margin-left:30% ;
   margin-right:30% ;
-  margin-bottom: 0%;
-  font-size: 5vw;
+  margin-bottom: 0;
   text-align: center;
 }
 .magicContainer-pi {
@@ -21,7 +21,7 @@
     width:45%;
     margin-left: 27%;
     margin-right: 28%;
-    margin-bottom: -12%;
+    margin-bottom: -5%;
     display: grid;
     grid-template-areas: "headerPI headerPI" "magic1PI magic2PI";
   }
@@ -58,7 +58,6 @@ rotate:6deg;
     top: 0%;
     margin-left:30% ;
     margin-right:30% ;
-    font-size: 5.5vw;
     text-align: center;
   }
   .pageintroP{
@@ -68,9 +67,7 @@ rotate:6deg;
     margin-right:25% ;
     margin-top:5% ;
     margin-bottom:0% ;
-    font-size: 2.6vw;
     text-transform: lowercase;
-    line-height: 5vw;
     text-align: justify;
     /*color: #fec125;*/
   }
@@ -80,7 +77,6 @@ rotate:6deg;
     top: 0%;
     margin-left:30% ;
     margin-right:30% ;
-    font-size: 5.5vw;
     text-align: center;
   }
 
@@ -93,10 +89,20 @@ rotate:6deg;
     margin-right:25% ;
     margin-top:10% ;
     margin-bottom:0% ;
-    font-size: 1.6vw;
     text-transform: lowercase;
-    line-height: 5vw;
+   
   
     /*color: #fec125;*/
+  }
+  .magicContainer-pi {
+    overflow: visible;
+    position: relative;
+    margin-top: 0%;
+    width:30%;
+    margin-left: 35%;
+    margin-right: 28%;
+    margin-bottom: -9%;
+    display: grid;
+    grid-template-areas: "headerPI headerPI" "magic1PI magic2PI";
   }
 }

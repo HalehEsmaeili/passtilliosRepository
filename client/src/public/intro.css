@@ -1,46 +1,41 @@
-
 body {
   overflow-x: hidden;
   background-color: #090225;
- 
 }
 
 div {
-/*border: 1px solid pink;*/
+  /*border: 1px solid pink;*/
   min-height: auto;
   margin-bottom: 10%;
   z-index: 1;
   overflow: hidden;
 }
 h1 {
-  
   color: white;
   font-family: "Exo 2", sans-serif;
-  font-size: 5vw;
-  z-index: 3000;
-  line-height: 7.5vw;
   text-transform: uppercase;
 }
 
-.bufferForItIsDamnTime-beforClick{
+.bufferForItIsDamnTime-beforClick {
   overflow: visible;
   position: relative;
   margin-top: 20%;
-
-
 }
-.bufferForItIsDamnTime-afterClick{
+.bufferForItIsDamnTime-afterClick {
   overflow: visible;
   position: relative;
-  margin-top:70%;
+  margin-top: 75%;
 }
-#h1Intro{
-position: relative;
-  font-size: 5vw;
+#h1Intro {
+  position: relative;
+  margin-left: 12%;
+  margin-right: 12%;
 }
+/*
 .storytimeH{
   font-size: 2vw;
 }
+*/
 .GreyToBackGround {
   position: absolute;
   top: 0;
@@ -54,10 +49,9 @@ position: relative;
 
 p {
   color: white;
-  font-size: 3.5vw;
- 
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 7vw;
+  font-size: var(--fs-400);
+  line-height: var(--lh-400);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   text-align: justify;
 }
 .div0 {
@@ -77,9 +71,11 @@ p {
   margin-right: 98%;
   margin-left: 18%;
   margin-top: -20%;
-  /* border: 2px solid yellow;*/
-  font-size: 7vw;
-  line-height:10vw ;
+  /* 
+    border: 2px solid yellow;
+    font-size: 7vw;
+    line-height:10vw ;
+  */
 
   align-self: left;
 }
@@ -131,7 +127,7 @@ p {
 .colorSplash {
   margin-top: -34%;
   position: relative;
-z-index: 100000;
+  z-index: 100000;
 }
 
 .color-bubbles {
@@ -169,7 +165,6 @@ h1 {
 }
 .divProjectSection {
   overflow: visible;
- 
 }
 .div1 {
   position: auto;
@@ -260,7 +255,6 @@ h1 {
   left: 22%;
   top: 2%;
   z-index: 1000;
-
 }
 #greyDown3 {
   width: 70%;
@@ -271,12 +265,11 @@ h1 {
   z-index: 1000;
 }
 #greyDown2 {
-
   position: absolute;
   left: -40%;
   top: -20%;
   width: 90%;
-z-index:1;
+  z-index: 1;
 }
 #greySplashs {
   position: absolute;
@@ -301,7 +294,6 @@ z-index:1;
   justify-self: end;
 }
 .div2 {
- 
   margin-top: 5%;
   position: relative;
   display: grid;
@@ -392,7 +384,6 @@ z-index:1;
   z-index: 10;
 }
 
-
 #yourcolorsIMG {
   width: 68%;
 
@@ -424,7 +415,6 @@ z-index:1;
   right: -1vh;
   z-index: 1;
 }
-
 
 .section1 img {
   width: 70%;
@@ -471,7 +461,6 @@ z-index:1;
 }
 
 #rainbowStart {
-
 }
 #personNotTalking {
   opacity: 1;
@@ -479,7 +468,6 @@ z-index:1;
   right: 10vw;
 }
 .personNotTalking2 {
- 
   rotate: -1deg;
   position: absolute;
   opacity: 1;
@@ -487,11 +475,9 @@ z-index:1;
   opacity: 1;
   margin-top: 160%;
   width: 57%;
-  right:-80vw;
-  
+  right: -80vw;
 }
-.personNotMoving2{
-
+.personNotMoving2 {
   rotate: -1deg;
   position: absolute;
   opacity: 1;
@@ -499,8 +485,7 @@ z-index:1;
   opacity: 1;
   margin-top: 160%;
   width: 57%;
-  right:2vw;
-  
+  right: 2vw;
 }
 
 .col1 {
@@ -595,43 +580,39 @@ z-index:1;
 }
 
 .NextStepsContainer {
- /* border: 1px solid green;*/
+  /* border: 1px solid green;*/
   position: relative;
   padding-top: 0%;
   margin-top: 0;
   overflow: visible;
- 
 }
 .ArtOrPainting {
- /* border: 1px solid yellow;*/
- 
+  /* border: 1px solid yellow;*/
+
   padding-top: 5%;
   position: relative;
   overflow: visible;
   align-content: left;
-  
 }
-#fightH{
- 
+#fightH {
   text-transform: uppercase;
-  color:#00eeb9;
-  margin-top:3%;
-  margin-bottom:1%;
+  color: #00eeb9;
+  margin-top: 3%;
+  margin-bottom: 1%;
   font-size: 3vw;
   margin-right: 10%;
 }
-div{
+div {
   /* border: 2px solid yellow;*/
 }
-.storytime-title{
+.storytime-title {
   position: relative;
   overflow: visible;
   margin-top: 15%;
- margin-bottom: -2%;
+  margin-bottom: -2%;
   /* border: 2px solid yellow;*/
 }
 .grid-container {
-
   display: grid;
   grid-template-columns: auto;
   gap: 2vw;
@@ -674,15 +655,12 @@ div{
   position: absolute;
   left: 78%;
   display: block;
-  font-size: 6vw;
 }
 
 #firstSideText {
   top: -5%;
-  font-size: 8vw;
 }
 #secondSideText {
-  font-size: 4vw;
   top: 20%;
 }
 #thirdSideText {
@@ -691,14 +669,11 @@ div{
 #forthSideText {
   top: 36%;
   left: 79%;
-  font-size: 13vw;
   letter-spacing: 3vw;
 }
 #fifthSideText {
   top: 70%;
-  font-size: 7.1vw;
 }
-
 
 .div2Bubblecontainer {
   position: relative;
@@ -754,7 +729,6 @@ left:10%;
   opacity: 0;
   overflow: visible;
   /*min-height: 500px;*/
- 
 }
 .lastWordsTxt {
   position: absolute;
@@ -762,22 +736,19 @@ left:10%;
   top: 0%;
   left: 20%;
   right: 20%;
-  font-size: 3vw;
 }
-.secondGreyTxtp{
+.secondGreyTxtp {
   position: relative;
-margin-left: 20%;
-margin-right: 20%;
-font-size: 1.5vw;
-line-height: 3vw;
+  margin-left: 20%;
+  margin-right: 20%;
+
+  line-height: 3vw;
   margin-left: 20%;
   margin-right: 20%;
 }
-.greyTxt{
+.greyTxt {
   margin-left: 0%;
   margin-right: 0%;
-  font-size: 2.8vw; 
-  line-height: 5.2vw;
 }
 
 /*
@@ -842,12 +813,6 @@ line-height: 7vw;
 
   position: relative;
 }
-.rightSideText {
-  position: relative;
-  font-size: 3.5vw;
-  padding-top: 30%;
-  line-height: 7vw;
-}
 
 .containerTxt {
   margin-top: 0%;
@@ -874,6 +839,7 @@ line-height: 7vw;
   right: 35vw;
   position: absolute;
   rotate: 0deg;
+  font-size: 5.2vw;
   /* color:#00EEB9;*/
 }
 #painting {
@@ -922,7 +888,7 @@ line-height: 7vw;
   left:3.5%;
   top:5%;
   */
-
+  font-size: 5vw;
   rotate: 60deg;
 }
 #magnet {
@@ -947,7 +913,6 @@ line-height: 7vw;
   width: 54%;
 }
 
-
 .secondGreyHeader {
   text-align: center;
   text-transform: uppercase;
@@ -971,7 +936,6 @@ line-height: 7vw;
   opacity: 0;
   position: relative;
   overflow: visible;
-
 }
 .greyDivSvg {
   opacity: 0;
@@ -1002,21 +966,18 @@ line-height: 7vw;
   position: relative;
   width: 20%;
 }
-.nextstepDiv{
- 
+.nextstepDiv {
   position: relative;
   margin-top: 100%;
- margin-bottom: 0%;
+  margin-bottom: 0%;
   overflow: visible;
-max-height: fit-content;
-/*border: 5px solid green;*/
-  
+  max-height: fit-content;
+  /*border: 5px solid green;*/
 }
 .showMeActivationDiv {
   position: relative;
   overflow: visible;
   padding-bottom: 10%;
- 
 }
 
 #showMeImgLine {
@@ -1033,8 +994,6 @@ max-height: fit-content;
   margin-left: 12%;
   margin-right: 12%;
   text-align: center;
-  font-size: 7vw;
-  line-height: 12vw;
 }
 #showMeText {
   position: relative;
@@ -1045,9 +1004,9 @@ max-height: fit-content;
 
 #bobNextStep {
   position: relative;
-  top:0%;
- margin-left: 15%;
- margin-right: 15%;
+  top: 0%;
+  margin-left: 15%;
+  margin-right: 15%;
   width: 70%;
 }
 .onePainting {
@@ -1072,8 +1031,10 @@ max-height: fit-content;
   margin-bottom: 40%;
 }
 #campaignH {
-  font-size: 7vw;
-  line-height: 9.5vw;
+  /*
+  font-size: 5vw;
+  line-height: 8.5vw;
+  */
   text-align: left;
   margin-bottom: -25%;
   margin-right: 18%;
@@ -1081,10 +1042,10 @@ max-height: fit-content;
 }
 .tooFastH {
   position: relative;
-  margin-left: 37%;
-  margin-right: 37%;
+  margin-left: 38%;
+  margin-right: 38%;
   text-align: justify;
-  font-size: 2.5vw;
+  font-size: 2.1vw;
   margin-bottom: 20%;
   margin-top: 10%;
 }
@@ -1092,7 +1053,7 @@ max-height: fit-content;
   position: relative;
   margin-top: 35%;
   text-align: center;
-  font-size: 5vw;
+
   margin-bottom: 10%;
   margin-left: 32%;
   margin-right: 32%;
@@ -1100,14 +1061,14 @@ max-height: fit-content;
 #tooFast {
   margin-top: 35%;
   text-align: center;
-  font-size: 5vw;
+
   margin-bottom: 5%;
   margin-top: 60%;
 }
 
 #shit {
   text-align: center;
-  font-size: 9vw;
+
   margin-bottom: 5%;
 }
 .atATime {
@@ -1122,7 +1083,7 @@ max-height: fit-content;
   margin-bottom: 30%;
 }
 #crazyProjectH {
-  position: relative;
+  position: absolute;
   font-size: 4vw;
   top: -37%;
   right: 0;
@@ -1175,9 +1136,12 @@ max-height: fit-content;
 }
 .atATimeSlide {
   display: flex;
-  position: absolute;
+  position: relative;
+  /*
   top: -10%;
   left: -188%;
+  */
+  margin-left: 120%;
   z-index: 0;
   width: 100%;
   overflow: visible;
@@ -1196,33 +1160,37 @@ max-height: fit-content;
 }
 .projectStatement {
   /* border:3px solid #00EEB9;*/
-  position: relative;
+  position: absolute;
   z-index: 10000;
   display: flexbox;
   overflow: visible;
 }
 #AtATimeH {
-  padding-left: 10%;
-  margin-right: 50%;
-  margin-top: 40%;
-  font-size: 7vw;
+  left: -120%;
+  right: 50%;
+  top: 4vw;
+  padding-right: 100%;
+  padding-left: 20%;
+  font-size: 6vw;
   line-height: 9vw;
 }
 #countlessSharedMemoriesH {
-  padding-top: 32%;
-  margin-right: 12%;
-  margin-left: -40%;
-  padding-right: 0%;
+  top: 4.5vw;
+  right: 12%;
+  left: -50%;
+  padding-right: 80%;
+  padding-left: 10%;
 }
 #oneCrazyProjectH {
-  padding-left: 30%;
-  margin-top: 40%;
+  left: 80%;
+  top: 4vw;
   font-size: 5vw;
   line-height: 9vw;
+  padding-left: 10%;
 }
-#greyTitle{
+#greyTitle {
   display: inline-block;
-margin-left: 11%;
+  margin-left: 11%;
 }
 #onSvgtxt1 {
   background-color: #090225;
@@ -1244,31 +1212,16 @@ margin-left: 11%;
   position: relative;
 }
 
-
 @media screen and (min-width: 1000px) {
   /* Styles for screens with a minimum width of 1200 pixels */
-  
+
   h1 {
     color: white;
     font-family: "Exo 2", sans-serif;
-    font-size: 4vw;
     z-index: 3000;
-    font-size: 5.3vw;
     text-transform: uppercase;
   }
- 
-  
-  
-  
-  
-  p {
-    color: white;
-    font-size:1.6vw;
-    line-height: 4vw;
-    text-align: justify;
-  }
-  
- 
+
   .ArtOrPaintingTitle {
     position: relative;
     margin-bottom: 5%;
@@ -1279,29 +1232,21 @@ margin-left: 11%;
     display: inline-block;
     align-self: left;
   }
-  
+
   .lastWordsTxt {
     position: absolute;
     text-align: center;
     top: 0%;
     left: 20%;
     right: 20%;
-   
   }
-  
-  .rightSideText {
-    position: relative;
-    font-size: 3.5vw;
-    padding-top: 30%;
-    line-height: 7vw;
-  }
-  
+
   #life {
     position: relative;
     rotate: -30deg;
     font-size: 15vw;
   }
-  
+
   #painting {
     top: 2%;
     right: 5%;
@@ -1309,7 +1254,7 @@ margin-left: 11%;
     rotate: 0deg;
     font-size: 11vw;
   }
-  
+
   .secondGreyHeader {
     text-align: center;
     text-transform: uppercase;
@@ -1319,8 +1264,7 @@ margin-left: 11%;
     margin-right: 2%;
     margin-left: 2%;
   }
-  
-  
+
   #showMeHeader {
     position: relative;
     margin-top: 20%;
@@ -1330,7 +1274,7 @@ margin-left: 11%;
     font-size: 7vw;
     line-height: 12vw;
   }
-  
+
   #oneInOnePainting {
     rotate: 0deg;
     padding-right: 0vw;
@@ -1338,7 +1282,7 @@ margin-left: 11%;
     margin-top: -10%;
     font-size: 10vw;
   }
-  
+
   #campaignH {
     font-size: 10vh;
     line-height: 12.5vh;
@@ -1347,8 +1291,7 @@ margin-left: 11%;
     margin-right: 40%;
     margin-left: 27%;
   }
- 
-  
+
   #whatIHave {
     position: relative;
     margin-top: 35%;
@@ -1358,22 +1301,20 @@ margin-left: 11%;
     margin-left: 32%;
     margin-right: 32%;
   }
-  
-  
+
   #tooFast {
-  
     text-align: center;
     font-size: 2vw;
     margin-bottom: 10%;
     margin-top: 60%;
   }
-  
+
   #shit {
     text-align: center;
     font-size: 4vw;
     margin-bottom: 5%;
   }
-  
+
   #crazyProjectH {
     position: relative;
     font-size: 4vw;
@@ -1381,8 +1322,7 @@ margin-left: 11%;
     right: 0;
     left: -10%;
   }
-  
-  
+
   #sharedMemo {
     position: absolute;
     display: inline-block;
@@ -1391,14 +1331,14 @@ margin-left: 11%;
     left: 75%;
     font-size: 5vw;
   }
-  
+
   #atATime {
     position: relative;
     font-size: 5vw;
     margin-top: 63%;
     left: -9%;
   }
-  
+
   #countless {
     position: absolute;
     display: inline-block;
@@ -1407,7 +1347,7 @@ margin-left: 11%;
     left: 25%;
     font-size: 5vw;
   }
-  
+
   #memories {
     position: absolute;
     display: inline-block;
@@ -1416,7 +1356,7 @@ margin-left: 11%;
     left: 25%;
     font-size: 5vw;
   }
-  
+
   #AtATimeH {
     padding-left: 10%;
     margin-right: 50%;
@@ -1424,21 +1364,20 @@ margin-left: 11%;
     font-size: 7vw;
     line-height: 9vw;
   }
-  
- 
+
   #countlessSharedMemoriesH {
     padding-top: 32%;
     margin-right: 12%;
     margin-left: -40%;
     padding-right: 0%;
   }
-.greyTxt{
-  margin-left: 10%;
-  margin-right: 10%;
-  font-size: 1.6vw; 
-  line-height: 4vw;
-}
-/*
+  .greyTxt {
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size: 1.6vw;
+    line-height: 4vw;
+  }
+  /*
 #greyUP {
   position: absolute;
   opacity: 60%;
@@ -1463,38 +1402,38 @@ margin-left: 11%;
 }
 */
 
-.GridItemGreyTitle {
-  grid-area: header;
-  text-align: start;
-  margin-left: 10%;
-margin-right: 50%;
-  overflow: visible;
-}
-.div2 img{
-  width:20%;
-  padding: 11%;
-}
-.logoContainer{
-  width:10%
-}
-.schirm {
-  opacity: 0;
-  left: auto;
-  bottom: 0;
-  scale: 2;
-  transform-origin: bottom;
-  z-index: 1;
-}
-.logo {
-  position: absolute;
-  left: auto;
-  bottom: 0;
-  scale: 1;
-  transform-origin: center;
-  z-index: 100000;
-}
+  .GridItemGreyTitle {
+    grid-area: header;
+    text-align: start;
+    margin-left: 10%;
+    margin-right: 50%;
+    overflow: visible;
+  }
+  .div2 img {
+    width: 20%;
+    padding: 11%;
+  }
+  .logoContainer {
+    width: 10%;
+  }
+  .schirm {
+    opacity: 0;
+    left: auto;
+    bottom: 0;
+    scale: 2;
+    transform-origin: bottom;
+    z-index: 1;
+  }
+  .logo {
+    position: absolute;
+    left: auto;
+    bottom: 0;
+    scale: 1;
+    transform-origin: center;
+    z-index: 100000;
+  }
 
-/*
+  /*
 .container img {
   width: 40%;
 }
@@ -1537,29 +1476,27 @@ position: relative;
   left: -120%;
 }
 */
-#h1Intro{
-  position: relative;
-  width: 70%;
-  margin-top: 0%;
-  margin-right: 15%;
- margin-left: 15%;
- font-size: 3.2vw;
- line-height: 4.5vw;
-  
-}
-.webTxtP{
+  #h1Intro {
+    position: relative;
+    width: 70%;
+    margin-top: 0%;
+    margin-right: 15%;
+    margin-left: 15%;
+    font-size: 3.2vw;
+    line-height: 4.5vw;
+  }
+  .webTxtP {
+    font-size: 2vw;
+  }
+  .projectTxt {
+    /* border: 2px solid yellow;*/
+    font-size: 1.6vw;
+    line-height: 4vw;
+    position: relative;
+    margin-left: 20%;
+    margin-right: 20%;
 
-  font-size: 2vw;
-}
-.projectTxt {
-  /* border: 2px solid yellow;*/
-  font-size: 1.6vw; 
-  line-height: 4vw;
-  position: relative;
-  margin-left: 20%;
-  margin-right: 20%;
-
-  /* 
+    /* 
   .storytime-title{
 
   position:relative;
@@ -1569,69 +1506,63 @@ position: relative;
   border:10px solid red;
    Set the height of the grid to 100% of the parent container */
 
-  margin-top: 2%;
-  margin-bottom: 0;
-}
+    margin-top: 2%;
+    margin-bottom: 0;
+  }
 
+  .ArtOrPaintingTitle {
+    position: relative;
 
-.ArtOrPaintingTitle {
-  position: relative;
- 
-  margin-right: 98%;
-  margin-left: 18%;
-  margin-top: -20%;
-  /* border: 2px solid yellow;*/
-  font-size: 7vw;
-  line-height:10vw ;
-  align-self: left;
-}
-#greyTitle{
-  margin-left: 10%;
-}
+    margin-right: 98%;
+    margin-left: 18%;
+    margin-top: -20%;
+    /* border: 2px solid yellow;*/
+    font-size: 7vw;
+    line-height: 10vw;
+    align-self: left;
+  }
+  #greyTitle {
+    margin-left: 10%;
+  }
 
-.secondGreyHeader {
-  text-align: center;
-  text-transform: uppercase;
+  .secondGreyHeader {
+    text-align: center;
+    text-transform: uppercase;
 
-  font-size: 6vw;
-  line-height: 1vw;
-  display: inline-block;
-  margin-right: 2%;
-  margin-left: 5%;
-}
-.secondGreyHeaderContainer {
-  width:40%;
-  overflow: visible;
-  position: relative;
-  margin-left: 32%;
-  margin-right: 25%;
-  margin-bottom: 0;
-}
-.secondGreyTxtp{
-  position: relative;
+    font-size: 6vw;
+    line-height: 1vw;
+    display: inline-block;
+    margin-right: 2%;
+    margin-left: 5%;
+  }
+  .secondGreyHeaderContainer {
+    width: 40%;
+    overflow: visible;
+    position: relative;
+    margin-left: 32%;
+    margin-right: 25%;
+    margin-bottom: 0;
+  }
+  .secondGreyTxtp {
+    position: relative;
+  }
+  p {
+    font-size: 1.5vw;
+    line-height: 3vw;
+  }
+  .bufferForItIsDamnTime-afterClick {
+    margin-top: 0;
+  }
 
-}
-p{
-
-  font-size: 1.5vw;
-  line-height: 3vw;
-}
-.bufferForItIsDamnTime-afterClick{
-
-  margin-top:0;
-}
-
-/*TODO: next step component*/
-.nextstepDiv{
- width:60%;
- margin-left: 23%;
-  position: relative;
-  margin-top: 100%;
- margin-bottom: 0%;
-  overflow: visible;
-max-height: fit-content;
-/*border: 5px solid green;*/
-  
-}
-
+  /*TODO: next step component*/
+  .nextstepDiv {
+    width: 60%;
+    margin-left: 23%;
+    position: relative;
+    margin-top: 100%;
+    margin-bottom: 0%;
+    overflow: visible;
+    max-height: fit-content;
+    /*border: 5px solid green;*/
+  }
 }

@@ -62,12 +62,12 @@ element.style {
   background-color: var(--caption-background-color);
   padding: 5%;
   color: #fff;
-  font-weight: bold;
+ 
   transition: transform 0.425s cubic-bezier(0.05, 0.65, 0.1, 0.95), opacity 300ms ease-out;
   transform: translate3d(0, 0, 0);
   opacity: 1;
-  font-size: 2vw; 
-  line-height:4vw;
+  font-size:  var(--fs-300); 
+  line-height:var(--lh-300);
 }
 
 .awssld {
@@ -110,7 +110,7 @@ element.style {
 }
 @media (max-width: 600px){
 .awssld__content [data-type=caption] p {
-     font-size: 2vw; 
-    line-height:2.6vw;
+    
+  
 }
 }

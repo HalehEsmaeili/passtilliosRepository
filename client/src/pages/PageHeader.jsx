@@ -304,14 +304,14 @@ const bubbleAnimationControlsArray = [{
 </div>
 
 <h1 style={{fontSize:"12vw",color:"#fec125" ,marginLeft:"20%",marginBottom:"-5%"}}>“</h1>
-        <h1 className="h1PageHeader">
+        <h2 className="h1PageHeader">
       {splittedTxt.length>0? splittedTxt[0]:""}
-        </h1>
+        </h2>
        
         <h1 style={{fontSize:"12vw",color:"#fec125"  ,marginLeft:"74%",marginTop:"2%"}}>”</h1>
-        <h1 id="quoteFrom" className="h1PageHeader">
+        <h3 id="quoteFrom" className="h1PageHeader">
       {splittedTxt.length>0? splittedTxt[1]:""}
-        </h1>
+        </h3>
        { /*<p className="txtPageHeader" id="pageTxtP">
           it is about time to embrace the true charm of grey! lets step by step
           guide it back to being the background color; the perfect backdrop

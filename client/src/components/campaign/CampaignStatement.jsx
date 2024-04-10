@@ -139,16 +139,13 @@ function CampaignStatement(props) {
           try {
             // Other animation without await
             paintBrushControls.start({
-              left: ["-200%", "4%"],
-              top: ["3%", "0%"],
+              left: ["-200%", "4.5%","3%"],
+              top: ["3%", "10%","30%"],
               rotate: 90,
               transition: { type: "yoyo", stiffness: 70, duration: 0.4 },
             });
           } catch (error) {
-            console.error(
-              "An error occurred during handOfCanvasControls animation:",
-              error
-            );
+           
           }
 
           try {
@@ -160,10 +157,7 @@ function CampaignStatement(props) {
               transition: { duration: 0.3 },
             });
           } catch (error) {
-            console.error(
-              "An error occurred during handOfCanvasControls animation:",
-              error
-            );
+          
           }
 
           try {
@@ -183,8 +177,8 @@ function CampaignStatement(props) {
             // Other animation without await
             asAControls.start({
               opacity: 1,
-              right: ["-20vw", "-5vw"],
-              top: ["-8vw", "-.7vw"],
+              right: ["50%", "-19%"],
+              top: ["-8%", "14.5%"],
               rotate: 60,
               color: "#00EEB9",
               transition: { delay: 0.5, duration: 0.2 },
@@ -565,7 +559,9 @@ function CampaignStatement(props) {
         <motion.h1 id="painting" className="leftSideHeader">
           painting
         </motion.h1>
-        <motion.p class="rightSideText">
+        </div>
+        <div class="rightSideText" >
+        <motion.p >
           In 60 years, if a painting were to represent the life you lived up to
           that point, how would it look? Will it be a grey landscape telling a
           tale of vibrant hues slowly overshadowed by black and white? Aim high;

@@ -163,9 +163,7 @@ const Campaign = () => {
           <div className="iframe-container  roadmap-iframe-container ">
             <iframe
              className="cmplazyload"
-             
              data-cmp-preview="300x200"
-              
               data-cmp-src="https://www.youtube.com/embed/5f5TQZi5_08?si=mYcZfNPclVekAVCt"
               src="about:blank"     
               data-cmp-vendor="s30"

@@ -1,5 +1,6 @@
 .h1-subthemes{
-    font-size: 3vw;
+   
+
     text-align: center;
     margin-bottom: 5%;
     margin-top: 10%;
@@ -7,7 +8,7 @@
     margin-left: 30%;
 }
 .h1-leftAligned{
-    font-size: 2.9vw;
+  
     text-align: left;
     margin-bottom: 2%;
     margin-top: 0%;
@@ -23,8 +24,7 @@
     margin-left: 10%;
 }
 .txt{
-    font-size: 1.9vw;
-    line-height: 5vw;
+
 }
 
 .pages-imgs{
@@ -35,8 +35,8 @@
 .mappedContentContainer{
   
     position: relative;
-    margin-left: 20%;
-    margin-right: 20%;
+    margin-left: 10%;
+    margin-right: 10%;
     margin-bottom: 10%;
     display: flex;
     flex-direction:column;
@@ -49,15 +49,17 @@
         color:#00eeb9;
         color:#fec125;
         color:white;
-        font-size: 3.5vw;
-        line-height: 6vw;
+       
+     margin-left: 9%;
+     margin-right: 9%;
+
         display: inline-block;
         text-align: center;
     
     }
     .mappedContentTxt{
-        font-size: 1.9vw;
-        line-height: 5vw;
+      
+       
         display: inline-block;
         text-align: justify;
       
@@ -86,8 +88,7 @@
 @media screen and (min-width: 920px) {
 
     .h1-subthemes{
-        font-size: 2.2vw;
-        line-height: 4vw;
+       
         text-align: center;
         margin-bottom: 5%;
         margin-top: 5%;
@@ -99,10 +100,9 @@
     width:20%
 }
 .mappedContentTxt{
-    font-size: 1.5vw;
-    line-height: 5vw;
+   
     display: inline-block;
-    text-align: center;
+  
   
 }
 

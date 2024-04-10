@@ -58,7 +58,7 @@ import greyUP from "../public/images/greyDivGrey/2.png";
 import { useLanguageContext } from "../context/LanguageContext";
 function IntroParallax() {
   const { t } = useLanguageContext();
-  
+
   const [scrollToGreyActive, setScrollToGreyActive] = useState(false);
   const [scrollToNextStepsActive, setScrollToNextStepsActive] = useState(false);
   const [introAnimationComplete, setIntroAnimationComplete] = useState(false);
@@ -70,15 +70,10 @@ function IntroParallax() {
 
   const [startNextStepAnimation, setStartNextStepAnimation] = useState(false);
 
-  
-  
-
-  
-
   ///////////refs and useinview aniamtion set up
 
   const div0 = useRef(null);
-  const div2 = useRef(null);
+
   const div3 = useRef(null);
   const finalWordsDiv = useRef(null);
   const divNextSteps = useRef(null);
@@ -87,9 +82,6 @@ function IntroParallax() {
 
   const greydiv = useRef(null);
 
-  const campaignImgRef = useRef(null);
-
- 
   const magicContainerRef = useRef(null);
   const isInViewMagicContainerRef = useInView(magicContainerRef, {
     once: true,
@@ -165,48 +157,7 @@ function IntroParallax() {
   const[animateimg3,setimg3animate]=useState(false);
   */
 
-  const [headers, setHeaders] = useState(null);
-
-  const [headers2, setHeaders2] = useState(null);
-  const [texts2, setTexts2] = useState(null);
-
   //////////////////////animation functions
-
-  useEffect(() => {
-    /*
-    axiosInstance.get(`/api/content/sections/${1}/${2}`)
-      .then((response) => {
-        console.log("responsoe for grey");
-        console.log(response.data.sections);
-        //response.data.sections.section_title;
-        setHeaders(response.data.sections.header_contents);
-        setTexts(response.data.sections.text_contents);
-
-        //console.log(response.data.sections);
-        //setSectionData(response.data.sections);
-      })
-      .catch((error) => {
-        console.error("Error retrieving section data:", error);
-        // Handle error
-      });
-
-    ///fetch texts for the grey 2
-        // .get(`/api/content/sections/${1}/${3}`)
-    axiosInstance
-    .get(`/api/content/sections/intro/grey`)
-      .then((response) => {
-        console.log("responsoe for grey");
-        console.log(response.data.sections);
-        //response.data.sections.section_title;
-        setHeaders2(response.data.sections.header_contents);
-        setTexts2(response.data.sections.text_contents);
-      })
-      .catch((error) => {
-        console.error("Error retrieving section data:", error);
-        // Handle error
-      });
-      */
-  }, []);
 
   useEffect(() => {
     const svgLineAnim = async () => {
@@ -345,17 +296,6 @@ function IntroParallax() {
 
   const handleScrollToDivNext = (e) => {
     setScrollToNextStepsActive(true);
-    // Access the current property of the ref to get the DOM element
-    /*
-  const element = divNextSteps.current;
-
-  // Check if the element exists before scrolling
-  if (element) {
-    // Use the scrollIntoView method to scroll to the element
-    setTimeout(() => {
-      element.scrollIntoView({  behavior: 'smooth', block: 'center', inline: 'center',duration: 3000  });
-    },);
-  }*/
   };
 
   const handleScrollToDivgrey = (e) => {
@@ -378,9 +318,9 @@ function IntroParallax() {
       }, 0);
     }
   };
-  useEffect(()=>{
+  useEffect(() => {
     window.scrollTo(0, 0);
- },[]);
+  }, []);
   const { scrollYProgress: s } = useScroll();
   const { scrollYProgress: divFinalWordsScroll } = useScroll({
     target: finalWordsDiv,
@@ -499,7 +439,6 @@ function IntroParallax() {
       scrollToNextStepsActive &&
       !startNextStepAnimation
     ) {
-      console.log("im in setting it to true!!!!!!!!!!!!!!!");
       setStartNextStepAnimation(true);
     }
   }, [
@@ -827,9 +766,7 @@ function IntroParallax() {
         </div>
       </motion.div>
 
-      {/**
-<video id="yourcolorsVid"  autoplay="autoplay" muted loop> <source src={teamHeaderVid} type="image/gif"></source>  </video> 
-*/}
+  
 
       <CampaignStatement
         pageTitle="intro"
@@ -958,13 +895,7 @@ function IntroParallax() {
         {/*<div className="divGreyContent"></div>*/}
         {!scrollToGreyActive ? (
           <div>
-            {/**      <div >className="GridItemGreyTitle"     </div>*/}
-
-            {headers ? (
-              <h1 id="greyTitle">{headers[0]}</h1>
-            ) : (
-              <h1 id="greyTitle">THE GREY EPIDEMIC</h1>
-            )}
+            <h1 id="greyTitle">THE GREY EPIDEMIC</h1>
 
             <Slider
               images={[
@@ -1084,7 +1015,6 @@ function IntroParallax() {
         )}
       </motion.div>
       <div className="div2Bubblecontainer">
-      
         {scrollToGreyActive ? (
           <div className="logoSvgLineContainer" ref={finalWordsDiv}>
             <svg
@@ -1115,28 +1045,13 @@ function IntroParallax() {
                 </linearGradient>
               </defs>
             </svg>
-            {texts2 ? (
-              <p>{texts2[0]}</p>
-            ) : (
-              <p className="secondGreyTxtp">
-                Instead how about we embrace the true charm of grey? I believe
-                it's about time we guide it back to being the background color;
-                the perfect backdrop where vibrant and unique colors can take
-                the lead as the main storytellers in the painting of our lives!
-              </p>
-            )}
+
+            <p className="">{t("grey2.txt")}</p>
 
             <div className="passtilliosSvgContainer">
-              {headers2 ? (
-                <h1 id="onSvgtxt1">{headers2[0]}</h1>
-              ) : (
-                <h1 id="onSvgtxt1">but for this to work</h1>
-              )}
-              {headers2 ? (
-                <h1 id="onSvgtxt2">{headers2[1]}</h1>
-              ) : (
-                <h1 id="onSvgtxt2">we need to work together</h1>
-              )}
+              <h1 id="onSvgtxt1">{t("grey2.forThisToWork")}</h1>
+
+              <h1 id="onSvgtxt2">{t("grey2.weNeedTo")}</h1>
 
               <svg
                 className="logoSvgLine"
@@ -1210,7 +1125,7 @@ function IntroParallax() {
             position: "absolute",
             top: "600%",
             left: "100%",
-            zIndex: 20000,
+            zIndex: 2000,
           }}
           animate={b10Controls}
           className="bubbleDiv2"
@@ -1234,6 +1149,7 @@ function IntroParallax() {
             position: "absolute",
             top: "-1500%",
             left: "7%",
+            zIndex: 1,
           }}
           animate={b11Controls}
           className="bubbleDiv2"
