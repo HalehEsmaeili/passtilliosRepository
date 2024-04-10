@@ -255,7 +255,7 @@ useEffect(() => {
               transition: { duration: 0.5, type: "yoyo", ease: "easeIn" },
             });
             await atATimeSlideControls.start({
-              left: ["0%", "10%", "-188%"],
+              left: ["120%", "130%", "-70%"],
               transition: { duration: 0.7, type: "yoyo", ease: "easeIn" },
             });
             // await oneCrazyProject.start({opacity:1,transition:{duration:1.5,delay:.1}});
@@ -279,7 +279,7 @@ useEffect(() => {
               transition: { duration: 0.4, type: "yoyo", ease: "easeIn" },
             });
             await atATimeSlideControls.start({
-              left: ["-188%", "-73%"],
+              left: ["-70%", "50%"],
               transition: { duration: 0.5, type: "yoyo", ease: "easeIn" },
             });
 
@@ -302,7 +302,7 @@ useEffect(() => {
             controlsMemories.start({ opacity: 0, transition: { duration: 1 } });
 
             await atATimeSlideControls.start({
-              left: ["-73%", "0%"],
+              left: ["50%", "120%"],
               transition: { duration: 0.5, type: "yoyo", ease: "easeIn" },
             });
 

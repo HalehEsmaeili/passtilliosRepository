@@ -1093,9 +1093,9 @@ line-height: 7vw;
   position: absolute;
   display: inline-block;
   text-align: left;
-
   top: 10%;
   left: 75%;
+  top:8vw;
   font-size: 5vw;
 }
 #atATime {
@@ -1141,7 +1141,8 @@ line-height: 7vw;
   top: -10%;
   left: -188%;
   */
-  margin-left: 120%;
+  left:-70%;
+ 
   z-index: 0;
   width: 100%;
   overflow: visible;
@@ -1175,11 +1176,12 @@ line-height: 7vw;
   line-height: 9vw;
 }
 #countlessSharedMemoriesH {
-  top: 4.5vw;
+  top: 4vw;
   right: 12%;
   left: -50%;
   padding-right: 80%;
   padding-left: 10%;
+  font-size:4.5vw;
 }
 #oneCrazyProjectH {
   left: 80%;
