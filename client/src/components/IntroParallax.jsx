@@ -18,7 +18,8 @@ import {
 //import Highlighted from "../components/Highlighted.js";
 //import useWindowDimensions from "./useWindowDimensions.js";
 import logo from "../public/images/logo.png";
-
+import imgOfMe from "../public/images/Intro/myimg.png";
+import sonne from "../public/images/Intro/sonneBG.gif";
 /////your life as a painting
 
 /////bubbles for lets go
@@ -41,6 +42,7 @@ import bubble5 from "../public/images/EmptyBubbles/5.png";
 import splash1 from "../public/images/colorSplash/9.png";
 import splash2 from "../public/images/colorSplash/5.png";
 import splash3 from "../public/images/colorSplash/11.png";
+import myIntroSplash from "../public/images/colorSplash/12.png";
 import splash4 from "../public/images/colorSplash/12.png";
 import splash5 from "../public/images/colorSplash/13.png";
 
@@ -81,7 +83,7 @@ function IntroParallax() {
   const isInViewdivNextStep = useInView(divNextSteps, { amount: 0.7 });
 
   const greydiv = useRef(null);
-
+  const myintroSection=useRef(null);
   const magicContainerRef = useRef(null);
   const isInViewMagicContainerRef = useInView(magicContainerRef, {
     once: true,
@@ -94,6 +96,7 @@ function IntroParallax() {
   //const isInViewDivGrey=useInView(greydiv, {once:true});
 
   const isInViewdiv3 = useInView(div3, { once: true, amount: 0.8 });
+ const isInViewMyIntroSection= useInView(myintroSection, { once: true, amount: 0.3 });
 
   //const [isHovered,handleHover]=useHover();
   ///////dont let grey take over
@@ -108,7 +111,11 @@ function IntroParallax() {
   const greyCloudDownControl = useAnimationControls();
   const introLogoControl = useAnimationControls();
   const greyToAnimate = useAnimationControls();
-
+  const myIntroGreyCloudDownControl= useAnimationControls();
+  const myintroBubbleEmptyControls= useAnimationControls();
+  const myintroBubblesplashControls= useAnimationControls();
+  const myIntroBubbleControls= useAnimationControls();
+  const myIntroGreyControl= useAnimationControls();
   ////bubble attack
 
   const splash1Controls = useAnimationControls();
@@ -434,6 +441,60 @@ function IntroParallax() {
   }, [isInViewGreyTxt, introAnimationComplete, greyScrolled]);
 
   useEffect(() => {
+    const myIntroGreyAnim = async () => {
+      try {
+        myIntroGreyCloudDownControl.start({
+       
+          x: "-40%",
+          y: "22%",
+          rotate: 10,
+          scale: 1.2,
+        
+
+          transition: { duration: 2 },
+        });
+        myIntroGreyControl.start({
+          x: "-20%",
+          y: "1%",
+          rotate: -67,
+          opacity: 0.5,
+          scale: 1.7,
+
+          transition: { duration: 2.5 },
+        });
+        ;
+       /*   */
+        await myIntroBubbleControls.start({
+          left: "71%",
+          top: "88%",
+          zIndex:1,
+          rotate:40,
+          transition: { stiffness: 20, duration: 4 },
+        });
+     
+
+        myintroBubbleEmptyControls.start({
+          scale: 6,
+          opacity: 0,
+          transition: { duration: 0.1 },
+        });
+
+        await myintroBubblesplashControls.start({ scale: 3, transition: {delay:-1} });
+        dontAnim.start({ opacity: 1 });
+
+      
+      } catch {}
+    };
+
+    if (isInViewMyIntroSection ) {
+      setGreyContentVisible(true);
+      myIntroGreyAnim();
+    }
+  }, [isInViewMyIntroSection]);
+
+
+
+  useEffect(() => {
     if (
       isInViewdivNextStep &&
       scrollToNextStepsActive &&
@@ -516,7 +577,7 @@ function IntroParallax() {
           ///colorful bubblessss animation
 
           b2Controls.start({
-            top: "-100%",
+            top: "-300%",
             left: "70%",
             transition: { type: "spring", stiffness: 22, duration: 0.2 },
           }),
@@ -774,7 +835,56 @@ function IntroParallax() {
         pageId={1}
         sectionId={1}
       />
+{/**intro to me */}
+<div className="divMyIntro">
+<div ref={myintroSection} className="divMyIntro" >
+<img id="myImg" src={imgOfMe}></img>
+<img id="sonne" src={sonne} />
 
+<motion.img
+         
+         id="greyInMyIntro"
+          src={greyDown}
+          alt="grey cloud"
+          animate={myIntroGreyControl}
+        ></motion.img>
+        <motion.img
+          id="greyInMyIntrofront"
+          src={greyUP}
+          alt="grey cloud"
+          animate={myIntroGreyCloudDownControl}
+        ></motion.img>
+        <motion.img
+          id="grey2InMyIntro"
+          src={greyUP}
+          alt="grey cloud"
+          animate={myIntroGreyCloudDownControl}
+        ></motion.img>
+        <motion.div initial={{width:"35%",top:"300%"}} className="bubbleContainerGrey" animate={myIntroBubbleControls}>
+          <motion.img
+            className="emptyBubble"
+            animate={myintroBubbleEmptyControls}
+            src={bubble2}
+            alt=""
+          ></motion.img>
+          <motion.img
+            className="colorSplash"
+            initial={{ zIndex: 1, scale: 0.7, opacity: 0.8 }}
+            animate={myintroBubblesplashControls}
+            src={myIntroSplash}
+            alt="colorSplash"
+          ></motion.img>
+        </motion.div>
+
+<h1 id="myintroh1">the "AND?" story..</h1>
+</div>
+
+<div className="myintroTxts">
+<p>{t("into.myintro.txt1")}</p>
+</div>
+
+
+</div>
       <motion.div className="divGrey" ref={greydiv}>
         <motion.div className="bubbleContainerGrey" animate={b1Controls}>
           <motion.img
@@ -893,7 +1003,9 @@ function IntroParallax() {
           animate={greyCloudDownControl}
         ></motion.img>
         {/*<div className="divGreyContent"></div>*/}
-        {!scrollToGreyActive ? (
+       
+       
+     {!scrollToGreyActive ? (
           <div>
             <h1 id="greyTitle">THE GREY EPIDEMIC</h1>
 

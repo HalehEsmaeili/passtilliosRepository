@@ -31,9 +31,7 @@ import cloudOutCanvas from "../../public/images/yourLifeAsAPainting/cloud.png";
 import arrow from "../../public/images/campaign/arrow.png";
 
 function CampaignStatement(props) {
-  const text =
-    "Imagine a world painted only in shades of gray, where only black and white call the shots. It's a place without the cozy warmth of lively colors.In this imaginary place, our eyes reveal emptiness, echoing the loneliness inside. The once-fiery passion in hearts, eager to use their unique colors to make a beautiful difference on our collective canvas of life, now flickers, struggling to survive in a world that only wants us to be either black or white.Creativity and inspiration take a backseat. Life in this gray and expected canvas feels like a broken record, missing the beat of unpredictability that makes it exciting and dance-worthy!";
-
+ 
   ///////////refs  und is in view
 
   const magicContainerRef = useRef(null);

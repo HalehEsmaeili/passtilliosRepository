@@ -1190,6 +1190,66 @@ line-height: 7vw;
   line-height: 9vw;
   padding-left: 10%;
 }
+#myImg{
+position: relative;
+margin-top: 0%;
+margin-left: 40%;
+width:90%;
+rotate:0deg
+}
+#greyInMyIntro{
+  position: absolute;
+  left:84%;
+  top:50%;
+  width:20%;
+  z-index: -1;
+
+ 
+}
+#grey2InMyIntro{
+  position: absolute;
+  left:57%;
+  top:35%;
+  width:30%;
+  z-index: -1;
+  opacity: .7;
+}
+#greyInMyIntrofront{
+  position: absolute;
+  left:67%;
+  top:46%;
+  width:27%;
+  z-index: 0;
+ rotate:-10deg;
+ opacity: 0.4;
+}
+#sonne{
+  position: absolute;
+  top:20%;
+  left:45%;
+  width:47%;
+  z-index: -1;
+}
+#myintroh1{
+  position: absolute;
+  top:45%;
+  left:15%;
+  right:70%;
+  font-size: var(--fs-700);
+}
+.divMyIntro{
+  width:100%;
+  position: relative;
+overflow: visible;
+margin-top:-20%;
+margin-bottom: 0;
+}
+.myintroTxts{
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: -10%;
+  margin-bottom: 30%;
+}
 #greyTitle {
   display: inline-block;
   margin-left: 11%;

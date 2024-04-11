@@ -1,9 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.752439db.css",
-    "main.js": "/static/js/main.eb96e647.js",
+    "main.css": "/static/css/main.0480206c.css",
+    "main.js": "/static/js/main.e89f5574.js",
     "static/js/651.47184ffe.chunk.js": "/static/js/651.47184ffe.chunk.js",
     "static/media/yourcolors.gif": "/static/media/yourcolors.24f54106c2588d4ae63e.gif",
+    "static/media/sonneBG.gif": "/static/media/sonneBG.fe839119fb42d9d06d36.gif",
     "static/media/1.png": "/static/media/1.6efa4fc6f70ec38e3a7f.png",
     "static/media/3.png": "/static/media/3.d6fd2388739f08c07634.png",
     "static/media/2.png": "/static/media/2.2cd2b37f789dd6d45418.png",
@@ -26,6 +27,7 @@
     "static/media/43.png": "/static/media/43.ceb6260911ccb234f2ea.png",
     "static/media/fa-solid-900.ttf": "/static/media/fa-solid-900.45a265d0f07b31cde85f.ttf",
     "static/media/paintsplashReal.png": "/static/media/paintsplashReal.06ad8c5c3ca9b03c1fdd.png",
+    "static/media/myimg.png": "/static/media/myimg.28a51bd37d58b212878a.png",
     "static/media/wtf.png": "/static/media/wtf.7acf4a7bc0bf25986f87.png",
     "static/media/colorRevelation.png": "/static/media/colorRevelation.0869797b594facabe1e2.png",
     "static/media/hand.png": "/static/media/hand.f2c86fc48c8ba9a3bb03.png",
@@ -56,12 +58,12 @@
     "static/media/fa-v4compatibility.ttf": "/static/media/fa-v4compatibility.2eb7b3ef25042305f3ff.ttf",
     "static/media/fa-v4compatibility.woff2": "/static/media/fa-v4compatibility.b3049b13a93f07e026fc.woff2",
     "index.html": "/index.html",
-    "main.752439db.css.map": "/static/css/main.752439db.css.map",
-    "main.eb96e647.js.map": "/static/js/main.eb96e647.js.map",
+    "main.0480206c.css.map": "/static/css/main.0480206c.css.map",
+    "main.e89f5574.js.map": "/static/js/main.e89f5574.js.map",
     "651.47184ffe.chunk.js.map": "/static/js/651.47184ffe.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.752439db.css",
-    "static/js/main.eb96e647.js"
+    "static/css/main.0480206c.css",
+    "static/js/main.e89f5574.js"
   ]
 }

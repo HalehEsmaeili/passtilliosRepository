@@ -3,6 +3,7 @@ import { useLanguageContext } from "../context/LanguageContext";
 import axiosInstance from "../Api/axiosInstance";
 import "../public/intro.css";
 import Slider from "./Slider.jsx";
+//import stars from "../public/images/Intro/stars.gif";
 //1901 change the h1s positioning css.
 //the local deployment works with serve,but with heroku not yet
 //heroku logs --tail -a passtilliostest1
@@ -657,16 +658,18 @@ useEffect(()=>{
 
   return (
     <div className="divProjectSection">
+   {/* <img style={{width:"100%",left:0,top:"30%",position:"absolute"}} src={stars}></img>*/}
       <div className="divForLogoContainer">
         {/**
 <motion.video ref={whatPaintingRef}  muted  id="personNotTalking2" initial={{opacity:0}} animate={controlsSecondPerson}    >
 
  <source src={whatpaintingsVid} type="video/mp4"></source>
-
+import sonne from "../public/images/Intro/sonneBG.gif";
 
 
 </motion.video>
  */}
+
 
         <motion.img
           src={bobpng}
