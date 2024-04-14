@@ -20,6 +20,8 @@ import {
 import logo from "../public/images/logo.png";
 import imgOfMe from "../public/images/Intro/myimg.png";
 import sonne from "../public/images/Intro/sonneBG.gif";
+
+
 /////your life as a painting
 
 /////bubbles for lets go
@@ -96,7 +98,7 @@ function IntroParallax() {
   //const isInViewDivGrey=useInView(greydiv, {once:true});
 
   const isInViewdiv3 = useInView(div3, { once: true, amount: 0.8 });
- const isInViewMyIntroSection= useInView(myintroSection, { once: true, amount: 0.3 });
+ const isInViewMyIntroSection= useInView(myintroSection, { once: true, amount: 0.7 });
 
   //const [isHovered,handleHover]=useHover();
   ///////dont let grey take over
@@ -116,6 +118,7 @@ function IntroParallax() {
   const myintroBubblesplashControls= useAnimationControls();
   const myIntroBubbleControls= useAnimationControls();
   const myIntroGreyControl= useAnimationControls();
+  const myImgControl= useAnimationControls();
   ////bubble attack
 
   const splash1Controls = useAnimationControls();
@@ -446,30 +449,33 @@ function IntroParallax() {
         myIntroGreyCloudDownControl.start({
        
           x: "-40%",
-          y: "22%",
+          //y: "22%",
           rotate: 10,
           scale: 1.2,
         
 
           transition: { duration: 2 },
         });
-        myIntroGreyControl.start({
+       myIntroGreyControl.start({
           x: "-20%",
-          y: "1%",
+         // y: "1%",
           rotate: -67,
           opacity: 0.5,
           scale: 1.7,
 
-          transition: { duration: 2.5 },
+          transition: { duration: 1.5 },
         });
-        ;
+      /* myImgControl.start({
+       //left: ["60%","46%","49%"],
+       //scale:[.6,1] , 
+       opacity:1 , transition: { delay:2.4,duration:.2,stiffness:100}});
        /*   */
-        await myIntroBubbleControls.start({
-          left: "71%",
-          top: "88%",
+ await myIntroBubbleControls.start({
+          left: "64%",
+          top: "100%",
           zIndex:1,
-          rotate:40,
-          transition: { stiffness: 20, duration: 4 },
+          rotate:60,
+          transition: { stiffness: 25, duration: 3 },
         });
      
 
@@ -479,7 +485,7 @@ function IntroParallax() {
           transition: { duration: 0.1 },
         });
 
-        await myintroBubblesplashControls.start({ scale: 3, transition: {delay:-1} });
+        await myintroBubblesplashControls.start({ scale: 4.5, transition: {delay:-1} });
         dontAnim.start({ opacity: 1 });
 
       
@@ -487,7 +493,7 @@ function IntroParallax() {
     };
 
     if (isInViewMyIntroSection ) {
-      setGreyContentVisible(true);
+   
       myIntroGreyAnim();
     }
   }, [isInViewMyIntroSection]);
@@ -838,7 +844,7 @@ function IntroParallax() {
 {/**intro to me */}
 <div className="divMyIntro">
 <div ref={myintroSection} className="divMyIntro" >
-<img id="myImg" src={imgOfMe}></img>
+<motion.img animate={myImgControl} id="myImg" src={imgOfMe}></motion.img>
 <img id="sonne" src={sonne} />
 
 <motion.img
@@ -860,7 +866,7 @@ function IntroParallax() {
           alt="grey cloud"
           animate={myIntroGreyCloudDownControl}
         ></motion.img>
-        <motion.div initial={{width:"35%",top:"300%"}} className="bubbleContainerGrey" animate={myIntroBubbleControls}>
+        <motion.div initial={{width:"55%",left:"160%",top:"300%"}} className="bubbleContainerGrey" animate={myIntroBubbleControls}>
           <motion.img
             className="emptyBubble"
             animate={myintroBubbleEmptyControls}
@@ -876,7 +882,7 @@ function IntroParallax() {
           ></motion.img>
         </motion.div>
 
-<h1 id="myintroh1">the "AND?" story..</h1>
+<h1 id="myintroh1">AND ??? ???...</h1>
 </div>
 
 <div className="myintroTxts">
@@ -1013,33 +1019,33 @@ function IntroParallax() {
               images={[
                 {
                   url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/intro/grey1/slideshow/1.png",
-                  caption: "",
+                  caption: t("intro.greyEpidemy.slideshow.caption.1"),
                 },
                 {
                   url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/intro/grey1/slideshow/2.png",
                   caption:
-                    "I wish something can break through to you and play the reminder in that very moment! that even the greyness surrounding you, resisting your bold, vibrant colors, will one day realize it needed them all along",
+                  t("intro.greyEpidemy.slideshow.caption.2"),
                 },
                 {
                   url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/intro/grey1/slideshow/3.png",
                   caption:
-                    "cause remember, even the color grey looks its best when paired with bright colors!",
+                  t("intro.greyEpidemy.slideshow.caption.3"),
                 },
                 {
                   url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/intro/grey1/slideshow/4.png",
                   caption:
-                    "so dont give in to the greyness of your surroundings instead help inspire your grey surrounding with your unique colors!",
+                  t("intro.greyEpidemy.slideshow.caption.4"),
                 },
 
                 {
                   url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/intro/grey1/slideshow/5.png",
                   caption:
-                    "I have managed to keep my true colors alive one painting at a time! now I wonder if these paintings have the potential to be that reminder for someone out there...",
+                  t("intro.greyEpidemy.slideshow.caption.5"),
                 },
                 {
                   url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/intro/grey1/slideshow/6.png",
                   caption:
-                    "I have managed to keep my true colors alive one painting at a time! now I wonder if these paintings have the potential to be that reminder for someone out there...",
+                  t("intro.greyEpidemy.slideshow.caption.6"),
                 },
               ]}
             />
@@ -1259,9 +1265,10 @@ function IntroParallax() {
           initial={{
             display: "inlineBlock",
             position: "absolute",
-            top: "-1500%",
-            left: "7%",
+            top: "-1900%",
+            left: "15%",
             zIndex: 1,
+            width:"80%"
           }}
           animate={b11Controls}
           className="bubbleDiv2"

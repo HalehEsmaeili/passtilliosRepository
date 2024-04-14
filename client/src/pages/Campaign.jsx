@@ -115,7 +115,7 @@ const Campaign = () => {
           ]}
         />
         <h1 className="h1-shareMyDream">
-          Now, let me "Walk it like I Talk it" !
+          Now, time to "Walk IT like I Talk IT" !
         </h1>
         <img
           style={{
@@ -128,9 +128,9 @@ const Campaign = () => {
         ></img>
 
         <p className="p-shareMyDream">
-          I mean practice what you preach right? so to kick things into high
-          gear and set the stage for you to share your own versions of "daringly
-          naive dreams," let me whisk you away into my world first!
+          I mean practice what you preach right? so to kick things off
+           and set the stage and warm you up to the idea of sharing your own versions of "daringly
+          naive dreams," let me talk you into my world first!
         </p>
 
         <h1 id="roadmapstartTxt">
@@ -176,30 +176,29 @@ const Campaign = () => {
           </div>
           {/* <h1 id="roadmap-h1-persian" className="h1-roadmap" >the Persian New Year and I watched this video on TV... </h1>*/}
 
-          <h1 id="roadmap-h1-buzzing" className="roadmap-h1-subthemes">
+          <p id="roadmap-h1-buzzing" className="roadmap-h1-subthemes">
             {" "}
             here's what's buzzing around my brain as I am watching this video
-          </h1>
+          </p>
 
-          <p id="roadmapTxt1" className="roadmapTxt">
+          {/*<p id="roadmapTxt1" className="roadmapTxt">
             Wouldn't it be cool to pull off something like this with my future
             uni pals? And hey, why not spread the fun? What if we got other
             colleges, even from around the globe, to join in and make their own
             versions?
-          </p>
+          </p>*/}
           <p id="roadmapTxt2" className="roadmapTxt">
-            Then, we could let people vote on the best one, and ta-da! The
-            winning gang bags an awesome week-long trip, bonding and making
-            memories along the way. But, how on earth would we pay for it? Maybe
-            we could snag some sponsorships from a company or an investor. But
-            hey, let's not get too carried away. It's a bit childish.
+          Wouldn't it be insanely cool to bring this vibe to uni campuses worldwide? Imagine reaching out to other universities and getting them excited about a global uni-challenge, each creating their own awesome remix music videos. We turn it into this fun 
+ competition, with the top video winning an epic week-long adventure and some cash on the side. Just think about all the connections and memories we'd make!
+
+But hey, How on earth would I even fund this? Maybe I could secure some sponsorships or get some investors interested? Still, gotta keep it real. Handling something this huge? only the big boys can pull off something like this... And I definitely don't want to come off as a naive dreamer, you know?
           </p>
-          <h1 id="h1-dismissed" className="h1-leftAligned">
+          <p id="h1-dismissed" className="h1-leftAligned">
             so just like that I dismissed that dream.
-          </h1>
-          <h1 id="roadmap-h1-4years" className="h1-leftAligned">
+          </p>
+          <p id="roadmap-h1-4years" className="h1-leftAligned">
             4 years after that I came across this video...
-          </h1>
+          </p>
 
           <div
             id="roadmap-iframe-container2"
@@ -220,30 +219,30 @@ const Campaign = () => {
             ></iframe>
           </div>
 
-          <h1 id="roadmap-h1-realization" className="h1-roadmap">
-            Through this video, I realized two things. 1.the power of just
-            asking!
-          </h1>
-          <h1 id="roadmap-h1-realization1" className="h1-roadmap"></h1>
-          <h1 id="roadmap-h1-realization2" className="h1-roadmap">
-            1.how making dreams come true together with others is the key to
-            creating communities capable of the miraculous!
-          </h1>
-          <h1 id="roadmap-h1-resurface" className="h1-roadmap">
+          <p id="roadmap-h1-realization" className="h1-roadmap">
+            Through this video, I realized two things. 1.you never know!
+            just ask and dee what happens!
+          </p>
+          <p id="roadmap-h1-realization1" className="h1-roadmap"></p>
+          <p id="roadmap-h1-realization2" className="h1-roadmap">
+            2. making dreams come true together with others is the key to
+            creating communities capable of the miraculous! and how much I crave a magical community like that.
+          </p>
+          <p id="roadmap-h1-resurface" className="h1-roadmap">
             Then, I dared to resurface my "childish weird" dream again!
-          </h1>
+          </p>
 
-          <h1 id="roadmap-h1-building" className="h1-roadmap">
-            But this time, I started seriously building on that childish dream
-          </h1>
-          <h1 id="roadmap-h1-project" className="h1-roadmap">
+          <p id="roadmap-h1-building" className="h1-roadmap">
+            But this time, I started seriously building around that childish dream
+          </p>
+          <p id="roadmap-h1-project" className="h1-roadmap">
             and the result is the project you see in front of you!
-          </h1>
+          </p>
 
-          <h1 id="roadmap-h1-slideshow" className="h1-roadmap">
+          <p id="roadmap-h1-slideshow" className="h1-roadmap">
             Now, here's a slideshow on why you should help make this childish
             dream come true...
-          </h1>
+          </p>
         </div>
 
         <Slider

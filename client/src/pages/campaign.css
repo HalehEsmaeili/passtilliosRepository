@@ -4,8 +4,7 @@
     margin-bottom: 5%;
     margin-right: 20%;
     margin-left: 20%;
-    font-size: 1.8vw;
-    line-height: 200%;
+   
     position: absolute;
   top: 15.5%;
   left: -3%;
@@ -19,9 +18,10 @@
   right:0%;
 }
 #roadmapTxt2{
-   
+   font-size: 1.7vw;
     position: absolute;
-  top: 18.4%;
+    padding: 1%;
+  top: 15.5%;
   left: 0%;
   right:0%;
 }
@@ -31,9 +31,9 @@
     padding-right: 1.5%;
       border-top-left-radius: 10%;
       border-top-right-radius: 10%;
-    top:-0.3%;
+    top:-2%;
     left: -20%;
-    right:28%;
+    right:30%;
    padding-bottom: 1.5%;
    text-align: center;
    
@@ -43,7 +43,7 @@
     border-top: 3px solid #ee00d6 ;
     background-color: #090225;
     position: absolute;
-    top: 24.5%;
+    top: 25.5%;
     left: 30%;
     right:13%;
     text-align: center;
@@ -85,7 +85,7 @@ left:30%
   box-sizing: border-box;
 
     border-radius: 10%;
-    font-size: 2.9vw;
+  
     text-align: center;
     position: absolute;
     background-color: #090225;
@@ -149,7 +149,7 @@ left:30%
     margin-left: 30%;
     margin-right: 30%;
     text-align: center;
-    font-size: 3.5vw;
+   
 }
 #roadmap-h1-project{
     border-top: 3px solid #ee00d6 ;
@@ -178,7 +178,7 @@ left:30%
     left: 30%;
     right:30%;
     top: 1%;
-    font-size: 1.7vw;
+  
 }
 
 
@@ -193,7 +193,7 @@ left:30%
 
 .roadmap-h1-subthemes{
     background-color: #090225;
-    font-size: 2.2vw;
+  
 
     text-align: left;
     margin-bottom: 5%;
@@ -207,7 +207,7 @@ left:30%
 
 }
 .roadmap-h1-leftAligned{
-    font-size: 2.9vw;
+
     text-align: left;
     margin-bottom: 2%;
     margin-top: 0%;
@@ -243,8 +243,8 @@ left:30%
     margin-top: 4%; 
     margin-left: 30%;
     margin-right: 30%;
-    font-size: 2.7vw;
-    line-height: 5vw;
+  
+
 
    
   }
@@ -253,8 +253,7 @@ left:30%
     margin-top: 5%; 
     margin-left: 30%;
     margin-right: 30%;
-    font-size: 4vw;
-    line-height: 8vw;
+   
 text-align: center;
    
   }

@@ -29,11 +29,13 @@ import handOfCanvas from "../../public/images/yourLifeAsAPainting/hand.png";
 import cloudOutCanvas from "../../public/images/yourLifeAsAPainting/cloud.png";
 //campaign
 import arrow from "../../public/images/campaign/arrow.png";
-
+import { useLanguageContext } from "../../context/LanguageContext";
+ 
 function CampaignStatement(props) {
  
   ///////////refs  und is in view
-
+  
+    const { t } = useLanguageContext();
   const magicContainerRef = useRef(null);
   const isInViewMagicContainerRef = useInView(magicContainerRef, {
     once: true,
@@ -277,7 +279,7 @@ function CampaignStatement(props) {
         <div className="videoContanier">
           {/*<video  id="parazitVid" autoplay="autoplay" muted loop> <source src={parazzit} type="video/mp4"></source>
   </video>*/}
-          <h1 className="centerH">I'm a sucker for certain kind of stories!</h1>
+          <h1 className="centerH">{t("intro.section1.h1.sucker")}</h1>
         </div>
         {/*
       <h1 className="centerH" >
@@ -289,29 +291,16 @@ function CampaignStatement(props) {
 */}
 
         <p className="meetPasstilliosTxt">
-          Stories where seemingly regular, ordinary folks come together and
-          manage to create something extraordinary, especially against all odds?
-          Oh boy, that just tugs at my heartstrings! Whether it's a true story
-          from a TED Talk or a fictional plot from a movie, these narratives
-          simply fill my heart with joy. At some point, I decided to take that
-          joy and make it the heartbeat of this project, Passtillios! Through
-          this venture, I aim to create a space where more of these incredible
-          stories can unfold. a place for unique and vibrant experiences to
-          bloom in our sometimes too black-and-white world. Picture it: regular
-          folks like us making extraordinary memories that stick with us
-          forever...what am I after? let me put it this way...
+          {t("intro.section1.p.sucker")}
+  
         </p>
       </div>
       <div className="yourColorsDiv">
-        {headers ? (
+        
           <h1 id="campaignH" className="campaignText">
-            {headers[1]}...
+      {t( "intro.section1.h1.touchOf")}
           </h1>
-        ) : (
-          <h1 id="campaignH" className="campaignText">
-            a world with a touch of...
-          </h1>
-        )}
+      
         {/**<img id="yourcolorsIMG" src={yourColors}></img>
 <video id="yourcolorsVid"  autoplay="autoplay" muted loop> <source src={yourColorsVid} type="video/mp4"></source>
   </video>
@@ -319,27 +308,28 @@ function CampaignStatement(props) {
  */}
         <img id="yourcolorsWords" src={yourcolors}></img>
         <img id="yourcolorsIMG1" src={teamHeaderVid} />
-        {texts ? (
+
           <p id="campaignP" className="campaignText">
-            {texts[1]}
+          {t("intro.section1.p,isWhatImAfter")}
+         
           </p>
-        ) : (
-          ""
-        )}
-        <h1 id="useWhatYouCan" className="tooFastH">
-          start where you are, use what you have, do what you can principle!
-        </h1>
+        
+        <p id="useWhatYouCan" >
+        {t("intro.section1.h1,startWhereUAre")}
+         
+        </p>
+
+      
 
         <div style={{ position: "relative" }}>
-          {headers ? (
-            <h1 id="whatIHave" className="tooFastH">
-              {headers[2]}
-            </h1>
-          ) : (
-            ""
-          )}
+       
+        <h3 id="useWhatYouCan" >
+        {t("intro.section1.h1.paintingAndIdea")}
+       
+        </h3>
+         
 
-          <motion.img
+        <motion.img
             ref={campaignImgRef}
             animate={campaignImgAnimation}
             id="yourcolorsIMG"
@@ -458,16 +448,12 @@ function CampaignStatement(props) {
           <div className="arrowContainer">
             <img className="arrowImage" src={arrow}></img>
           </div>
-          {texts ? (
+        
             <p id="journeyTxt" className="campaignText">
-              {texts[2]}
+            {t("intro.section1.h1.coreTeam")}
+            
             </p>
-          ) : (
-            <p id="journeyTxt" className="campaignText">
-              , I want to kickstart a journey where together, we bring back some
-              magic and spice to our lives!{" "}
-            </p>
-          )}
+         
         </div>
         <div className="wtfContainer">
           <motion.img
@@ -484,9 +470,9 @@ function CampaignStatement(props) {
             sh*t!
           </h1>
 
-          <h1 className="tooFastH">
+          <p className="tooFastH">
             my bad! then let's start from the begining... shall we?
-          </h1>
+          </p>
         </div>
       </div>
 
@@ -559,13 +545,15 @@ function CampaignStatement(props) {
         </motion.h1>
         </div>
         <div class="rightSideText" >
-        <motion.p >
+       {/* <motion.p >
           In 60 years, if a painting were to represent the life you lived up to
           that point, how would it look? Will it be a grey landscape telling a
           tale of vibrant hues slowly overshadowed by black and white? Aim high;
           transform life into an epic adventure! Let the painting of your life
           burst with inspiring colors, vibes, and deep moments.
-        </motion.p>
+        </motion.p>*/}
+<p> {t("intro.life-as-a-painting")}</p>
+        
       </div>
     </div>
   );

@@ -1,15 +1,13 @@
-
-
 /*campaign css*/
 
 #wtf {
   opacity: 0;
   position: absolute;
-  left: -2%;
-  width: 40%;
-  top: -20%;
+  left: 5%;
+  width: 35%;
+  top: -35%;
 }
-.wtfContainer{
+.wtfContainer {
   position: relative;
   width: 100%;
   margin-right: 0%;
@@ -18,68 +16,68 @@
   margin-bottom: 10%;
   overflow: visible;
 }
-#parazitVid{
+#parazitVid {
   position: absolute;
-  width:70%;
-  left:15%;
-  right:15%;
+  width: 70%;
+  left: 15%;
+  right: 15%;
   opacity: 50%;
-top: 0%;
+  top: 0%;
 }
-.videoContanier{
-  
-overflow: visible;
+.videoContanier {
+  overflow: visible;
 }
-.meetPasstilliosContainer{
-
+.meetPasstilliosContainer {
   position: relative;
   margin-left: 5%;
   margin-right: 5%;
-margin-top: 20%;
-margin-bottom: 20%;
+  margin-top: 20%;
+  margin-bottom: 20%;
 }
-.meetPasstilliosTxt{
+.meetPasstilliosTxt {
   position: relative;
   margin-left: 10%;
   margin-right: 10%;
-
- 
 }
-.centerH{
+.centerH {
   position: relative;
-display: inline-block;
-margin-left: 20%;
-margin-right: 20%;
+  display: inline-block;
+  margin-left: 20%;
+  margin-right: 20%;
 
-margin-bottom: 0%;
-text-align: center;
+  margin-bottom: 0%;
+  text-align: center;
+}
+#yourcolorsIMG {
+  width: 60%;
+  margin-left: 23%;
+  margin-right: 17%;
 }
 #yourcolorsIMG1 {
-    width: 160%;
-    position: relative;
-    display: inline-block;
-    margin-left: -75%;
-    margin-top: 20%;
-  }
-  #useWhatYouCan{
+  width: 160%;
+  position: relative;
+  display: inline-block;
+  margin-left: -75%;
+  margin-top: 20%;
+}
+#useWhatYouCan {
+  margin-top: 5%;
+  margin-left: 35%;
+  margin-right: 30%;
+  text-align: center;
+  margin-bottom: 10%;
+}
+.campaignText {
+  position: relative;
+  margin-left: 30%;
+  margin-right: 15%;
+}
+#campaignP {
+  margin-left: 25%;
+  margin-top: -5%;
+  margin-bottom: 10%;
+}
 
-margin-left: 32%;
-margin-right: 32%;
-text-align: center;
-margin-bottom: 0;
-  }
-  .campaignText {
-    position: relative;
-    margin-left: 30%;
-    margin-right: 15%;
-  }
-  #campaignP {
-  
-    margin-left: 25%;
-    margin-top: -15%;
-    margin-bottom: 40%;
-  }
-  
 #greyCloudOutCanvas {
   position: absolute;
   right: -80vw;
@@ -89,371 +87,99 @@ margin-bottom: 0;
   opacity: 0.3;
   scale: 0.55;
 }
-  #campaignH {
-   /*
+#campaignH {
+  /*
     font-size: 7vw;
     line-height: 9.5vw;
     */
-    text-align: left;
-    margin-bottom: -25%;
-    margin-right: 30%;
-    margin-left: 27%;
-  }
-  #yourcolorsWords {
-    width: 40%;
-    position: absolute;
-    display: inline-block;
-    left: 22%;
-    top: 7%;
-    z-index: 10;
-  }
-  #journeyTxt {
+   
+  text-align: left;
+  margin-bottom: -25%;
+  margin-right: 30%;
+  margin-left: 27%;
+}
+#yourcolorsWords {
+  width: 40%;
+  position: absolute;
+  display: inline-block;
+  left: 22%;
+  top: 7%;
+  z-index: 10;
+}
+#journeyTxt {
   position: relative;
   margin-left: 20%;
   margin-right: 20%;
   padding-top: 25%;
-margin-top: -20%;
+  margin-top: -20%;
 }
 
-  .arrowImage {
-   
-    position: relative;
-    width: 100%;
-    margin-left: 50%;
- margin-bottom: 0%;
-    rotate: 8deg;
- 
-  }
-
-  .arrowContainer{
-    overflow: visible;
-    width: 30%;
-    margin-bottom: 0%;
-  }
-  .svgTeam {
-    position: relative;
-    margin-left: 37%;
-    width: 20%;
-    margin-top: 20%;
-    margin-bottom: 2%;
-  }
-  #handOfCanvas {
-    opacity: 0;
-    position: absolute;
-    right: 24vw;
-    top: -37%;
-    width: 20%;
-    rotate: -50deg;
-    z-index: 1;
-  }
-  
-  #whatIHave {
-    position: relative;
-    margin-top: 35%;
-    text-align: center;
-    /*
-    font-size: 5vw;
-    */
-    margin-bottom: 10%;
-    margin-left: 32%;
-    margin-right: 32%;
-  }
-  #tooFast {
-   
-    text-align: left;
-    font-size:var(--fs-600);
-    margin-top: 60%;
-  }
-  
-  #shit {
-    text-align: center;
-    font-size: var(--fs-xl);
-    margin-bottom: 5%;
-  }
-  
-  /*your life as a painting*/
-  
-  .gridContainer {
-  min-width: 40%;
-
-    position: relative;
- 
-    margin-left: 10%;
-    margin-right: 10%;
-  margin-bottom: 15%;
-    overflow: visible;
- 
-  }
-  
-  .leftSideHeader {
-    text-transform: uppercase;
-    position: relative;
-  }
-  .rightSideText {
- 
-   margin-top: -10%;
-    position: relative;
-    margin-left: 15%;
-  margin-right: 15%;
-    
-  }
-  
-  .containerTxt {
-    margin-top: 0%;
-    overflow: visible;
-    width: 100%;
-    display: flex;
-  }
-  
-  #life {
-    position: relative;
-    rotate: -30deg;
-    font-size: 15vw;
-  }
-  .lifeContainer {
-    top: -9vw;
-    left: 4.6%;
-    position: absolute;
-  
-    overflow: visible;
-  }
-  #asA {
-    opacity: 0;
-    top: -8vw;
-    right: 4%;
-    position: absolute;
-    rotate: 0deg;
-    /* color:#00EEB9;*/
-  }
-  #painting {
-    top: 2%;
-    right: 5%;
-    position: absolute;
-    rotate: 0deg;
-    font-size: 11vw;
-  }
-  /*paing not art section*/
-  .lifePaintGraphics {
-    position: absolute;
-    width: 35%;
-    right: 0%;
-  }
-  .lamp {
-    opacity: 1;
-    /*
-    top:-5vw;
-    right:-18vw;
-    */
-    top: -.3%;
-    right: -14.9vw;
-    position: absolute;
-    rotate: 58deg;
-    z-index: 1000;
-    width: 70%;
-  }
-  #paintBrush {
-    opacity: 1;
-    /*right:99%;
-    left:-8.2vw;
-    top:-11.7%;
-    */
-    top: -92%;
-    left: -8.7vw;
-    rotate: -30deg;
-    width: 130%;
-    position: absolute;
-  }
-  
-  #your {
-    color: #00eeb9;
-    position: relative;
-    /*
-    left:3.5%;
-    top:5%;
-    */
-  
-    rotate: 60deg;
-  }
-  #magnet {
-    opacity: 0;
-    transform-origin: bottom;
-    top: -14vw;
-    right: 32vw;
-    position: absolute;
-    rotate: 5deg;
-    z-index: 100;
-    width: 40%;
-  }
-  #lampNotOn {
-    z-index: 1000;
-  }
-  #lampOn {
-  }
-  #paintingImg {
-    margin-left: 47%;
-    position: relative;
-    opacity: 0.2;
-    right: 3%;
-   margin-top: -30%;
-    width: 54%;
-  }
-  .brushContainer {
-    scale: 1.1;
-   
-    rotate: -90deg;
-    position: absolute;
-    display: grid;
-    grid-template-columns: 100%;
-    overflow: visible;
-    left: -100%;
-    top: 30%;
-  }
-  
-
-@media screen and (min-width: 1000px) {
- .gridContainer{
-  width: 50%;
-  margin-left: 25%;
- }
-
-  /* Styles for screens with a minimum width of 1200 pixels */
- 
-  
- 
-  
-  #life {
-    position: absolute;
-    rotate: -30deg;
-    font-size: 14vw;
-  }
-  
-  #painting {
-    top: 2%;
-    right: -4%;
-    position: absolute;
-    rotate: 0deg;
-    font-size: 8vw;
-  }
-  
-  
-  
-  
-
- 
-
-  
- 
-  
-  
-  
-  
-  #whatIHave {
-    position: relative;
-    margin-top: 35%;
-    text-align: center;
-    margin-bottom: 10%;
-    margin-left: 20%;
-    margin-right: 20%;
-  }
-  
-  
-  #tooFast {
- 
-    text-align: center;
-    margin-bottom: 5%;
-    margin-top: 10%;
-  }
-  
-  #shit {
-    text-align: center;
-    margin-bottom: 5%;
-  }
-  
-  
-  
-  
- 
-  
-
- 
-
- 
-
-/*campaign css*/
-#yourcolorsIMG1 {
-  width: 300%;
+.arrowImage {
   position: relative;
-  display: inline-block;
-  margin-left: -200%;
-  margin-top: 40%;
-}
-.campaignText {
-  position: relative;
-  margin-left: 30%;
-  margin-right: 15%;
-
-
-}
-#campaignP {
-
-  margin-left: 10%;
-  margin-right: 5%;
-  margin-top: -25%;
-  margin-bottom: 40%;
-}
-#campaignH {
-
-  text-align: left;
-  margin-bottom: -95%;
-  margin-right: 0%;
-
-  margin-left: 10%;
-}
-#yourcolorsWords {
   width: 50%;
+  margin-left: 130%;
+  margin-bottom: 0%;
+  rotate: 8deg;
+}
+
+.arrowContainer {
+  overflow: visible;
+  width: 30%;
+  margin-bottom: 0%;
+  margin-right: 20%;
+}
+.svgTeam {
+  position: relative;
+  margin-left: 40%;
+  width: 20%;
+  margin-top: 10%;
+  margin-bottom: 2%;
+  rotate: -10deg;
+}
+#handOfCanvas {
+  opacity: 0;
   position: absolute;
-  display: inline-block;
-  left: 5%;
-  top: 6.8%;
-  z-index: 10;
+  right: 24vw;
+  top: -37%;
+  width: 20%;
+  rotate: -50deg;
+  z-index: 1;
 }
-
 
 #whatIHave {
   position: relative;
   margin-top: 35%;
   text-align: center;
- 
+  /*
+    font-size: 5vw;
+    */
   margin-bottom: 10%;
-  margin-left: 15%;
-  margin-right: 15%;
+  margin-left: 32%;
+  margin-right: 32%;
 }
 #tooFast {
-
   text-align: center;
-
-  margin-bottom: 10%;
+  font-size: var(--fs-700);
   margin-top: 60%;
-
 }
 
 #shit {
   text-align: center;
-
+  font-size: var(--fs-xl);
+  margin-bottom: 5%;
 }
 
 /*your life as a painting*/
 
 .gridContainer {
-  /*  min-height: 100vw;*/
+  min-width: 40%;
 
   position: relative;
-width: 50%;
-  margin-left: 25%;
-  margin-right: 25%;
 
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 15%;
   overflow: visible;
-
 }
 
 .leftSideHeader {
@@ -461,10 +187,10 @@ width: 50%;
   position: relative;
 }
 .rightSideText {
-  margin-top: -7%;
-  margin-left: 25%;
-margin-right: 20%;
- 
+  margin-top: -10%;
+  position: relative;
+  margin-left: 15%;
+  margin-right: 15%;
 }
 
 .containerTxt {
@@ -477,28 +203,29 @@ margin-right: 20%;
 #life {
   position: relative;
   rotate: -30deg;
-
+  font-size: 15vw;
 }
 .lifeContainer {
-  top: -75%;
-  left: 5%;
+  top: -9vw;
+  left: 4.6%;
   position: absolute;
+
   overflow: visible;
 }
 #asA {
   opacity: 0;
-  right: 30vw;
+  top: -8vw;
+  right: 4%;
   position: absolute;
   rotate: 0deg;
-
   /* color:#00EEB9;*/
 }
 #painting {
-  top: 27%;
-  right: -4%;
+  top: 2%;
+  right: 5%;
   position: absolute;
   rotate: 0deg;
-font-size: 7.5vw;
+  font-size: 11vw;
 }
 /*paing not art section*/
 .lifePaintGraphics {
@@ -509,22 +236,22 @@ font-size: 7.5vw;
 .lamp {
   opacity: 1;
   /*
-  top:-5vw;
-  right:-18vw;
-  */
-  top: 10%;
-  right: -35%;
+    top:-5vw;
+    right:-18vw;
+    */
+  top: 1.5%;
+  right: -14.9vw;
   position: absolute;
   rotate: 58deg;
-  z-index: 1000;
-  width: 50%;
+  z-index: -1;
+  width: 70%;
 }
 #paintBrush {
   opacity: 1;
   /*right:99%;
-  left:-8.2vw;
-  top:-11.7%;
-  */
+    left:-8.2vw;
+    top:-11.7%;
+    */
   top: -92%;
   left: -8.7vw;
   rotate: -30deg;
@@ -536,9 +263,9 @@ font-size: 7.5vw;
   color: #00eeb9;
   position: relative;
   /*
-  left:3.5%;
-  top:5%;
-  */
+    left:3.5%;
+    top:5%;
+    */
 
   rotate: 60deg;
 }
@@ -555,26 +282,254 @@ font-size: 7.5vw;
 #lampNotOn {
   z-index: 1000;
 }
-
-#paintingImg {
-
-  opacity: 0.2;
-  right: -5%;
-
-  width: 56%;
+#lampOn {
 }
-
+#paintingImg {
+  margin-left: 47%;
+  position: relative;
+  opacity: 0.2;
+  right: 3%;
+  margin-top: -30%;
+  width: 54%;
+}
 .brushContainer {
   scale: 1.1;
+
   rotate: -90deg;
   position: absolute;
-  top:0%;
-  left:-200%;
   display: grid;
   grid-template-columns: 100%;
   overflow: visible;
+  left: -100%;
+  top: 30%;
 }
-#wtf {
+
+@media screen and (min-width: 1000px) {
+  .gridContainer {
+    width: 50%;
+    margin-left: 25%;
+  }
+
+  /* Styles for screens with a minimum width of 1200 pixels */
+
+  #life {
+    position: absolute;
+    rotate: -30deg;
+    font-size: 14vw;
+  }
+
+  #painting {
+    top: 2%;
+    right: -4%;
+    position: absolute;
+    rotate: 0deg;
+    font-size: 8vw;
+  }
+
+  #whatIHave {
+    position: relative;
+    margin-top: 35%;
+    text-align: center;
+    margin-bottom: 10%;
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+
+  #tooFast {
+    text-align: center;
+    margin-bottom: 5%;
+    margin-top: 10%;
+  }
+
+  #shit {
+    text-align: center;
+    margin-bottom: 5%;
+  }
+
+  /*campaign css*/
+  #yourcolorsIMG1 {
+    width: 300%;
+    position: relative;
+    display: inline-block;
+    margin-left: -200%;
+    margin-top: 40%;
+  }
+  .campaignText {
+    position: relative;
+    margin-left: 30%;
+    margin-right: 15%;
+  }
+  #campaignP {
+    margin-left: 10%;
+    margin-right: 5%;
+    margin-top: -25%;
+    margin-bottom: 20%;
+  }
+  #campaignH {
+    text-align: left;
+    margin-bottom: -95%;
+    margin-right: 0%;
+
+    margin-left: 10%;
+  }
+  #yourcolorsWords {
+    width: 50%;
+    position: absolute;
+    display: inline-block;
+    left: 5%;
+    top: 6.8%;
+    z-index: 10;
+  }
+
+  #whatIHave {
+    position: relative;
+    margin-top: 35%;
+    text-align: center;
+
+    margin-bottom: 10%;
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+  #tooFast {
+    text-align: center;
+
+    margin-bottom: 10%;
+    margin-top: 60%;
+  }
+
+  #shit {
+    text-align: center;
+  }
+
+  /*your life as a painting*/
+
+  .gridContainer {
+    /*  min-height: 100vw;*/
+
+    position: relative;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+
+    overflow: visible;
+  }
+
+  .leftSideHeader {
+    text-transform: uppercase;
+    position: relative;
+  }
+  .rightSideText {
+    margin-top: -7%;
+    margin-left: 25%;
+    margin-right: 20%;
+  }
+
+  .containerTxt {
+    margin-top: 0%;
+    overflow: visible;
+    width: 100%;
+    display: flex;
+  }
+
+  #life {
+    position: relative;
+    rotate: -30deg;
+  }
+  .lifeContainer {
+    top: -75%;
+    left: 5%;
+    position: absolute;
+    overflow: visible;
+  }
+  #asA {
+    opacity: 0;
+    right: 30vw;
+    position: absolute;
+    rotate: 0deg;
+
+    /* color:#00EEB9;*/
+  }
+  #painting {
+    top: 27%;
+    right: -4%;
+    position: absolute;
+    rotate: 0deg;
+    font-size: 7.5vw;
+  }
+  /*paing not art section*/
+  .lifePaintGraphics {
+    position: absolute;
+    width: 35%;
+    right: 0%;
+  }
+  .lamp {
+    opacity: 1;
+    /*
+  top:-5vw;
+  right:-18vw;
+  */
+    top: 10%;
+    right: -35%;
+    position: absolute;
+    rotate: 58deg;
+    z-index: 1000;
+    width: 50%;
+  }
+  #paintBrush {
+    opacity: 1;
+    /*right:99%;
+  left:-8.2vw;
+  top:-11.7%;
+  */
+    top: -92%;
+    left: -8.7vw;
+    rotate: -30deg;
+    width: 130%;
+    position: absolute;
+  }
+
+  #your {
+    color: #00eeb9;
+    position: relative;
+    /*
+  left:3.5%;
+  top:5%;
+  */
+
+    rotate: 60deg;
+  }
+  #magnet {
+    opacity: 0;
+    transform-origin: bottom;
+    top: -14vw;
+    right: 32vw;
+    position: absolute;
+    rotate: 5deg;
+    z-index: 100;
+    width: 40%;
+  }
+  #lampNotOn {
+    z-index: 1000;
+  }
+
+  #paintingImg {
+    opacity: 0.2;
+    right: -5%;
+
+    width: 56%;
+  }
+
+  .brushContainer {
+    scale: 1.1;
+    rotate: -90deg;
+    position: absolute;
+    top: 0%;
+    left: -200%;
+    display: grid;
+    grid-template-columns: 100%;
+    overflow: visible;
+  }
+  #wtf {
     opacity: 0;
     position: absolute;
     left: -90%;
@@ -582,14 +537,13 @@ font-size: 7.5vw;
     top: -30%;
   }
 
-  .yourColorsDiv{
-    margin-left:25% ;
-    margin-right:25% ;
+  .yourColorsDiv {
+    margin-left: 25%;
+    margin-right: 25%;
     width: 50%;
     overflow: visible;
   }
-  .wtfContainer{
-   
+  .wtfContainer {
     position: relative;
     width: 60%;
     margin-right: 20%;
@@ -608,9 +562,8 @@ font-size: 7.5vw;
   .tooFastH {
     position: relative;
     margin-left: 0%;
-    margin-right:0%;
+    margin-right: 0%;
     text-align: center;
-  
 
     margin-top: 7%;
   }
@@ -623,31 +576,24 @@ font-size: 7.5vw;
     rotate: -50deg;
     z-index: 1;
   }
-  
-#greyCloudOutCanvas {
-  position: absolute;
-  right: -90vw;
-  top: -50%;
-  width: 70%;
-  z-index: 0;
-  opacity: 0.3;
-  scale: 0.55;
+
+  #greyCloudOutCanvas {
+    position: absolute;
+    right: -90vw;
+    top: -50%;
+    width: 70%;
+    z-index: 0;
+    opacity: 0.3;
+    scale: 0.55;
+  }
+  .meetPasstilliosTxt {
+    position: relative;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  #useWhatYouCan {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 10%;
+  }
 }
-.meetPasstilliosTxt{
-  position: relative;
-  margin-left: 10%;
-  margin-right: 10%;
- 
-}
-#useWhatYouCan{
-
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-bottom: 0;
-    }
-
-}
-
-
-
-
