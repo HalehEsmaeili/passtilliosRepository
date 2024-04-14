@@ -220,28 +220,28 @@ But hey, How on earth would I even fund this? Maybe I could secure some sponsors
           </div>
 
           <p id="roadmap-h1-realization" className="h1-roadmap">
-            Through this video, I realized two things. 1.you never know!
-            just ask and dee what happens!
+          Watching this video, I had two realizations:
+           1.you never know!
+            just ask and see what happens!
           </p>
           <p id="roadmap-h1-realization1" className="h1-roadmap"></p>
           <p id="roadmap-h1-realization2" className="h1-roadmap">
-            2. making dreams come true together with others is the key to
-            creating communities capable of the miraculous! and how much I crave a magical community like that.
+          2.Working together with others to turn wildest dreams into reality is what creates communities capable of the miraculous! And boy, do I long for a magical community like that.
           </p>
           <p id="roadmap-h1-resurface" className="h1-roadmap">
-            Then, I dared to resurface my "childish weird" dream again!
+          So I revisited that old dream and dared to resurface it once again.
           </p>
 
           <p id="roadmap-h1-building" className="h1-roadmap">
-            But this time, I started seriously building around that childish dream
+            But this time, I started seriously building around that "childish" dream
           </p>
           <p id="roadmap-h1-project" className="h1-roadmap">
             and the result is the project you see in front of you!
           </p>
 
           <p id="roadmap-h1-slideshow" className="h1-roadmap">
-            Now, here's a slideshow on why you should help make this childish
-            dream come true...
+          Now, now! Let me walk you through all the reasons why jumping on board with this project could be one of the best decisions of your life! 🚀💥
+           
           </p>
         </div>
 
