@@ -168,7 +168,7 @@ function IntroParallax() {
   */
 
   //////////////////////animation functions
-
+//delete
   useEffect(() => {
     const svgLineAnim = async () => {
       // animateMagicContainer.start({scale:[1,1.2,1],rotate:[0,30,0,-30,0,20,0,-20,0], transition:{delay:.2,type:"yoyo"}});
@@ -212,7 +212,7 @@ function IntroParallax() {
       });
     }
   }, [isInViewdiv3]);
-
+//attack
   useEffect(() => {
     if (scrollToGreyActive) {
       const bubbleBurstAnim = async () => {
@@ -231,7 +231,7 @@ function IntroParallax() {
           });
           b10Controls.start({
             left: "-4%",
-            top: "-49%",
+            top: "-46%",
             transition: {
               zIndex: 100000,
               delay: 4,
@@ -247,7 +247,7 @@ function IntroParallax() {
 
           await b11Controls.start({
             left: "15%",
-            top: "-54%",
+            top: "-49%",
             transition: { stiffness: 1, duration: 5 },
           });
 
@@ -1018,7 +1018,7 @@ function IntroParallax() {
             <Slider
               images={[
                 {
-                  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/intro/grey1/slideshow/1.png",
+                  url: "https://passtillios.com/public/images/artpage/whitePaint.png",
                   caption: t("intro.greyEpidemy.slideshow.caption.1"),
                 },
                 {

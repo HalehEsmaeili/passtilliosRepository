@@ -64,7 +64,7 @@ const Campaign = () => {
     <div className="ContactPage">
       <PageHeader page="campaign" quote="camapign-me" image={campaign} />
       <div style={{ position: "relative", overflow: "hidden" }}>
-        <PageIntro page="campaign" />
+        <PageIntro page="campaign" txt={t("pageIntro.campaign.text")}/>
         <Slider
           images={[
             {
@@ -233,14 +233,14 @@ But hey, How on earth would I even fund this? Maybe I could secure some sponsors
           </p>
 
           <p id="roadmap-h1-building" className="h1-roadmap">
-            But this time, I started seriously building around that "childish" dream
+            But this time, I started seriously building around that ambitious dream
           </p>
           <p id="roadmap-h1-project" className="h1-roadmap">
             and the result is the project you see in front of you!
           </p>
 
           <p id="roadmap-h1-slideshow" className="h1-roadmap">
-          Now, now! Let me walk you through all the reasons why jumping on board with this project could be one of the best decisions of your life! 🚀💥
+          Now, now! Let me walk you through all the reasons why jumping on board with this project could be one of the best decisions of your life!💥lets go!:
            
           </p>
         </div>

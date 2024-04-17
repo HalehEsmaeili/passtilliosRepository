@@ -54,7 +54,7 @@ const TeamPage = () => {
   return (
     <div className="TeamPage">
       <PageHeader page="team" quote="arttttt-me" image={teamImg} />
-     <PageIntro page="team"/>
+     <PageIntro page="team" txt={t("pageIntro.team.text")}/>
      
       <div className="contactTextContainer">
         {/**

@@ -20,7 +20,7 @@ const ContactPage = () => {
     <div className="ContactPage">
       <PageHeader  page="contact" quote="arttttt-me" image={callMe} />
       <div style={{ position: "relative", overflow: "visible" }}>
-      <PageIntro page="Networking" title="" paragraph=""/>
+      <PageIntro page="Networking" txt={t("pageIntro.contact.text")}/>
        <ContactList/>
       </div>
 

@@ -290,6 +290,7 @@ const bubbleAnimationControlsArray = [{
   bubbleAnimationControlsArray.map((bubble, index) => (
     <motion.img
       className="headersBubble"
+      initial={{top:"500%"}}
       key={index}
       src={`https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/headerPage/${props.page}/${index}.png`}
       alt={`b${index}`}
