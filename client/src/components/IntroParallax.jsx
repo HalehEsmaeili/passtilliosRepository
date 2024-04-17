@@ -1018,7 +1018,7 @@ function IntroParallax() {
             <Slider
               images={[
                 {
-                  url: "https://passtillios.com/public/images/artpage/whitePaint.png",
+                  url: `${process.env.PUBLIC_URL}/images/artpage/whitePaint.png`,
                   caption: t("intro.greyEpidemy.slideshow.caption.1"),
                 },
                 {
