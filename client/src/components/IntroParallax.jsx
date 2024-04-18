@@ -465,11 +465,11 @@ function IntroParallax() {
 
           transition: { duration: 1.5 },
         });
-      /* myImgControl.start({
-       //left: ["60%","46%","49%"],
-       //scale:[.6,1] , 
+       myImgControl.start({
+       left: ["100%","45%","53%"],
+       //scale:[1.2,1] , 
        opacity:1 , transition: { delay:2.4,duration:.2,stiffness:100}});
-       /*   */
+       
  await myIntroBubbleControls.start({
           left: "64%",
           top: "100%",
@@ -1018,32 +1018,32 @@ function IntroParallax() {
             <Slider
               images={[
                 {
-                  url: `${process.env.PUBLIC_URL}/images/artpage/whitePaint.png`,
+                  url:`/images/slideShow/grey1/1.png`,
                   caption: t("intro.greyEpidemy.slideshow.caption.1"),
                 },
                 {
-                  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/intro/grey1/slideshow/2.png",
+                  url:`/images/slideShow/grey1/2.png`,
                   caption:
                   t("intro.greyEpidemy.slideshow.caption.2"),
                 },
                 {
-                  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/intro/grey1/slideshow/3.png",
+                  url:`/images/slideShow/grey1/3.png`,
                   caption:
                   t("intro.greyEpidemy.slideshow.caption.3"),
                 },
                 {
-                  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/intro/grey1/slideshow/4.png",
+                  url:`/images/slideShow/grey1/4.png`,
                   caption:
                   t("intro.greyEpidemy.slideshow.caption.4"),
                 },
 
                 {
-                  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/intro/grey1/slideshow/5.png",
+                  url:`/images/slideShow/grey1/5.png`,
                   caption:
                   t("intro.greyEpidemy.slideshow.caption.5"),
                 },
                 {
-                  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/intro/grey1/slideshow/6.png",
+                  url:`/images/slideShow/grey1/6.png`,
                   caption:
                   t("intro.greyEpidemy.slideshow.caption.6"),
                 },

@@ -88,27 +88,27 @@ const introTxt="Art is a superpower that speaks in its own language of colors, t
 <PageHeader  page="art" quote="arttttt-me" image={paintImg}/> 
 <PageIntro page="art" txt={t("pageIntro.art.text")}/>
 <Slider images={[{
-         url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/art/teaserslideshow/1.png",
+         url: "images/slideShow/art/slide1/1.png",
               caption: "When the world around you becomes rigid and conformist, and you find yourself in a solitary battle to make room for the playfulness, free-spiritedness, and the out of the box...when you begin to doubt it all and consider blending in with your surroundings to fit in... ",
              
 },{
-         url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/art/teaserslideshow/2.png",
+  url: "images/slideShow/art/slide1/2.png",
               caption: "I wish something can break through to you and play the reminder in that very moment! that even the greyness surrounding you, resisting your bold, vibrant colors, will one day realize it needed them all along"
              
 },
 {
-         url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/art/teaserslideshow/3.png",
+  url: "images/slideShow/art/slide1/3.png",
               caption: "because remember, even the color grey looks its best when paired with bright colors!",
              
 }
 ,{
-         url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/art/teaserslideshow/4.png",
+  url: "images/slideShow/art/slide1/4.png",
               caption: "so dont give in to the greyness of your surroundings instead join in and help inspire your grey surrounding with your unique colors!",
              
 },
 
 {
-         url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/art/teaserslideshow/5.png",
+  url: "images/slideShow/art/slide1/5.png",
               caption: "I have managed to keep my true colors alive one painting at a time... now I wonder if these paintings can be that reminder for someone out there!",
              
 }

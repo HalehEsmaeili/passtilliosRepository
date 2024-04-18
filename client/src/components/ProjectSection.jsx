@@ -1045,54 +1045,54 @@ How will your life look as a painting 60 years from now? Will it narrate a story
  
   <Slider images={[
   {
-         url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/intro/projectPainting/slideshow/1.png",
+    url:`/images/slideShow/letmeexplain/1.png`,
               caption:  t("intro.projectsection.slideshow.caption.1")
              
 },{
-         url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/intro/projectPainting/slideshow/2.png", 
+  url:`/images/slideShow/letmeexplain/2.png`,
               caption:  t("intro.projectsection.slideshow.caption.2")
              
 },
 {
-  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/intro/projectPainting/slideshow/3.png",
+  url:`/images/slideShow/letmeexplain/3.png`,
               caption:  t("intro.projectsection.slideshow.caption.3")
              
 }
 ,{
-  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/intro/projectPainting/slideshow/4.png",
+  url:`/images/slideShow/letmeexplain/4.png`,
               caption: t("intro.projectsection.slideshow.caption.4"),
              
 },
 
 {
-  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/intro/projectPainting/slideshow/5.png",
+  url:`/images/slideShow/letmeexplain/5.png`,
               caption:  t("intro.projectsection.slideshow.caption.5"),
              
 },
 {
-  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/intro/projectPainting/slideshow/6.png",
+  url:`/images/slideShow/letmeexplain/6.png`,
               caption:t("intro.projectsection.slideshow.caption.6"),
              
 },
 {
-  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/intro/projectPainting/slideshow/7.png",
+  url:`/images/slideShow/letmeexplain/7.png`,
               caption: t("intro.projectsection.slideshow.caption.7"),
              
 }
 ,
 {
-  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/intro/projectPainting/slideshow/8.png",
+  url:`/images/slideShow/letmeexplain/8.png`,
               caption: t("intro.projectsection.slideshow.caption.8"),
              
 }
 ,
 {
-  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/intro/projectPainting/slideshow/9.png",
+  url:`/images/slideShow/letmeexplain/9.png`,
               caption: t("intro.projectsection.slideshow.caption.9"),
              
 },
 {
-  url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/intro/projectPainting/slideshow/10.png",
+  url:`/images/slideShow/letmeexplain/10.png`,
               caption: t("intro.projectsection.slideshow.caption.10"),
              
 }

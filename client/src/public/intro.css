@@ -1189,11 +1189,11 @@ line-height: 7vw;
 position: relative;
 margin-top: 14%;
 
-/*
-left:60%;
-*/
+
+left:100%;
+
 width:100%;
-margin-left:53.5%;
+/*margin-left:53.5%;*/
 rotate:-48deg;
 z-index: 3;
 opacity: 1;
