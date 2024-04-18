@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import callMe from "../public/images/contactPage/call.png";
+//import callMe from "../public/images/contactPage/call.png";
 
 import { Country, State, City } from "country-state-city";
-import ReCAPTCHA from "react-google-recaptcha";
+//import ReCAPTCHA from "react-google-recaptcha";
 import brevoLogo from "../public/images/contactPage/BREVO.png";
 import contactlistCanva from "../public/images/contactPage/contactlistcanva.png";
 //import "./TeamPage.css";
@@ -24,7 +24,6 @@ const ContactList = () => {
   );
   //const [allcities, setAllCities] = useState([]);
   const [citySuggestions, setCitySuggestions] = useState([]);
-
   const [state, setState] = useState({ name: "", isoCode: "" });
   const [statePlaceholder, setStatePlaceholder] = useState(
     "great! which state in Germany?"
@@ -49,16 +48,18 @@ const ContactList = () => {
   const [savedSuccessfully, setSavedSuccessfully] = useState(false);
   const [savingUnsuccessful, setSavingUnsuccessful] = useState(false);
   const [tooManyTries, setTooManyTries] = useState(false);
-  const [telError, setTelError] = useState("");
+  //const [telError, setTelError] = useState("");
   const [emailError, setEmailError] = useState("");
   const [error, setError] = useState("");
   const [stateIsoCode, setStateIsoCode] = useState("");
   const [helperTxt, setHelperTxt] = useState("");
 
-  ////recaptcha
+  ///
+  /*recaptcha
   const [recaptchaToken, setRechatchaToken] = useState(null);
-  //const [recaptchaFail, setRecaptchaFail] = useState(false);
+ 
   const [recaptchaSuccess, setRecaptchaSuccess] = useState();
+ 
   useEffect(() => {
     axiosInstance
       .get(`/api/contact/verify-recaptcha`, { recaptchaToken: recaptchaToken })
@@ -80,10 +81,10 @@ const ContactList = () => {
         // Handle error
       });
   }, [recaptchaToken]);
-
+ */
   ////useeffects for country,state,city
   useEffect(() => {
-    console.log("i am triggered by", country.name);
+   
     if (country.isoCode === "") {
       //setCountry.isoCode("");
       setStatePlaceholder("lets first find your country;)");
@@ -93,7 +94,7 @@ const ContactList = () => {
   }, [country]);
 
   useEffect(() => {
-    console.log("state: i am triggered by", state.name);
+   
     //handleFilteringAndSetting(newValue,Country.getAllCountries(),country,setCountry,countrySuggestions,setCountrySuggestions);
 
     if (state.isoCode === "") {
@@ -103,7 +104,7 @@ const ContactList = () => {
     }
   }, [state]);
 
-  const handleRecaptcha = () => {};
+ /// const handleRecaptcha = () => {};
 
   /*
   const handleBlur = (event) => {
@@ -125,19 +126,17 @@ const ContactList = () => {
   };
 */
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // Füge hier deine Submit-Logik hinzu
-  };
+
 
   const handleClick = async (e) => {
     //make sure country state city are valid values othere wise set them to ""
-
+/*
     if (!isMobilePhone(tel, "de-DE", { strictMode: false })) {
       setTelError("Invalid phone number");
     }
+    */
     if (
-      (tel !== "" && !isMobilePhone(tel, "de-DE", { strictMode: false })) ||
+     
       !isEmail(email) ||
       email === "" ||
       name === "" ||
@@ -145,9 +144,9 @@ const ContactList = () => {
       country.isoCode === "" ||
       state.isoCode === "" ||
       !agreedToBrevo ||
-      !agreedToJoin ||
-      recaptchaSuccess === null ||
-      recaptchaSuccess === false
+      !agreedToJoin
+     // recaptchaSuccess === null ||
+      //recaptchaSuccess === false
     ) {
       setBtnPressed(true);
     } else {
@@ -166,31 +165,31 @@ const ContactList = () => {
 
         if (response.status === 200) {
           setSavedSuccessfully(true);
-          console.log("Success:", response.data);
+         
         } else {
           // Handle different HTTP status codes here
           if (response.status === 429) {
-            console.log("Rate limit exceeded in right place");
+           setTooManyTries(true);
           } else if (response.status === 400) {
             // Handle 400 error (validation error)
             setError(response.data.errors);
-            console.error("Validation Error:", response.data.errors);
+      
           } else {
             // Handle other errors
-            console.error("Server Error:", response.data);
+     
           }
         }
       } catch (error) {
-        console.error("Validation Error:", error);
+        
         if (error.response) {
           if (error.response.status === 429) {
-            console.log("Rate limit exceeded in catch");
+           
             setSavingUnsuccessful(true);
             setTooManyTries(true);
             setSavedSuccessfully(false);
           } else {
             // Handle other errors
-            console.error("Server Error:", error.response.data);
+           // console.error("Server Error:", error.response.data);
             setSavingUnsuccessful(true);
             setTooManyTries(false);
             setSavedSuccessfully(false);
@@ -235,9 +234,9 @@ const ContactList = () => {
       */
     } else if (event.target.name === "country") {
       const newValue = event.target.value;
-      console.log("country", country);
+     
       if (newValue.length < country.name.length) {
-        console.log("Deletion occurred");
+      
         setCountry({ name: newValue, isoCode: "" });
         setStatePlaceholder("first choose the country:)");
         setState({ name: "", isoCode: "" });
@@ -299,7 +298,7 @@ const ContactList = () => {
       //console.log("the current state saved isssss", state);
     } else if (event.target.name === "city") {
       if (state.isoCode === "") {
-        console.log("iso code state is" + stateIsoCode);
+      
         setCity({ name: "" });
         setCityPlaceholder("first enter the state:)");
       } else {
@@ -308,7 +307,7 @@ const ContactList = () => {
         const newValue = event.target.value;
         ///by deletion in city input field
         if (newValue.length < city.name.length) {
-          console.log("Deletion occurred");
+         
           setCityPlaceholder("which city are you in?");
           setCity({ name: newValue });
         }
@@ -371,10 +370,10 @@ const ContactList = () => {
           */
     } else {
       if (filteredValues.length === 0 && suggestion_useState_Val.length === 1) {
-        console.log("i am in fitered val 0", suggestion_useState_Val[0]);
+
         set_useState_Val(suggestion_useState_Val[0]);
       } else {
-        console.log("no matches yet just saving" + newInputValue);
+
         set_useState_Val({ name: newInputValue, isoCode: "" });
         setSuggestions(filteredValues);
       }
@@ -425,7 +424,7 @@ const ContactList = () => {
           ) : savingUnsuccessful ? (
             <h3 className="fw-normal h1contact">oooops!</h3>
           ) : (
-            <h3 className="fw-normal h1contact">join the contact list</h3>
+            <h3 className="fw-normal h1contact">join the passtillios newsletter</h3>
           )}
         </div>
       </div>
@@ -773,9 +772,9 @@ const ContactList = () => {
             <p
               className="conditionsTxt"
             >
-              I agree to join the Passtillios contact list 🤙, ensuring that I
-              receive important project updates and timely calls to action. I
-              accept the terms of the data privacy statement. If at any point I
+              I agree to join the Passtillios newsletter 🤙, ensuring that I
+              receive important project updates and timely calls to action and show my support for this project. I
+              am aware that personal data I provided above, will be proccessed in accordance to passtillios data policy <a style={{color:"#00eeb9"}} href="/datenschutz">link to data policy</a>. accept the terms of the data privacy statement. If at any point I
               wish to discontinue receiving communications, I understand that I
               can effortlessly opt out by clicking the provided link in the
               update emails or by sending an email to
@@ -882,7 +881,7 @@ const ContactList = () => {
               flexDirection: "column",
             }}
           >
-            <p
+           { /*<p
               style={{
                 fontSize: "2vw",
                 marginLeft: "20%",
@@ -921,11 +920,11 @@ const ContactList = () => {
               }}
               onExpired={() => setRechatchaToken(null)}
               onErrored={() => setRecaptchaSuccess(false)}
-            />
-            {btnPressed &&
+            />*/}
+            {/*btnPressed &&
             (recaptchaSuccess === null || recaptchaSuccess === false) ? (
               <p className="errorP">it didnt work out here</p>
-            ) : null}
+            ) : null*/}
           </div>
 
           <div className="btnEmailListContainer">

@@ -279,7 +279,7 @@ function CampaignStatement(props) {
         <div className="videoContanier">
           {/*<video  id="parazitVid" autoplay="autoplay" muted loop> <source src={parazzit} type="video/mp4"></source>
   </video>*/}
-          <h1 className="centerH">{t("intro.section1.h1.sucker")}</h1>
+          <h3 className="centerH">{t("intro.section1.h1.sucker")}</h3>
         </div>
         {/*
       <h1 className="centerH" >

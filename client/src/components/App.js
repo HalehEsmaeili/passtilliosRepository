@@ -9,9 +9,13 @@ import ArtPage from '../pages/ArtPage';
 import Campaign from '../pages/Campaign';
 import Impressum from "../pages/Impressum";
 import DatenSchutz from "../pages/DatenSchutz";
- import CookieBanner from './CookieBanner';
+import CookieBanner from './CookieBanner';
+import {useEffect} from 'react';
 
 function App() {
+  useEffect(() => {
+    document.title = "passtillios";
+  }, []);
  return (
     <div style={{overflow:"hidden",marginBottom:0}} >
  

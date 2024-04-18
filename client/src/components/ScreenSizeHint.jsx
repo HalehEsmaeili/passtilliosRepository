@@ -32,7 +32,7 @@ const ScreenSizeHint = () => {
   const renderHint = showHint ? (
     <div className="screen-size-hint">
       <div className="hintContainer">
-        <img className="hintImg" src="https://passtillios-bucket-web.s3.amazonaws.com/screensizeHint/screensizeImg.png" ></img>
+        <img className="hintImg" src="images/i.png" ></img>
         <h1 className="hintH">HAAAAh! a gorgeous big screen user detected!</h1>
         <p className="hintP">
           how are youuu doin? so for now, this website is optimized for smaller

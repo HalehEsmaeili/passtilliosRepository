@@ -42,8 +42,8 @@
 .centerH {
   position: relative;
   display: inline-block;
-  margin-left: 20%;
-  margin-right: 20%;
+  margin-left: 10%;
+  margin-right: 10%;
 
   margin-bottom: 0%;
   text-align: center;
@@ -239,8 +239,8 @@
     top:-5vw;
     right:-18vw;
     */
-  top: 1.5%;
-  right: -14.9vw;
+  top: 2.5%;
+  right: -51%;
   position: absolute;
   rotate: 58deg;
   z-index: -1;
@@ -463,17 +463,17 @@
     right: 0%;
   }
   .lamp {
-    opacity: 1;
+
     /*
   top:-5vw;
   right:-18vw;
   */
-    top: 10%;
-    right: -35%;
+    top: 9%;
+    right: -40%;
     position: absolute;
     rotate: 58deg;
     z-index: 1000;
-    width: 50%;
+    width: 55%;
   }
   #paintBrush {
     opacity: 1;
