@@ -4,15 +4,18 @@ import heyThere from "../public/errorImgVid/heythere2.png";
 
 const ScreenSizeHint = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const [showHint, setShowHint] = useState(window.innerWidth > 1100);
+  const [smallScreenMsg, setSmallScreenMsg] = useState(true);
+  const [showHint, setShowHint] = useState(true); // State to control the visibility of the hint
 
   useEffect(() => {
     const handleResize = () => {
       const newWindowWidth = window.innerWidth;
       setWindowWidth(newWindowWidth);
-
-      // Show/hide hint based on window width
-      setShowHint(newWindowWidth > 1150);
+      if (newWindowWidth < 1100) {
+        setSmallScreenMsg(true);
+      } else {
+        setSmallScreenMsg(false);
+      }
     };
 
     // Attach the event listener for window resize
@@ -32,16 +35,28 @@ const ScreenSizeHint = () => {
   const renderHint = showHint ? (
     <div className="screen-size-hint">
       <div className="hintContainer">
-        <img className="hintImg" src="images/i.png" ></img>
-        <h1 className="hintH">HAAAAh! a gorgeous big screen user detected!</h1>
-        <p className="hintP">
-          how are youuu doin? so for now, this website is optimized for smaller
-          screens..but hey! While I'm perfecting the desktop version, you may
-          want to switch to a smaller screen for a more enjoyable journey!
-        </p>
-        <button className="close-button" onClick={closeHint}>
-          got it!
-        </button>
+        <img className="hintImg" src="/images/i.png" alt="Hey there" />
+        {smallScreenMsg ? (
+          <div>
+            <h1 className="hintH">yooo look! A gorgeous visitor stopped by! </h1>
+            <p className="hintP">
+            How's life treating ya? Listen, I'm genuinely happy you're here. This visit won't be your average internet stop. on this website you're not just a visitor; you are one of the main charactors. But hey dont believe me just yet! Go on this short journey I've created for you where you'll learn all about it yourself. have fun, Cheers!
+            </p>
+            <button className="close-button" onClick={closeHint}>
+             cool let's go!
+            </button>
+          </div>
+        ) : (
+          <div>
+            <h1 className="hintH">HAAAAh! A gorgeous big screen user detected!</h1>
+            <p className="hintP">
+              How are you doing? So for now, this website is optimized for smaller screens. But hey! While I'm perfecting the desktop version, you may want to switch to a smaller screen for a more enjoyable journey!
+            </p>
+            <button className="close-button" onClick={closeHint}>
+              Got it!
+            </button>
+          </div>
+        )}
       </div>
     </div>
   ) : null;

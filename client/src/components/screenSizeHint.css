@@ -1,11 +1,10 @@
 .screen-size-hint {
     position: fixed;
     overflow: visible;
-    bottom: 0;
+    top: 15%;
     right: 0;
     background-color: #ffffff00; /* Add your preferred background color */
- width:30%;
- 
+    width:45%;
     z-index: 100000000; /* border: 1px solid  #00EEB9 ; Add a z-index to ensure it appears above other elements */
     cursor: pointer;
   }
@@ -16,21 +15,22 @@
 
   /*#f90e9b,#5a00b4,60%,#00EEB9*/
   .hintP{
-    position: absolute;
+    position: relative;
     color: white;
     text-align: justify;
-   font-size: .7vw;
-line-height: 1.5vw;
-left:15%;
-right:20%;
-top:95%;
+   font-size:var(--fs-200);
+line-height: var(--hl-200);
+margin-left:35%;
+margin-right:2%;
+top:97%;
   }
   .hintH{
-   padding-top: -23%;
-   margin-left:15%;
-  
-   margin-right:40%;
-    position: relative;
+    padding-top: 0%;
+    margin-left:50%;
+    margin-top: -80%;
+    rotate:-10deg;
+    margin-right:5%;
+    position: absolute;
     text-align: left;
     line-height: 3vw;
     font-size: 1.5vw;
@@ -44,32 +44,33 @@ top:95%;
     overflow: visible;
   }
   .hintImg{
-   position: absolute;
+   position: relative;
    top:-60%;
-   right: -2%;
+   margin-left: 32%;
    width:70%
   }
   .close-button{
   
 cursor: pointer;
-    position: absolute;
+    position: relative;
     font-weight: 200;
-    font-size: 1.2vw;
+   font-size:2vw;
 position: absolute;
 background-color: #00EEB9;
-margin-top: -2.5%;
+margin-top: 2%;
 margin-right: -2%;
 padding-top: 4%;
 padding-bottom: 6%;
-padding-right: 1%;
-padding-left: 2%;
+padding-right: 16%;
+padding-left: 16%;
 right: 2%;
-top: 110%;
+
 display: inline-block;
-border: 8px solid rgb(255, 0, 204);
+border: 1.4vw solid rgb(255, 0, 204);
 border-right-color: #eec200 ;
 border-bottom-color: #eec200 ;
-border-radius: 3px;
+/*border-radius: 3px;
 border-bottom-left-radius: 20%;
 border-top-left-radius: 20%;
+*/
   }

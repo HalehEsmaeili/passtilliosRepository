@@ -85,50 +85,83 @@ const introTxt="Art is a superpower that speaks in its own language of colors, t
 
   return (
    <div >
+     {/*
+         url: "images/slideShow/art/slide1/1.png",
+              caption: "",
+             
+*/}
 <PageHeader  page="art" quote="arttttt-me" image={paintImg}/> 
 <PageIntro page="art" txt={t("pageIntro.art.text")}/>
-<Slider images={[{
-         url: "images/slideShow/art/slide1/1.png",
-              caption: "When the world around you becomes rigid and conformist, and you find yourself in a solitary battle to make room for the playfulness, free-spiritedness, and the out of the box...when you begin to doubt it all and consider blending in with your surroundings to fit in... ",
+
+<h3 className="h1-subthemes ">The painting you saw in the home page</h3>
+
+<img className="pages-imgs " src={thePainting}></img>
+<h3 className="h1-subthemes ">is one of my paintings</h3>
+<h3 className="h1-subthemes ">what is the plan with it?</h3>
+
+
+  <Slider images={[
+      {
+         url: "images/slideShow/art/slide2/1.png",
+              caption: "",
+             
+},
+  {
+         url: "images/slideShow/art/slide2/2.png",
+              caption: "",
              
 },{
-  url: "images/slideShow/art/slide1/2.png",
-              caption: "I wish something can break through to you and play the reminder in that very moment! that even the greyness surrounding you, resisting your bold, vibrant colors, will one day realize it needed them all along"
+  url: "images/slideShow/art/slide2/3.png",
+              caption: ""
              
 },
 {
-  url: "images/slideShow/art/slide1/3.png",
-              caption: "because remember, even the color grey looks its best when paired with bright colors!",
+  url: "images/slideShow/art/slide2/4.png",
+              caption: "",
              
 }
+
+]}
+
+
+  />
+  <h3 className="h1-subthemes ">what is the motive of this art? What do I wish they add to your life?  </h3>
+<Slider images={[
+
+{
+       url: "images/slideShow/art/slide1/2.png",
+            caption: "When the world around you becomes rigid and conformist, and you find yourself in a solitary battle to make room for the playfulness, free-spiritedness, and the out of the box...when you begin to doubt it all and consider blending in with your surroundings to fit in... ",
+           
+},{
+url: "images/slideShow/art/slide1/3.png",
+            caption: "I wish a piece of art can play the reminder for you in that very moment. that even the greyness surrounding you, resisting your bold, vibrant colors, will have to one day realize "
+           
+},
+{
+url: "images/slideShow/art/slide1/4.png",
+            caption: "that even the color grey looks its best when paired with bright bold colors!",
+           
+}
 ,{
-  url: "images/slideShow/art/slide1/4.png",
-              caption: "so dont give in to the greyness of your surroundings instead join in and help inspire your grey surrounding with your unique colors!",
-             
+url: "images/slideShow/art/slide1/5.png",
+            caption: "so what about we stop giving in to the greyness of our surroundings and instead paint on this grey surrounding with one of a kind colors and stories!",
+           
 },
 
 {
-  url: "images/slideShow/art/slide1/5.png",
-              caption: "I have managed to keep my true colors alive one painting at a time... now I wonder if these paintings can be that reminder for someone out there!",
-             
+url: "images/slideShow/art/slide1/1.png",
+            caption: "I have managed to keep my true colors alive one painting at a time... now I hope these paintings can serve as that reminder for someone out there!",
+           
 }
 
 ]}/>
-<h3 className="h1-subthemes ">remember the painting I showed you in the home page?</h3>
-<img className="pages-imgs " src={thePainting}></img>
-
-<h3 className="h1-subthemes ">what do I plan to do with it?</h3>
-
-{(productImages && productImages.length>0)?
-  <Slider images={productImages}/>
-  :<div></div>
-}
 <div className="mappedContentContainer">
-<h3 className="mappedContentH">selling will open shortly before the campaign launch!</h3>
-<p className="mappedContentTxt">The money generated will be poured back into the project, fueling our journey to make even more extraordinary dreams a reality.
+<h3 className="mappedContentH"></h3>
 
-Intrigued by the campaign? Dive deeper on the campaign page!</p>
+<p className="mappedContentTxt">
+Sales will kick off just before the campaign launch, and all the money we make from those sales will be poured back into the project, keeping our journey fueled as we strive to turn even more extraordinary dreams into reality. This will continue until we find the perfect investor fit backing the project, After that this will go on more independently from the campaign. what campaign? Dive deeper on the campaign page!</p>
 </div>
+
 {/**TODO:headers :Slider */}
 {/**TODO:headers :what i plan to do with it? */}
 {/**TODO:headers :why ? */}
@@ -149,6 +182,13 @@ Instead how about we embrace the true charm of grey? I believe it's about time w
 
 </div>
 
+<div className="mappedContentContainer">
+<h3 style={{marginLeft:"20%", marginRight:"20%"}} className="mappedContentH">Ah by the way! to my Artists out there</h3>
+
+<p className="mappedContentTxt">
+Does your artistic expression happen to invovle bold, vibrant colors and powerful strokes? I want to hear from you! Let's chat and see if there's a collaboration waiting to happen! send me an email to collab@passtillios.com 😘
+</p>
+</div>
    </div>
    
 
