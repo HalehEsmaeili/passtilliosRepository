@@ -21,6 +21,29 @@ const ContactPage = () => {
       <PageHeader  page="contact" quote="arttttt-me" image={callMe} />
       <div style={{ position: "relative", overflow: "visible" }}>
       <PageIntro page="Networking" txt={t("pageIntro.contact.text")}/>
+       
+      <div className="mappedContentContainer">
+      <h3 className="mappedContentH">Here's why joining the Passtillios contact list is a smart first move to join this symphony!</h3>
+   
+
+<p className="mappedContentTxt">
+1. Big High-Five ✋: Your joining is like shouting "heck yeah!" for the project. It tells me you liked what you read and saw here, and for now, you're in. The more of you join in, the closer we get to finding the right talents, connections, and backers to make more crazy ideas a reality.
+</p>
+   <p className="mappedContentTxt">
+
+2.Stay Connected 🪢: At the heart of this project is building a bold, fun, and magical Passtillios community. Joining the contact list means you want to stay in the loop and become part of a family that will be your go-to when it comes to finding partners in crime for your next out-of-the-box, innovative ideas.
+</p>
+
+
+<p className="mappedContentTxt">
+3.
+Not salesy or spammy 🫰: Your attention is sacred to me. This is purely for networking purposes. I'll only send emails when there are important updates about this project. And hey, if it turns out you it is not your cup of tea 🍵, you can opt-out anytime down the road. So, there's nothing to lose.
+</p>
+
+
+          </div>
+       
+
        <ContactList/>
       </div>
 

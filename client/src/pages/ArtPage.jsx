@@ -106,11 +106,8 @@ const introTxt="Art is a superpower that speaks in its own language of colors, t
               caption: "",
              
 },
-  {
-         url: "images/slideShow/art/slide2/2.png",
-              caption: "",
-             
-},{
+
+ {
   url: "images/slideShow/art/slide2/3.png",
               caption: ""
              
@@ -119,38 +116,72 @@ const introTxt="Art is a superpower that speaks in its own language of colors, t
   url: "images/slideShow/art/slide2/4.png",
               caption: "",
              
+},
+{
+         url: "images/slideShow/art/slide2/5.png",
+              caption: "",
+             
+},
+{
+         url: "images/slideShow/art/slide2/6.png",
+              caption: "",
+             
+},
+{
+         url: "images/slideShow/art/slide2/shoe.png",
+              caption: "",
+             
+},
+{
+         url: "images/slideShow/art/slide2/shoe1.png",
+              caption: "",
+             
+},
+{
+         url: "images/slideShow/art/slide2/speaker.png",
+              caption: "",
+             
+},
+{
+         url: "images/slideShow/art/slide2/9.png",
+              caption: "",
+             
 }
 
 ]}
 
 
   />
-  <h3 className="h1-subthemes ">what is the motive of this art? What do I wish they add to your life?  </h3>
+  <h3 className="h1-subthemes ">Art as a reminder!</h3>
 <Slider images={[
 
 {
        url: "images/slideShow/art/slide1/2.png",
-            caption: "When the world around you becomes rigid and conformist, and you find yourself in a solitary battle to make room for the playfulness, free-spiritedness, and the out of the box...when you begin to doubt it all and consider blending in with your surroundings to fit in... ",
+            caption: "When the world around you starts feeling all rigid and conformist, and you're in this solo battle trying to squeeze in some playfulness, free-spiritedness, and out-of-the-box thinking... and then you catch yourself doubting it all, thinking maybe you should just blend in with the grey scenery surrounding you to fit the mold...",
            
 },{
 url: "images/slideShow/art/slide1/3.png",
-            caption: "I wish a piece of art can play the reminder for you in that very moment. that even the greyness surrounding you, resisting your bold, vibrant colors, will have to one day realize "
+            caption: "Wouldn't it be cool if a piece of art could play the reminder for you in that moment? You know, that even when everything around you seems to resist your bold, vibrant colors, there's gonna come a time"
            
 },
 {
 url: "images/slideShow/art/slide1/4.png",
-            caption: "that even the color grey looks its best when paired with bright bold colors!",
+            caption: "When even grey starts to realize it look more awesome next to some bright, bold colors!",
            
 }
 ,{
 url: "images/slideShow/art/slide1/5.png",
-            caption: "so what about we stop giving in to the greyness of our surroundings and instead paint on this grey surrounding with one of a kind colors and stories!",
+            caption: "Find an art piece that resonates with you, invite it into your life, and let it serve as your reminder: Don't succumb to the greyness and rigidity of your surroundings; instead, inspire them with your bold true colors",
            
 },
 
 {
 url: "images/slideShow/art/slide1/1.png",
-            caption: "I have managed to keep my true colors alive one painting at a time... now I hope these paintings can serve as that reminder for someone out there!",
+            caption: "I've been keeping my true colors alive, one painting at a time... Now, I'm hoping these paintings can be that little reminder for someone out there.",
+           
+},
+{url: "images/slideShow/art/slide1/6.png",
+            caption: "Right now, I only have my own art to offer, but hey, who knows? Someday, we might have a whole squad of artists coming together to create even more one of a kind reminders!"
            
 }
 
@@ -159,7 +190,7 @@ url: "images/slideShow/art/slide1/1.png",
 <h3 className="mappedContentH"></h3>
 
 <p className="mappedContentTxt">
-Sales will kick off just before the campaign launch, and all the money we make from those sales will be poured back into the project, keeping our journey fueled as we strive to turn even more extraordinary dreams into reality. This will continue until we find the perfect investor fit backing the project, After that this will go on more independently from the campaign. what campaign? Dive deeper on the campaign page!</p>
+Sales will kick off just before the campaign launch, and all the money made from those sales will be poured back into the project, keeping our journey fueled as we strive to turn even more extraordinary dreams into reality. This will continue until we find the perfect investor fit backing the project, After that this will go on more independently from the campaign. what campaign? Dive deeper on the campaign page!</p>
 </div>
 
 {/**TODO:headers :Slider */}
@@ -186,7 +217,7 @@ Instead how about we embrace the true charm of grey? I believe it's about time w
 <h3 style={{marginLeft:"20%", marginRight:"20%"}} className="mappedContentH">Ah by the way! to my Artists out there</h3>
 
 <p className="mappedContentTxt">
-Does your artistic expression happen to invovle bold, vibrant colors and powerful strokes? I want to hear from you! Let's chat and see if there's a collaboration waiting to happen! send me an email to collab@passtillios.com 😘
+Does your artistic expression happen to invovle bold, vibrant colors? I want to hear from you! Let's chat and see if there's a collaboration waiting to happen! send me an email to collab@passtillios.com 😘
 </p>
 </div>
    </div>

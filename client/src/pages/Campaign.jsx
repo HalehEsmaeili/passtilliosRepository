@@ -129,7 +129,7 @@ const Campaign = () => {
 
         <p className="p-shareMyDream">
           I mean practice what you preach right? so to kick things off
-           and set the stage and warm you up to the idea of sharing your own versions of "daringly
+           and set the stage for you to share your own versions of "daringly
           naive dreams," let me talk you into my world first!
         </p>
 
@@ -178,7 +178,7 @@ const Campaign = () => {
 
           <p id="roadmap-h1-buzzing" className="roadmap-h1-subthemes">
             {" "}
-            here's what's buzzing around my brain as I am watching this video
+            as I am watching this I am thinking...
           </p>
 
           {/*<p id="roadmapTxt1" className="roadmapTxt">
@@ -226,7 +226,7 @@ But hey, How on earth would I even fund this? Maybe I could secure some sponsors
           </p>
           <p id="roadmap-h1-realization1" className="h1-roadmap"></p>
           <p id="roadmap-h1-realization2" className="h1-roadmap">
-          2.Working together with others to turn wildest dreams into reality is what creates communities capable of the miraculous! And boy, do I long for a magical community like that.
+          2.Work together with others to turn bold dreams into reality, and you'll create a community capable of miracles!
           </p>
           <p id="roadmap-h1-resurface" className="h1-roadmap">
           So I revisited that old dream and dared to resurface it once again.

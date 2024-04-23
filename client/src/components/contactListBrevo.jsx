@@ -774,7 +774,7 @@ const ContactList = () => {
             >
               I agree to join the Passtillios newsletter 🤙, ensuring that I
               receive important project updates and timely calls to action and show my support for this project. I
-              am aware that personal data I provided above, will be proccessed in accordance to passtillios data policy <a style={{color:"#00eeb9"}} href="/datenschutz">link to data policy</a>. accept the terms of the data privacy statement. If at any point I
+              am aware that personal data I provided above, will be proccessed in accordance to passtillios data policy <a style={{color:"#00eeb9"}} href="/datenschutz">link to data policy</a>. If at any point I
               wish to discontinue receiving communications, I understand that I
               can effortlessly opt out by clicking the provided link in the
               update emails or by sending an email to

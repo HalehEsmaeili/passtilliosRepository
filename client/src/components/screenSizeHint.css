@@ -1,76 +1,71 @@
 .screen-size-hint {
-    position: fixed;
-    overflow: visible;
-    top: 15%;
-    right: 0;
-    background-color: #ffffff00; /* Add your preferred background color */
-    width:45%;
-    z-index: 100000000; /* border: 1px solid  #00EEB9 ; Add a z-index to ensure it appears above other elements */
-    cursor: pointer;
-  }
-  
-  .close-button {
-    margin-left: 10px; /* Add space between the text and the button */
-  }
+  position: fixed;
+  overflow: visible;
+  top: 15%;
+  right: 0;
+  background-color: #ffffff00; /* Add your preferred background color */
+  width: 30%;
+  z-index: 100000000; /* border: 1px solid  #00EEB9 ; Add a z-index to ensure it appears above other elements */
+  cursor: pointer;
+}
 
-  /*#f90e9b,#5a00b4,60%,#00EEB9*/
-  .hintP{
-    position: relative;
-    color: white;
-    text-align: justify;
-   font-size:var(--fs-200);
-line-height: var(--hl-200);
-margin-left:35%;
-margin-right:2%;
-top:97%;
-  }
-  .hintH{
-    padding-top: 0%;
-    margin-left:50%;
-    margin-top: -80%;
-    rotate:-10deg;
-    margin-right:5%;
-    position: absolute;
-    text-align: left;
-    line-height: 3vw;
-    font-size: 1.5vw;
-   color: #00EEB9 ;
+.close-button {
+  margin-left: 10px; /* Add space between the text and the button */
+}
 
-  }
-  .hintContainer{
-    position: relative;
-    margin-right: 0%;
-    margin-left: 10%;
-    overflow: visible;
-  }
-  .hintImg{
-   position: relative;
-   top:-60%;
-   margin-left: 32%;
-   width:70%
-  }
-  .close-button{
-  
-cursor: pointer;
-    position: relative;
-    font-weight: 200;
-   font-size:2vw;
-position: absolute;
-background-color: #00EEB9;
-margin-top: 2%;
-margin-right: -2%;
-padding-top: 4%;
-padding-bottom: 6%;
-padding-right: 16%;
-padding-left: 16%;
-right: 2%;
+/*#f90e9b,#5a00b4,60%,#00EEB9*/
+.hintP {
+  position: relative;
+  color: white;
+  text-align: justify;
+  font-size: var(--fs-200);
+  line-height: var(--hl-200);
+  margin-left: 35%;
+  margin-right: 2%;
+  top: 97%;
+}
+.hintH {
+  margin-left: 50%;
+  margin-top: -100%;
+  rotate: -10deg;
+  margin-right: 5%;
+  position: absolute;
+  text-align: left;
+  line-height: 3vw;
+  font-size: 1.5vw;
+  color: #00eeb9;
+}
+.hintContainer {
+  position: relative;
+  margin-right: 0%;
+  margin-left: 10%;
+  overflow: visible;
+}
+.hintImg {
+  position: relative;
+  top: -60%;
+  margin-left: 32%;
+  width: 70%;
+}
+.close-button {
+  cursor: pointer;
+  position: relative;
+  font-weight: 200;
 
-display: inline-block;
-border: 1.4vw solid rgb(255, 0, 204);
-border-right-color: #eec200 ;
-border-bottom-color: #eec200 ;
-/*border-radius: 3px;
+  position: absolute;
+  background-color: #00eeb9;
+  margin-top: 2%;
+  margin-right: -2%;
+  width: 65%;
+  right: 2%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  display: inline-block;
+  border: 5px solid rgb(255, 0, 204);
+  border-right-color: #eec200;
+  border-bottom-color: #eec200;
+  /*border-radius: 3px;
 border-bottom-left-radius: 20%;
 border-top-left-radius: 20%;
 */
-  }
+}
