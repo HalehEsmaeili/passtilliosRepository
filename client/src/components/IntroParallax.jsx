@@ -231,7 +231,7 @@ function IntroParallax() {
           });
           b10Controls.start({
             left: "-4%",
-            top: "-46%",
+            top: "-40%",
             transition: {
               zIndex: 100000,
               delay: 4,
@@ -246,13 +246,13 @@ function IntroParallax() {
           });
 
           await b11Controls.start({
-            left: "15%",
-            top: "-49%",
+            left: "18%",
+            top: "-42%",
             transition: { stiffness: 1, duration: 5 },
           });
 
           b11EmptyControls.start({
-            scale: 6,
+            scale: 5,
             opacity: 0,
             transition: { duration: 0.1 },
           });
@@ -1290,9 +1290,10 @@ function IntroParallax() {
       {!scrollToNextStepsActive ? (
         <div></div>
       ) : (
-        <video muted autoPlay="autoplay" loop id="bobNextStep">
-          <source src={bobVid} type="video/mp4"></source>
-        </video>
+      <div>
+
+        
+      </div>
       )}
       <ProjectSection
         pageId={1}

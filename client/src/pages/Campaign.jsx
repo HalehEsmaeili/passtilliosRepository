@@ -32,16 +32,16 @@ const Campaign = () => {
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     if (isInViewRoadmapcontainer) {
-      if (latest < 0.4) {
+      if (latest < 0.3) {
         svgLengthControls.start({ pathLength: latest * 0 });
-      } else if (0.52 > latest > 0.4) {
+      } else if (0.5 > latest > 0.3) {
         svgLengthControls.start({
-          pathLength: latest * 0.5,
+          pathLength: latest * 1,
           transition: { stiffness: 100 },
         });
       } else {
         svgLengthControls.start({
-          pathLength: latest * 1.18,
+          pathLength: latest * 1.6,
           transition: { stiffness: 100 },
         });
       }
@@ -64,78 +64,66 @@ const Campaign = () => {
     <div className="ContactPage">
       <PageHeader page="campaign" quote="camapign-me" image={campaign} />
       <div style={{ position: "relative", overflow: "hidden" }}>
-        <PageIntro page="campaign" txt={t("pageIntro.campaign.text")}/>
+        <PageIntro page="campaign" txt={t("pageIntro.campaign.text")} />
         <Slider
           images={[
             {
-              url:`/images/slideShow/campaign/slide1/1.png`,
-              caption: "",
-            },
-            {
-              url:`/images/slideShow/campaign/slide1/2.png`,
-              caption:
-                "I wish something can break through to you and play the reminder in that very moment! that even the greyness surrounding you, resisting your bold, vibrant colors, will one day realize it needed them all along",
-            },
-            {
-              url:`/images/slideShow/campaign/slide1/3.png`,
-              caption:
-                "cause remember, even the color grey looks its best when paired with bright colors!",
-            },
-            {
-              url:`/images/slideShow/campaign/slide1/4.png`,
-              caption:
-                "so dont give in to the greyness of your surroundings instead help inspire your grey surrounding with your unique colors!",
+              url: `/images/slideShow/campaign/slide1/1.png`,
+              caption: t("campaignpage.slideshow1.1"),
             },
 
             {
-              url:`/images/slideShow/campaign/slide1/5.png`,
-              caption:
-                "I have managed to keep my true colors alive one painting at a time! now I wonder if these paintings have the potential to be that reminder for someone out there...",
+              url: `/images/slideShow/campaign/slide1/3.png`,
+              caption: t("campaignpage.slideshow1.2"),
             },
             {
-              url:`/images/slideShow/campaign/slide1/6.png`,
-              caption:
-                "I have managed to keep my true colors alive one painting at a time! now I wonder if these paintings have the potential to be that reminder for someone out there...",
+              url: `/images/slideShow/campaign/slide1/4.png`,
+              caption: t("campaignpage.slideshow1.3"),
             },
             {
-              url:`/images/slideShow/campaign/slide1/7.png`,
-              caption:
-                "I have managed to keep my true colors alive one painting at a time! now I wonder if these paintings have the potential to be that reminder for someone out there...",
+              url: `/images/slideShow/campaign/slide1/5.png`,
+              caption: t("campaignpage.slideshow1.4"),
+            },
+
+            {
+              url: `/images/slideShow/campaign/slide1/6.png`,
+              caption: t("campaignpage.slideshow1.5"),
             },
             {
-              url:`/images/slideShow/campaign/slide1/8.png`,
-              caption:
-                "I have managed to keep my true colors alive one painting at a time! now I wonder if these paintings have the potential to be that reminder for someone out there...",
+              url: `/images/slideShow/campaign/slide1/7.png`,
+              caption: t("campaignpage.slideshow1.6"),
             },
             {
-              url:`/images/slideShow/campaign/slide1/9.png`,
-              caption:
-                "I have managed to keep my true colors alive one painting at a time! now I wonder if these paintings have the potential to be that reminder for someone out there...",
+              url: `/images/slideShow/campaign/slide1/8.png`,
+              caption: t("campaignpage.slideshow1.7"),
+            },
+            {
+              url: `/images/slideShow/campaign/slide1/9.png`,
+              caption: t("campaignpage.slideshow1.8"),
+            },
+            {
+              url: `/images/slideShow/campaign/slide1/2.png`,
+              caption: t("campaignpage.slideshow1.9"),
             },
           ]}
         />
-        <h1 className="h1-shareMyDream">
-          Now, time to "Walk IT like I Talk IT" !
-        </h1>
-        <img
-          style={{
-            top: "18.4%",
-            left: "70%",
-            position: "absolute",
-            width: "7%",
-          }}
-          src={music}
-        ></img>
+        <div style={{ position: "relative" }}>
+          <h1 className="h1-shareMyDream">
+            {t("campaignpage.h1.timeToWalkIt")}
+          </h1>
+          <img
+            style={{
+              top: "12%",
+              left: "70%",
+              position: "absolute",
+              width: "7%",
+            }}
+            src={music}
+          ></img>
 
-        <p className="p-shareMyDream">
-          I mean practice what you preach right? so to kick things off
-           and set the stage for you to share your own versions of "daringly
-          naive dreams," let me talk you into my world first!
-        </p>
-
-        <h1 id="roadmapstartTxt">
-          Tuesday 21 March 2017, persian new year, this was on TV..
-        </h1>
+          <p className="p-shareMyDream">{t("campaignpage.p.timeToWalkIt")}</p>
+        </div>
+        <h1 id="roadmapstartTxt">{t("campaignpage.roadmap.h.1")}</h1>
         <div
           ref={roadmapcontainer}
           style={{
@@ -162,10 +150,10 @@ const Campaign = () => {
 
           <div className="iframe-container  roadmap-iframe-container ">
             <iframe
-             className="cmplazyload"
-             data-cmp-preview="300x200"
+              className="cmplazyload"
+              data-cmp-preview="300x200"
               data-cmp-src="https://www.youtube.com/embed/5f5TQZi5_08?si=mYcZfNPclVekAVCt"
-              src="about:blank"     
+              src="about:blank"
               data-cmp-vendor="s30"
               title="YouTube video player"
               frameborder="0"
@@ -177,8 +165,7 @@ const Campaign = () => {
           {/* <h1 id="roadmap-h1-persian" className="h1-roadmap" >the Persian New Year and I watched this video on TV... </h1>*/}
 
           <p id="roadmap-h1-buzzing" className="roadmap-h1-subthemes">
-            {" "}
-            as I am watching this I am thinking...
+            {t("campaignpage.roadmap.h.2")}
           </p>
 
           {/*<p id="roadmapTxt1" className="roadmapTxt">
@@ -188,16 +175,13 @@ const Campaign = () => {
             versions?
           </p>*/}
           <p id="roadmapTxt2" className="roadmapTxt">
-          Wouldn't it be insanely cool to bring this vibe to uni campuses worldwide? Imagine reaching out to other universities and getting them excited about a global uni-challenge, each creating their own awesome remix music videos. We turn it into this fun 
- competition, with the top video winning an epic week-long adventure and some cash on the side. Just think about all the connections and memories we'd make!
-
-But hey, How on earth would I even fund this? Maybe I could secure some sponsorships or get some investors interested? Still, gotta keep it real. Handling something this huge? only the big boys can pull off something like this... And I definitely don't want to come off as a naive dreamer, you know?
+            {t("campaignpage.roadmap.p.1")}
           </p>
           <p id="h1-dismissed" className="h1-leftAligned">
-            so just like that I dismissed that dream.
+            {t("campaignpage.roadmap.p.dismissed")}
           </p>
           <p id="roadmap-h1-4years" className="h1-leftAligned">
-            4 years after that I came across this video...
+            {t("campaignpage.roadmap.h.4yearsago")}
           </p>
 
           <div
@@ -210,7 +194,7 @@ But hey, How on earth would I even fund this? Maybe I could secure some sponsors
               data-cmp-preview="300x200"
               className="cmplazyload"
               data-cmp-src="https://www.youtube.com/embed/H2rG4Dg6xyI?si=dp8dOseok1MS53_V"
-              src="about:blank"     
+              src="about:blank"
               data-cmp-vendor="s30"
               title="YouTube video player"
               frameborder="0"
@@ -220,80 +204,69 @@ But hey, How on earth would I even fund this? Maybe I could secure some sponsors
           </div>
 
           <p id="roadmap-h1-realization" className="h1-roadmap">
-          Watching this video, I had two realizations:
-           1.you never know!
-            just ask and see what happens!
+            {t("campaignpage.roadmap.p.2")}
           </p>
           <p id="roadmap-h1-realization1" className="h1-roadmap"></p>
           <p id="roadmap-h1-realization2" className="h1-roadmap">
-          2.Work together with others to turn bold dreams into reality, and you'll create a community capable of miracles!
+            {t("campaignpage.roadmap.p.3")}
           </p>
           <p id="roadmap-h1-resurface" className="h1-roadmap">
-          So I revisited that old dream and dared to resurface it once again.
+            {t("campaignpage.roadmap.p.4")}
           </p>
 
           <p id="roadmap-h1-building" className="h1-roadmap">
-            But this time, I started seriously building around that ambitious dream
+            {t("campaignpage.roadmap.p.5")}
           </p>
           <p id="roadmap-h1-project" className="h1-roadmap">
-            and the result is the project you see in front of you!
+            {t("campaignpage.roadmap.p.6")}
           </p>
 
           <p id="roadmap-h1-slideshow" className="h1-roadmap">
-          Now, now! Let me walk you through all the reasons why jumping on board with this project could be one of the best decisions of your life!💥lets go!:
-           
+            {t("campaignpage.roadmap.p.7")}
           </p>
         </div>
 
         <Slider
           images={[
             {
-              url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/1.png",
-              caption: "",
-            },
-            {
-              url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/2.png",
-              caption:
-                "I wish something can break through to you and play the reminder in that very moment! that even the greyness surrounding you, resisting your bold, vibrant colors, will one day realize it needed them all along",
-            },
-            {
-              url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/3.png",
-              caption:
-                "cause remember, even the color grey looks its best when paired with bright colors!",
-            },
-            {
-              url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/4.png",
-              caption:
-                "so dont give in to the greyness of your surroundings instead help inspire your grey surrounding with your unique colors!",
+              url: `/images/slideShow/campaign/slide2/student.png`,
+              caption: t("campaignpage.slideshow2.1"),
             },
 
             {
-              url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/5.png",
-              caption:
-                "I have managed to keep my true colors alive one painting at a time! now I wonder if these paintings have the potential to be that reminder for someone out there...",
+              url: `/images/slideShow/campaign/slide2/3.png`,
+              caption: t("campaignpage.slideshow2.2"),
             },
             {
-              url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/6.png",
-              caption:
-                "I have managed to keep my true colors alive one painting at a time! now I wonder if these paintings have the potential to be that reminder for someone out there...",
+              url: `/images/slideShow/campaign/slide2/sponsor.png`,
+              caption: t("campaignpage.slideshow2.3"),
             },
             {
-              url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/7.png",
-              caption:
-                "I have managed to keep my true colors alive one painting at a time! now I wonder if these paintings have the potential to be that reminder for someone out there...",
-            },
-            {
-              url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/8.png",
-              caption:
-                "I have managed to keep my true colors alive one painting at a time! now I wonder if these paintings have the potential to be that reminder for someone out there...",
-            },
-            {
-              url: "https://passtillios-bucket-web.s3.eu-central-1.amazonaws.com/campaign/slideshow/9.png",
-              caption:
-                "I have managed to keep my true colors alive one painting at a time! now I wonder if these paintings have the potential to be that reminder for someone out there...",
+              url: `/images/slideShow/campaign/slide2/4.png`,
+              caption: t("campaignpage.slideshow2.4"),
             },
           ]}
         />
+        <div className="mappedContentContainer">
+          <h3 className="mappedContentH">
+            {t("campaignpage.roadmap.h.convinced")}
+          </h3>
+
+          <p className="mappedContentTxt">{t("campaignpage.roadmap.p.join")}</p>
+        </div>
+
+        <div className="mappedContentContainer">
+          <h3 className="mappedContentH">
+            {t("campaignpage.roadmap.h.lastminute")}
+          </h3>
+
+          <p
+            style={{ marginLeft: "5%", marginRight: "5%" }}
+            className="mappedContentTxt"
+          >
+            {t("campaignpage.roadmap.p.lastminute")}
+          </p>
+        </div>
 
         <div
           style={{
@@ -305,8 +278,8 @@ But hey, How on earth would I even fund this? Maybe I could secure some sponsors
           }}
         >
           <NextSteps
-            dontshow="btn3"
-            currentStation="contact"
+            dontshow="btn1"
+            currentStation="campaign"
             conditionForAnimStart={true}
           />
         </div>

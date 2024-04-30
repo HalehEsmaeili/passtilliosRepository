@@ -186,7 +186,7 @@ h1 {
   overflow: visible;
   position: relative;
   margin-bottom: 35%;
-  z-index: 100000;
+  z-index: 1000;
 }
 
 .divGreyContent {
@@ -674,7 +674,7 @@ div {
   position: relative;
   min-height: 30vw;
   overflow: visible;
-  z-index: 100000000;
+  z-index: 100000;
 }
 .bubbleDiv2 {
   display: grid;
@@ -1325,7 +1325,8 @@ margin-bottom: 0;
   .secondGreyHeader {
     text-align: center;
     text-transform: uppercase;
-  
+    font-size: 6vw;
+    line-height: 1.5;
     display: inline-block;
     margin-right: 2%;
     margin-left: 2%;

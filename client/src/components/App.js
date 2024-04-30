@@ -30,8 +30,8 @@ function App() {
     <Route path="/contact" element={<ContactPage />} />
     <Route path="/contact/success" element={<ContactPage savedsuccessful={true}/>} />
     <Route path="/home" element={<IntroParallax/>} />
-    <Route path="/impressum" element={ <Impressum/>} />
-    <Route path="/datenschutz" element={ <DatenSchutz/>} />
+    <Route path="/imprint" element={ <Impressum/>} />
+    <Route path="/datapolicy" element={ <DatenSchutz/>} />
     <Route index element={ <IntroParallax/>} />
   
     {/* Add more routes for other components */}

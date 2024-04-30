@@ -69,29 +69,35 @@ const TeamPage = () => {
           </div>
           <div className="mappedContentContainer">
             <h3 className="mappedContentH">core team</h3>
+            <p style={{marginLeft:"5%",marginRight:"5%"}} className="mappedContentTxt">
+            We're going to form a tight-knit team of 5 to 7 folks, and together as a unit, we need to cover some crucial skills. But here's the deal: I'm not too fussed about how we will end up dividing these roles up among ourselves. Whether you're a web wizard with an eye for photos or a coordination champ with killer video skills, as long as we've got these skills covered, we're golden. So, the first step is finding the right people and then crafting roles that match their strengths. Now, let's run through the must-have skills:
+ 
+            </p>
+            <p  className="mappedContentTxt">
+           
+Social Media Savvy ⭐: If you possess this skill, you're not just creative; you're also deeply passionate about crafting eye-catching, unique content for various social media platforms. You're ready to brainstorm wild ideas and bring them to life together with me. Think photography, videography, editing skills, and content management.
+
+            </p>
+            <p  className="mappedContentTxt">
+        Legal, Financial, Operational, and Management Know-How 👨‍💼👩‍💼: This skill set is all about tackling the legal, financial, operational, and management aspects of a project like a champ. As for me, that's where you'll find me least at ease! 😁
+            </p>
+            <p  className="mappedContentTxt">
+          
+Coordination Maestro 🚀: If you've got this skill, you're the go-to person for keeping everything running smoothly. You excel in coordination, communication, and organizational tasks.
+
+            </p>
             <p className="mappedContentTxt">
-              Sales will kick off just before the campaign launch, and all the
-              money made from those sales will be poured back into the project,
-              keeping our journey fueled as we strive to turn even more
-              extraordinary dreams into reality. This will continue until we
-              find the perfect investor fit backing the project, After that this
-              will go on more independently from the campaign. what campaign?
-              Dive deeper on the campaign page!
+            
+Tech Guru 👨‍💻: This skill set belongs to the tech whiz who can take the lead in developing the website and applications.
             </p>
           </div>
           <div className="mappedContentContainer">
-            <h3 className="mappedContentH">mentors</h3>
-            <p className="mappedContentTxt">
-            I once read an article by Rod Ebrahimi from Forbes that really stuck with me. 
-            He mentioned how without a savvy guide, in the form of a mentor, you may wind up making crucial early mistakes that would have otherwise been avoidable. If you recognize the potential of this project to make a positve impact and you have the experience and knowledge to guide it, I would truly appreciate you getting in contact with me 🙃.
+            <h3 className="mappedContentH">mentors and backers</h3>
+            <p style={{marginLeft:"5%",marginRight:"5%"}} className="mappedContentTxt">
+            I've come to understand the value of having a savvy guide, like a mentor, to navigate those early pitfalls that could otherwise trip us up. If this project has caught your interest and you're thinking about taking on that guiding role, whether through sharing your experience, knowledge, expertise, or financial support, I warmly encourage you to reach out. Your input could be invaluable, and I'd be thrilled to hear from you.
             </p>
           </div>
-          <div className="mappedContentContainer">
-            <h3 className="mappedContentH">investors</h3>
-            <p className="mappedContentTxt">
-            If you're thinking about backing this project, let's grab a coffee and chat to see if we're a good fit to work togetheror not.🤞🎉🤝
-            </p>
-          </div>
+        
         </div>
       </div>
 
@@ -125,12 +131,12 @@ const TeamPage = () => {
           {
             url: "images/slideShow/team/haleh/6.png",
             caption:
-              "You know what sums me up in just two words? Mindfully Naive. In a world that's all about being rational, sometimes you gotta embrace a little naivety to jump into the unknown and discover some real magic.",
+              "Here is what sums me up in just two words: Mindfully Naive. In a world that's all about being rational, sometimes you gotta embrace a little naivety to jump into the unknown and discover some real magic.",
           },
           {
             url: "images/slideShow/team/haleh/7.png",
             caption:
-              "It's all about striking that balance. Too much rationality? ",
+              "It's all about striking that balance. Too free-spirited? well that leads to pure chaos, leaving us spinning our wheels with no direction...Too much rationality? ",
           },
           {
             url: "images/slideShow/team/haleh/8.png",
@@ -154,8 +160,18 @@ const TeamPage = () => {
           {
             url: "images/slideShow/team/haleh/12.png",
             caption:
-              "Or else, I might just throw this shoe at you... Nah, just kidding. But seriously, think it through and let's have a chat.",
+              "Or else, I might just throw this shoe at ya... Nah, just kidding. But seriously, think it through and let's have a chat.",
           },
+          {
+            url: "images/slideShow/team/haleh/13.png",
+            caption:
+              "I will be waiting IM-patiently for you",
+          },
+          {
+            url: "images/slideShow/team/haleh/14.png",
+            caption:
+              "ok? bye!",
+          }
         ]}
       />
       <Slider
@@ -172,7 +188,7 @@ const TeamPage = () => {
           {
             url: "images/slideShow/team/you/3.png",
             caption:
-              "and this could be us. look what you made me do!😵 email me to collab@passtillios.com",
+              "And this could be us. Look what you made me do! 😵 Shoot me an email at collab@passtillios.com. I mean, how could you resist after seeing this masterpiece of a photo, showcasing my exceptional editing skills?",
           },
         ]}
       />

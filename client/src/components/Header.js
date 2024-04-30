@@ -121,25 +121,7 @@ function Header() {
               <li>
                 <div className="placeholder">
                   <div className="upside">
-                  <Link to="/campaign" className="button">
-                      <img src={campaign} className="customIconCss" />
-                  </Link>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div className="placeholder">
-                  <div className="upside">
-                    <Link to="/team" className="button">
-                      <img src={team} className="customIconCss" />
-                    </Link>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div className="placeholder">
-                  <div className="upside">
-                    <a
+                  <a
                       href="https://www.instagram.com/passtillios/"
                       className="button"
                     >
@@ -152,8 +134,28 @@ function Header() {
               <li>
                 <div className="placeholder">
                   <div className="upside">
+                   
                     <Link to="/contact" className="button">
                       <img src={contact} className="customIconCss" />
+                    </Link>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div className="placeholder">
+                  <div className="upside">
+                  <Link to="/campaign" className="button">
+                      <img src={campaign} className="customIconCss" />
+                  </Link>
+                   
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div className="placeholder">
+                  <div className="upside">
+                  <Link to="/team" className="button">
+                      <img src={team} className="customIconCss" />
                     </Link>
                   </div>
                 </div>

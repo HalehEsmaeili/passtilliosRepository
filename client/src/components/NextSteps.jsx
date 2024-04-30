@@ -85,8 +85,7 @@ const[showBtn3,setShowBtn3]=useState(true);
    if(isInViewdivNextStep && props.conditionForAnimStart){
     logoAnimationToNextSteps();
    }
-console.log("conditionForAnimStart"+props.conditionForAnimStart);
-console.log("isInViewdivNextStep"+isInViewdivNextStep);
+
   },[isInViewdivNextStep,props.conditionForAnimStart]);
   useEffect(()=>{
     
