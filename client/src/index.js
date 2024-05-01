@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 //import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import App from './components/App';
-import LanguageSelect from "./components/LanguageSelect";
+//import LanguageSelect from "./components/LanguageSelect";
 import reportWebVitals from './reportWebVitals';
 
 import './i18n';
@@ -14,7 +14,7 @@ root.render(
   <React.StrictMode>
  
     <LanguageContextProvider>
-    <LanguageSelect/>
+  {/*  <LanguageSelect/>*/}
       <App />
     </LanguageContextProvider>
 

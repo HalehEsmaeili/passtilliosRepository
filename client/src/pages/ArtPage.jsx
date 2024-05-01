@@ -105,7 +105,7 @@ const ArtPage = () => {
         images={[
           {
             url: "images/slideShow/art/slide2/1.png",
-            caption: t("campaignpage.Artpage.slideshow1.1"),
+            caption: t("Artpage.slideshow1.1"),
           },
 
           {
@@ -114,15 +114,15 @@ const ArtPage = () => {
           },
           {
             url: "images/slideShow/art/slide2/notMyArt.png",
-            caption: t("campaignpage.Artpage.slideshow1.3"),
+            caption: t("Artpage.slideshow1.3"),
           },
           {
             url: "images/slideShow/art/slide2/9.png",
-            caption: t("campaignpage.Artpage.slideshow1.4"),
+            caption: t("Artpage.slideshow1.4"),
           },
           {
             url: "images/slideShow/art/slide2/5.png",
-            caption: t("campaignpage.Artpage.slideshow1.5"),
+            caption: t("Artpage.slideshow1.5"),
           },
           {
             url: "images/slideShow/art/slide2/shoe.png",
@@ -140,12 +140,12 @@ const ArtPage = () => {
 
           {
             url: "images/slideShow/art/slide1/6.png",
-            caption: t("campaignpage.Artpage.slideshow1.6"),
+            caption: t("Artpage.slideshow1.6"),
           },
 
           {
             url: "images/slideShow/art/slide2/toMyArtists.png",
-            caption: t("campaignpage.Artpage.slideshow1.7"),
+            caption: t("Artpage.slideshow1.7"),
           },
         ]}
       />

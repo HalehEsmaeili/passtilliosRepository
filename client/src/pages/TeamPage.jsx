@@ -79,7 +79,7 @@ Social Media Savvy ⭐: If you possess this skill, you're not just creative; you
 
             </p>
             <p  className="mappedContentTxt">
-        Legal, Financial, Operational, and Management Know-How 👨‍💼👩‍💼: This skill set is all about tackling the legal, financial, operational, and management aspects of a project like a champ. As for me, that's where you'll find me least at ease! 😁
+            Legal, Financial, Operational, and Management Know-How 👨‍💼👩‍💼: This skill set is all about conquering those if-you-don't-you're-doomed aspects of a project like a pro. As for me, that's where you'll find me least comfortable! 😁
             </p>
             <p  className="mappedContentTxt">
           
@@ -94,7 +94,7 @@ Tech Guru 👨‍💻: This skill set belongs to the tech whiz who can take the 
           <div className="mappedContentContainer">
             <h3 className="mappedContentH">mentors and backers</h3>
             <p style={{marginLeft:"5%",marginRight:"5%"}} className="mappedContentTxt">
-            I've come to understand the value of having a savvy guide, like a mentor, to navigate those early pitfalls that could otherwise trip us up. If this project has caught your interest and you're thinking about taking on that guiding role, whether through sharing your experience, knowledge, expertise, or financial support, I warmly encourage you to reach out. Your input could be invaluable, and I'd be thrilled to hear from you.
+            I've come to understand the value of having a savvy guide, like a mentor, to navigate those early pitfalls that could otherwise trip us up. If this project has caught your interest and you're thinking about taking on that guiding role, whether through sharing your experience, knowledge, expertise, or financial support, I warmly encourage you to reach out. Your input could be invaluable, and I'd be thrilled to hear from you!
             </p>
           </div>
         

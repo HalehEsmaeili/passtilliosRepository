@@ -17,11 +17,11 @@ function Impressum () {
   return (
     <div style={{margin:"20%",marginTop:"60%",marginBottom:"50%"}} >
      
-<h1>Impressum</h1>
+<h1>IMPRINT/IMPRESSUM</h1>
 
 <p>haleh esmaeili<br />
-beckstrasse 8<br />
-64287 darmstadt</p>
+Eschersheimer Landstraße 42,<br />
+60322, Frankfurt am Main,Hessen, Germany</p>
 
 <h2>Kontakt</h2>
 <p style={{color:"white"}}>Telefon: 017662560123<br />

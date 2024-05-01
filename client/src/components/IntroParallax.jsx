@@ -466,9 +466,9 @@ function IntroParallax() {
           transition: { duration: 1.5 },
         });
        myImgControl.start({
-       left: ["100%","45%","53%"],
+       left: ["100%","43%","53.5%"],
        //scale:[1.2,1] , 
-       opacity:1 , transition: { delay:2.3,duration:.2,stiffness:1000}});
+       opacity:1 , transition: { delay:2.5,duration:.1,stiffness:1000}});
        
  await myIntroBubbleControls.start({
           left: "64%",

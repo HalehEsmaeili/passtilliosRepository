@@ -10,6 +10,7 @@ import Campaign from '../pages/Campaign';
 import Impressum from "../pages/Impressum";
 import DatenSchutz from "../pages/DatenSchutz";
 import CookieBanner from './CookieBanner';
+import Success from "./Success.jsx";
 import {useEffect} from 'react';
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
     <Route path="/team" element={<TeamPage />} />
     <Route path="/campaign" element={<Campaign />} />
     <Route path="/contact" element={<ContactPage />} />
+    <Route path="/success" element={<Success />} />
     <Route path="/contact/success" element={<ContactPage savedsuccessful={true}/>} />
     <Route path="/home" element={<IntroParallax/>} />
     <Route path="/imprint" element={ <Impressum/>} />
