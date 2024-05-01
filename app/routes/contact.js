@@ -10,7 +10,7 @@ const router = Router();
 // Rate limit configuration
 const limiter = rateLimit({
   windowMs: 20 * 60 * 1000, // 20 minutes
-  max: 3, // limit eac IP to 2 requests per windowMs
+  max: 4, // limit eac IP to 2 requests per windowMs
   handler: (req, res) => {
     // Send a custom response when the rate limit is exceeded
     res.status(429).json({
@@ -29,54 +29,53 @@ router.post('/save-to-tempo-contactlist-brevo', [
   check('email').isEmail().withMessage('Invalid email address'),
   check('name').notEmpty().withMessage('Name is required'),
   check('city').notEmpty().withMessage('City is required'),
- // check('tel').optional().isMobilePhone('any', { strictMode: false }).withMessage('Telephone must be a valid phone number')
-
 ], async (req, res) => {
-  const errors = validationResult(req);
-  if (!errors.isEmpty()) {
-    return res.status(400).json({ errors: errors.array() });
-  }
+  try {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
 
-  const email = req.body.email;
-  const name = req.body.name;
-  const city = req.body.city;
-  const state = req.body.state;
-  const country = req.body.country;
- // const tel = req.body.tel;
- // SMS: tel
-  if (!email) {
-    return res.status(400).json({ error: 'Email is required' });
-  }
+    const { email, name, city, state, country } = req.body;
 
-  const url ='https://api.brevo.com/v3/contacts/doubleOptinConfirmation';
-  const options = {
-    method: 'POST',
-    headers: {
-      accept: 'application/json',
-      'content-type': 'application/json',
-      'api-key': process.env.BREVO_API_KEY,
-    },
-    body: JSON.stringify({
-      attributes: {
-        VORNAME: name,
-        EMAIL:email,
-        COUNTRY: country,
-        STATE: state,
-        CITY: city,
-       
+    if (!email) {
+      return res.status(400).json({ error: 'Email is required' });
+    }
+
+    const url = 'https://api.brevo.com/v3/contacts/doubleOptinConfirmation';
+    const options = {
+      method: 'POST',
+      headers: {
+        accept: 'application/json',
+        'content-type': 'application/json',
+        'api-key': process.env.BREVO_API_KEY,
       },
-      includeListIds: [process.env.BREVO_LIST_ID ],
-      email: email,
-      templateId: process.env.BREVO_TEMPLATE_ID ,
-      redirectionUrl: process.env.BREVO_REDIRECT_URL
-    })
-  };
-  
-  fetch(url, options)
-    .then(res => res.json())
-    .then(json => console.log(json))
-    .catch(err => console.error('error:' + err));
+      body: JSON.stringify({
+        attributes: {
+          VORNAME: name,
+          EMAIL: email,
+          COUNTRY: country,
+          STATE: state,
+          CITY: city,
+        },
+        includeListIds: [process.env.BREVO_LIST_ID],
+        email: email,
+        templateId: process.env.BREVO_TEMPLATE_ID,
+        redirectionUrl: process.env.BREVO_REDIRECT_URL
+      })
+    };
+
+    const response = await fetch(url, options);
+    const json = await response.json();
+    console.log(json);
+    
+    res.status(200).json({ message: 'Data saved successfully.' });
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
 });
+
 
 // Apply the rate limiter to all requests to the '/saveEmail' route
 router.post(

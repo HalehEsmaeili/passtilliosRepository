@@ -152,7 +152,7 @@ const ContactList = () => {
       setBtnPressed(true);
     } else {
       try {
-    
+    console.log(email,name,city.name);
         const response = await axiosInstance.post(
           "/api/contact/save-to-tempo-contactlist-brevo",
           {
