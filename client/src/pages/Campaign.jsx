@@ -107,8 +107,8 @@ const Campaign = () => {
             },
           ]}
         />
-        <div style={{ position: "relative" }}>
-          <h1 className="h1-shareMyDream">
+        <div style={{marginTop:"25%", position: "relative" }}>
+          <h1  className="h1-shareMyDream">
             {t("campaignpage.h1.timeToWalkIt")}
           </h1>
           <img
@@ -121,7 +121,7 @@ const Campaign = () => {
             src={music}
           ></img>
 
-          <p className="p-shareMyDream">{t("campaignpage.p.timeToWalkIt")}</p>
+          <p style={{marginLeft:"10%",marginRight:"10%"}} className="p-shareMyDream">{t("campaignpage.p.timeToWalkIt")}</p>
         </div>
         <h1 id="roadmapstartTxt">{t("campaignpage.roadmap.h.1")}</h1>
         <div

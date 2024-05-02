@@ -420,8 +420,8 @@ const ContactList = () => {
 
         <div className="mb-3">
           {savedSuccessfully ? (
-            <h3 className="h3  fw-normal h2contact">
-              only 1 last step left to do!{name ? name : ""}! 🎉🥳🍾
+            <h3 style={{marginRight:"5%"}} className="fw-normal h1contact">
+             1 last step left {name ? name : ""}! 🎉🥳🍾
             </h3>
           ) : savingUnsuccessful ? (
             <h3 className="fw-normal h1contact">oooops!</h3>
@@ -432,20 +432,10 @@ const ContactList = () => {
       </div>
       {savedSuccessfully ? (
         <div className="successContainer">
-          <video className="contactListVid" autoPlay muted loop>
-            <source
-              src="https://passtillios-bucket-web.s3.amazonaws.com/contact/success.mp4"
-              type="video/mp4"
-            ></source>
-          </video>
+       
           <p className="contactListMsg">
             {" "}
-            Hey {name}! 🌟 So stoked to welcome you to the Passtillios crew!
-            Your trust means the world to me. it will be aweome so buckel up
-            because we're about to embark on an epic journey, collecting some
-            incredible stories together. I'll be dropping you a welcome email
-            soon, so keep an eye out! Take care, and get ready for the
-            awesomeness ahead!🚀🎨✨
+            now it is time to head to you email and confirm your inclusion. in return I promise to show you some real nice chicks when you come back as a welcome bonus 😏😁! see you soon👀
           </p>
         </div>
       ) : savingUnsuccessful ? (
