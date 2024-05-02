@@ -21,7 +21,13 @@ const port = process.env.PORT || 3001;
 
 // Middleware
 app.use(bodyParser.json());
-app.use(cors());
+
+  app.use(cors({
+    origin: 'https://passtillios.com',
+    // You can also specify more granular options here if needed
+  }));
+
+
 app.use((req, _, next) => {
   req.pool = pool;
   next();
