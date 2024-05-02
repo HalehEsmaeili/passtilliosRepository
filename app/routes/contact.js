@@ -25,7 +25,7 @@ const limiter = rateLimit({
 
 // Define route to save email in SendinBlue contact list
 router.post('/save-to-tempo-contactlist-brevo', [
-  limiter,
+ 
   check('email').isEmail().withMessage('Invalid email address'),
   check('name').notEmpty().withMessage('Name is required'),
   check('city').notEmpty().withMessage('City is required'),
