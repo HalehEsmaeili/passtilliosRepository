@@ -435,24 +435,15 @@ const ContactList = () => {
        
           <p className="contactListMsg">
             {" "}
-            now it is time to head to you email and confirm your inclusion. in return I promise to show you some real nice chicks when you come back as a welcome bonus 😏😁! see you soon👀
+            now it is time to head to your email inbox and confirm your inclusion. in return I promise to show you some real nice chicks when you come back as a welcome bonus 😏😁! see you soon👀
           </p>
         </div>
       ) : savingUnsuccessful ? (
         tooManyTries ? (
-          <video className="contactListVid" autoPlay muted>
-            <source
-              src="https://passtillios-bucket-web.s3.amazonaws.com/contact/too-many-trys.mp4"
-              type="video/mp4"
-            ></source>
-          </video>
+          <p className="contactListMsg">
+something went wrong.. please try another time again </p>
         ) : (
-          <video className="contactListVid" autoPlay muted>
-            <source
-              src="https://passtillios-bucket-web.s3.amazonaws.com/contact/fail.mp4"
-              type="video/mp4"
-            ></source>
-          </video>
+          <p className="contactListMsg"></p>
         )
       ) : (
         <div className="InputLabelContainer">

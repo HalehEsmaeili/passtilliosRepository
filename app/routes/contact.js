@@ -41,7 +41,7 @@ router.post('/save-to-tempo-contactlist-brevo', [
     if (!email) {
       return res.status(400).json({ error: 'Email is required' });
     }
-
+    console.log("template", process.env.BREVO_TEMPLATE_ID);
     const url = 'https://api.brevo.com/v3/contacts/doubleOptinConfirmation';
     const options = {
       method: 'POST',
@@ -58,16 +58,16 @@ router.post('/save-to-tempo-contactlist-brevo', [
           STATE: state,
           CITY: city,
         },
-        includeListIds: [process.env.BREVO_LIST_ID],
+        includeListIds: [Number(process.env.BREVO_LIST_ID)],
         email: email,
-        templateId: process.env.BREVO_TEMPLATE_ID,
+        templateId: Number(process.env.BREVO_TEMPLATE_ID),
         redirectionUrl: process.env.BREVO_REDIRECT_URL
       })
     };
 
-    const response = await fetch(url, options);
-    const json = await response.json();
-    console.log(json);
+    //const response = await fetch(url, options);
+    //const json = await response.json();
+    //console.log(json);
     
     res.status(200).json({ message: 'Data saved successfully.' });
   } catch (error) {

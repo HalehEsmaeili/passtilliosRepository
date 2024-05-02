@@ -32,6 +32,8 @@ function App() {
     <Route path="/success" element={<Success />} />
     <Route path="/contact/success" element={<ContactPage savedsuccessful={true}/>} />
     <Route path="/home" element={<IntroParallax/>} />
+    <Route path="/impressum" element={ <Impressum/>} />
+    <Route path="/datenschutz" element={ <DatenSchutz/>} />
     <Route path="/imprint" element={ <Impressum/>} />
     <Route path="/datapolicy" element={ <DatenSchutz/>} />
     <Route index element={ <IntroParallax/>} />
