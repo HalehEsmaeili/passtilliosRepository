@@ -34,7 +34,7 @@ useEffect(() => {
   // Add data fetching or side effect logic here
   // This will run when the component mounts or when props.images changes
   setImages(props.images);
-  console.log("in slider!!!!!!!!!!!", props.images[0]);
+ 
 }, [props.images]);
 
   return (

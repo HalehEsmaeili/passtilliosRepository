@@ -1,23 +1,28 @@
 import React, { useEffect, useState } from "react";
 import Slider from "../components/Slider.jsx";
-import { Container, Row, Col } from "react-bootstrap";
-import axiosInstance from "../Api/axiosInstance.js";
+import {Row, Col } from "react-bootstrap";
+//import axiosInstance from "../Api/axiosInstance.js";
 import "./TeamPage.css";
 import teamImg from "../public/images/teampage/teamIconWhite.png";
 import PageHeader from "./PageHeader.jsx";
 import NextSteps from "../components/NextSteps.jsx";
-import { formatCrewData } from "../Utils/crewUtils.js";
-import MappedContent from "../Utils/contentMapUtil.jsx";
+//import { formatCrewData } from "../Utils/crewUtils.js";
+
 import PageIntro from "../components/PageIntro.jsx";
 import { useLanguageContext } from "../context/LanguageContext";
 const TeamPage = () => {
-  const [mappingJson, setMappingJson] = useState([]);
+  //const [mappingJson, setMappingJson] = useState([]);
   const { t } = useLanguageContext();
   const [imagesForCrew, setImagesForCrew] = useState([]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    axiosInstance
+   
+  }, []);
+
+  // Define a function to handle images for each crew member
+  /*
+ axiosInstance
       .post("/api/crew/get-crew", { pageId: 2 })
       .then((response) => {
         console.log(`Response for crew:`, response.data);
@@ -38,10 +43,8 @@ const TeamPage = () => {
       .catch((error) => {
         console.error("Error retrieving section data:", error);
       });
-  }, []);
 
-  // Define a function to handle images for each crew member
-  /*
+
   const handleCrewMembers = (data) => {
     ///returns a json with an array of jsons for images and captions,crew_name and crew_id
     const formattedCrew = formatCrewData(data);

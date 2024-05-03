@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import "../../public/intro.css";
 import "./CampaignStatement.css";
 
-import axiosInstance from "../../Api/axiosInstance.js";
+//import axiosInstance from "../../Api/axiosInstance.js";
 
 //1901 change the h1s positioning css.
 //the local deployment works with serve,but with heroku not yet
@@ -167,10 +167,10 @@ function CampaignStatement(props) {
               transition: { delay: 0.3, duration: 0.1 },
             });
           } catch (error) {
-            console.error(
+           { /*console.error(
               "An error occurred during handOfCanvasControls animation:",
               error
-            );
+            );*/}
           }
 
           try {
@@ -184,10 +184,10 @@ function CampaignStatement(props) {
               transition: { delay: 0.5, duration: 0.2 },
             });
           } catch (error) {
-            console.error(
+           { /*console.error(
               "An error occurred during handOfCanvasControls animation:",
               error
-            );
+            );*/}
           }
 
           try {
@@ -197,10 +197,10 @@ function CampaignStatement(props) {
               transition: { delay: 0.7, duration: 0.1 },
             });
           } catch (error) {
-            console.error(
+           {/* console.error(
               "An error occurred during handOfCanvasControls animation:",
               error
-            );
+            );*/}
           }
 
           await lampControls.start({
@@ -230,32 +230,32 @@ function CampaignStatement(props) {
               transition: { stiffness: 50, duration: 0.01 },
             });
           } catch (error) {
-            console.error(
+           {/* console.error(
               "An error occurred during handOfCanvasControls animation:",
               error
-            );
+            );*/}
           }
         } catch {}
       };
       yourLifePaintigAnim();
     }
   }, [isInViewYourLifePaintingDiv]);
-
+/*
   useEffect(() => {
-    /////test
+  
     axiosInstance
       .get(`/api/content/contentForMapping/${props.pageId}`)
       .then((response) => {
-        console.log("page mapping works", response);
+        
         //console.log(response.data.sections);
         //setSectionData(response.data.sections);
       })
       .catch((error) => {
-        console.error("Error retrieving section data:", error);
-        // Handle error
+      
+       
       });
 
-    //////
+   
 
     axiosInstance
       .get(`/api/content/sections/${props.pageId}/${props.sectionId}`)
@@ -268,11 +268,11 @@ function CampaignStatement(props) {
         //setSectionData(response.data.sections);
       })
       .catch((error) => {
-        console.error("Error retrieving section data:", error);
-        // Handle error
+       
       });
   }, []);
 
+*/
   return (
     <div>
       <div className="meetPasstilliosContainer">

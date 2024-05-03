@@ -441,9 +441,12 @@ const ContactList = () => {
       ) : savingUnsuccessful ? (
         tooManyTries ? (
           <p className="contactListMsg">
-something went wrong.. please try another time again </p>
+        seems like you have tried a couple of times to join in. if you did not recieve an email from me, no worries! just shoot me an email at add-me-to-newsletter@passtillios.com and I will find a solution🧡</p>
         ) : (
-          <p className="contactListMsg"></p>
+          <p className="contactListMsg">
+         it is not you it is us! something went wrong🧡 if the problem persists no worries I am not the kind to give you up that easily😆! just shoot me an email at add-me-to-newsletter@passtillios.com and I will find a solution.
+          </p>
+       
         )
       ) : (
         <div className="InputLabelContainer">

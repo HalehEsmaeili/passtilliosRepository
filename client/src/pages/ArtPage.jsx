@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axiosInstance from "../Api/axiosInstance.js";
+//import axiosInstance from "../Api/axiosInstance.js";
 import Slider from "../components/Slider.jsx";
 //import 'bootstrap/dist/css/bootstrap.min.css';
 import "./pages.css";
@@ -50,6 +50,7 @@ const ArtPage = () => {
   */
 
   // Fetch product images
+ /*
   useEffect(() => {
     const fetchProductImages = async () => {
       try {
@@ -77,12 +78,12 @@ const ArtPage = () => {
           setProductImages([]);
         }
       } catch (error) {
-        console.error("Error fetching product images:", error);
+       // console.error("Error fetching product images:", error);
       }
     };
     fetchProductImages();
   }, []);
-
+*///
   
   return (
     <div>

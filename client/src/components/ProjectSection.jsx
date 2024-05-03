@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef, useHover } from "react";
 import { useLanguageContext } from "../context/LanguageContext";
-import axiosInstance from "../Api/axiosInstance";
+//import axiosInstance from "../Api/axiosInstance";
 import "../public/intro.css";
 import Slider from "./Slider.jsx";
 //import stars from "../public/images/Intro/stars.gif";
@@ -171,11 +171,9 @@ useEffect(()=>{
 },[isInViewdiv4]);
 */
 ////fetch content
-
+/*
 useEffect(() => {
-
-  //////
-
+ 
   axiosInstance
     .get(`/api/content/sections/${props.pageId}/${props.sectionId}`)
     .then((response) => {
@@ -187,11 +185,11 @@ useEffect(() => {
       //setSectionData(response.data.sections);
     })
     .catch((error) => {
-      console.error("Error retrieving section data for project section:", error);
+    //  console.error("Error retrieving section data for project section:", error);
       // Handle error
     });
 }, []);
-
+*/
 
   ///bro moving
   useEffect(() => {
@@ -238,7 +236,7 @@ useEffect(() => {
         case 0:
           {
             h1Index = 1;
-            console.log("im in caaase here in 0");
+           // console.log("im in caaase here in 0");
             //setIsNextArrowClickable(false);
             await nextButtonControls.start({
               opactity: 1,
@@ -514,7 +512,7 @@ controlsLogoAfterPush.start({opacity:0,transition:{duration:.5}});
 */
         await controls
           .start({ opacity: 0, transition: { delay: -0.2, duration: 0.01 } })
-          .catch((error) => console.error(error));
+          //.catch((error) => console.error(error));
 
         await controlsimg2.start({ opacity: 1, x: "10vw" });
         ////delay-group 1

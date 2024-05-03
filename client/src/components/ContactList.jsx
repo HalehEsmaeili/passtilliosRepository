@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import callMe from "../public/images/contactPage/call.png";
+
 import { Country, State, City } from "country-state-city";
 //import "./TeamPage.css";
 import "../pages/ContactPage.css";
@@ -54,7 +54,7 @@ const ContactList = () => {
   const [helperTxt, setHelperTxt] = useState("");
 ////useeffects for country,state,city
   useEffect(() => {
-    console.log("i am triggered by",country.name);
+  
     if (country.isoCode==="") {
     //setCountry.isoCode("");
     setStatePlaceholder(
@@ -71,7 +71,7 @@ const ContactList = () => {
   }, [country]);
 
   useEffect(() => {
-    console.log("state: i am triggered by",state.name);
+   
     //handleFilteringAndSetting(newValue,Country.getAllCountries(),country,setCountry,countrySuggestions,setCountrySuggestions);
    
    
@@ -138,31 +138,31 @@ const ContactList = () => {
 
         if (response.status === 200) {
           setSavedSuccessfully(true);
-          console.log("Success:", response.data);
+        
         } else {
           // Handle different HTTP status codes here
           if (response.status === 429) {
-            console.log("Rate limit exceeded in right place");
+         
           } else if (response.status === 400) {
             // Handle 400 error (validation error)
             setError(response.data.errors);
-            console.error("Validation Error:", response.data.errors);
+          
           } else {
             // Handle other errors
-            console.error("Server Error:", response.data);
+          
           }
         }
       } catch (error) {
-        console.error("Validation Error:", error);
+        
         if (error.response) {
           if (error.response.status === 429) {
-            console.log("Rate limit exceeded in catch");
+           
             setSavingUnsuccessful(true);
             setTooManyTries(true);
             setSavedSuccessfully(false);
           }  else {
             // Handle other errors
-            console.error("Server Error:", error.response.data);
+        
             setSavingUnsuccessful(true);
         setTooManyTries(false);
         setSavedSuccessfully(false);
@@ -208,9 +208,9 @@ const ContactList = () => {
       */
     } else if (event.target.name === "country") {
       const newValue = event.target.value;
-      console.log("country",country);
+     
       if (newValue.length < country.name.length) {
-        console.log("Deletion occurred");
+   
         setCountry({name:newValue, isoCode:""});
         setStatePlaceholder("first choose the country:)");
         setState({name:"",isoCode:""});
@@ -259,7 +259,7 @@ handleFilteringAndSetting(newValue,Country.getAllCountries(),country,setCountry,
       //console.log("the current state saved isssss", state);
     } else if (event.target.name === "city") {
       if (state.isoCode === "") {
-        console.log("iso code state is" + stateIsoCode);
+       
         setCity({name:""});
         setCityPlaceholder("first enter the state:)");
       } else {
@@ -268,7 +268,7 @@ handleFilteringAndSetting(newValue,Country.getAllCountries(),country,setCountry,
         const newValue = event.target.value;
         ///by deletion in city input field
         if (newValue.length < city.name.length) {
-          console.log("Deletion occurred");
+        
           setCityPlaceholder("which city are you in?");
           setCity({name:newValue});
         }
@@ -315,10 +315,10 @@ const handleFilteringAndSetting=(newInputValue,listTOFilter,useState_Val,set_use
           */
         } else {
           if (filteredValues.length === 0 && suggestion_useState_Val.length === 1) {
-            console.log("i am in fitered val 0",suggestion_useState_Val[0] );
+           
             set_useState_Val(suggestion_useState_Val[0]);
           } else {
-            console.log("no matches yet just saving" + newInputValue);
+          
             set_useState_Val({name:newInputValue,isoCode:""});
             setSuggestions(filteredValues);
           }

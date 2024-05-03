@@ -1,5 +1,5 @@
 import { React,useState, useEffect } from 'react';
-import { motion,useMotionValue, useAnimation, useControls,useScroll, useMotionValueEvent, animate, easeIn, spring } from 'framer-motion';
+import {useMotionValue } from 'framer-motion';
 function getWindowDimensions() {
   const { innerWidth: width, innerHeight: height } = window;
   return {
