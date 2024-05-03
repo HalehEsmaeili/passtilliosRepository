@@ -25,7 +25,6 @@ const limiter = rateLimit({
 
 // Define route to save email in SendinBlue contact list
 router.post('/save-to-tempo-contactlist-brevo', [
- 
   check('email').isEmail().withMessage('Invalid email address'),
   check('name').notEmpty().withMessage('Name is required'),
   check('city').notEmpty().withMessage('City is required'),
@@ -41,7 +40,7 @@ router.post('/save-to-tempo-contactlist-brevo', [
     if (!email) {
       return res.status(400).json({ error: 'Email is required' });
     }
-    console.log("template", process.env.BREVO_TEMPLATE_ID);
+
     const url = 'https://api.brevo.com/v3/contacts/doubleOptinConfirmation';
     const options = {
       method: 'POST',
@@ -61,20 +60,26 @@ router.post('/save-to-tempo-contactlist-brevo', [
         includeListIds: [Number(process.env.BREVO_LIST_ID)],
         email: email,
         templateId: Number(process.env.BREVO_TEMPLATE_ID),
-        redirectionUrl: process.env.BREVO_REDIRECT_URL
+        redirectionUrl: "https://www.passtillios.com/success"
       })
     };
 
-    //const response = await fetch(url, options);
-    //const json = await response.json();
-    //console.log(json);
-    
-    res.status(200).json({ message: 'Data saved successfully.' });
+    fetch(url, options)
+    .then(response => {
+      if (response.status === 204) {
+        res.status(200).json({ message: 'Data saved successfully.' });
+      } else {
+        return response.json();
+      }
+    })
+    .catch(err => console.error('error:' + err));
   } catch (error) {
     console.error('Error:', error);
     res.status(500).json({ error: 'Internal server error' });
   }
 });
+
+
 
 
 // Apply the rate limiter to all requests to the '/saveEmail' route
