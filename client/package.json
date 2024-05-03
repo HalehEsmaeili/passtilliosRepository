@@ -30,6 +30,7 @@
     "react-floating-action-button": "^1.0.5",
     "react-floating-button": "^1.1.1",
     "react-google-recaptcha": "^3.1.0",
+    "react-gtm-module": "^2.0.11",
     "react-i18next": "^14.1.0",
     "react-marker": "^1.0.1",
     "react-native": "^0.72.6",

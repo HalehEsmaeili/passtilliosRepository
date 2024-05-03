@@ -1,3 +1,12 @@
+
+@font-face {
+  font-family:"Exo 2";
+  src: url('../public/fonts/Exo_2/static/Exo2-Regular.ttf') format('truetype');
+  /* Add other font properties (e.g., font-weight, font-style) if needed */
+}
+a{
+  color:#00eeb9;
+}
 body {
     overflow-x: hidden;
     background-color:#090225;
