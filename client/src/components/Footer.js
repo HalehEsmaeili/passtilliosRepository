@@ -20,11 +20,11 @@ function Footer() {
      
      <footer className="footer">
       <div className="footer-content">
-        <span onClick={()=>navigate("/impressum")}  className="footer-link">Imprint</span>
+        <p onClick={()=>navigate("/impressum")}  className="footer-link">Imprint</p>
         <span className="separator">|</span>
-        <span onClick={()=>navigate("/datenschutz")}  className="footer-link">Data Policy</span>
+        <p onClick={()=>navigate("/datenschutz")}  className="footer-link">Data Policy</p>
         <span className="separator" >|</span>
-        <span style={{margin:"0 10px"}} className="separator"> &copy; passtillios 2024 </span>
+        <p style={{margin:"0 10px"}} className="separator"> &copy; 2024 PASSTILLIOS</p>
       </div>
 
     </footer>

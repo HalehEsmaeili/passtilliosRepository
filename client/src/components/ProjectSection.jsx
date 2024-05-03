@@ -27,7 +27,7 @@ import {
 } from "framer-motion";
 
 import throatCleaning from "../public/images/broDIV2/1.png";
-import poking from "../public/images/broDIV2/needle.png";
+
 import talking from "../public/images/broDIV2/3.png";
 import notTalking from "../public/images/broDIV2/2.png";
 import schirm from "../public/images/broDIV2/schirm.png";

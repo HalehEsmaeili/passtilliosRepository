@@ -184,14 +184,20 @@ url: "images/slideShow/art/slide1/1.png",
 
 ]}/>*/}
       <div className="mappedContentContainer">
-        <h3 className="mappedContentH"></h3>
+   
 
         <p className="mappedContentTxt">
           {t("Artpage.p.salesStartWhen")}
         </p>
       </div>
 
-    
+      <div className="mappedContentContainer">
+        <h3 className="mappedContentH">💛💜💚🧡</h3>
+
+        <p className="mappedContentTxt">
+          {t("Artpage.p.shout-outs")}
+        </p>
+      </div>
 
 
       <div

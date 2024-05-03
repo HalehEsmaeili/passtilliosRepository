@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.328a4457.css",
-    "main.js": "/static/js/main.8092c87b.js",
+    "main.js": "/static/js/main.bd71a82e.js",
     "static/js/651.47184ffe.chunk.js": "/static/js/651.47184ffe.chunk.js",
     "static/media/yourcolors.gif": "/static/media/yourcolors.24f54106c2588d4ae63e.gif",
     "static/media/sonneBG.gif": "/static/media/sonneBG.fe839119fb42d9d06d36.gif",
@@ -11,7 +11,6 @@
     "static/media/4.png": "/static/media/4.932db309e02d160e20a5.png",
     "static/media/music.png": "/static/media/music.24a09246d4bcd1f0884e.png",
     "static/media/5.png": "/static/media/5.61466203bdebd1480f76.png",
-    "static/media/heythere2.png": "/static/media/heythere2.53e88db301d8f0412052.png",
     "static/media/myimg.png": "/static/media/myimg.c9173d54547e11d6d25a.png",
     "static/media/spiceIntro.png": "/static/media/spiceIntro.1b4277fca4000dd97963.png",
     "static/media/7.png": "/static/media/7.573fc6d363986f629c33.png",
@@ -21,7 +20,6 @@
     "static/media/8.png": "/static/media/8.22aed4d0d0a3b0fe9f2e.png",
     "static/media/10.png": "/static/media/10.79c8b8efd551e9eda7de.png",
     "static/media/12.png": "/static/media/12.1191d300bb2e04c14700.png",
-    "static/media/parazit.mp4": "/static/media/parazit.7d92b5b50089d97d1c2a.mp4",
     "static/media/cloud.png": "/static/media/cloud.29e64a3048859fb4a21e.png",
     "static/media/9.png": "/static/media/9.1820d6d476c2f59a21f5.png",
     "static/media/13.png": "/static/media/13.ff3cdf022091e69ad90e.png",
@@ -31,7 +29,6 @@
     "static/media/wtf.png": "/static/media/wtf.7acf4a7bc0bf25986f87.png",
     "static/media/colorRevelation.png": "/static/media/colorRevelation.0869797b594facabe1e2.png",
     "static/media/hand.png": "/static/media/hand.f2c86fc48c8ba9a3bb03.png",
-    "static/media/28.mp4": "/static/media/28.97cf3ac9db97e701c87a.mp4",
     "static/media/schirm.png": "/static/media/schirm.7ea2432ac8c682842a8b.png",
     "static/media/yourcolorwords.png": "/static/media/yourcolorwords.3d108a1aa23555aac015.png",
     "static/media/fa-brands-400.ttf": "/static/media/fa-brands-400.6205fd00fb1b573e9f0f.ttf",
@@ -47,7 +44,6 @@
     "static/media/campaignIcon.png": "/static/media/campaignIcon.f87f854813fb984948ae.png",
     "static/media/call.png": "/static/media/call.d77f827403ca7a790505.png",
     "static/media/teamIconWhite.png": "/static/media/teamIconWhite.6626a8820e8adbb34790.png",
-    "static/media/needle.png": "/static/media/needle.2899e5a37b9fe1357298.png",
     "static/media/campaignIconWhite.png": "/static/media/campaignIconWhite.0452a70a32984e8f3027.png",
     "static/media/lines.png": "/static/media/lines.e87cd213940a81f32810.png",
     "static/media/person.png": "/static/media/person.a88a3860cce45c6aa3c7.png",
@@ -60,11 +56,11 @@
     "static/media/fa-v4compatibility.woff2": "/static/media/fa-v4compatibility.b3049b13a93f07e026fc.woff2",
     "index.html": "/index.html",
     "main.328a4457.css.map": "/static/css/main.328a4457.css.map",
-    "main.8092c87b.js.map": "/static/js/main.8092c87b.js.map",
+    "main.bd71a82e.js.map": "/static/js/main.bd71a82e.js.map",
     "651.47184ffe.chunk.js.map": "/static/js/651.47184ffe.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.328a4457.css",
-    "static/js/main.8092c87b.js"
+    "static/js/main.bd71a82e.js"
   ]
 }

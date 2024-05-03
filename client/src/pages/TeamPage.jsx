@@ -63,6 +63,7 @@ const TeamPage = () => {
 
         <div>
           <div className="mappedContentContainer">
+          <h3 className="mappedContentH">💛💜💚🧡</h3>
             <h3 className="mappedContentH">
               partners in crime this project needs:
             </h3>
@@ -96,6 +97,7 @@ Tech Guru 👨‍💻: This skill set belongs to the tech whiz who can take the 
             <p style={{marginLeft:"5%",marginRight:"5%"}} className="mappedContentTxt">
             I've come to understand the value of having a savvy guide, like a mentor, to navigate those early pitfalls that could otherwise trip us up. If this project has caught your interest and you're thinking about taking on that guiding role, whether through sharing your experience, knowledge, expertise, or financial support, I warmly encourage you to reach out. Your input could be invaluable, and I'd be thrilled to hear from you!
             </p>
+           
           </div>
         
         </div>

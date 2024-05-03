@@ -6,7 +6,6 @@ import ProjectSection from "./ProjectSection.jsx";
 import NextSteps from "./NextSteps.jsx";
 import Slider from "./Slider.jsx";
 import ScreenSizeHint from "./ScreenSizeHint.jsx";
-import bobVid from "../public/images/nextSteps/28.mp4";
 import Button from "./Button.js";
 import {
   motion,

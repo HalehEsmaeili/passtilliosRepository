@@ -24,7 +24,7 @@ Eschersheimer Landstraße 42,<br />
 60322, Frankfurt am Main,Hessen, Germany</p>
 
 <h2>Kontakt</h2>
-<p style={{color:"white"}}>Telefon: 017662560123<br />
+<p style={{color:"white"}}>Telefon: 01633659699<br />
 {/*Telefax: +49 (0) 123 44 55 99<br />*/}
 E-Mail: haleh@passtillios.com</p>
 

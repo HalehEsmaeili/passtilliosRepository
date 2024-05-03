@@ -1,9 +1,9 @@
 import React, { useEffect, useState, useRef } from "react";
 import "../../public/intro.css";
 import "./CampaignStatement.css";
-import axios from "axios";
+
 import axiosInstance from "../../Api/axiosInstance.js";
-import parazzit from "../../public/images/campaign/parazit.mp4";
+
 //1901 change the h1s positioning css.
 //the local deployment works with serve,but with heroku not yet
 //heroku logs --tail -a passtilliostest1

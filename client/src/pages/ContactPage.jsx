@@ -23,6 +23,7 @@ const ContactPage = () => {
         <PageIntro page="Networking" txt={t("pageIntro.contact.text")} />
 
         <div className="mappedContentContainer">
+        <h3 className="mappedContentH">💛💜💚🧡</h3>
           <h3 className="mappedContentH">
            {t("contactpage.joinContactList")}
         
@@ -41,6 +42,7 @@ const ContactPage = () => {
           {t("contactpage.notspammy")}
 
           </p>
+          
         </div>
 
         <ContactList />

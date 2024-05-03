@@ -256,7 +256,9 @@ const Campaign = () => {
         </div>
 
         <div className="mappedContentContainer">
+      
           <h3 className="mappedContentH">
+          
             {t("campaignpage.roadmap.h.lastminute")}
           </h3>
 
@@ -266,6 +268,7 @@ const Campaign = () => {
           >
             {t("campaignpage.roadmap.p.lastminute")}
           </p>
+         
         </div>
 
         <div
