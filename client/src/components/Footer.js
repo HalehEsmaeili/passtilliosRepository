@@ -26,11 +26,11 @@ function Footer() {
         <span className="separator" >|</span>
         <p style={{margin:"0 10px"}} className="separator"> &copy; 2024 PASSTILLIOS</p>
       </div>
-
+    
     </footer>
 {/*
         <button name='Impressum' onClick={()=>navigate("/impressum")} style={{ position:"relative",display: 'inline-block', textAlign: 'center',color:"#00eeb9",marginLeft:"30%",fontSize:"2vw"  }} className="mt-5 mb-3 text-body-secondary">Impressum</button>
-       
+         <p style={{margin:"0 10px"}} className="separator">designed with 🧡 by haleh esmaeili</p>
     
       <p style={{display: 'inline-block',paddingLeft:"4%", textAlign: 'center', color: 'white' }} className="mt-5 mb-3 text-body-secondary">&copy; passtillios 2022</p>
     

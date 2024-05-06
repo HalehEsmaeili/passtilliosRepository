@@ -9,8 +9,8 @@ const router = Router();
 
 // Rate limit configuration
 const limiter = rateLimit({
-  windowMs: 20 * 60 * 1000, // 20 minutes
-  max: 3, // limit eac IP to 2 requests per windowMs
+  windowMs: 30 * 60 * 1000, // 20 minutes
+  max: 2, // limit eac IP to 2 requests per windowMs
   handler: (req, res) => {
     // Send a custom response when the rate limit is exceeded
     res.status(429).json({
@@ -84,6 +84,7 @@ router.post('/save-to-tempo-contactlist-brevo', [
 
 
 // Apply the rate limiter to all requests to the '/saveEmail' route
+/*
 router.post(
   '/saveEmail',
   [
@@ -152,9 +153,10 @@ router.post(
     reqq.end();
   }
 );
-
+*/
 
 // Endpoint to handle reCAPTCHA verification
+/*
 router.post('/verify-recaptcha', async (req, res) => {
   const { recaptchaToken } = req.body;
 
@@ -179,5 +181,5 @@ router.post('/verify-recaptcha', async (req, res) => {
     res.status(500).json({ success: false, message: 'Internal server error' });
   }
 });
-
+*/
 export default router;

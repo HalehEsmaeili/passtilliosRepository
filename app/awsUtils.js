@@ -1,4 +1,4 @@
-import s3 from "./aws.js";
+/*import s3 from "./aws.js";
 
 
 // Functioon to retrieve photos from AWS S3
@@ -29,7 +29,7 @@ async function getMediaFromS3(bucketName, folderName) {
   module.exports = {
     getMediaFromS3,
   };
-
+*/
 /*
   app.get('/get-image/:key', async (req, res) => {
     const { key } = req.params;

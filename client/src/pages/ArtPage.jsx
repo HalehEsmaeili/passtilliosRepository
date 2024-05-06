@@ -105,25 +105,29 @@ const ArtPage = () => {
       <Slider
         images={[
           {
-            url: "images/slideShow/art/slide2/1.png",
+            url: "images/slideShow/art/slide2/art-splash.png",
             caption: t("Artpage.slideshow1.1"),
           },
 
           {
             url: "images/slideShow/art/slide2/3.png",
-            caption: t("campaignpage.Artpage.slideshow1.2"),
+            caption: t("Artpage.slideshow1.2"),
           },
           {
-            url: "images/slideShow/art/slide2/notMyArt.png",
+            url: "images/slideShow/art/slide2/sth-else2.png",
             caption: t("Artpage.slideshow1.3"),
           },
           {
-            url: "images/slideShow/art/slide2/9.png",
+            url: "images/slideShow/art/slide2/group2.png",
             caption: t("Artpage.slideshow1.4"),
           },
           {
             url: "images/slideShow/art/slide2/5.png",
             caption: t("Artpage.slideshow1.5"),
+          },
+          {
+            url: "images/slideShow/art/slide2/6.png",
+            caption: "",
           },
           {
             url: "images/slideShow/art/slide2/shoe.png",

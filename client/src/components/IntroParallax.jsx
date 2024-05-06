@@ -467,7 +467,7 @@ function IntroParallax() {
        myImgControl.start({
        left: ["100%","43%","53.5%"],
        //scale:[1.2,1] , 
-       opacity:1 , transition: { delay:2.5,duration:.1,stiffness:1000}});
+       opacity:1 , transition: { delay:1.8,duration:.1,stiffness:1000}});
        
  await myIntroBubbleControls.start({
           left: "64%",
@@ -1290,8 +1290,34 @@ function IntroParallax() {
         <div></div>
       ) : (
       <div>
+      <div className="mappedContentContainer">
+            <h3 className="mappedContentH">First things first, let's help spread the magic!</h3>
+            <p className="mappedContentH">Did you happen to get a flyer from me? Is this the flyer you have in your hand?</p>
+          
 
-        
+            <img style={{width:"100%"}} src="/images/flyers/1.jpg"></img>
+            <p className="mappedContentH">Then, you can help encourage the next person to take a look at the website! Let me give you an example...</p>
+           <img style={{width:"100%"}} src="/images/flyers/example2.jpg"></img>
+           <p
+              style={{ marginLeft: "5%", marginRight: "5%" }}
+              className="mappedContentH"
+            >
+              Remember! Your words carry serious weight. Let's put that power to good use together!
+            </p>
+           
+            <h3 className="mappedContentH">Or did you receive this flyer?</h3>
+            <img style={{width:"100%"}} src="/images/flyers/small.jpg"></img>
+            <p
+              style={{ marginLeft: "5%", marginRight: "5%" }}
+              className="mappedContentH"
+            >
+             Then don't toss it away. Either pass it on to another student or leave it in a public spot and let serendipity work its magic.
+            </p>
+            <p style={{ marginLeft: "5%", marginRight: "5%" }} className="mappedContentH">
+            And of course, let's not forget about the internet and social media. I'm pretty sure you folks are much better at that than I am, so I'll leave that part to you! 😜
+</p>
+            <p className="mappedContentH">Now, if you're ready, scroll down, and I'll guide you through the next stops on the website.🤟</p>
+            </div>
       </div>
       )}
       <ProjectSection

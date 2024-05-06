@@ -1,4 +1,4 @@
-import express from 'express';
+/*import express from 'express';
 import pool from '../db.js';
 //import { check, validationResult } from 'express-validator';
 const router = express.Router();
@@ -32,3 +32,4 @@ console.log(result);
 });
 
 export default router;
+*/

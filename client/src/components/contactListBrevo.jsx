@@ -764,7 +764,7 @@ const ContactList = () => {
               wish to discontinue receiving communications, I understand that I
               can effortlessly opt out by clicking the provided link in the
               update emails or by sending an email to
-              remove-me-from-contactlist@passtillios.com🤝
+              remove-me-from-newsletter@passtillios.com🤝
             </p>
             {btnPressed && agreedToJoin === false ? (
               <p className="errorP">your agreement above is required</p>

@@ -34,7 +34,7 @@ function Datenschutz() {
 Eschersheimer Landstra&szlig;e 42,<br />
 60322, Frankfurt am Main,Hessen, Deutschland</p>
 
-<p>Telefon: 01633659699<br />
+<p>Telefon: +49 (0) 1633659699<br />
 E-Mail: haleh@passtillios.com</p>
  <p>Verantwortliche Stelle ist die nat&uuml;rliche oder juristische Person, die allein oder gemeinsam mit anderen &uuml;ber die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z.&nbsp;B. Namen, E-Mail-Adressen o. &Auml;.) entscheidet.</p>
 
@@ -85,7 +85,7 @@ E-Mail: haleh@passtillios.com</p>
 Eschersheimer Landstra&szlig;e 42,<br />
 60322, Frankfurt am Main,Hessen, Deutschland</p>
 
-<p>Phone: 01633659699<br />
+<p>Phone: +49 (0) 1633659699<br />
 E-mail: haleh@passtillios.com</p>
  <p>The controller is the natural person or legal entity that single-handedly or jointly with others makes decisions as to the purposes of and resources for the processing of personal data (e.g., names, e-mail addresses, etc.).</p>
 

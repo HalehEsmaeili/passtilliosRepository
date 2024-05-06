@@ -1,4 +1,4 @@
-import pg from 'pg';
+/*import pg from 'pg';
 
 // Database configuration with connection pool
 const pool = new pg.Pool({
@@ -10,3 +10,4 @@ const pool = new pg.Pool({
 });
 
 export default pool;
+*/

@@ -1,3 +1,4 @@
+/*
 import express from 'express';
 import { S3Client, ListObjectsCommand } from '@aws-sdk/client-s3'; // Make sure to import GetObjectsCommand
 import  s3  from "../aws.js";  // Assuming 's3' is exported from 'aws.js'
@@ -9,7 +10,7 @@ const port = 3001;
 const router = express.Router();
 
 // Configure AWS SDK v3
-/*
+
 const s3Client = new S3Client({
   region: 'your-region',
   credentials: {
@@ -17,7 +18,7 @@ const s3Client = new S3Client({
     secretAccessKey: 'your-secret-access-key',
   },
 });
-*/
+
 
 // Find AWS image folder
 router.post('/getImages', async (req, res) => {
@@ -52,3 +53,4 @@ router.post('/getImages', async (req, res) => {
 
 
 export default router;
+*/

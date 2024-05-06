@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Slider from "../components/Slider.jsx";
-import {Row, Col } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 //import axiosInstance from "../Api/axiosInstance.js";
 import "./TeamPage.css";
 import teamImg from "../public/images/teampage/teamIconWhite.png";
@@ -17,7 +17,6 @@ const TeamPage = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-   
   }, []);
 
   // Define a function to handle images for each crew member
@@ -66,43 +65,80 @@ const TeamPage = () => {
 
         <div>
           <div className="mappedContentContainer">
-          <h3 className="mappedContentH">💛💜💚🧡</h3>
+            <h3 className="mappedContentH">🩵💛🤍💜💚🧡</h3>
             <h3 className="mappedContentH">
               partners in crime this project needs:
             </h3>
           </div>
           <div className="mappedContentContainer">
             <h3 className="mappedContentH">core team</h3>
-            <p style={{marginLeft:"5%",marginRight:"5%"}} className="mappedContentTxt">
-            We're going to form a tight-knit team of 5 to 7 folks, and together as a unit, we need to cover some crucial skills. But here's the deal: I'm not too fussed about how we will end up dividing these roles up among ourselves. Whether you're a web wizard with an eye for photos or a coordination champ with killer video skills, as long as we've got these skills covered, we're golden. So, the first step is finding the right people and then crafting roles that match their strengths. Now, let's run through the must-have skills:
- 
-            </p>
-            <p  className="mappedContentTxt">
-           
-Social Media Savvy ⭐: If you possess this skill, you're not just creative; you're also deeply passionate about crafting eye-catching, unique content for various social media platforms. You're ready to brainstorm wild ideas and bring them to life together with me. Think photography, videography, editing skills, and content management.
-
-            </p>
-            <p  className="mappedContentTxt">
-            Legal, Financial, Operational, and Management Know-How 👨‍💼👩‍💼: This skill set is all about conquering those if-you-don't-you're-doomed aspects of a project like a pro. As for me, that's where you'll find me least comfortable! 😁
-            </p>
-            <p  className="mappedContentTxt">
-          
-Coordination Maestro 🚀: If you've got this skill, you're the go-to person for keeping everything running smoothly. You excel in coordination, communication, and organizational tasks.
-
+            <p
+              style={{ marginLeft: "5%", marginRight: "5%" }}
+              className="mappedContentTxt"
+            >
+              We're going to form a tight-knit team of 5 to 7 folks, and
+              together as a unit, we need to cover some crucial skills. But
+              here's the deal: I'm not too fussed about how we will end up
+              dividing these roles up among ourselves. Whether you're a web
+              wizard with an eye for photos or a coordination champ with killer
+              video skills, as long as we've got these skills covered, we're
+              golden. So, the first step is finding the right people and then
+              crafting roles that match their strengths. Now, let's run through
+              the must-have skills:
             </p>
             <p className="mappedContentTxt">
-            
-Tech Guru 👨‍💻: This skill set belongs to the tech whiz who can take the lead in developing the website and applications.
+              Social Media Savvy ⭐: If you possess this skill, you're not just
+              creative; you're also deeply passionate about crafting
+              eye-catching, unique content for various social media platforms.
+              You're ready to brainstorm wild ideas and bring them to life
+              together with me. Think photography, videography, editing skills,
+              and content management. Reach out to me at:
+              social-media-savvy@passtillios.com.💛
             </p>
+            <p className="mappedContentTxt">
+              Legal, Financial, Operational, and Management Know-How 👨‍💼👩‍💼: This
+              skill set is all about conquering those if-you-don't-you're-doomed
+              aspects of a project like a pro. As for me, that's where you'll
+              find me least comfortable! 😁 Reach out to me at:
+              lfom-wiz@passtillios.com.💚
+            </p>
+            <p className="mappedContentTxt">
+              Coordination Maestro 🚀: If you've got this skill, you're the
+              go-to person for keeping everything running smoothly. You excel in
+              coordination, communication, and organizational tasks. Reach out
+              to me at: coordination-maestro@passtillios.com.🧡
+            </p>
+            <p className="mappedContentTxt">
+              Tech Guru 👨‍💻: This skill set belongs to the tech whiz who can take
+              the lead in developing the website and applications. Reach out to
+              me at: tech-guru@passtillios.com.🩵
+            </p>
+           
           </div>
           <div className="mappedContentContainer">
             <h3 className="mappedContentH">mentors and backers</h3>
-            <p style={{marginLeft:"5%",marginRight:"5%"}} className="mappedContentTxt">
-            I've come to understand the value of having a savvy guide, like a mentor, to navigate those early pitfalls that could otherwise trip us up. If this project has caught your interest and you're thinking about taking on that guiding role, whether through sharing your experience, knowledge, expertise, or financial support, I warmly encourage you to reach out. Your input could be invaluable, and I'd be thrilled to hear from you!
+            <p
+              style={{ marginLeft: "5%", marginRight: "5%" }}
+              className="mappedContentTxt"
+            >
+              I've come to understand the value of having a savvy guide, like a
+              mentor, to navigate those early pitfalls that could otherwise trip
+              us up. If this project has caught your interest and you're
+              thinking about taking on that guiding role, whether through
+              sharing your experience, knowledge, expertise, or financial
+              support, I warmly encourage you to reach out. Your input could be
+              invaluable, and I'd be thrilled to hear from you! please send me
+              an email at backers@passtillios.com or mentors@passtillios.com.💜
             </p>
-           
+            <h3 className="mappedContentH">none of the above? 👽</h3>
+            <p 
+             style={{ marginLeft: "5%", marginRight: "5%" }}
+            className="mappedContentTxt">
+             you believe you have something
+              important to add to the project that I am missing? uuuuh curious!
+              then reach out to me at: collab@passtillios.com.🤍
+            </p>
           </div>
-        
         </div>
       </div>
 
@@ -146,7 +182,7 @@ Tech Guru 👨‍💻: This skill set belongs to the tech whiz who can take the 
           {
             url: "images/slideShow/team/haleh/8.png",
             caption:
-              "It breeds a rigid culture where no one dares to think outside of the box and use their imagination, leading to stagnation. Let me tell you, my rational side is still shaking in its boots. it keeps saying nooo way it will happen, but hey, I'm all in for taking this risk while I still can. So, why not roll the dice? Yeah, it's scary, but that's where the real beauty lies",
+              "It creates this rigid culture where nobody wants to step out of line and unleash their creativity, which just leads to stagnation. Let me tell you, My logical side is freaking out, screaming ''You're insane!'' But you know what? Why not shake things up while I still have the chance? Sure, it's terrifying, but that's where all the magic happens.",
           },
           {
             url: "images/slideShow/team/haleh/9.png",
@@ -168,15 +204,9 @@ Tech Guru 👨‍💻: This skill set belongs to the tech whiz who can take the 
               "Or else, I might just throw this shoe at ya... Nah, just kidding. But seriously, think it through and let's have a chat.",
           },
           {
-            url: "images/slideShow/team/haleh/13.png",
-            caption:
-              "I will be waiting IM-patiently for you",
-          },
-          {
             url: "images/slideShow/team/haleh/14.png",
-            caption:
-              "ok? bye!",
-          }
+            caption: "I will be waiting IM-patiently for you.. ok? bye!",
+          },
         ]}
       />
       <Slider
@@ -193,7 +223,7 @@ Tech Guru 👨‍💻: This skill set belongs to the tech whiz who can take the 
           {
             url: "images/slideShow/team/you/3.png",
             caption:
-              "And this could be us. Look what you made me do! 😵 Shoot me an email at collab@passtillios.com. I mean, how could you resist after seeing this masterpiece of a photo, showcasing my exceptional editing skills?",
+              "And this could be us. Look what you made me do! 😵 Shoot me an email at one of the email addresses I have mentioned above. I mean, how could you resist after seeing this masterpiece of a photo, showcasing my exceptional editing skills?",
           },
         ]}
       />

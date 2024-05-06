@@ -1,3 +1,4 @@
+/*
 import express from 'express';
 import pool from '../db.js';
 import { check, validationResult } from 'express-validator';
@@ -64,3 +65,4 @@ router.post('/get-crew', [
 });
 
 export default router;
+*/

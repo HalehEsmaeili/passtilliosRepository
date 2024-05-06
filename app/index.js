@@ -3,7 +3,7 @@ import { dirname } from "path";
 import dotenv from "dotenv";
 import express from "express";
 import routes from "./routes/index.js";
-import pool from "./db.js";
+//import pool from "./db.js";
 import bodyParser from "body-parser";
 import cors from "cors";
 //import AWS  from 'aws-sdk';
@@ -22,10 +22,11 @@ const port = process.env.PORT || 3004;
 // Middleware
 app.use(bodyParser.json());
 app.use(cors());
+/*
 app.use((req, _, next) => {
   req.pool = pool;
   next();
-});
+});*/
 
 
 

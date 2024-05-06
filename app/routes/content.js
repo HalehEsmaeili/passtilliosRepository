@@ -1,4 +1,4 @@
-import express from "express";
+/*import express from "express";
 import pool from "../db.js";
 import { check, validationResult } from "express-validator";
 
@@ -43,7 +43,7 @@ router.get(
     }
   }
 );
-/*router.get("/sections/:pageTitle/:sectionTitle", [
+router.get("/sections/:pageTitle/:sectionTitle", [
   // Validation middleware for the '/sections/:pageId/:sectionId' route
   check('pageTitle').exists().withMessage('page title is required'),
   check('sectionTitle').exists().withMessage('section title is required'),
@@ -97,7 +97,7 @@ router.get(
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
-*/
+
 router.get(
   "/sections/:pageId/:sectionId",
   [
@@ -246,3 +246,4 @@ router.get("/header-page/:pageId", async (req, res) => {
 });
 
 export default router;
+*/
