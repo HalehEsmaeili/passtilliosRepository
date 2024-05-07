@@ -1046,6 +1046,21 @@ function IntroParallax() {
                   caption:
                   t("intro.greyEpidemy.slideshow.caption.6"),
                 },
+                {
+                  url:`/images/slideShow/grey1/7.png`,
+                  caption:
+                  t("intro.greyEpidemy.slideshow.caption.7"),
+                },
+                {
+                  url:`/images/slideShow/grey1/differentPainting.png`,
+                  caption:
+                  t("intro.greyEpidemy.slideshow.caption.differentPainting"),
+                },
+                {
+                  url:`/images/slideShow/grey1/diverstiy.png`,
+                  caption:
+                  t("intro.greyEpidemy.slideshow.caption.differentPainting2"),
+                }
               ]}
             />
 
