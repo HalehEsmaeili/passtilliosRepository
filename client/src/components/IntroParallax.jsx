@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef, useHover } from "react";
-import axiosInstance from "../Api/axiosInstance.js";
+//import axiosInstance from "../Api/axiosInstance.js";
 import "../public/intro.css";
 import CampaignStatement from "./campaign/CampaignStatement.jsx";
 import ProjectSection from "./ProjectSection.jsx";
@@ -17,7 +17,7 @@ import {
 //import Highlighted from "../components/Highlighted.js";
 //import useWindowDimensions from "./useWindowDimensions.js";
 import logo from "../public/images/logo.png";
-import imgOfMe from "../public/images/Intro/myimg.png";
+import imgOfMe from "../public/images/Intro/myimg2.png";
 import sonne from "../public/images/Intro/sonneBG.gif";
 
 
