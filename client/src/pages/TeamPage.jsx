@@ -93,25 +93,25 @@ const TeamPage = () => {
               You're ready to brainstorm wild ideas and bring them to life
               together with me. Think photography, videography, editing skills,
               and content management. Reach out to me at:
-              social-media-savvy@passtillios.com.💛
+              <a href="mailto:social-media-savvy@passtillios.com">social-media-savvy@passtillios.com</a>💛
             </p>
             <p className="mappedContentTxt">
               Legal, Financial, Operational, and Management Know-How 👨‍💼👩‍💼: This
               skill set is all about conquering those if-you-don't-you're-doomed
               aspects of a project like a pro. As for me, that's where you'll
               find me least comfortable! 😁 Reach out to me at:
-              lfom-wiz@passtillios.com.💚
+              <a href="mailto:lfom-wiz@passtillios.com">lfom-wiz@passtillios.com</a>💚
             </p>
             <p className="mappedContentTxt">
               Coordination Maestro 🚀: If you've got this skill, you're the
               go-to person for keeping everything running smoothly. You excel in
               coordination, communication, and organizational tasks. Reach out
-              to me at: coordination-maestro@passtillios.com.🧡
+              to me at: <a href="mailto:coordination-maestro@passtillios.com">coordination-maestro@passtillios.com</a>🧡
             </p>
             <p className="mappedContentTxt">
               Tech Guru 👨‍💻: This skill set belongs to the tech whiz who can take
               the lead in developing the website and applications. Reach out to
-              me at: tech-guru@passtillios.com.🩵
+              me at: <a href="mailto:tech-guru@passtillios.com">tech-guru@passtillios.com</a>🩵
             </p>
            
           </div>
@@ -128,15 +128,15 @@ const TeamPage = () => {
               sharing your experience, knowledge, expertise, or financial
               support, I warmly encourage you to reach out. Your input could be
               invaluable, and I'd be thrilled to hear from you! please send me
-              an email at backers@passtillios.com or mentors@passtillios.com.💜
+              an email at <a href="mailto:backers@passtillios.com">backers@passtillios.com</a> or  <a href="mailto:mentors@passtillios.com">mentors@passtillios.com</a>💜
             </p>
-            <h3 className="mappedContentH">none of the above? 👽</h3>
+            <h3 className="mappedContentH">none of the above? </h3>
             <p 
              style={{ marginLeft: "5%", marginRight: "5%" }}
             className="mappedContentTxt">
              you believe you have something
               important to add to the project that I am missing? uuuuh curious!
-              then reach out to me at: collab@passtillios.com.🤍
+              then reach out to me at: <a href="mailto:collab@passtillios.com">collab@passtillios.com</a>🤍
             </p>
           </div>
         </div>
@@ -172,7 +172,7 @@ const TeamPage = () => {
           {
             url: "images/slideShow/team/haleh/6.png",
             caption:
-              "Here is what sums me up in just two words: Mindfully Naive. In a world that's all about being rational, sometimes you gotta embrace a little naivety to jump into the unknown and discover some real magic.",
+              "Here is what sums me up in just two words: Mindfully Crazy. In a world that's all about being rational, sometimes you gotta embrace a little naivety to jump into the unknown and discover some real magic.",
           },
           {
             url: "images/slideShow/team/haleh/7.png",

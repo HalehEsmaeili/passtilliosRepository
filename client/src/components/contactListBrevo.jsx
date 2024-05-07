@@ -53,7 +53,7 @@ const ContactList = () => {
   const [error, setError] = useState("");
   const [stateIsoCode, setStateIsoCode] = useState("");
   const [helperTxt, setHelperTxt] = useState("");
-
+  const [buttonClicked, setButtonClicked] = useState(false);
   ///
   /*recaptcha
   const [recaptchaToken, setRechatchaToken] = useState(null);
@@ -151,6 +151,7 @@ const ContactList = () => {
 
       setBtnPressed(true);
     } else {
+      setButtonClicked(true);
       try {
     console.log(email,name,city.name);
         const response = await axiosInstance.post(
@@ -421,7 +422,7 @@ const ContactList = () => {
         <div className="mb-3">
           {savedSuccessfully ? (
             <h3 style={{marginRight:"5%"}} className="fw-normal h1contact">
-             1 last step left {name ? name : ""}! 🎉🥳🍾
+             1 last step left {name ? name : ""}! 🎉🥳
             </h3>
           ) : savingUnsuccessful ? (
             <h3 className="fw-normal h1contact">oooops!</h3>
@@ -847,7 +848,7 @@ const ContactList = () => {
                   personal data you provided will be transferred to Brevo for
                   processing in accordance with Brevo's Privacy Policy.👉{" "}
                   <a
-                    style={{ color: "#f90e9b" }}
+                    
                     href="https://www.brevo.com/en/legal/privacypolicy/"
                   >
                     Brevo's Privacy Policy.
@@ -914,14 +915,18 @@ const ContactList = () => {
           </div>
 
           <div className="btnEmailListContainer">
-            <Button
-              id="contactBtn"
-              name="count me in!"
-              form="sib-form"
-              type="submit"
-              handleClick={handleClick}
-            />
-          </div>
+          {!buttonClicked && (
+        <Button
+          id="contactBtn"
+          name="count me in!"
+          form="sib-form"
+          type="submit"
+          handleClick={handleClick}
+        />)}
+         {buttonClicked && (
+        <p className="mappedContentH">please wait a second 😗🎶 ... </p>
+        )}
+           </div>
         </div>
       )}
     </main>
