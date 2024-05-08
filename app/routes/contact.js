@@ -10,7 +10,7 @@ const router = Router();
 // Rate limit configuration
 const limiter = rateLimit({
   windowMs: 30 * 60 * 1000, // 30 minutes
-  max: 2, // limit eac IP to 2 requests per windowMs
+  max: 4, // limit eac IP to 2 requests per windowMs
   handler: (req, res) => {
     // Send a custom response when the rate limit is exceeded
     res.status(429).json({
@@ -54,7 +54,6 @@ router.post('/save-to-tempo-contactlist-brevo', [
       body: JSON.stringify({
         attributes: {
           VORNAME: name,
-          EMAIL: email,
           COUNTRY: country,
           STATE: state,
           CITY: city,
