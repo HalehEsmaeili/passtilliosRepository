@@ -67,7 +67,7 @@ router.post('/save-to-tempo-contactlist-brevo', [
 
     fetch(url, options)
     .then(response => {
-      if (response.status === 204) {
+      if (response.status === 204|| response.status === 201 ) {
         res.status(200).json({ message: 'Data saved successfully.' });
       } else {
         return response.json();
