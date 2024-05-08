@@ -87,19 +87,18 @@ const TeamPage = () => {
               the must-have skills:
             </p>
             <p className="mappedContentTxt">
-              Social Media Savvy ⭐: If you possess this skill, you're not just
-              creative; you're also deeply passionate about crafting
-              eye-catching, unique content for various social media platforms.
-              You're ready to brainstorm wild ideas and bring them to life
+              Social Media Savvy ⭐: If you possess this skill, you're
+              creative and not afraid of bold crazy ideas🤪; you're deeply passionate about crafting
+              unique, high-quality and eye-catching content for various social media platforms and ready to brainstorm wild ideas and bring them to life
               together with me. Think photography, videography, editing skills,
-              and content management. Reach out to me at:
+              and content creation and management. Reach out to me at:
               <a href="mailto:social-media-savvy@passtillios.com">social-media-savvy@passtillios.com</a>💛
             </p>
             <p className="mappedContentTxt">
               Legal, Financial, Operational, and Management Know-How 👨‍💼👩‍💼: This
               skill set is all about conquering those if-you-don't-you're-doomed
               aspects of a project like a pro. As for me, that's where you'll
-              find me least comfortable! 😁 Reach out to me at:
+              find me least comfortable! 😁 Be kind and reach out to me at:
               <a href="mailto:lfom-wiz@passtillios.com">lfom-wiz@passtillios.com</a>💚
             </p>
             <p className="mappedContentTxt">
