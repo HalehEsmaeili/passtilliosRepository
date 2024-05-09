@@ -98,7 +98,7 @@ const TeamPage = () => {
               Legal, Financial, Operational, and Management Know-How 👨‍💼👩‍💼: This
               skill set is all about conquering those if-you-don't-you're-doomed
               aspects of a project like a pro. As for me, that's where you'll
-              find me least comfortable! 😁 Be kind and reach out to me at:
+              find me least comfortable! 😁 Be kind and reach out to me at: 
               <a href="mailto:lfom-wiz@passtillios.com">lfom-wiz@passtillios.com</a>💚
             </p>
             <p className="mappedContentTxt">

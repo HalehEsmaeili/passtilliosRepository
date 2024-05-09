@@ -23,7 +23,7 @@ const ContactPage = () => {
         <PageIntro page="Networking" txt={t("pageIntro.contact.text")} />
 
         <div className="mappedContentContainer">
-        <h3 className="mappedContentH">💛💜💚🧡</h3>
+       
           <h3 className="mappedContentH">
            {t("contactpage.joinContactList")}
         
@@ -37,12 +37,20 @@ const ContactPage = () => {
           {t("contactpage.stayconnected")}
 
           </p>
-
           <p className="mappedContentTxt">
           {t("contactpage.notspammy")}
 
           </p>
-          
+         
+          <h3 className="mappedContentH">
+          {t("contactpage.whycity.h1")}
+        
+          </h3> 
+          <p style={{marginLeft:"5%",marginRight:"5%"}} className="mappedContentTxt">
+           {t("contactpage.whycity.p")}
+        
+          </p>
+          {/*<h3 className="mappedContentH">💛💜💚🧡</h3>*/}
         </div>
 
         <ContactList />
