@@ -24,7 +24,7 @@ function Footer() {
         <span className="separator">|</span>
         <p onClick={()=>navigate("/datenschutz")}  className="footer-link">Data Policy</p>
         <span className="separator" >|</span>
-        <p style={{margin:"0 10px"}} className="separator"> &copy; 2024 PASSTILLIOS</p>
+        <p style={{margin:"0 10px"}} className="separator"> &copy; PASSTILLIOS 2024</p>
       </div>
     
     </footer>
