@@ -20,8 +20,8 @@ const Success = () => {
           </video>
           <p style={{ marginLeft: "10%",marginRight: "10%"}} className="contactListMsg">
             {" "}
-            Here the real nice chicks I promised you... Did you expect something else?
-            SHAME! go work on yourself!😏
+            I promised to show you some real nice chicks when you come back as a welcome bonus 😏😁! Here they are... Did you expect something else?
+            WELL! go work on yourself!😏
             anywaysss! 🌟 So stoked to welcome you to the Passtillios crew!
             Your trust means the world to me. it will be aweome so buckel up
             because we're about to embark on an epic journey, collecting some

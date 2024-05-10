@@ -181,7 +181,7 @@ const TeamPage = () => {
           {
             url: "images/slideShow/team/haleh/8.png",
             caption:
-              "It creates this rigid culture where nobody wants to step out of line and unleash their creativity, which just leads to stagnation. Let me tell you, My logical side is freaking out, screaming ''You're insane!'' But you know what? Why not shake things up while I still have the chance? Sure, it's terrifying, but that's where all the magic happens.",
+       "It creates this rigid culture where nobody wants to step out of line and unleash their creativity, which just leads to stagnation. Let me tell you, my logical side is freaking out, screaming 'You're insane!' But you know what... Sure, it's terrifying, but if magic is what I'm after, then I must take that leap of faith!🚀✨" ,
           },
           {
             url: "images/slideShow/team/haleh/9.png",
