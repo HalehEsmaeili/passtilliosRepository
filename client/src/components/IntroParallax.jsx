@@ -1307,6 +1307,7 @@ function IntroParallax() {
       <div>
       <div className="mappedContentContainer">
             <h3 className="mappedContentH">First things first, let's help spread the magic!</h3>
+           {/**
             <p className="mappedContentH">Did you happen to get a flyer from me? Is this the flyer you have in your hand?</p>
           
 
@@ -1328,8 +1329,9 @@ function IntroParallax() {
             >
              Then don't toss it aside. Either pass it on to another student or leave it in a public spot and let serendipity work its magic.
             </p>
+            */}
             <p style={{ marginLeft: "5%", marginRight: "5%" }} className="mappedContentTxt">
-            And of course, let's not forget about the internet and social media. Let's stay connected on Instagram (link in the menu above or simply search for passtillios 😘). As for the rest, I'm pretty sure you folks are much better at social media than I am, so I'll leave that part to you! 😜
+           Let's stay connected on Instagram (link in the menu above or simply search for passtillios 😘). As for the rest, I'm pretty sure you folks are much better at social media than I am, so I'll leave that part to you! 😜
 </p>
             <p className="mappedContentH">Now, if you're ready, scroll down, and I'll guide you through the next stops on the website.🤟</p>
             </div>
