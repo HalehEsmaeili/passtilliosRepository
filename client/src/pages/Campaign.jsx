@@ -152,7 +152,7 @@ const Campaign = () => {
             <iframe
               className="cmplazyload"
               data-cmp-preview="300x200"
-              data-cmp-src="https://www.youtube.com/embed/5f5TQZi5_08?si=mYcZfNPclVekAVCt"
+              data-cmp-src="https://www.youtube-nocookie.com/embed/5f5TQZi5_08?si=mYcZfNPclVekAVCt?privacy-enhanced=1"
               src="about:blank"
               data-cmp-vendor="s30"
               title="YouTube video player"
@@ -193,7 +193,7 @@ const Campaign = () => {
               height="100%"
               data-cmp-preview="300x200"
               className="cmplazyload"
-              data-cmp-src="https://www.youtube.com/embed/H2rG4Dg6xyI?si=dp8dOseok1MS53_V"
+              data-cmp-src="https://www.youtube-nocookie.com/embed/H2rG4Dg6xyI?si=dp8dOseok1MS53_V?privacy-enhanced=1"
               src="about:blank"
               data-cmp-vendor="s30"
               title="YouTube video player"
