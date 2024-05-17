@@ -14,6 +14,7 @@ function Header() {
   const handleToggleClick = () => {
     const menuToggle = document.querySelector(".menu__toggle");
     menuToggle.classList.toggle("clicked");
+    
   };
 
   return (
