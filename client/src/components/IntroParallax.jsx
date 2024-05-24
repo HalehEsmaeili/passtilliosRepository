@@ -91,13 +91,13 @@ function IntroParallax() {
     amount: 0.3,
   });
 
-  const isInViewGreyTxt = useInView(greydiv, { once: true, amount: 0.44 });
+  const isInViewGreyTxt = useInView(greydiv, { once: true, amount: 0.2 });
 
   //const isInViewdiv0=useInView(div0, {once:true});
   //const isInViewDivGrey=useInView(greydiv, {once:true});
 
   const isInViewdiv3 = useInView(div3, { once: true, amount: 0.8 });
- const isInViewMyIntroSection= useInView(myintroSection, { once: true, amount: 0.7 });
+ const isInViewMyIntroSection= useInView(myintroSection, { once: true, amount: 0.1 });
 
   //const [isHovered,handleHover]=useHover();
   ///////dont let grey take over
