@@ -1379,7 +1379,15 @@ margin-bottom: 0;
     margin-bottom: 5%;
   }
 
-  #crazyProjectH {
+ 
+  .greyTxt {
+    margin-left: 10%;
+    margin-right: 10%;
+
+  }
+  /*
+
+ #crazyProjectH {
     position: relative;
     font-size: 4vw;
     top: -37%;
@@ -1435,12 +1443,14 @@ margin-bottom: 0;
     margin-left: -40%;
     padding-right: 0%;
   }
-  .greyTxt {
-    margin-left: 10%;
-    margin-right: 10%;
 
-  }
-  /*
+
+
+
+
+
+
+
 #greyUP {
   position: absolute;
   opacity: 60%;
