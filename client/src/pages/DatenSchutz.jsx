@@ -31,8 +31,8 @@ function Datenschutz() {
 <h2>3. Allgemeine Hinweise und Pflicht&shy;informationen</h2>
 <h3>Datenschutz</h3> <p>Die Betreiber dieser Seiten nehmen den Schutz Ihrer pers&ouml;nlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerkl&auml;rung.</p> <p>Wenn Sie diese Website benutzen, werden verschiedene personenbezogene Daten erhoben. Personenbezogene Daten sind Daten, mit denen Sie pers&ouml;nlich identifiziert werden k&ouml;nnen. Die vorliegende Datenschutzerkl&auml;rung erl&auml;utert, welche Daten wir erheben und wof&uuml;r wir sie nutzen. Sie erl&auml;utert auch, wie und zu welchem Zweck das geschieht.</p> <p>Wir weisen darauf hin, dass die Daten&uuml;bertragung im Internet (z.&nbsp;B. bei der Kommunikation per E-Mail) Sicherheitsl&uuml;cken aufweisen kann. Ein l&uuml;ckenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht m&ouml;glich.</p>
 <h3>Hinweis zur verantwortlichen Stelle</h3> <p>Die verantwortliche Stelle f&uuml;r die Datenverarbeitung auf dieser Website ist:</p> <p>haleh esmaeili<br />
-Eschersheimer Landstra&szlig;e 42,<br />
-60322, Frankfurt am Main,Hessen, Deutschland</p>
+Beckstraße 8,<br />
+64287, Darmstadt, Hessen, Deutschland</p>
 
 <p>Telefon: +49 (0) 1633659699<br />
 E-Mail: haleh@passtillios.com</p>
@@ -82,8 +82,8 @@ E-Mail: haleh@passtillios.com</p>
 <h2>3. General information and mandatory information</h2>
 <h3>Data protection</h3> <p>The operators of this website and its pages take the protection of your personal data very seriously. Hence, we handle your personal data as confidential information and in compliance with the statutory data protection regulations and this Data Protection Declaration.</p> <p>Whenever you use this website, a variety of personal information will be collected. Personal data comprises data that can be used to personally identify you. This Data Protection Declaration explains which data we collect as well as the purposes we use this data for. It also explains how, and for which purpose the information is collected.</p> <p>We herewith advise you that the transmission of data via the Internet (i.e., through e-mail communications) may be prone to security gaps. It is not possible to completely protect data against third-party access.</p>
 <h3>Information about the responsible party (referred to as the &ldquo;controller&rdquo; in the GDPR)</h3> <p>The data processing controller on this website is:</p> <p>haleh esmaeili<br />
-Eschersheimer Landstra&szlig;e 42,<br />
-60322, Frankfurt am Main,Hessen, Deutschland</p>
+Beckstraße 8,<br />
+64287, Darmstadt, Hesse, Germany</p>
 
 <p>Phone: +49 (0) 1633659699<br />
 E-mail: haleh@passtillios.com</p>
